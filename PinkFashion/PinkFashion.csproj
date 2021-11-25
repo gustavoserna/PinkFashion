@@ -24,6 +24,7 @@
     <PackageReference Include="Xamarin.Forms.OpenWhatsApp" Version="1.0.1" />
     <PackageReference Include="Com.OneSignal" Version="3.10.6" />
     <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
+    <PackageReference Include="CarouselView.FormsPlugin" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
@@ -53,5 +54,6 @@
   <ItemGroup>
     <None Remove="Plugin.Firebase" />
     <None Remove="Plugin.FirebaseAnalytics" />
+    <None Remove="CarouselView.FormsPlugin" />
   </ItemGroup>
 </Project>

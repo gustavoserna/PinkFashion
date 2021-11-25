@@ -16,55 +16,55 @@ namespace PinkFashion.Views
 {
     public partial class Inicio : ContentPage
     {
-        
+
         InicioViewModel inicioViewModel;
         json_object json_ob = new json_object();
         public Command GetBloques { get; set; }
         public Command GetContador { get; set; }
         uint scrollRate = 1000; // in milliseconds
 
-        ObservableCollection<Layoutapp>  BloquesLayoutApp = new ObservableCollection<Layoutapp>();
+        ObservableCollection<Layoutapp> BloquesLayoutApp = new ObservableCollection<Layoutapp>();
         public Inicio()
         {
             InitializeComponent();
-            
+
             BindingContext = inicioViewModel = new InicioViewModel(Navigation);
 
             if (Application.Current.Properties.ContainsKey("Abreviado"))
             {
                 //lbNombre.Text = "Hola " + Application.Current.Properties["Abreviado"].ToString().Trim();
-                StackName.IsVisible = true;
+                //StackName.IsVisible = true;
             }
             else
             {
-                StackName.IsVisible = false;
+                //StackName.IsVisible = false;
             }
             var clickCuenta = new TapGestureRecognizer();
             clickCuenta.Tapped += async (s, e) =>
             {
 
-                        var page = new NavigationPage(new Cuenta());
-                        page.BarBackgroundColor = App.bgColor;
-                        page.BarTextColor = App.textColor;
-                        await Navigation.PushModalAsync(page);
+                var page = new NavigationPage(new Cuenta());
+                page.BarBackgroundColor = App.bgColor;
+                page.BarTextColor = App.textColor;
+                await Navigation.PushModalAsync(page);
 
-                
+
             };
             cuenta.GestureRecognizers.Add(clickCuenta);
-            
+
             var clickNovedades = new TapGestureRecognizer();
             clickNovedades.Tapped += (s, e) =>
             {
                 Navigation.PushAsync(new Novedades());
             };
-            btnNovedades.GestureRecognizers.Add(clickNovedades);
+            //btnNovedades.GestureRecognizers.Add(clickNovedades);
 
             var clickOfertas = new TapGestureRecognizer();
             clickOfertas.Tapped += (s, e) =>
             {
                 Navigation.PushAsync(new Ofertas());
             };
-            btnOfertas.GestureRecognizers.Add(clickOfertas);
+            //btnOfertas.GestureRecognizers.Add(clickOfertas);
 
             var clickVendidos = new TapGestureRecognizer();
             clickVendidos.Tapped += (s, e) =>
@@ -72,8 +72,8 @@ namespace PinkFashion.Views
                 Navigation.PushAsync(new MasVendidos());
 
             };
-            btnVendidos.GestureRecognizers.Add(clickVendidos);
-            
+            //btnVendidos.GestureRecognizers.Add(clickVendidos);
+
             var clickCarrito = new TapGestureRecognizer();
             clickCarrito.Tapped += async (s, e) =>
             {
@@ -107,16 +107,16 @@ namespace PinkFashion.Views
 
             };
             carrito.GestureRecognizers.Add(clickCarrito);
-            
+
             GetContador = new Command(async () =>
             {
                 await ExecuteGetContadorCommand();
             });
-            
-            
+
+
             GetBloques = new Command(async () =>
             {
-                await ExecuteGetBloquesCommand(); 
+                await ExecuteGetBloquesCommand();
 
             });
 
@@ -126,14 +126,14 @@ namespace PinkFashion.Views
                 Navigation.PushAsync(new CarritosAbandonados());
 
             };
-            lbAbandonado.GestureRecognizers.Add(clickAbandonados);
+            //lbAbandonado.GestureRecognizers.Add(clickAbandonados);
 
             Device.StartTimer(new TimeSpan(0, 0, 5), () =>
             {
                 // do something every 30 seconds
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    if (StackAbandonado.IsVisible == true)
+                    /*if (StackAbandonado.IsVisible == true)
                     {
                         if (lbEnvios.IsVisible == true)
                         {
@@ -157,7 +157,7 @@ namespace PinkFashion.Views
                         {
                             lbEnvios.IsVisible = true;
                         }
-                    }
+                    }*/
                 });
                 return true; // runs again, or false to stop
             });
@@ -168,9 +168,9 @@ namespace PinkFashion.Views
 
         bool HandleTimer()
         {
-            double offset = scrollView.ScrollX >= (inicioViewModel.InicioVista.Banners.Count - 1) * this.Width ? 0 : scrollView.ScrollX + this.Width;
-            var animation = new Animation(x => scrollView.ScrollToAsync(x, scrollView.ScrollY, false), scrollView.ScrollX, offset);
-            animation.Commit(this, "Scroll", length: scrollRate);
+            //double offset = scrollView.ScrollX >= (inicioViewModel.InicioVista.Banners.Count - 1) * this.Width ? 0 : scrollView.ScrollX + this.Width;
+            //var animation = new Animation(x => scrollView.ScrollToAsync(x, scrollView.ScrollY, false), scrollView.ScrollX, offset);
+            //animation.Commit(this, "Scroll", length: scrollRate);
 
             return true;
         }
@@ -215,7 +215,7 @@ namespace PinkFashion.Views
                     Margin = new Thickness(0, 0, 0, 0),
                     //VerticalOptions = LayoutOptions.FillAndExpand,
                     HorizontalOptions = LayoutOptions.FillAndExpand
-                    
+
                 };
                 GridImage1.Children.Add(navImage1);
 
@@ -236,15 +236,15 @@ namespace PinkFashion.Views
                     Margin = new Thickness(0, 0, 0, 0),
                     //VerticalOptions = LayoutOptions.FillAndExpand,
                     HorizontalOptions = LayoutOptions.FillAndExpand
-                    
+
 
                 };
                 GridImage2.Children.Add(navImage2);
 
                 if (itemlay.Bloque == "2")
                 {
-                    GridMarcas.Children.Add(GridImage1, 0, CountRow);
-                    GridMarcas.Children.Add(GridImage2, 1, CountRow);
+                    //GridMarcas.Children.Add(GridImage1, 0, CountRow);
+                    //GridMarcas.Children.Add(GridImage2, 1, CountRow);
                     var clickMarca1 = new TapGestureRecognizer();
                     clickMarca1.Tapped += (s, e) =>
                     {
@@ -262,7 +262,7 @@ namespace PinkFashion.Views
                 }
                 else
                 {
-                    GridMarcas.Children.Add(GridImage1, 0, CountRow);
+                    //GridMarcas.Children.Add(GridImage1, 0, CountRow);
                     Grid.SetColumnSpan(GridImage1, 2);
                     var clickMarca1 = new TapGestureRecognizer();
                     clickMarca1.Tapped += (s, e) =>
@@ -276,7 +276,7 @@ namespace PinkFashion.Views
                 CountRow++;
             }
 
-            
+
         }
 
         protected override void OnAppearing()
