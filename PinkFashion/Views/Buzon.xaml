@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PinkFashion.Renderers"
+             x:Class="PinkFashion.Views.Buzon">
+    <NavigationPage.TitleView>
+        <Grid  HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+                    <ColumnDefinition.Width>
+                        <OnPlatform x:TypeArguments="GridLength" iOS="21*"  Android="0*" />
+                    </ColumnDefinition.Width>
+                </ColumnDefinition>
+                <ColumnDefinition>
+                    <ColumnDefinition.Width>
+                        <OnPlatform x:TypeArguments="GridLength" iOS="49*"  Android="70*" />
+                    </ColumnDefinition.Width>
+                </ColumnDefinition>
+                <ColumnDefinition>
+                    <ColumnDefinition.Width>
+                        <OnPlatform x:TypeArguments="GridLength" iOS="30*"  Android="30*" />
+                    </ColumnDefinition.Width>
+                </ColumnDefinition>
+                
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="logo" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="logo.png"  HeightRequest="45" />          
+            
+            <RelativeLayout x:Name="carrito" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                
+                <RelativeLayout.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" iOS="0,0,0,0" Android="0,0,10,0" />
+                </RelativeLayout.Margin>
+                
+                <Image Source="cart.png" VerticalOptions="CenterAndExpand">
+                    <Image.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="30" Android="30" />
+                    </Image.HeightRequest>
+                </Image>
+                
+                <Frame HasShadow="false" MinimumWidthRequest="20" CornerRadius="7" Margin="25,12,0,0" VerticalOptions="EndAndExpand">
+                   
+                    <Frame.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color" iOS="#eb068c" Android="#eb068c" />
+                    </Frame.BackgroundColor>
+                    
+                    <Frame.Padding>
+                        <OnPlatform x:TypeArguments="Thickness" iOS="7,3,7,3" Android="2,1,2,1" />
+                    </Frame.Padding>
+                    
+                    <Frame.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="10" Android="15" />
+                    </Frame.HeightRequest>
+                    
+                    <Label x:Name="lblCarrito" Text="{Binding noProductos}" TextColor="White" FontSize="13" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                    
+                </Frame>
+                
+            </RelativeLayout>
+            
+        </Grid>
+        
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+            <StackLayout BackgroundColor="#eb068c" Padding="10" HorizontalOptions="FillAndExpand"> 
+                 <Label Text="Buzón de Correos" FontSize="25" FontAttributes="Italic" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+            <controls:HybridWebView
+                x:Name="webViewElement"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

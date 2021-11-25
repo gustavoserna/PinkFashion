@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.Novedades"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             BackgroundColor="White">
+    <NavigationPage.TitleView>
+        
+        <Grid  HorizontalOptions="FillAndExpand">
+            
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition>
+                    <ColumnDefinition.Width>
+                        <OnPlatform x:TypeArguments="GridLength" iOS="21*"  Android="0*" />
+                    </ColumnDefinition.Width>
+                </ColumnDefinition>
+                
+                <ColumnDefinition>
+                    <ColumnDefinition.Width>
+                        <OnPlatform x:TypeArguments="GridLength" iOS="49*"  Android="70*" />
+                    </ColumnDefinition.Width>
+                </ColumnDefinition>
+                
+                <ColumnDefinition>
+                    <ColumnDefinition.Width>
+                        <OnPlatform x:TypeArguments="GridLength" iOS="30*"  Android="30*" />
+                    </ColumnDefinition.Width>
+                </ColumnDefinition>
+                
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="logo" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="logo.png"  HeightRequest="45" />          
+            <!--<Label x:Name="lblTitulo" Grid.Column="1" VerticalOptions="CenterAndExpand" FontSize="17" FontAttributes="Bold">
+                <Label.HorizontalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions" iOS="CenterAndExpand" Android="StartAndExpand" />
+                </Label.HorizontalOptions>
+            </Label>-->
+            
+            <RelativeLayout x:Name="carrito" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                
+                <RelativeLayout.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" iOS="0,0,0,0" Android="0,0,10,0" />
+                </RelativeLayout.Margin>
+                
+                <Image Source="cart.png" VerticalOptions="CenterAndExpand">
+                    <Image.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="30" Android="30" />
+                    </Image.HeightRequest>
+                </Image>
+                
+                <Frame HasShadow="false" MinimumWidthRequest="20" CornerRadius="7" Margin="25,12,0,0" VerticalOptions="EndAndExpand">
+                   
+                    <Frame.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color" iOS="#eb068c" Android="#eb068c" />
+                    </Frame.BackgroundColor>
+                    
+                    <Frame.Padding>
+                        <OnPlatform x:TypeArguments="Thickness" iOS="7,3,7,3" Android="2,1,2,1" />
+                    </Frame.Padding>
+                    
+                    <Frame.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="10" Android="15" />
+                    </Frame.HeightRequest>
+                    
+                    <Label x:Name="lblCarrito" Text="{Binding noProductos}" TextColor="White" FontSize="13" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                    
+                </Frame>
+                
+            </RelativeLayout>
+            
+        </Grid>
+        
+    </NavigationPage.TitleView>
+
+    
+    <ContentPage.Content>
+        
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+                 <StackLayout x:Name="StackName" Grid.Row="0" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0" >
+                    <StackLayout BackgroundColor="#eb068c" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="0" >
+                        <!--<Label x:Name="lbNombre" TextColor="WhiteSmoke" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>-->
+                        <!--<Label x:Name="lbMonedero" Text="{Binding Monedero, StringFormat='Tu monedero ${0:D}'}" TextColor="WhiteSmoke" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->
+                        <StackLayout x:Name="StackAbandonado" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Padding="0" IsVisible="{Binding visibleAbandonado}">             
+                            <Label x:Name="lbAbandonado" Text="Tienes un carrito abandonado, click Aquí" TextColor="WhiteSmoke" IsVisible="false" HorizontalOptions="Center" HorizontalTextAlignment="Center"  VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                        <Label x:Name="lbMonedero" Text="{Binding TituloMonedero}" TextColor="WhiteSmoke" HorizontalOptions="Center" HorizontalTextAlignment="Center"  VerticalOptions="CenterAndExpand"/>                
+                        <Label x:Name="lbEnvios" Text="{Binding TituloEnviosGratis}" TextColor="WhiteSmoke" IsVisible="false" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                 </StackLayout>
+            
+            </Grid>      
+            <flv:FlowListView 
+                x:Name="listview"
+                FlowColumnCount="2"
+                SeparatorColor="#f1f1f1"
+                HasUnevenRows="true"
+                FlowItemTappedCommand="{Binding ItemTappedCommand}" 
+                FlowLastTappedItem="{Binding LastTappedItem}"
+                FlowItemsSource="{Binding Productos}"
+                IsRefreshing="{Binding IsBusy}" BackgroundColor="White">
+                
+                <flv:FlowListView.Header>
+                
+                    <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="White">
+                        <SearchBar x:Name="buscar" HorizontalOptions="FillAndExpand" PlaceholderColor="#ccc" TextColor="#333" BackgroundColor="White"/>
+                                        
+                        <BoxView HeightRequest="1" BackgroundColor="#f1f1f1" HorizontalOptions="FillAndExpand" Margin="0,0,0,0" />
+                                       
+                    </StackLayout>
+                
+                </flv:FlowListView.Header>
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    
+                     <DataTemplate>
+                            <Frame BorderColor="#d4d4d4" Padding="3" HasShadow="false" CornerRadius="7" Margin="3,3,3,3" >
+                            <Grid HorizontalOptions="FillAndExpand" Padding="0" RowSpacing="0"  BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                 <RowDefinition Height="1*" /> 
+                                 <RowDefinition Height="4*" />
+                                 <RowDefinition Height="1*" />
+                                 <RowDefinition Height="1*" /> 
+                                 <RowDefinition Height="1*" />
+                             </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Text="{Binding marca}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource MediumLabelStyle}"/>
+
+                                <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="3" >
+                                    <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Image  Grid.Row="0" Source="{Binding Imagen}" Aspect="AspectFill" WidthRequest="150" HorizontalOptions="Center" />
+                                        <Frame x:Name="vAgotado" HasShadow="True" Grid.Row="0" MinimumWidthRequest="25" CornerRadius="25" Margin="90,110,0,0" HorizontalOptions="End" VerticalOptions="End" IsVisible="{Binding Agotado}">
+                                            <Frame.BackgroundColor>
+                                                <OnPlatform x:TypeArguments="Color" iOS="#ff0404" Android="#ff0404" />
+                                            </Frame.BackgroundColor>
+                                            <Frame.Padding>
+                                                <OnPlatform x:TypeArguments="Thickness" iOS="7,3,7,3" Android="2,1,2,1" />
+                                            </Frame.Padding>
+                                            <Frame.HeightRequest>
+                                                <OnPlatform x:TypeArguments="x:Double" iOS="60" Android="65" />
+                                            </Frame.HeightRequest>
+                                            <Label Text="Agotado" TextColor="White" FontSize="12" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                                        </Frame>
+                                </Grid>
+
+                                <Label Grid.Row="2" Text="{Binding producto}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource SmallLabelStyle}"/>
+                                <StackLayout Grid.Row="3" HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="0">
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="3" IsVisible="{Binding ConPromo}" >
+                                        <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" Text="{Binding SobrePreciostring}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Style="{StaticResource PetitLabelStyle}"/>
+                                            <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Spacing="0">
+                                                <BoxView Grid.Row="0" HeightRequest="2" Rotation="0" BackgroundColor="#eb068c" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0"/> 
+                                            </StackLayout>
+                                                                                    
+                                    </Grid>
+                                    <Label Text="{Binding precioCarrito}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontAttributes="Bold" Style="{StaticResource SmallLabelStyle}"/>
+                                </StackLayout>
+                                <StackLayout Grid.Row="4" HorizontalOptions="FillAndExpand" Orientation="Vertical" VerticalOptions="EndAndExpand" Spacing="0">
+                                <Label Text="{Binding TituloVer}" Padding="5" HorizontalTextAlignment="Center" TextColor="#eb068c" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Style="{StaticResource SmallLabelStyle}"/>   
+                                </StackLayout>
+                                
+                        </Grid>
+                       </Frame>
+                        
+                    </DataTemplate>
+                    
+                </flv:FlowListView.FlowColumnTemplate>
+                
+                <flv:FlowListView.Footer>
+                
+                    <StackLayout IsVisible="{Binding nodisponible}" HorizontalOptions="FillAndExpand" Padding="50" BackgroundColor="White">
+                         
+                        <Image Source="nodisponible.png" HeightRequest="60" HorizontalOptions="CenterAndExpand" />
+                        
+                        <Label Text="No disponible por el momento" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Margin="0,10,0,0" Style="{StaticResource MediumLabelStyle}"/>
+                        
+                    </StackLayout>
+                
+                </flv:FlowListView.Footer>
+
+            </flv:FlowListView>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
+

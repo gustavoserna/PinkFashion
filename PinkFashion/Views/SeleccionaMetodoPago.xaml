@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.SeleccionaMetodoPago"
+             BackgroundColor="White">
+    <NavigationPage.TitleView>
+        
+        <Grid x:Name="gridHeader" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+            
+            <Grid.ColumnDefinitions>
+           
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="30*" />
+                
+            </Grid.ColumnDefinitions>
+            
+            <StackLayout x:Name="cerrar" Grid.Column="0" HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                <Label x:Name="lblCerrar" Text="Cerrar" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="17"  />
+                                
+            </StackLayout>
+            
+            <Label Text="" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="17" FontAttributes="Bold" />
+            
+            <StackLayout Grid.Column="2" HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                
+            </StackLayout>  
+            
+        </Grid>
+        
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="loader" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <ActivityIndicator IsRunning="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+            
+            <StackLayout x:Name="cont" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            
+                
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Grid
+                            BackgroundColor="White"
+                            Padding="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85*"/>
+                                <ColumnDefinition Width="15*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                                <Label Grid.Column="0" Text="Selecciona tu método de pago" FontAttributes="Bold" Margin="10,20,10,10" Style="{StaticResource LargeLabelStyle}"/>
+                                <Image x:Name="btnAgregar" Grid.Column="1" Margin="15" Source="add.png" HeightRequest="55" HorizontalOptions="End" VerticalOptions="EndAndExpand" />
+                        </Grid>
+                </StackLayout>
+                <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" />
+                <ListView
+                    x:Name="listview"
+                    HasUnevenRows="true"
+                    SelectionMode="None"
+                    SeparatorVisibility="None"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    ItemsSource="{Binding Tarjetas}"
+                    RefreshCommand="{Binding LoadTarjetasCommand}"
+                    IsPullToRefreshEnabled="true"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    CachingStrategy="RecycleElement" BackgroundColor="White">
+                    
+                    <ListView.ItemTemplate>
+                        
+                        <DataTemplate>
+                            
+                            <ViewCell>
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    
+                                    <StackLayout HorizontalOptions="FillAndExpand" Margin="15" Orientation="Horizontal">
+                                    
+                                        <Label Text="{Binding CuentaDigitos}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource MediumLabelStyle}"/>
+                                        
+                                        <Image Source="{Binding imagen}" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+                                        
+                                    </StackLayout>
+                                    
+                                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" />
+                                    
+                                </StackLayout>
+                                
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                        
+                    </ListView.ItemTemplate>
+                    <!--
+                    <ListView.Footer>
+                        
+                        <StackLayout x:Name="cash" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" Margin="15" Orientation="Horizontal">
+                                
+                                <Image Source="cash.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" />
+                                
+                                <Label Text="Efectivo" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource MediumLabelStyle}"/>
+                                
+                                <Image x:Name="imgEfectivo" Source="checkgris.png" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+                            
+                            </StackLayout>
+                            
+                            <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" />
+                        
+                        </StackLayout>
+                        
+                    </ListView.Footer>
+                    -->
+                </ListView>
+                
+                
+            </StackLayout>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+
+</ContentPage>

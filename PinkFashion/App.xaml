@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" x:Class="PinkFashion.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="FontAwesome"
+                        x:TypeArguments="x:String"
+                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid"
+                        iOS="Font Awesome 5 Free"
+                        WinPhone="Assets/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free"/>
+        </ResourceDictionary>
+
+        <Color x:Key="TransparentColor">Transparent</Color>
+
+        <!-- Light colors -->
+        <Color x:Key="LightPageBackgroundColor">White</Color>
+        <Color x:Key="LightNavigationBarColor">WhiteSmoke</Color>
+        <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="LightSecondaryColor">Black</Color>
+        <Color x:Key="LightPrimaryTextColor">Black</Color>
+        <Color x:Key="LightSecondaryTextColor">Black</Color>
+        <Color x:Key="LightTertiaryTextColor">Gray</Color>
+        <Color x:Key="LightLbPrimaryTextColor">#333</Color>
+        <Color x:Key="LightEdPrimaryTextColor">#333</Color>
+        <Color x:Key="LightLbSecondaryTextColor">#666</Color>
+
+        <!-- Dark colors -->
+        <Color x:Key="DarkPageBackgroundColor">White</Color>
+        <Color x:Key="DarkNavigationBarColor">WhiteSmoke</Color>
+        <Color x:Key="DarkPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="DarkSecondaryColor">Black</Color>
+        <Color x:Key="DarkPrimaryTextColor">Black</Color>
+        <Color x:Key="DarkSecondaryTextColor">Black</Color>
+        <Color x:Key="DarkTertiaryTextColor">Gray</Color>
+        <Color x:Key="DarkTertiaryCollTextColor">#333</Color>
+        <Color x:Key="DarkLbPrimaryTextColor">#333</Color>
+        <Color x:Key="DarkEdPrimaryTextColor">#333</Color>
+        <Color x:Key="DarkLbSecondaryTextColor">#666</Color>
+        <!--
+        <Color x:Key="DarkPageBackgroundColor">Black</Color>
+        <Color x:Key="DarkNavigationBarColor">Teal</Color>
+        <Color x:Key="DarkPrimaryColor">Teal</Color>
+        <Color x:Key="DarkSecondaryColor">White</Color>
+        <Color x:Key="DarkPrimaryTextColor">White</Color>
+        <Color x:Key="DarkSecondaryTextColor">White</Color>
+        <Color x:Key="DarkTertiaryTextColor">WhiteSmoke</Color>
+        <Color x:Key="DarkTertiaryCollTextColor">Gray</Color>
+        <Color x:Key="DarkLbPrimaryTextColor">#d6d3d3</Color>
+        <Color x:Key="DarkEdPrimaryTextColor">#333</Color>
+        <Color x:Key="DarkLbSecondaryTextColor">WhiteSmoke</Color>
+        -->
+
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightNavigationBarColor}, Dark={StaticResource DarkNavigationBarColor}}" />
+            <Setter Property="BarTextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+        </Style>
+
+
+
+        <Style x:Key="ButtonStyle"
+               TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+            <Setter Property="HeightRequest"
+                    Value="45" />
+            <Setter Property="WidthRequest"
+                    Value="190" />
+            <Setter Property="CornerRadius"
+                    Value="18" />
+        </Style>
+
+        
+        <Style x:Key="PrimaryEditorTextLabelStyle"
+               TargetType="Entry">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightEdPrimaryTextColor}, Dark={StaticResource DarkEdPrimaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="18" />
+        </Style>
+        <Style x:Key="SecondaryEditorTextLabelStyle"
+               TargetType="Entry">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightLbPrimaryTextColor}, Dark={StaticResource DarkLbPrimaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="16" />
+        </Style>
+
+
+        <Style x:Key="LargeLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightSecondaryTextColor}, Dark={StaticResource DarkSecondaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="25" />
+        </Style>
+
+        <Style x:Key="TallLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="20" />
+        </Style>
+
+
+        <Style x:Key="MediumLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="Medium" />
+        </Style>
+
+       <Style x:Key="SmallLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightTertiaryTextColor}, Dark={StaticResource DarkTertiaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="12" />
+        </Style>
+
+        <Style x:Key="SmallLabelCollStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightTertiaryTextColor}, Dark={StaticResource DarkTertiaryCollTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="12" />
+        </Style>
+
+
+        <Style x:Key="PetitLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightTertiaryTextColor}, Dark={StaticResource DarkTertiaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="10" />
+        </Style>
+
+        <Style x:Key="PrimaryEdTextLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightLbPrimaryTextColor}, Dark={StaticResource DarkLbPrimaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="20" />
+        </Style>
+
+        <Style x:Key="SecondaryEdTextLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightLbSecondaryTextColor}, Dark={StaticResource DarkLbSecondaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="15" />
+        </Style>
+        
+        <Style x:Key="StProdImage"             TargetType="Image">
+                <Setter Property="Aspect"             Value="AspectFill"/>
+                <Setter Property="WidthRequest"       Value="85"/>
+                <Setter Property="HeightRequest"      Value="85"/>
+        </Style>
+
+        <Style x:Key="StProdDesc"             TargetType="Label">
+                <Setter Property="HorizontalOptions"  Value="CenterAndExpand"/>
+                <Setter Property="FontSize"           Value="Micro"/>
+        </Style>
+
+        <Style x:Key="StProdQuantity"        TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+                <Setter Property="Margin"            Value="0,0,0,10"/> 
+        </Style>
+    </Application.Resources>
+</Application>

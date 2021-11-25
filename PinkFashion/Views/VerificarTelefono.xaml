@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.VerificarTelefono"
+             xmlns:local="clr-namespace:PinkFashion.Renderers;assembly=PinkFashion"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+                
+                <StackLayout x:Name="loader" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    
+                    <ActivityIndicator HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsRunning="true" />
+                    
+                </StackLayout>
+                
+                <StackLayout x:Name="contNumero" Spacing="0" BackgroundColor="White">
+                    
+                    <Label Text="Ingresa tu número de teléfono para recibir un código de verificación." TextColor="#000" FontSize="18" />
+                
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" Margin="-20,20,-20,0" />
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        
+                        <Image Source="mex.png" HeightRequest="30" HorizontalOptions="Start"  VerticalOptions="CenterAndExpand"/>
+                        
+                        <Label Text="+52" TextColor="#666" VerticalOptions="CenterAndExpand" FontSize="13" />
+                        
+                        <local:Entry_R x:Name="numero" Text="" HeightRequest="50" HorizontalOptions="FillAndExpand" Keyboard="Telephone" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" VerticalOptions="CenterAndExpand" />
+                        
+                    </StackLayout>
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" Margin="-20,0,-20,0" />
+                    
+                    <Label Text="siguiente" x:Name="btnNumero" FontSize="16" TextColor="#333" HorizontalOptions="EndAndExpand" Margin="20" />
+                    
+                </StackLayout>
+                
+                <StackLayout x:Name="contCodigo" IsVisible="false" BackgroundColor="White" Spacing="0">
+                    
+                    <Label Text="Ingresa tu código de verificación" TextColor="#000" FontSize="18" />
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" Margin="-20,20,-20,0" />
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        
+                        <local:Entry_R x:Name="codigo" Text="" Placeholder="4 dígitos" HeightRequest="50" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" VerticalOptions="CenterAndExpand" />
+                        
+                    </StackLayout> 
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" Margin="-20,0,-20,0" />
+                    
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    
+                        <Label Text="Reenviar código" x:Name="btnCodigo2" FontSize="16" TextColor="#333" HorizontalOptions="Start" Margin="20" />
+                        
+                        <Label Text="siguiente" x:Name="btnCodigo" FontSize="16" TextColor="#333" HorizontalOptions="EndAndExpand" Margin="20" />
+                        
+                    </StackLayout>
+                    
+                </StackLayout>
+
+                <StackLayout x:Name="btnLogin" HorizontalOptions="FillAndExpand" Padding="20,30,20,20">
+                                    
+                    <Label Text="Regresar al iniciar sesión" TextColor="#eb068c" FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                                    
+                </StackLayout>
+            </StackLayout>
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

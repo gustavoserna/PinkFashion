@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{CD157A8F-3486-4654-B2B4-6358F3A9D435}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.Default">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
+  </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion.iOS/Entitlements.plist">
+    <Files>
+      <File FileName="PinkFashion/App.xaml.cs" Line="58" Column="14" />
+      <File FileName="PinkFashion/App.xaml" />
+      <File FileName="PinkFashion/Views/Cuenta.xaml.cs" />
+      <File FileName="PinkFashion/Views/Inicio.xaml" />
+      <File FileName="PinkFashion/Views/Inicio.xaml.cs" />
+      <File FileName="PinkFashion.iOS/Entitlements.plist" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PinkFashion" expanded="True">
+            <Node name="PinkFashion" expanded="True">
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+            <Node name="PinkFashion.iOS" expanded="True">
+              <Node name="Entitlements.plist" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.SelectDevice" />
+</Properties>

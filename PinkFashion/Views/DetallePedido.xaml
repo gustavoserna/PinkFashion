@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.DetallePedido" BackgroundColor="White">
+    <ContentPage.Content>
+
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout HorizontalOptions="FillAndExpand" Padding="0" Spacing="0" BackgroundColor="White">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <!--<RowDefinition Height="Auto" />-->
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="1.7*"/>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="1.8*"/>
+                        </Grid.ColumnDefinitions>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="2" Spacing="0" Grid.Row="0" Grid.Column="0">
+                                <Label x:Name="lblNuevo" Text="Nuevo" HorizontalOptions="CenterAndExpand" Style="{StaticResource PetitLabelStyle}"/>                                
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="2" Spacing="0" Grid.Row="0" Grid.Column="1">
+                                <Label x:Name="lblPagado" Text="Pagado" HorizontalOptions="CenterAndExpand" Style="{StaticResource PetitLabelStyle}"/>                                
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="2" Spacing="0" Grid.Row="0" Grid.Column="2">
+                                <Label x:Name="lblEmpaque" Text="Empaque" HorizontalOptions="CenterAndExpand" Style="{StaticResource PetitLabelStyle}"/>                                
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="2" Spacing="0" Grid.Row="0" Grid.Column="3">
+                                <Label x:Name="lblGuia" Text="Guia" HorizontalOptions="CenterAndExpand" Style="{StaticResource PetitLabelStyle}"/>                                
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="2" Spacing="0" Grid.Row="0" Grid.Column="4">
+                                <Label x:Name="lblEnviado" Text="Enviado" HorizontalOptions="CenterAndExpand" Style="{StaticResource PetitLabelStyle}"/>                                
+                            </StackLayout>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="2" Spacing="0" Grid.Row="0" Grid.Column="5">
+                                <Label x:Name="lblRecibido" Text="Recibido" HorizontalOptions="CenterAndExpand" Style="{StaticResource PetitLabelStyle}"/>                                
+                            </StackLayout>
+
+                        <ProgressBar x:Name="defaultProgressBar"
+                                 WidthRequest="500" ProgressColor="#eb068c"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="Fill" Grid.Row="1" Grid.ColumnSpan="7"/>
+                        </Grid>
+
+                </StackLayout>
+
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#f1f1f1" />
+                
+                <!-- productos -->
+                <ListView
+                    x:Name="listview"
+                    HasUnevenRows="true"
+                    SeparatorVisibility="None"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    ItemsSource="{Binding Items}"
+                    RefreshCommand="{Binding LoadItemsCommand}"
+                    IsPullToRefreshEnabled="true"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    CachingStrategy="RecycleElement" BackgroundColor="White">
+                    <ListView.Header>
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="20" Spacing="10">
+
+                            <Label x:Name="lblNumPedido" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Style="{StaticResource MediumLabelStyle}"/>
+                    
+                            <Label x:Name="lblFecha" HorizontalOptions="CenterAndExpand" Style="{StaticResource SmallLabelStyle}"/>
+                    
+                            <Label x:Name="lblAliasDireccion" HorizontalOptions="CenterAndExpand" Style="{StaticResource SmallLabelStyle}"/>
+
+                        </StackLayout>
+                            
+                            <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" />
+                          
+                        </StackLayout>
+                        
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        
+                        <DataTemplate>
+                            
+                            <ViewCell>
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    
+                                    <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
+                                    
+                                        <Label Text="{Binding producto}" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>                                        
+                                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                                            
+                                                <Label Text="Precio" Style="{StaticResource SmallLabelStyle}"/>
+                                            
+                                                <Label Text="{Binding Precio}" Style="{StaticResource SmallLabelStyle}" />
+                                                
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                                            
+                                                <Label Text="Cant." Style="{StaticResource SmallLabelStyle}"/>
+                                            
+                                                <Label Text="{Binding Cantidad}" Style="{StaticResource SmallLabelStyle}" />
+                                                
+                                            </StackLayout>
+                                            
+                                            <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                            
+                                                <Label Text="Importe" Style="{StaticResource SmallLabelStyle}"/>
+                                            
+                                                <Label Text="{Binding Importe}" Style="{StaticResource SmallLabelStyle}" />
+                                            
+                                            </StackLayout>
+                                            
+                                        </StackLayout>
+
+                                        
+                                        
+                                    </StackLayout>
+                                    
+                                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" />
+                                    
+                                </StackLayout>
+                                
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                        
+                    </ListView.ItemTemplate>
+                    
+                    <ListView.Footer>
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10,15,10,10">
+
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    
+                                    
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    
+                                    <Label Text="Forma de Pago" HorizontalOptions="Start" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                    <Label x:Name="lblFormaPago" HorizontalOptions="EndAndExpand" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                </StackLayout>
+                                <!--
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    
+                                    <Label Text="Instrucciones" HorizontalOptions="Start" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                    <Editor x:Name="lblInstruccion" AutoSize="TextChanges" HorizontalOptions="EndAndExpand" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                </StackLayout>
+                                -->
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    
+                                    <Label Text="SubTotal" HorizontalOptions="Start" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                    <Label x:Name="lblTotal" HorizontalOptions="EndAndExpand" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                </StackLayout>
+
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    
+                                    <Label Text="Descuento Promocional" HorizontalOptions="Start" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                    <Label x:Name="lblDescuento" HorizontalOptions="EndAndExpand" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                </StackLayout>
+
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    
+                                    <Label Text="Costo de envío" HorizontalOptions="Start" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                    <Label x:Name="lblEnvioC" HorizontalOptions="EndAndExpand" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                </StackLayout>
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    
+                                    <Label Text="Total" HorizontalOptions="Start" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                    <Label x:Name="lblTotalFinal" HorizontalOptions="EndAndExpand" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                </StackLayout>
+
+
+                                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                    
+                                    <Label Text="No. de Guia" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#eb068c" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                    <Label x:Name="lblNumGuia" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#eb068c" Style="{StaticResource MediumLabelStyle}"/>
+                                    
+                                </StackLayout>
+                            </StackLayout>
+                            
+                            <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" />
+                            
+                        </StackLayout>
+                        
+                    </ListView.Footer>
+                
+                </ListView>
+
+
+            </StackLayout>
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

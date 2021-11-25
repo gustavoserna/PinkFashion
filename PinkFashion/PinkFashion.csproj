@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Sharpnado.Presentation.Forms" Version="1.7.1" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.1.1.1-beta" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+    <PackageReference Include="CardsView" Version="2.8.0" />
+    <PackageReference Include="XamarinFastEntry.Behaviors" Version="1.1.1" />
+    <PackageReference Include="Conekta.Xamarin" Version="1.0.6" />
+    <PackageReference Include="Xamarin.Forms.OpenWhatsApp" Version="1.0.1" />
+    <PackageReference Include="Com.OneSignal" Version="3.10.6" />
+    <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderers\" />
+    <Folder Include="Tarjeta\" />
+    <Folder Include="AuthHelpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Registro.xaml.cs">
+      <DependentUpon>Registro.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RecuperarCuenta.xaml.cs">
+      <DependentUpon>RecuperarCuenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PerfilUsuario.xaml.cs">
+      <DependentUpon>PerfilUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SeleccionaDireccion.xaml.cs">
+      <DependentUpon>SeleccionaDireccion.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SeleccionaEstados.xaml.cs">
+      <DependentUpon>SeleccionaEstados.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SeleccionaMunicipios.xaml.cs">
+      <DependentUpon>SeleccionaMunicipios.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Plugin.Firebase" />
+    <None Remove="Plugin.FirebaseAnalytics" />
+  </ItemGroup>
+</Project>

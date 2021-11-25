@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.MisPedidos"
+             x:Name="MisPedidosPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        
+        <ListView
+            x:Name="listview"
+            HasUnevenRows="true"
+            SelectionMode="None"
+            SeparatorVisibility="None"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            ItemsSource="{Binding Items}"
+            RefreshCommand="{Binding LoadItemsCommand}"
+            IsPullToRefreshEnabled="true"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            CachingStrategy="RecycleElement" BackgroundColor="White">
+            
+            <ListView.ItemTemplate>
+                
+                <DataTemplate>
+                    
+                    <ViewCell>
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="15,20,15,15">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="10">
+                                   
+                                    <StackLayout HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding NumPedido}" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}" />
+                                        <Label Text="{Binding Flujo}" FontAttributes="Bold" Style="{StaticResource SmallLabelStyle}"/>
+                                        <Label Text="{Binding Fecha}" Style="{StaticResource SmallLabelStyle}" />
+                                        <Label Text="{Binding AliasDireccion}" Style="{StaticResource SmallLabelStyle}" />
+                                        
+                                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+
+                                                <Label Text="{Binding SubTotalString}" FontAttributes="Bold" Style="{StaticResource SmallLabelStyle}" />
+                                                <Label Text="{Binding DescuentoString}" FontAttributes="Bold" Style="{StaticResource SmallLabelStyle}" />
+                                                <Label Text="{Binding EnvioString}" FontAttributes="Bold" Style="{StaticResource SmallLabelStyle}" />
+                                                <Label Text="{Binding TotalFinal}" FontAttributes="Bold" Style="{StaticResource SmallLabelStyle}" />
+
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Vertical">
+                                            <Frame Padding="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BorderColor="#eb068c" HasShadow="false" CornerRadius="5" HeightRequest="40" WidthRequest="100">
+                                                        <Label Text="Detalle" FontAttributes="Bold" TextColor="#eb068c" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Style="{StaticResource MediumLabelStyle}" />
+                                                    
+                                            </Frame>
+                                            
+                                        </StackLayout>
+                                    </StackLayout>
+                                    
+                                </StackLayout>
+                                
+                            </StackLayout>
+                            
+                            <BoxView HeightRequest="1" BackgroundColor="#f1f1f1" HorizontalOptions="FillAndExpand" />
+                        
+                        </StackLayout>
+                    
+                    </ViewCell>
+                
+                </DataTemplate>
+            
+            </ListView.ItemTemplate>
+            
+            <ListView.Footer>
+                
+                <StackLayout IsVisible="{Binding noencontrado}" HorizontalOptions="FillAndExpand" Padding="50">
+                     
+                    <Image Source="m404.png" HeightRequest="70" HorizontalOptions="CenterAndExpand" />
+                    
+                    <Label Text="Aún no tienes ningún pedido." HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#ccc" Margin="0,10,0,0" Style="{StaticResource MediumLabelStyle}"/>
+                    
+                </StackLayout>
+                
+            </ListView.Footer>
+        
+        </ListView>
+        
+    </ContentPage.Content>
+</ContentPage>

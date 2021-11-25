@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.PerfilUsuario"
+             xmlns:local="clr-namespace:PinkFashion.Renderers;assembly=PinkFashion" xmlns:fastEntry="clr-namespace:XamarinFastEntrySample.FastEntry;assembly=XamarinFastEntry.Behaviors"
+             BackgroundColor="#f1f1f1">
+    <ContentPage.Content>
+        
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
+                
+                <StackLayout x:Name="loader" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    
+                    <ActivityIndicator IsRunning="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                    
+                </StackLayout>
+                
+                <StackLayout x:Name="cont" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
+                    
+                    <!-- perfil -->
+                    <!--<Label Text="PERFIL" TextColor="#666" FontSize="16" Margin="10,40,10,10" />
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="20">
+                        
+                        <Image x:Name="btnPP" Source="avatar.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="CenterAndExpand" />
+                    -->    
+                        <!--<Label x:Name="lblPP" Text="Elige una nueva foto" TextColor="Red" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0" />-->
+                     <!--   
+                    </StackLayout>
+                    -->
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                    
+                    <!-- cuenta -->
+                    <Label Text="CUENTA" TextColor="#666" FontSize="16" Margin="10,40,10,10" />
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">
+                            
+                            <Label Text="Usuario" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                            
+                            <local:Entry_R x:Name="usuario" HorizontalTextAlignment="End" IsEnabled="false" TextColor="Black" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="35" />
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">
+                            
+                            <Label Text="Mail" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                            
+                            <local:Entry_R x:Name="mail" HorizontalTextAlignment="End" IsReadOnly="True" TextColor="Black" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="35" />
+                            
+                        </StackLayout>
+                        
+                    </StackLayout>
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                    
+                    <!-- info personal -->
+                    <Label Text="INFORMACIÓN PERSONAL" TextColor="#666" FontSize="16" Margin="10,40,10,10" />
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">
+                            
+                            <Label Text="Nombre" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                            
+                            <local:Entry_R x:Name="nombre" HorizontalTextAlignment="End" TextColor="Black" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="35" />
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">
+                            
+                            <Label Text="Apellidos" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                            
+                            <local:Entry_R x:Name="apellidos" HorizontalTextAlignment="End" TextColor="Black" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="35" />
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">
+                            
+                            <Label Text="Teléfono" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                            
+                            <Label Text="+52" TextColor="#666" FontSize="13" VerticalOptions="CenterAndExpand" />
+                            
+                            <Image Source="mex.png" HeightRequest="20" VerticalOptions="CenterAndExpand" />
+                            
+                            <local:Entry_R x:Name="telefono" HorizontalTextAlignment="End" Keyboard="Numeric" TextColor="Black" IsReadOnly="False" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="35" />
+                            
+                        </StackLayout>
+
+                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">                            
+                            <Label Text="Fecha Nacimiento" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />                            
+                            <StackLayout HorizontalOptions="FillAndExpand">
+
+                                <local:Entry_Pago x:Name="FechaNac" HeightRequest="35" Keyboard="Numeric" Placeholder="DD/MM/AAAA" HorizontalOptions="FillAndExpand" Style="{StaticResource PrimaryEditorTextLabelStyle}">
+                                    
+                                    <Entry.Behaviors>
+                                        
+                                        <fastEntry:XamarinFastEntryBehaviour Mask="##/##/####" MaxLength="12"/>
+                                        
+                                    </Entry.Behaviors>
+                                    
+                                </local:Entry_Pago>
+                                
+                            </StackLayout>                          
+                        </StackLayout>
+
+                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">                            
+                            <Label Text="Genero" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />                            
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <Picker x:Name="Genero" HorizontalOptions="FillAndExpand">
+                                    <Picker.Items>
+                                        <x:String>Femenino</x:String> 
+                                        <x:String>Masculino</x:String>
+                                    </Picker.Items>
+                                </Picker> 
+                            </StackLayout>                          
+                        </StackLayout>
+
+                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">                            
+                            <Label Text="Aceptas Publicidad" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />                            
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <Switch x:Name="Publicidad" IsToggled="true" OnColor="#eb068c" ThumbColor="WhiteSmoke" />
+                            </StackLayout>                          
+                        </StackLayout>
+
+                    </StackLayout>
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" Margin="0,0,0,40" />
+                    
+                    <!-- contraseñas -->
+                    <Label Text="CAMBIAR CONTRASEÑA" TextColor="#666" FontSize="16" Margin="10,40,10,10" />
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">
+                            
+                            <Label Text="Contraseña actual" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                            
+                            <local:Entry_R x:Name="claveActual" HorizontalTextAlignment="End" TextColor="Black" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="35" IsPassword="true" Placeholder="Password"/>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">
+                            
+                            <Label Text="Nueva contraseña" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                            
+                            <local:Entry_R x:Name="claveNueva" HorizontalTextAlignment="End" TextColor="Black" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="35" IsPassword="true" Placeholder="Password" />
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">
+                            
+                            <Label Text="Repetir contraseña" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                            
+                            <local:Entry_R x:Name="claveRepetir" HorizontalTextAlignment="End" TextColor="Black" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="35" IsPassword="true" Placeholder="Password" />
+                            
+                        </StackLayout>
+                        
+                    </StackLayout>
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" Margin="0,0,0,0" />
+                    
+                    <Label x:Name="btnClave" Text="Actualizar contraseña" HorizontalOptions="EndAndExpand" TextColor="#666" FontSize="15" Margin="0,10,10,40" />
+                    
+                    <!-- cerrar -->
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" />
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" x:Name="btnlogout" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">
+                            
+                            <Label Text="Cerrar sesión" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                            
+                            <Image Source="logout.png" HeightRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" />
+                            
+                        </StackLayout>
+                        
+                    </StackLayout>
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#ccc" Margin="0,0,0,40" />
+                    
+                </StackLayout>
+                
+            </StackLayout>
+            
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:renderedViews="clr-namespace:Sharpnado.Presentation.Forms.RenderedViews;assembly=Sharpnado.Presentation.Forms"
+             x:Class="PinkFashion.Views.Inicio" x:Name="InicioPage" BackgroundColor="White">
+    <NavigationPage.TitleView>
+        
+        <Grid  HorizontalOptions="FillAndExpand" >
+            <Grid.ColumnDefinitions>
+            
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="30*"/>
+                
+            </Grid.ColumnDefinitions>
+            
+            <Image x:Name="cuenta" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Source="cuenta.png"  HeightRequest="30" />
+
+            <Image x:Name="logo" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="logo.png"  HeightRequest="45" />
+            <RelativeLayout x:Name="carrito" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                
+                <RelativeLayout.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" iOS="0,0,0,0" Android="0,0,10,0" />
+                </RelativeLayout.Margin>
+                
+                <Image Source="cart.png" VerticalOptions="CenterAndExpand">
+                    <Image.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="30" Android="30" />
+                    </Image.HeightRequest>
+                </Image>
+                
+                <Frame HasShadow="false" MinimumWidthRequest="20" CornerRadius="7" Margin="25,12,0,0" VerticalOptions="EndAndExpand">
+                   
+                    <Frame.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color" iOS="#eb068c" Android="#eb068c" />
+                    </Frame.BackgroundColor>
+                    
+                    <Frame.Padding>
+                        <OnPlatform x:TypeArguments="Thickness" iOS="7,3,7,3" Android="2,1,2,1" />
+                    </Frame.Padding>
+                    
+                    <Frame.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="10" Android="15" />
+                    </Frame.HeightRequest>
+                    
+                    <Label x:Name="lblCarrito" Text="{Binding noProductos}" TextColor="White" FontSize="13" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                    
+                </Frame>
+                
+                
+            </RelativeLayout>
+            
+        </Grid>    
+        
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CommunityNameStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="#0a9bb5" />
+            </Style>
+
+            <Style x:Key="CommunityCreatedStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="#364f6b"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+            <Style x:Key="HorizontalListView" TargetType="renderedViews:HorizontalListView">
+                <Setter Property="ItemHeight" Value="130" />
+                <Setter Property="CollectionPadding" Value="10,145,10,75" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Padding="0" >
+         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+             <StackLayout x:Name="StackName" Grid.Row="0" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0" >
+                <StackLayout BackgroundColor="#eb068c" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="0" >
+                    <StackLayout x:Name="StackAbandonado" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Padding="0" IsVisible="{Binding visibleAbandonado}">             
+                        <Label x:Name="lbAbandonado" Text="Tienes un carrito abandonado, click Aquí" TextColor="WhiteSmoke" IsVisible="false" HorizontalOptions="Center" HorizontalTextAlignment="Center"  VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <Label x:Name="lbEnvios" Text="{Binding TituloEnviosGratis}" TextColor="WhiteSmoke" IsVisible="false" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+             </StackLayout>
+
+             <renderedViews:HorizontalListView  
+                Grid.Row="1" 
+                Margin="0"
+                CollectionPadding="0"
+                ItemSpacing="1"
+                ItemHeight="25"
+                ItemWidth="85" FlowDirection="LeftToRight"  
+                ItemsSource="{Binding InicioVista.Categorias}"
+                SnapStyle="Center">
+                <renderedViews:HorizontalListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                            <Frame Padding="0" Margin="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" BorderColor="White" BackgroundColor="White" HasShadow="false" CornerRadius="1" HeightRequest="25" WidthRequest="85">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding Path=BindingContext.CategoriaCommand,  Source={x:Reference InicioPage}}"/>     
+                                    </Frame.GestureRecognizers>
+                                    <Grid  HorizontalOptions="FillAndExpand" ColumnSpacing="0" Padding="0" Margin="0" BackgroundColor="White">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding Categoria}" Padding="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Style="{StaticResource PetitLabelStyle}"/>
+                                                    <FlexLayout Grid.Column="1" JustifyContent="SpaceEvenly" HeightRequest="25">
+                                                        <BoxView HorizontalOptions="FillAndExpand" WidthRequest="1" Color="#545454"/>
+                                                    </FlexLayout>
+                            
+                                    </Grid>    
+                                
+                            </Frame>
+                            
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </renderedViews:HorizontalListView.ItemTemplate>
+            </renderedViews:HorizontalListView>
+            <Image Source="tright.png" Grid.Row="1" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="End" />
+
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" /> 
+            </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+        
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+            
+            <!--<Grid Grid.Row="0" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="0" >-->
+            <Grid Grid.Row="0" Padding="0" Margin="3" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                        <ScrollView Orientation="Horizontal" x:Name="scrollView">
+                            <StackLayout Orientation="Horizontal" x:Name="stackLayout" Spacing="0" BindableLayout.ItemsSource="{Binding InicioVista.Banners}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                            <Image Source="{Binding ImagenBanner}" WidthRequest="{Binding Source={x:Reference InicioPage}, Path=Width}" Aspect="AspectFill">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    CommandParameter="{Binding .}"
+                                                    Command="{Binding Path=BindingContext.SelBannerCommand,  Source={x:Reference InicioPage}}"/>
+                                                </Image.GestureRecognizers>
+                                            
+                                            </Image>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        
+                        </ScrollView>
+                 
+
+                   <!-- <Image Source="{Binding Banner_principal}" BackgroundColor="White" Aspect="AspectFit" HeightRequest="100"/>-->
+            </Grid>
+        
+            
+            <Grid Grid.Row="1" Padding="0" RowSpacing="0" >
+
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*" />
+                     <ColumnDefinition  Width="*" />
+                     <ColumnDefinition  Width="*" />
+                 </Grid.ColumnDefinitions>
+                <StackLayout x:Name="btnNovedades" HorizontalOptions="FillAndExpand" Grid.Column="0" BackgroundColor="White" Padding="0" Spacing="2" >
+                    <controls:CircleImage Source="{Binding Banner_nuevos}" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFill" HeightRequest="70" WidthRequest="70">
+                    </controls:CircleImage>
+                </StackLayout>
+
+                <StackLayout x:Name="btnOfertas" HorizontalOptions="FillAndExpand" Grid.Column="1" BackgroundColor="White" Padding="0" Spacing="2" >
+                    <controls:CircleImage Source="{Binding Banner_promo}" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFill" HeightRequest="70" WidthRequest="70"/>
+                </StackLayout>
+
+                <StackLayout x:Name="btnVendidos" HorizontalOptions="FillAndExpand" Grid.Column="2" BackgroundColor="White" Padding="0" Spacing="2" >
+                    <controls:CircleImage Source="{Binding Banner_vendidos}" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFill" HeightRequest="70" WidthRequest="70"/>
+                </StackLayout>
+
+            </Grid>
+            
+            <Grid x:Name="GridMarcas" Grid.Row="2" Padding="0" RowSpacing="2" ColumnSpacing="2" BackgroundColor="White" >
+                <Grid.RowDefinitions>
+                     <RowDefinition Height="85" /> 
+                 </Grid.RowDefinitions>
+
+
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="5*" />
+                     <ColumnDefinition Width="5*" />
+                 </Grid.ColumnDefinitions>
+                 
+                 
+            </Grid>
+
+                    
+        </Grid>
+        
+
+        </ScrollView>
+
+        <ImageButton Grid.Row="0" Source="WhatsApp_verde.png" BorderColor="Transparent" BorderWidth="0" HorizontalOptions="End" WidthRequest="50" HeightRequest="50" Margin="0,0,20,22" VerticalOptions="End" Clicked="OnBtnWhatsappClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

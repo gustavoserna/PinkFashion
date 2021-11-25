@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "669401120691",
+    "project_id": "aplicacion-fa4d9",
+    "storage_bucket": "aplicacion-fa4d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669401120691:android:9958d47a224503fc8095c6",
+        "android_client_info": {
+          "package_name": "com.resos.pinkfashion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669401120691-92llgvvjav4qeok9scat6q8q0gbns25q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKIC_o1Gl0INzSfY69pavrO2wDpknVFYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669401120691-92llgvvjav4qeok9scat6q8q0gbns25q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "669401120691-vnkim6er39e024e6nivrl98rk3b98d83.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ResoS.PinkFashion"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

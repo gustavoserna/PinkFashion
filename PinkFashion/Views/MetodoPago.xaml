@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.MetodoPago"
+             x:Name="MetodoPagoPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            
+            <ListView
+                x:Name="listview"
+                HasUnevenRows="true"
+                SelectionMode="None"
+                SeparatorVisibility="None"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                ItemsSource="{Binding Items}"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement" BackgroundColor="White">
+                
+                <ListView.ItemTemplate>
+                    
+                    <DataTemplate>
+                        
+                        <ViewCell>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="20,20,20,10" Orientation="Horizontal">
+                                
+                                    <Label Text="{Binding CuentaDigitos}" FontAttributes="Bold" Style="{StaticResource MediumLabelStyle}"/>
+                                
+                                    <Image Source="btndelete.png" HeightRequest="22" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                    
+                                        <Image.GestureRecognizers>
+                                            
+                                            <TapGestureRecognizer
+                                                CommandParameter="{Binding .}"
+                                                Command="{Binding Path=BindingContext.BorrarCommand,  Source={x:Reference MetodoPagoPage}}"/>
+                                        
+                                        </Image.GestureRecognizers>
+                                        
+                                    </Image>
+                                    
+                                </StackLayout>
+                                
+                                <BoxView HeightRequest="1" BackgroundColor="#f1f1f1" HorizontalOptions="FillAndExpand" />
+                                    
+                            </StackLayout>
+                            
+                        </ViewCell>
+                        
+                    </DataTemplate>
+                    
+                </ListView.ItemTemplate>
+                
+                <ListView.Footer>
+                
+                    <StackLayout IsVisible="{Binding noencontrado}" HorizontalOptions="FillAndExpand" Padding="50">
+                         
+                        <Image Source="m404.png" HeightRequest="70" HorizontalOptions="CenterAndExpand" />
+                        
+                        <Label Text="No tienes métodos de pago registrados." HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Margin="0,10,0,0" Style="{StaticResource MediumLabelStyle}"/>
+                        
+                    </StackLayout>
+                
+                </ListView.Footer>
+                
+            </ListView>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.Cuenta"
+             BackgroundColor="#f1f1f1">
+    <ContentPage.Content>
+        
+        <StackLayout>
+            
+            <ScrollView HorizontalOptions="FillAndExpand">
+            
+                <StackLayout Padding="0,40,0,40" Spacing="0">
+                    
+                    <!-- BLOQUE 1 -->
+                    <BoxView HeightRequest=".1" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
+                    <!-- perfil -->
+                    <StackLayout x:Name="btnPerfil" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="USUARIO.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Perfil" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        
+                    </StackLayout>
+
+                    <!-- buzon -->
+                    <StackLayout x:Name="btnBuzon" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="buzon.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Buzón" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        
+                    </StackLayout>
+                    
+                    <!-- pedidos -->
+                    <StackLayout x:Name="btnPedidos" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="PEDIDOS.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Pedidos" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                    </StackLayout>
+                    
+                    <!-- FIN BLOQUE 1 -->
+                    
+                    <!-- BLOQUE 2 -->
+                    <!-- direcciones -->
+                    <StackLayout x:Name="btnDirecciones" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" Margin="0,40,0,0">
+                        
+                        <!--<BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="-10,-10,-10,5" />-->
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="DIRECCIONES.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Mis Direcciones" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                    </StackLayout>
+                    
+                    <!-- pago -->
+                    <StackLayout x:Name="btnPago" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,10">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="PAGOS.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Método de Pago" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                    </StackLayout>
+                                        
+                    <!-- Facturar -->
+                    <StackLayout x:Name="btnFacturar" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="facturas.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Deseas Facturar" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                    </StackLayout>
+
+                    <!-- Bloguers -->
+                    <StackLayout x:Name="btnConfBloguers" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" Margin="0,40,0,0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="blogger.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Afiliado" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="btnPinBloguers" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="PinBlogger.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Actualizar PIN" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                    </StackLayout>
+
+                    <!-- ayuda -->
+                    <StackLayout x:Name="btnAyuda" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" Margin="0,40,0,0">
+
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="FAQ.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Preguntas Frecuentes" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                    </StackLayout>
+
+                    <!-- Formulario Bloggers -->
+                    <StackLayout x:Name="btnFormularioBB" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                        
+                        <!--<BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="-10,-10,-10,5" />-->
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="formularioblogger.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="¿Eres Beauty Blogger?" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                    </StackLayout>
+
+                    <!-- Terminos -->
+                    <StackLayout x:Name="btnTerminos" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                        
+                        <!--<BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="-10,-10,-10,5" />-->
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="TERMINOS.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Términos y condiciones" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                    </StackLayout>
+
+                    <!-- WHATSAPP -->
+                    <StackLayout x:Name="btnWhatsapp" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                                                
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                             
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="WHATSAPP.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label  Text="Contáctanos en Whatsapp" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>                        
+                    </StackLayout>
+                    
+                    <BoxView HeightRequest=".1" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
+                    <!-- FIN BLOQUE 4 -->
+                   
+                </StackLayout>
+                
+            </ScrollView>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

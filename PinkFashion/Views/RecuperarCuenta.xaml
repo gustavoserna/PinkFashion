@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.RecuperarCuenta"
+             xmlns:local="clr-namespace:PinkFashion.Renderers;assembly=PinkFashion"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+                
+                <StackLayout x:Name="loader" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    
+                    <ActivityIndicator HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsRunning="true" />
+                    
+                </StackLayout>
+                
+                <StackLayout x:Name="contNumero" Spacing="0" BackgroundColor="White">
+                    
+                    <Label Text="Ingresa tu correo para recibir tu contraseña." TextColor="#000" FontSize="18" />
+                
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" Margin="-20,20,-20,0" />
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        
+                        <local:Entry_R x:Name="mail" Placeholder="Correo electrónico" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" Keyboard="Email" BackgroundColor="White" Opacity=".7" />
+                    </StackLayout>
+                    
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#f1f1f1" Margin="-20,0,-20,0" />
+                    
+                    <Label Text="siguiente" x:Name="btnNumero" FontSize="16" TextColor="#333" HorizontalOptions="EndAndExpand" Margin="20" IsVisible="false" />
+                    
+                </StackLayout>
+
+                <StackLayout x:Name="btnRecuperar" HorizontalOptions="FillAndExpand" >
+                                                            <Button
+                                                                BackgroundColor="#eb068c"
+                                                                FontSize="15"
+                                                                TextColor="#fff"
+                                                                Padding="10"
+                                                                BorderRadius="10"
+                                                                Text="Recuperar Cuenta"
+                                                                VerticalOptions="FillAndExpand"
+                                                                HorizontalOptions="FillAndExpand"
+                                                                Clicked="OnBtnRecuperarClicked"/>
+                </StackLayout>
+
+                <StackLayout x:Name="btnCerrar" HorizontalOptions="FillAndExpand" >
+                                                            <Button
+                                                                BackgroundColor="#a21c1c"
+                                                                FontSize="15"
+                                                                TextColor="#fff"
+                                                                Padding="10"
+                                                                BorderRadius="10"
+                                                                Text="Cerrar"
+                                                                VerticalOptions="FillAndExpand"
+                                                                HorizontalOptions="FillAndExpand"
+                                                                Clicked="OnBtnCerrarClicked"/>
+                </StackLayout>
+               
+            </StackLayout>
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

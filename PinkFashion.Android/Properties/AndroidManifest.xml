@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="15" android:versionName="1.15" package="com.resos.pinkfashion">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+	<permission android:name="com.resos.pinkfashion.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<application android:label="PinkFashion" android:usesCleartextTraffic="true" android:icon="@drawable/icon">
+		<receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="com.resos.pinkfashion" />
+			</intent-filter>
+		</receiver>
+		<uses-library android:name="org.apache.http.legacy" android:required="false" />
+		<service android:exported="false" android:name="com.paypal.android.sdk.payments.PayPalService" />
+		<activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+		<activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+		<activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+		<activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+		<activity android:configChanges="keyboardHidden|orientation" android:name="io.card.payment.CardIOActivity" />
+		<activity android:name="io.card.payment.DataEntryActivity" />
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>
