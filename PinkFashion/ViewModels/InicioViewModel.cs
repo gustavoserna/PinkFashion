@@ -16,15 +16,12 @@ namespace PinkFashion.ViewModels
     public class InicioViewModel : InsigniaViewModel
     {
         public INavigation Navigation { get; set; }
-
         public InicioModel InicioVista { get; set; }
-
         public ObservableCollection<Layoutpromo> LayoutPromos { get; set; }
-
+        public ObservableCollection<ColeccionCategorias> ColCategorias { get; set; }
         public Command LoadInicioCommand { get; set; }
 
         json_object json_ob = new json_object();
-
         json_objectprod json_obprod = new json_objectprod();
         json_objectc json_obc = new json_objectc();
         json_objectm json_obm = new json_objectm();
@@ -109,6 +106,7 @@ namespace PinkFashion.ViewModels
             InicioVista.Categorias = new ObservableCollection<Categoria_>();
             InicioVista.LayoutApp = new ObservableCollection<Layoutapp>();
             InicioVista.Banners = new ObservableCollection<BannerPrincipal>();
+            ColCategorias = new ObservableCollection<ColeccionCategorias>();
             LoadInicioCommand = new Command(async () =>
             {
                 await ExecuteLoadInicioCommand();
@@ -172,6 +170,9 @@ namespace PinkFashion.ViewModels
 
             try
             {
+                ColCategorias.Clear();
+                List<Categoria_> listacategorias_for_col = new List<Categoria_>();
+
                 InicioVista.Categorias.Clear();
                 IEnumerable<Categoria_> categorias = null;
                 List<Categoria_> listacategorias = new List<Categoria_>();
@@ -195,6 +196,7 @@ namespace PinkFashion.ViewModels
                         for (int i = 0; i < t.Result.Categorias.Count; i++)
                         {
                             listacategorias.Add(t.Result.Categorias[i]);
+                            listacategorias_for_col.Add(t.Result.Categorias[i]);
                         }
                         for (int i = 0; i < t.Result.LayoutApp.Count; i++)
                         {
@@ -208,6 +210,28 @@ namespace PinkFashion.ViewModels
 
                     }
                 });
+
+                double totalSlidesCategorias = Math.Ceiling((Double)listacategorias_for_col.Count / 3);
+                for (int i = 0; i < totalSlidesCategorias; i++)
+                {
+                    ColeccionCategorias coleccion = new ColeccionCategorias();
+                    coleccion.categorias = new List<Categoria_>();
+
+                    for(int k = 0; k <= listacategorias_for_col.Count; k++)
+                    {
+                        if(k < 3 && listacategorias_for_col.Count > 0)
+                        {
+                            coleccion.categorias.Add(listacategorias_for_col[0]);
+                            listacategorias_for_col.RemoveAt(0);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    ColCategorias.Add(coleccion);
+                }
 
                 categorias = listacategorias;
                 layoutapp = listalayout;
@@ -244,7 +268,7 @@ namespace PinkFashion.ViewModels
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                System.Diagnostics.Debug.WriteLine(ex);
             }
             finally
             {

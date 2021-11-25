@@ -30,6 +30,7 @@
     <Folder Include="Renderers\" />
     <Folder Include="Tarjeta\" />
     <Folder Include="AuthHelpers\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\Registro.xaml.cs">
@@ -55,5 +56,6 @@
     <None Remove="Plugin.Firebase" />
     <None Remove="Plugin.FirebaseAnalytics" />
     <None Remove="CarouselView.FormsPlugin" />
+    <None Remove="Controls\" />
   </ItemGroup>
 </Project>
