@@ -5,6 +5,7 @@
              xmlns:renderedViews="clr-namespace:Sharpnado.Presentation.Forms.RenderedViews;assembly=Sharpnado.Presentation.Forms"
              xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:local="clr-namespace:PinkFashion.Controls;assembly=PinkFashion"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="PinkFashion.Views.Inicio" x:Name="InicioPage" BackgroundColor="White">
     <NavigationPage.TitleView>
 
@@ -105,55 +106,6 @@
 
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Padding="0">
 
-        <!-- galeria -->
-        <carousel:CarouselViewControl
-            x:Name="CarouselViewG"
-            InterPageSpacing="0"
-            ShowIndicators="True"
-            ShowArrows="False"
-            IndicatorsTintColor="#fffff"
-            CurrentPageIndicatorTintColor="#eb068c"
-            ItemsSource="{Binding InicioVista.Banners}"
-            HeightRequest="160">
-
-            <carousel:CarouselViewControl.ItemTemplate>
-
-                <DataTemplate>
-
-                    <StackLayout
-                        Background="Transparent"
-                        VerticalOptions="FillAndExpand">
-
-                        <Frame
-                            CornerRadius="0"
-                            HasShadow="False"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="FillAndExpand"
-                            BorderColor="Transparent"
-                            IsClippedToBounds="True"
-                            Padding="0"
-                            BackgroundColor="#666">
-
-                            <Grid VerticalOptions="FillAndExpand">
-
-                                <Image
-                                    VerticalOptions="FillAndExpand"
-                                    Source="{Binding ImagenBanner}"
-                                    Aspect="AspectFill"/>
-
-                            </Grid>
-
-                        </Frame>
-
-                    </StackLayout>
-
-                </DataTemplate>
-
-            </carousel:CarouselViewControl.ItemTemplate>
-
-        </carousel:CarouselViewControl>
-        <!-- end galeria -->
-
         <!-- Menu -->
         <carousel:CarouselViewControl
             InterPageSpacing="0"
@@ -211,6 +163,143 @@
 
         </carousel:CarouselViewControl>
         <!-- End Menu -->
+
+        <!-- galeria -->
+        <carousel:CarouselViewControl
+            x:Name="CarouselViewG"
+            InterPageSpacing="0"
+            ShowIndicators="True"
+            ShowArrows="False"
+            IndicatorsTintColor="White"
+            CurrentPageIndicatorTintColor="#eb068c"
+            ItemsSource="{Binding InicioVista.Banners}"
+            HeightRequest="160">
+
+            <carousel:CarouselViewControl.ItemTemplate>
+
+                <DataTemplate>
+
+                    <StackLayout
+                        Background="Transparent"
+                        VerticalOptions="FillAndExpand">
+
+                        <Frame
+                            CornerRadius="0"
+                            HasShadow="False"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            BorderColor="Transparent"
+                            IsClippedToBounds="True"
+                            Padding="0"
+                            BackgroundColor="#666">
+
+                            <Grid VerticalOptions="FillAndExpand">
+
+                                <Image
+                                    VerticalOptions="FillAndExpand"
+                                    Source="{Binding ImagenBanner}"
+                                    Aspect="AspectFill"/>
+
+                            </Grid>
+
+                        </Frame>
+
+                    </StackLayout>
+
+                </DataTemplate>
+
+            </carousel:CarouselViewControl.ItemTemplate>
+
+        </carousel:CarouselViewControl>
+        <!-- end galeria -->
+
+        <!-- familias -->
+        <carousel:CarouselViewControl
+            Margin="0,5,0,0"
+            InterPageSpacing="0"
+            ShowIndicators="True"
+            ShowArrows="False"
+            ArrowsBackgroundColor="Transparent"
+            IndicatorsTintColor="#ccc"
+            CurrentPageIndicatorTintColor="#eb068c"
+            ItemsSource="{Binding ColFamilias}"
+            BackgroundColor="Transparent"
+            HeightRequest="215">
+
+            <carousel:CarouselViewControl.ItemTemplate>
+
+                <DataTemplate>
+
+                    <Grid
+                        BackgroundColor="Transparent"
+                        Padding="5,0,5,0">
+
+                        <local:FlowListView_R
+                            FlowColumnCount="3"
+                            HasUnevenRows="True"
+                            HorizontalOptions="FillAndExpand"
+                            SeparatorVisibility="None"
+                            VerticalScrollBarVisibility="Never"
+                            HorizontalScrollBarVisibility="Never"
+                            BackgroundColor="Transparent"
+                            FlowItemsSource="{Binding familias}"
+                            IsPullToRefreshEnabled="False">
+
+                            <local:FlowListView_R.FlowColumnTemplate>
+
+                                <DataTemplate>
+
+                                    <StackLayout
+                                        Padding="0,15,0,15">
+
+                                        <Frame
+                                            Padding="5,10,5,10"
+                                            HasShadow="False"
+                                            Margin="10,0,10,0"
+                                            BackgroundColor="#ccc"
+                                            HeightRequest="150"
+                                            VerticalOptions="FillAndExpand"
+                                            CornerRadius="0">
+
+                                            <StackLayout>
+
+                                                <Label
+                                                    HorizontalOptions="Center"
+                                                    HorizontalTextAlignment="Center"
+                                                    TextColor="#eb068c"
+                                                    FontSize="14"
+                                                    Text="{Binding clasificaciones}"/>
+
+                                                <ffimageloading:CachedImage
+                                                    DownsampleUseDipUnits="false"
+                                                    LoadingPlaceholder="loadingcat.png"
+                                                    ErrorPlaceholder="image_error.png"
+                                                    VerticalOptions="EndAndExpand"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    HeightRequest="145"
+                                                    WidthRequest="145"
+                                                    Source="{Binding imagen}"/>
+
+                                            </StackLayout>
+
+                                        </Frame>
+
+                                    </StackLayout>
+
+                                </DataTemplate>
+
+                            </local:FlowListView_R.FlowColumnTemplate>
+
+                        </local:FlowListView_R>
+
+                    </Grid>
+
+                </DataTemplate>
+
+            </carousel:CarouselViewControl.ItemTemplate>
+
+        </carousel:CarouselViewControl>
+        <!-- end pasillos -->
 
         <ImageButton Grid.Row="0" Source="WhatsApp_verde.png" BorderColor="Transparent" BorderWidth="0" HorizontalOptions="End" WidthRequest="50" HeightRequest="50" Margin="0,0,20,22" VerticalOptions="End" Clicked="OnBtnWhatsappClicked"/>
 

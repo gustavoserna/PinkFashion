@@ -76,6 +76,10 @@
               "target": "Package",
               "version": "[1.7.0, )"
             },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
             "Xamarin.Firebase.iOS.Analytics": {
               "target": "Package",
               "version": "[6.9.0, )"
@@ -193,6 +197,10 @@
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.7.0, )"
+            },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

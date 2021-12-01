@@ -25,6 +25,7 @@
     <PackageReference Include="Com.OneSignal" Version="3.10.6" />
     <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="6.0.0" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
@@ -57,5 +58,6 @@
     <None Remove="Plugin.FirebaseAnalytics" />
     <None Remove="CarouselView.FormsPlugin" />
     <None Remove="Controls\" />
+    <None Remove="Xamarin.FFImageLoading.Forms" />
   </ItemGroup>
 </Project>

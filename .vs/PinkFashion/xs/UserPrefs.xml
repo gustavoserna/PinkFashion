@@ -2,14 +2,14 @@
   <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/Inicio.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Models/InicioModel.cs">
     <Files>
-      <File FileName="PinkFashion/Views/Inicio.xaml" Line="164" Column="26" />
-      <File FileName="PinkFashion/ViewModels/InicioViewModel.cs" Line="220" Column="64" />
+      <File FileName="PinkFashion/Views/Inicio.xaml" Line="213" Column="29" />
+      <File FileName="PinkFashion/ViewModels/InicioViewModel.cs" Line="284" Column="14" />
       <File FileName="PinkFashion/Views/Inicio.xaml.cs" Line="14" Column="1" />
-      <File FileName="PinkFashion/Controls/FlowListView_R.cs" Line="15" Column="10" />
-      <File FileName="PinkFashion/Models/InicioModel.cs" Line="6" Column="18" />
-      <File FileName="PinkFashion/Models/ColeccionCategorias.cs" Line="8" Column="26" />
+      <File FileName="PinkFashion/Constantes.cs" Line="16" Column="1" />
+      <File FileName="PinkFashion/Models/Familia.cs" Line="12" Column="1" />
+      <File FileName="PinkFashion/Models/InicioModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,17 +17,14 @@
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
               <Node name="Controls" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="InicioModel.cs" selected="True" />
+              </Node>
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Inicio.xaml" selected="True" />
+                <Node name="Inicio.xaml" expanded="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
-            </Node>
-            <Node name="PinkFashion.Android" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="values" expanded="True" />
-              </Node>
             </Node>
           </Node>
         </State>
@@ -40,5 +37,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.R58NB32EELY" />
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
 </Properties>

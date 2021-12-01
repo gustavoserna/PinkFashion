@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fGIdJyhdBwVjPJ8zbjfGBw2dZCkF0ucFpqWorSUEK8vsvZXWUNwe9+blfc35iRUFSIot7qDj2irN6VubvQb4GA==",
+  "dgSpecHash": "EcrsuDl0hhF43v5/Mt+5Dh/8UDTB1kuwbJirRJzLXr0reDa8louIMskL+kqdQRQofVWzv3jFYwZATXdITzWqqw==",
   "success": true,
   "projectFilePath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj",
   "expectedPackageFiles": [
@@ -105,6 +105,8 @@
     "/Users/gustavoserna/.nuget/packages/xamarin.auth/1.7.0/xamarin.auth.1.7.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.build.download/0.10.0/xamarin.build.download.0.10.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
+    "/Users/gustavoserna/.nuget/packages/xamarin.ffimageloading/2.4.11.982/xamarin.ffimageloading.2.4.11.982.nupkg.sha512",
+    "/Users/gustavoserna/.nuget/packages/xamarin.ffimageloading.forms/2.4.11.982/xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.firebase.analytics/119.0.0/xamarin.firebase.analytics.119.0.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.firebase.annotations/116.0.0/xamarin.firebase.annotations.116.0.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.firebase.appindexing/119.1.0/xamarin.firebase.appindexing.119.1.0.nupkg.sha512",

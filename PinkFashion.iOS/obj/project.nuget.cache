@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tRjS74J9hrhAOT3Cc1EZdPg6L8uY7Z+d3yIwoLMZCTckd5931xt9HhqXswchKO/DIoJs4Bg6+MLpeUz89RnfHQ==",
+  "dgSpecHash": "wlOTnoo1i5aHzCElU8j8lav6Z4Hhj0y+EHEanUkWFkXLKAKrDqBxz+sEYiFxyqaiZxsn/TX0ZxXaYNOkyvqGbg==",
   "success": true,
   "projectFilePath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.iOS/PinkFashion.iOS.csproj",
   "expectedPackageFiles": [
@@ -62,10 +62,13 @@
     "/Users/gustavoserna/.nuget/packages/system.threading.timer/4.3.0/system.threading.timer.4.3.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
+    "/Users/gustavoserna/.nuget/packages/webp.touch/1.0.8/webp.touch.1.0.8.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xam.plugins.forms.imagecircle/3.1.1.1-beta/xam.plugins.forms.imagecircle.3.1.1.1-beta.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.auth/1.7.0/xamarin.auth.1.7.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.build.download/0.10.0/xamarin.build.download.0.10.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
+    "/Users/gustavoserna/.nuget/packages/xamarin.ffimageloading/2.4.11.982/xamarin.ffimageloading.2.4.11.982.nupkg.sha512",
+    "/Users/gustavoserna/.nuget/packages/xamarin.ffimageloading.forms/2.4.11.982/xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.firebase.ios.analytics/6.9.0/xamarin.firebase.ios.analytics.6.9.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.firebase.ios.core/6.10.4/xamarin.firebase.ios.core.6.10.4.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.firebase.ios.installations/1.7.0/xamarin.firebase.ios.installations.1.7.0.nupkg.sha512",

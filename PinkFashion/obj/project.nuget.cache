@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "O1qMSOjfB/5bDw6wln8wI2Zh2S+3nxZlGcoN2ufmSKLV61QDBVFsHqiSDurHuuRnd5vLr+9G1gDIHK/LBLk0iw==",
+  "dgSpecHash": "HvmJlaR3pTozBW0GxeDXkkBANVRL6pVnUW1aDkh9/hibVk1OAxM6hhL8eoAYa3nwtBle8XJEms2U3ZMM5Jt3Jg==",
   "success": true,
   "projectFilePath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,8 @@
     "/Users/gustavoserna/.nuget/packages/xam.plugins.forms.imagecircle/3.1.1.1-beta/xam.plugins.forms.imagecircle.3.1.1.1-beta.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.auth/1.7.0/xamarin.auth.1.7.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
+    "/Users/gustavoserna/.nuget/packages/xamarin.ffimageloading/2.4.11.982/xamarin.ffimageloading.2.4.11.982.nupkg.sha512",
+    "/Users/gustavoserna/.nuget/packages/xamarin.ffimageloading.forms/2.4.11.982/xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.forms/5.0.0.2083/xamarin.forms.5.0.0.2083.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.forms.openwhatsapp/1.0.1/xamarin.forms.openwhatsapp.1.0.1.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/xamarin.forms.pancakeview/2.3.0.759/xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",

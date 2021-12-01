@@ -19,6 +19,7 @@ namespace PinkFashion.ViewModels
         public InicioModel InicioVista { get; set; }
         public ObservableCollection<Layoutpromo> LayoutPromos { get; set; }
         public ObservableCollection<ColeccionCategorias> ColCategorias { get; set; }
+        public ObservableCollection<ColeccionFamilias> ColFamilias { get; set; }
         public Command LoadInicioCommand { get; set; }
 
         json_object json_ob = new json_object();
@@ -104,9 +105,11 @@ namespace PinkFashion.ViewModels
             this.Navigation = navigation;
             InicioVista = new InicioModel();
             InicioVista.Categorias = new ObservableCollection<Categoria_>();
+            InicioVista.Familias = new ObservableCollection<Familia>();
             InicioVista.LayoutApp = new ObservableCollection<Layoutapp>();
             InicioVista.Banners = new ObservableCollection<BannerPrincipal>();
             ColCategorias = new ObservableCollection<ColeccionCategorias>();
+            ColFamilias = new ObservableCollection<ColeccionFamilias>();
             LoadInicioCommand = new Command(async () =>
             {
                 await ExecuteLoadInicioCommand();
@@ -177,6 +180,13 @@ namespace PinkFashion.ViewModels
                 IEnumerable<Categoria_> categorias = null;
                 List<Categoria_> listacategorias = new List<Categoria_>();
 
+                ColFamilias.Clear();
+                List<Familia> listafamilias_for_col = new List<Familia>();
+
+                InicioVista.Familias.Clear();
+                IEnumerable<Familia> familias = null;
+                List<Familia> listafamilias = new List<Familia>();
+
                 InicioVista.LayoutApp.Clear();
                 IEnumerable<Layoutapp> layoutapp = null;
                 List<Layoutapp> listalayout = new List<Layoutapp>();
@@ -198,6 +208,11 @@ namespace PinkFashion.ViewModels
                             listacategorias.Add(t.Result.Categorias[i]);
                             listacategorias_for_col.Add(t.Result.Categorias[i]);
                         }
+                        for(int i = 0; i < t.Result.Familias.Count; i++)
+                        {
+                            listafamilias.Add(t.Result.Familias[i]);
+                            listafamilias_for_col.Add(t.Result.Familias[i]);
+                        }
                         for (int i = 0; i < t.Result.LayoutApp.Count; i++)
                         {
                             listalayout.Add(t.Result.LayoutApp[i]);
@@ -211,6 +226,7 @@ namespace PinkFashion.ViewModels
                     }
                 });
 
+                //carousel categorias
                 double totalSlidesCategorias = Math.Ceiling((Double)listacategorias_for_col.Count / 3);
                 for (int i = 0; i < totalSlidesCategorias; i++)
                 {
@@ -231,6 +247,29 @@ namespace PinkFashion.ViewModels
                     }
 
                     ColCategorias.Add(coleccion);
+                }
+
+                //carousel familias
+                double totalSlidesFamilias = Math.Ceiling((Double)listafamilias_for_col.Count / 3);
+                for (int i = 0; i < totalSlidesFamilias; i++)
+                {
+                    ColeccionFamilias coleccion = new ColeccionFamilias();
+                    coleccion.familias = new List<Familia>();
+
+                    for (int k = 0; k <= listafamilias_for_col.Count; k++)
+                    {
+                        if (k < 3 && listafamilias_for_col.Count > 0)
+                        {
+                            coleccion.familias.Add(listafamilias_for_col[0]);
+                            listafamilias_for_col.RemoveAt(0);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    ColFamilias.Add(coleccion);
                 }
 
                 categorias = listacategorias;

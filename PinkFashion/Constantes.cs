@@ -7,8 +7,10 @@ namespace PinkFashion
         //public static string url = "http:/ /pinkfashionstore.mx/app/";
         //public static string root_url = "http:/ /pinkfashionstore.mx/admin";
 
-        public static string url = "https://pinkfashionstore.com/app/";
-        public static string root_url = "https://pinkfashionstore.com/admin/";
+        //public static string url = "https://pinkfashionstore.com/app/";
+        //public static string root_url = "https://pinkfashionstore.com/admin/";
+        public static string url = "http://pink.resosistemas.mx/app/";
+        public static string root_url = "http://pink.resosistemas.mx/admin/";
         public static string tienda = "";
 
 
