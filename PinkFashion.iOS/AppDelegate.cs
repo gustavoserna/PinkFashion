@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Com.OneSignal;
+using FFImageLoading.Forms.Platform;
 using Foundation;
 using PanCardView.iOS;
 using PinkFashion.AuthHelpers;
@@ -33,6 +34,7 @@ namespace PinkFashion.iOS
             global::Xamarin.Forms.Forms.Init();
             Firebase.Core.App.Configure();
             CardsViewRenderer.Preserve();
+            CachedImageRenderer.Init();
             LoadApplication(new App());
             OneSignal.Current.StartInit("5e431b45-a0a3-4076-b948-27070889771e").EndInit();
             global::Xamarin.Auth.Presenters.XamarinIOS.AuthenticationConfiguration.Init();

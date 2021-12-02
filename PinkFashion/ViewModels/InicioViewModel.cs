@@ -20,6 +20,7 @@ namespace PinkFashion.ViewModels
         public ObservableCollection<Layoutpromo> LayoutPromos { get; set; }
         public ObservableCollection<ColeccionCategorias> ColCategorias { get; set; }
         public ObservableCollection<ColeccionFamilias> ColFamilias { get; set; }
+        public ObservableCollection<ColeccionSuperPrecio> ColSuperPrecio { get; set; }
         public Command LoadInicioCommand { get; set; }
 
         json_object json_ob = new json_object();
@@ -105,11 +106,13 @@ namespace PinkFashion.ViewModels
             this.Navigation = navigation;
             InicioVista = new InicioModel();
             InicioVista.Categorias = new ObservableCollection<Categoria_>();
+            InicioVista.SuperPrecios = new ObservableCollection<Producto_>();
             InicioVista.Familias = new ObservableCollection<Familia>();
             InicioVista.LayoutApp = new ObservableCollection<Layoutapp>();
             InicioVista.Banners = new ObservableCollection<BannerPrincipal>();
             ColCategorias = new ObservableCollection<ColeccionCategorias>();
             ColFamilias = new ObservableCollection<ColeccionFamilias>();
+            ColSuperPrecio = new ObservableCollection<ColeccionSuperPrecio>();
             LoadInicioCommand = new Command(async () =>
             {
                 await ExecuteLoadInicioCommand();
@@ -187,6 +190,13 @@ namespace PinkFashion.ViewModels
                 IEnumerable<Familia> familias = null;
                 List<Familia> listafamilias = new List<Familia>();
 
+                ColSuperPrecio.Clear();
+                List<Producto_> listasuperprecios_for_col = new List<Producto_>();
+
+                InicioVista.SuperPrecios.Clear();
+                IEnumerable<Producto_> superprecios = null;
+                List<Producto_> listasuperprecios = new List<Producto_>();
+
                 InicioVista.LayoutApp.Clear();
                 IEnumerable<Layoutapp> layoutapp = null;
                 List<Layoutapp> listalayout = new List<Layoutapp>();
@@ -203,16 +213,42 @@ namespace PinkFashion.ViewModels
                         Banner_promo = t.Result.Banner_promo;
                         Banner_nuevos = t.Result.Banner_nuevos;
                         Banner_vendidos = t.Result.Banner_vendidos;
-                        for (int i = 0; i < t.Result.Categorias.Count; i++)
+                        /*for (int i = 0; i < t.Result.Categorias.Count; i++)
                         {
                             listacategorias.Add(t.Result.Categorias[i]);
                             listacategorias_for_col.Add(t.Result.Categorias[i]);
                         }
+
                         for(int i = 0; i < t.Result.Familias.Count; i++)
                         {
                             listafamilias.Add(t.Result.Familias[i]);
                             listafamilias_for_col.Add(t.Result.Familias[i]);
                         }
+
+                        for(int i = 0; i < t.Result.SuperPrecios.Count; i++)
+                        {
+                            listasuperprecios.Add(t.Result.SuperPrecios[i]);
+                            listasuperprecios_for_col.Add(t.Result.SuperPrecios[i]);
+                        }*/
+
+                        foreach(Categoria_ categoria in t.Result.Categorias)
+                        {
+                            listacategorias.Add(categoria);
+                            listacategorias_for_col.Add(categoria);
+                        }
+
+                        foreach(Familia familia in t.Result.Familias)
+                        {
+                            listafamilias.Add(familia);
+                            listafamilias_for_col.Add(familia);
+                        }
+
+                        foreach(Producto_ producto in t.Result.SuperPrecios)
+                        {
+                            listasuperprecios.Add(producto);
+                            listasuperprecios_for_col.Add(producto);
+                        }
+
                         for (int i = 0; i < t.Result.LayoutApp.Count; i++)
                         {
                             listalayout.Add(t.Result.LayoutApp[i]);
@@ -270,6 +306,29 @@ namespace PinkFashion.ViewModels
                     }
 
                     ColFamilias.Add(coleccion);
+                }
+
+                //carousel superprecios
+                double totalSlidesSuperPrecios = Math.Ceiling((Double)listasuperprecios_for_col.Count / 2);
+                for (int i = 0; i < totalSlidesSuperPrecios; i++)
+                {
+                    ColeccionSuperPrecio coleccion = new ColeccionSuperPrecio();
+                    coleccion.superprecios = new List<Producto_>();
+
+                    for (int k = 0; k <= listasuperprecios_for_col.Count; k++)
+                    {
+                        if (k < 2 && listasuperprecios_for_col.Count > 0)
+                        {
+                            coleccion.superprecios.Add(listasuperprecios_for_col[0]);
+                            listasuperprecios_for_col.RemoveAt(0);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    ColSuperPrecio.Add(coleccion);
                 }
 
                 categorias = listacategorias;

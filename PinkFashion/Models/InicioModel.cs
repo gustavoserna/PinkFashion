@@ -59,6 +59,7 @@ namespace PinkFashion.Models
         }
         public ObservableCollection<Categoria_> Categorias { get; set; }
         public ObservableCollection<Familia> Familias { get; set; }
+        public ObservableCollection<Producto_> SuperPrecios { get; set; }
         public ObservableCollection<Layoutapp> LayoutApp { get; set; }
         public ObservableCollection<BannerPrincipal> Banners { get; set; }
 

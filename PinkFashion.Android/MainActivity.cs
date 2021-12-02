@@ -10,6 +10,7 @@ using PanCardView.Droid;
 using Sharpnado.Presentation.Forms.Droid;
 using Plugin.CurrentActivity;
 using Firebase.Analytics;
+using FFImageLoading.Forms.Platform;
 
 namespace PinkFashion.Droid
 {
@@ -44,6 +45,7 @@ namespace PinkFashion.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+            CachedImageRenderer.Init(true);
             //Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
             CrossCurrentActivity.Current.Init(this, savedInstanceState);

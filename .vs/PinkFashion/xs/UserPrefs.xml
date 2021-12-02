@@ -2,30 +2,23 @@
   <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Models/InicioModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Models/Producto_.cs">
     <Files>
-      <File FileName="PinkFashion/Views/Inicio.xaml" Line="213" Column="29" />
-      <File FileName="PinkFashion/ViewModels/InicioViewModel.cs" Line="284" Column="14" />
-      <File FileName="PinkFashion/Views/Inicio.xaml.cs" Line="14" Column="1" />
-      <File FileName="PinkFashion/Constantes.cs" Line="16" Column="1" />
-      <File FileName="PinkFashion/Models/Familia.cs" Line="12" Column="1" />
-      <File FileName="PinkFashion/Models/InicioModel.cs" Line="1" Column="1" />
+      <File FileName="PinkFashion/Views/Inicio.xaml" Line="409" Column="28" />
+      <File FileName="PinkFashion/Models/Familia.cs" Line="1" Column="1" />
+      <File FileName="PinkFashion/Models/Producto_.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
-              <Node name="Controls" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="InicioModel.cs" selected="True" />
+                <Node name="Producto_.cs" selected="True" />
               </Node>
-              <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Inicio.xaml" expanded="True" />
-              </Node>
-              <Node name="App.xaml" expanded="True" />
+              <Node name="Views" expanded="True" />
             </Node>
+            <Node name="PinkFashion.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -33,9 +26,12 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders>
+    <String>/Users/gustavoserna/Library/Caches/VisualStudio/8.0/Symbols/mono/mono/b4a385816ed4f1398d0184c38f19f560e868fd80</String>
+  </Debugger.DebugSourceFolders>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.R58NB32EELY" />
 </Properties>
