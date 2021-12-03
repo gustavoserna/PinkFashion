@@ -2,23 +2,25 @@
   <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Models/Producto_.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="PinkFashion/Views/Inicio.xaml" Line="409" Column="28" />
-      <File FileName="PinkFashion/Models/Familia.cs" Line="1" Column="1" />
-      <File FileName="PinkFashion/Models/Producto_.cs" Line="1" Column="1" />
+      <File FileName="PinkFashion/Views/Inicio.xaml" Line="493" Column="1" />
+      <File FileName="PinkFashion/Views/Novedades.xaml" />
+      <File FileName="PinkFashion/Models/Familia.cs" />
+      <File FileName="PinkFashion/Models/Producto_.cs" />
+      <File FileName="PinkFashion/Models/Categoria_.cs" />
+      <File FileName="PinkFashion/ViewModels/InicioViewModel.cs" />
+      <File FileName="PinkFashion/ViewModels/NovedadesViewModel.cs" />
+      <File FileName="PinkFashion/Views/Inicio.xaml.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="Producto_.cs" selected="True" />
-              </Node>
               <Node name="Views" expanded="True" />
             </Node>
-            <Node name="PinkFashion.iOS" expanded="True" />
+            <Node name="PinkFashion.Android" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>

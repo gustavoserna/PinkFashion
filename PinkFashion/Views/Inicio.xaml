@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             xmlns:renderedViews="clr-namespace:Sharpnado.Presentation.Forms.RenderedViews;assembly=Sharpnado.Presentation.Forms"
              xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:local="clr-namespace:PinkFashion.Controls;assembly=PinkFashion"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              x:Class="PinkFashion.Views.Inicio" x:Name="InicioPage" BackgroundColor="White">
     <NavigationPage.TitleView>
 
@@ -70,44 +70,10 @@
 
     </NavigationPage.TitleView>
 
-    <ContentPage.Resources>
-
-        <ResourceDictionary>
-
-            <Style x:Key="CommunityNameStyle" TargetType="Label">
-
-                <Setter Property="FontSize" Value="Large" />
-
-                <Setter Property="TextColor" Value="#0a9bb5" />
-
-            </Style>
-
-            <Style x:Key="CommunityCreatedStyle" TargetType="Label">
-
-                <Setter Property="FontSize" Value="Small" />
-
-                <Setter Property="TextColor" Value="#364f6b"/>
-
-                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-
-            </Style>
-
-            <Style x:Key="HorizontalListView" TargetType="renderedViews:HorizontalListView">
-
-                <Setter Property="ItemHeight" Value="130" />
-
-                <Setter Property="CollectionPadding" Value="10,145,10,75" />
-
-            </Style>
-
-        </ResourceDictionary>
-
-    </ContentPage.Resources>
-
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Padding="0">
 
         <!-- Menu -->
-        <carousel:CarouselViewControl
+        <!--<carousel:CarouselViewControl
             InterPageSpacing="0"
             ShowIndicators="False"
             ShowArrows="True"
@@ -161,7 +127,7 @@
 
             </carousel:CarouselViewControl.ItemTemplate>
 
-        </carousel:CarouselViewControl>
+        </carousel:CarouselViewControl>-->
         <!-- End Menu -->
 
         <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -228,7 +194,7 @@
                     CurrentPageIndicatorTintColor="#eb068c"
                     ItemsSource="{Binding ColFamilias}"
                     BackgroundColor="Transparent"
-                    HeightRequest="215">
+                    HeightRequest="180">
 
                     <carousel:CarouselViewControl.ItemTemplate>
 
@@ -257,15 +223,24 @@
                                                 Padding="0,15,0,15">
 
                                                 <Frame
-                                                    Padding="5,10,5,10"
+                                                    Padding="0"
                                                     HasShadow="False"
                                                     Margin="10,0,10,0"
-                                                    BackgroundColor="#f1f1f1"
+                                                    BackgroundColor="Transparent"
                                                     HeightRequest="150"
                                                     VerticalOptions="FillAndExpand"
                                                     CornerRadius="0">
 
-                                                    <StackLayout>
+                                                    <StackLayout Spacing="10">
+
+                                                        <ffimageloading:CachedImage
+                                                            DownsampleUseDipUnits="false"
+                                                            LoadingPlaceholder="loadingcat.png"
+                                                            ErrorPlaceholder="image_error.png"
+                                                            VerticalOptions="Start"
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            Aspect="AspectFit"
+                                                            Source="{Binding imagen}"/>
 
                                                         <Label
                                                             HorizontalOptions="Center"
@@ -273,16 +248,6 @@
                                                             TextColor="#eb068c"
                                                             FontSize="14"
                                                             Text="{Binding clasificaciones}"/>
-
-                                                        <ffimageloading:CachedImage
-                                                            DownsampleUseDipUnits="false"
-                                                            LoadingPlaceholder="loadingcat.png"
-                                                            ErrorPlaceholder="image_error.png"
-                                                            VerticalOptions="EndAndExpand"
-                                                            HorizontalOptions="CenterAndExpand"
-                                                            HeightRequest="145"
-                                                            WidthRequest="145"
-                                                            Source="{Binding imagen}"/>
 
                                                     </StackLayout>
 
@@ -336,7 +301,7 @@
                         ShowArrows="True"
                         ArrowsParentMargin="0"
                         ArrowsTintColor="#eb068c"
-                        HorizontalArrowsPosition="Top"
+                        HorizontalArrowsPosition="Center"
                         ArrowsSize="35"
                         ArrowsBackgroundColor="Transparent"
                         ItemsSource="{Binding ColSuperPrecio}"
@@ -435,6 +400,140 @@
 
                 </StackLayout>
                 <!-- end superprecios -->
+
+                <!-- nuestros favoritos -->
+                <StackLayout
+                    BackgroundColor="White">
+
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Padding="10">
+
+                        <Label
+                            Text="Nuestros favoritos"
+                            TextColor="#eb068c"
+                            HorizontalTextAlignment="Center"
+                            HorizontalOptions="Center"
+                            FontSize="20" />
+
+                        <Grid
+                            HorizontalOptions="FillAndExpand">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*" />
+                                <ColumnDefinition Width="50*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text="Más vendidos"
+                                TextColor="Black"
+                                HorizontalTextAlignment="Center"
+                                HorizontalOptions="CenterAndExpand"
+                                FontSize="16">
+
+                                <Label.GestureRecognizers>
+
+                                    <TapGestureRecognizer
+                                        Command="{Binding Path=BindingContext.MasVendidosCommand,  Source={x:Reference InicioPage}}"/>
+
+                                </Label.GestureRecognizers>
+
+                            </Label>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="Descuentos"
+                                TextColor="Black"
+                                HorizontalTextAlignment="Center"
+                                HorizontalOptions="CenterAndExpand"
+                                FontSize="16">
+
+                                <Label.GestureRecognizers>
+
+                                    <TapGestureRecognizer
+                                        Command="{Binding Path=BindingContext.DescuentosCommand,  Source={x:Reference InicioPage}}"/>
+
+                                </Label.GestureRecognizers>
+
+                            </Label>
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Text="Nuevos Productos"
+                                TextColor="Black"
+                                HorizontalTextAlignment="Center"
+                                HorizontalOptions="CenterAndExpand"
+                                FontSize="16">
+
+                                <Label.GestureRecognizers>
+
+                                    <TapGestureRecognizer
+                                        Command="{Binding Path=BindingContext.NuevosProductosCommand,  Source={x:Reference InicioPage}}"/>
+
+                                </Label.GestureRecognizers>
+
+                            </Label>
+
+                        </Grid>
+
+                    </StackLayout>
+
+                    <flv:FlowListView
+                        FlowColumnCount="2"
+                        SeparatorColor="#f1f1f1"
+                        HasUnevenRows="true"
+                        FlowItemsSource="{Binding LosFavoritos}"
+                        IsRefreshing="{Binding IsRefreshingFavoritos}"
+                        BackgroundColor="White">
+
+                        <flv:FlowListView.FlowColumnTemplate>
+
+                            <DataTemplate>
+
+                                <StackLayout>
+
+                                    <Label
+                                        Text="{Binding marca}"
+                                        HorizontalTextAlignment="Center"
+                                        HorizontalOptions="CenterAndExpand" />
+
+                                    <ffimageloading:CachedImage
+                                        DownsampleUseDipUnits="false"
+                                        LoadingPlaceholder="loadingcat.png"
+                                        ErrorPlaceholder="image_error.png"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="CenterAndExpand"
+                                        BackgroundColor="#f1f1f1"
+                                        Aspect="AspectFit"
+                                        HeightRequest="150"
+                                        WidthRequest="150"
+                                        Source="{Binding Imagen}"/>
+
+                                    <Label
+                                        Text="{Binding producto}"
+                                        HorizontalTextAlignment="Center"
+                                        HorizontalOptions="CenterAndExpand" />
+
+                                    <Label
+                                        Text="{Binding precioCarrito}"
+                                        HorizontalTextAlignment="Center"
+                                        HorizontalOptions="CenterAndExpand" />
+
+                                </StackLayout>
+
+                            </DataTemplate>
+
+                        </flv:FlowListView.FlowColumnTemplate>
+
+                    </flv:FlowListView>
+
+                </StackLayout>
+                <!-- end nuestros favoritos -->
 
                 <ImageButton Grid.Row="0" Source="WhatsApp_verde.png" BorderColor="Transparent" BorderWidth="0" HorizontalOptions="End" WidthRequest="50" HeightRequest="50" Margin="0,0,20,22" VerticalOptions="End" Clicked="OnBtnWhatsappClicked"/>
 

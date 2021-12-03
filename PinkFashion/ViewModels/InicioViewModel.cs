@@ -21,12 +21,22 @@ namespace PinkFashion.ViewModels
         public ObservableCollection<ColeccionCategorias> ColCategorias { get; set; }
         public ObservableCollection<ColeccionFamilias> ColFamilias { get; set; }
         public ObservableCollection<ColeccionSuperPrecio> ColSuperPrecio { get; set; }
+        public ObservableCollection<Producto_> LosFavoritos { get; set; }
         public Command LoadInicioCommand { get; set; }
+        public Command LoadFavoritosCommand { get; set; }
+        public string favoritosOpcion = "1";
 
         json_object json_ob = new json_object();
         json_objectprod json_obprod = new json_objectprod();
         json_objectc json_obc = new json_objectc();
         json_objectm json_obm = new json_objectm();
+
+        bool isRefreshingFavoritos = false;
+        public bool IsRefreshingFavoritos
+        {
+            get { return isRefreshingFavoritos; }
+            set { SetProperty(ref isRefreshingFavoritos, value); }
+        }
 
         bool _loader = false;
         public bool loader
@@ -113,9 +123,15 @@ namespace PinkFashion.ViewModels
             ColCategorias = new ObservableCollection<ColeccionCategorias>();
             ColFamilias = new ObservableCollection<ColeccionFamilias>();
             ColSuperPrecio = new ObservableCollection<ColeccionSuperPrecio>();
+            LosFavoritos = new ObservableCollection<Producto_>();
             LoadInicioCommand = new Command(async () =>
             {
                 await ExecuteLoadInicioCommand();
+            });
+
+            LoadFavoritosCommand = new Command(async () =>
+            {
+                await ExecuteLoadFavoritosCommand();
             });
         }
 
@@ -167,6 +183,44 @@ namespace PinkFashion.ViewModels
                 });
             }
         }
+
+        public ICommand MasVendidosCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    favoritosOpcion = "1";
+                    LoadFavoritosCommand.Execute(null);
+                });
+            }
+        }
+
+        public ICommand DescuentosCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    favoritosOpcion = "2";
+                    LoadFavoritosCommand.Execute(null);
+                });
+            }
+        }
+
+        public ICommand NuevosProductosCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    favoritosOpcion = "3";
+                    LoadFavoritosCommand.Execute(null);
+                });
+            }
+        }
+
+
         async Task ExecuteLoadInicioCommand()
         {
             if (IsBusy)
@@ -213,23 +267,6 @@ namespace PinkFashion.ViewModels
                         Banner_promo = t.Result.Banner_promo;
                         Banner_nuevos = t.Result.Banner_nuevos;
                         Banner_vendidos = t.Result.Banner_vendidos;
-                        /*for (int i = 0; i < t.Result.Categorias.Count; i++)
-                        {
-                            listacategorias.Add(t.Result.Categorias[i]);
-                            listacategorias_for_col.Add(t.Result.Categorias[i]);
-                        }
-
-                        for(int i = 0; i < t.Result.Familias.Count; i++)
-                        {
-                            listafamilias.Add(t.Result.Familias[i]);
-                            listafamilias_for_col.Add(t.Result.Familias[i]);
-                        }
-
-                        for(int i = 0; i < t.Result.SuperPrecios.Count; i++)
-                        {
-                            listasuperprecios.Add(t.Result.SuperPrecios[i]);
-                            listasuperprecios_for_col.Add(t.Result.SuperPrecios[i]);
-                        }*/
 
                         foreach(Categoria_ categoria in t.Result.Categorias)
                         {
@@ -361,8 +398,8 @@ namespace PinkFashion.ViewModels
                 {
                     await SendToken();
                 }
-                
 
+                LoadFavoritosCommand.Execute(null);
             }
             catch (Exception ex)
             {
@@ -373,7 +410,51 @@ namespace PinkFashion.ViewModels
                 IsBusy = false;
             }
         }
-        
+
+        async Task ExecuteLoadFavoritosCommand()
+        {
+            if (IsRefreshingFavoritos)
+                return;
+
+            IsRefreshingFavoritos = true;
+
+            try
+            {
+                LosFavoritos.Clear();
+                IEnumerable<Producto_> productos = null;
+                List<Producto_> lista = new List<Producto_>();
+
+                await GetFavoritos().ContinueWith(t =>
+                {
+                    if (t.Status == TaskStatus.RanToCompletion)
+                    {
+
+                        foreach (Producto_ producto in t.Result)
+                        {
+                            lista.Add(producto);
+                        }
+
+                    }
+                });
+
+                productos = lista;
+
+                foreach(var producto in productos)
+                {
+                    LosFavoritos.Add(producto);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsRefreshingFavoritos = false;
+            }
+        }
+
         public async Task<InicioModel> GetInicio()
         {
             try
@@ -447,10 +528,41 @@ namespace PinkFashion.ViewModels
 
         }
 
+        public async Task<Producto_[]> GetFavoritos()
+        {
+            try
+            {
+                var client = new HttpClient();
+                StringContent str = new StringContent("op=ObtenerProductoTipo&tipo=" + favoritosOpcion + "&limit=6", Encoding.UTF8, "application/x-www-form-urlencoded");
+                var respuesta = await client.PostAsync(Constantes.url + "Productos/App.php", str);
+                var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
+                System.Diagnostics.Debug.WriteLine("Productos favoritos: " + json);
+
+
+                if (json != "")
+                {
+                    json_ob = JsonConvert.DeserializeObject<json_object>(json);
+                }
+                else
+                {
+                    return json_ob.productosFavoritos = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            return json_ob.productosFavoritos;
+
+        }
+
         public class json_object
         {
             [JsonProperty("EntidadInicio")]
             public InicioModel[] iniciomodel { get; set; }
+
+            [JsonProperty("ListadoProductos")]
+            public Producto_[] productosFavoritos { get; set; }
 
         }
 

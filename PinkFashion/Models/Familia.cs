@@ -6,17 +6,17 @@ namespace PinkFashion.Models
         public int id_clasificacion { get; set; }
         public string clasificaciones { get; set; }
         public int status { get; set; }
-        public string imgPreview { get; set; }
 
+        string _imagen;
         public string imagen
         {
             get
             {
-                return imagen;
+                return Constantes.root_url + "/BannersFamilias/Autorizadas/" + _imagen;
             }
             set
             {
-                imagen = Constantes.root_url + imgPreview;
+                _imagen = value;
             }
         }
     }
