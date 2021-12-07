@@ -26,8 +26,6 @@ namespace PinkFashion.ViewModels
         public Command LoadFavoritosCommand { get; set; }
         public string favoritosOpcion = "1";
 
-
-
         json_object json_ob = new json_object();
         json_objectprod json_obprod = new json_objectprod();
         json_objectc json_obc = new json_objectc();
@@ -40,31 +38,25 @@ namespace PinkFashion.ViewModels
             set { SetProperty(ref isRefreshingFavoritos, value); }
         }
 
-        bool isUnderlinedMasVendidos = false;
+        TextDecorations isUnderlinedMasVendidos = TextDecorations.None;
         public TextDecorations IsUnderlinedMasVendidos
         {
-            get { if (isUnderlinedMasVendidos)
-                {  return TextDecorations.Underline; }
-                else { return TextDecorations.None; } }
+            get { return isUnderlinedMasVendidos; }
+            set { SetProperty(ref isUnderlinedMasVendidos, value); }
         }
 
-        bool isUnderlinedNuevosProductos = false;
+        TextDecorations isUnderlinedNuevosProductos = TextDecorations.None;
         public TextDecorations IsUnderlinedNuevosProductos
         {
-            get { if (isUnderlinedNuevosProductos)
-                { return TextDecorations.Underline; }
-                else { return TextDecorations.None; } }
+            get { return isUnderlinedNuevosProductos; }
+            set { SetProperty(ref isUnderlinedNuevosProductos, value); }
         }
 
-        bool isUnderlinedDescuentos = false;
+        TextDecorations isUnderlinedDescuentos = TextDecorations.None;
         public TextDecorations IsUnderlinedDescuentos
         {
-            get
-            {
-                if (isUnderlinedDescuentos)
-                { return TextDecorations.Underline; }
-                else { return TextDecorations.None; }
-            }
+            get { return isUnderlinedDescuentos; }
+            set { SetProperty(ref isUnderlinedDescuentos, value); }
         }
 
         bool _loader = false;
@@ -103,7 +95,7 @@ namespace PinkFashion.ViewModels
         string _Banner_promo;
         public string Banner_promo
         {
-            
+
             get
             {
                 return _Banner_promo;
@@ -170,7 +162,7 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<Categoria_>(async (Categoria_ model) =>
                 {
-                     await Navigation.PushAsync(new ProductosCategoria(model.IdCategoria, model.Categoria));
+                    await Navigation.PushAsync(new ProductosCategoria(model.IdCategoria, model.Categoria));
                 });
             }
         }
@@ -219,13 +211,11 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
-                    if (isUnderlinedMasVendidos)
+                    if (IsUnderlinedMasVendidos == TextDecorations.None)
                     {
-                        isUnderlinedMasVendidos = false;
-                    }
-                    else
-                    {
-                        isUnderlinedMasVendidos = true;
+                        IsUnderlinedMasVendidos = TextDecorations.Underline;
+                        IsUnderlinedDescuentos = TextDecorations.None;
+                        IsUnderlinedNuevosProductos = TextDecorations.None;
                     }
                     favoritosOpcion = "1";
                     LoadFavoritosCommand.Execute(null);
@@ -239,13 +229,11 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
-                    if (isUnderlinedDescuentos)
+                    if (IsUnderlinedDescuentos == TextDecorations.None)
                     {
-                        isUnderlinedDescuentos = false;
-                    }
-                    else
-                    {
-                        isUnderlinedDescuentos = true;
+                        IsUnderlinedMasVendidos = TextDecorations.None;
+                        IsUnderlinedDescuentos = TextDecorations.Underline;
+                        IsUnderlinedNuevosProductos = TextDecorations.None;
                     }
                     favoritosOpcion = "2";
                     LoadFavoritosCommand.Execute(null);
@@ -253,7 +241,7 @@ namespace PinkFashion.ViewModels
             }
         }
 
-       
+
 
         public ICommand NuevosProductosCommand
         {
@@ -261,12 +249,11 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
-                    if(isUnderlinedNuevosProductos)
+                    if (IsUnderlinedNuevosProductos == TextDecorations.None)
                     {
-                        isUnderlinedNuevosProductos = false;
-                    } else
-                    {
-                        isUnderlinedNuevosProductos = true;
+                        IsUnderlinedMasVendidos = TextDecorations.None;
+                        IsUnderlinedDescuentos = TextDecorations.None;
+                        IsUnderlinedNuevosProductos = TextDecorations.Underline;
                     }
                     favoritosOpcion = "3";
                     LoadFavoritosCommand.Execute(null);
@@ -321,19 +308,19 @@ namespace PinkFashion.ViewModels
                         Banner_nuevos = t.Result.Banner_nuevos;
                         Banner_vendidos = t.Result.Banner_vendidos;
 
-                        foreach(Categoria_ categoria in t.Result.Categorias)
+                        foreach (Categoria_ categoria in t.Result.Categorias)
                         {
                             listacategorias.Add(categoria);
                             listacategorias_for_col.Add(categoria);
                         }
 
-                        foreach(Familia familia in t.Result.Familias)
+                        foreach (Familia familia in t.Result.Familias)
                         {
                             listafamilias.Add(familia);
                             listafamilias_for_col.Add(familia);
                         }
 
-                        foreach(Producto_ producto in t.Result.SuperPrecios)
+                        foreach (Producto_ producto in t.Result.SuperPrecios)
                         {
                             listasuperprecios.Add(producto);
                             listasuperprecios_for_col.Add(producto);
@@ -359,9 +346,9 @@ namespace PinkFashion.ViewModels
                     ColeccionCategorias coleccion = new ColeccionCategorias();
                     coleccion.categorias = new List<Categoria_>();
 
-                    for(int k = 0; k <= listacategorias_for_col.Count; k++)
+                    for (int k = 0; k <= listacategorias_for_col.Count; k++)
                     {
-                        if(k < 3 && listacategorias_for_col.Count > 0)
+                        if (k < 3 && listacategorias_for_col.Count > 0)
                         {
                             coleccion.categorias.Add(listacategorias_for_col[0]);
                             listacategorias_for_col.RemoveAt(0);
@@ -427,7 +414,7 @@ namespace PinkFashion.ViewModels
                 if (Application.Current.Properties.ContainsKey("Abreviado"))
                 {
                     AliasUsuario = "Hola " + Application.Current.Properties["Abreviado"].ToString();
-                    
+
                 }
                 else
                 {
@@ -435,7 +422,7 @@ namespace PinkFashion.ViewModels
                 }
                 foreach (var itemcat in categorias)
                 {
-                    InicioVista.Categorias.Add(itemcat);                    
+                    InicioVista.Categorias.Add(itemcat);
                 }
 
                 foreach (var itemlay in layoutapp)
@@ -470,7 +457,7 @@ namespace PinkFashion.ViewModels
                 return;
 
             IsRefreshingFavoritos = true;
-            
+
             try
             {
                 LosFavoritos.Clear();
@@ -492,7 +479,7 @@ namespace PinkFashion.ViewModels
 
                 productos = lista;
 
-                foreach(var producto in productos)
+                foreach (var producto in productos)
                 {
                     LosFavoritos.Add(producto);
                 }
