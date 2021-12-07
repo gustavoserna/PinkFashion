@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="PinkFashion.Views.FamiliaVista">
+
+    <ContentPage.Content>
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <flv:FlowListView 
+                x:Name="listview"
+                FlowColumnCount="2"
+                SeparatorColor="#f1f1f1"
+                HasUnevenRows="true"
+                FlowItemsSource="{Binding Productos}"
+                IsRefreshing="{Binding IsBusy}" BackgroundColor="White">
+
+                <flv:FlowListView.FlowColumnTemplate>
+
+                    <DataTemplate>
+
+                        <Frame
+                            BorderColor="#d4d4d4"
+                            Padding="3"
+                            HasShadow="false"
+                            CornerRadius="7"
+                            Margin="3,3,3,3">
+
+                            <Grid
+                                HorizontalOptions="FillAndExpand"
+                                Padding="0"
+                                RowSpacing="0"
+                                BackgroundColor="White">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="4*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+
+                                <Label
+                                    Grid.Row="0"
+                                    Text="{Binding marca}"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Style="{StaticResource MediumLabelStyle}"/>
+
+                                <Grid
+                                    Grid.Row="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    RowSpacing="3">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <ffimageloading:CachedImage
+                                        DownsampleUseDipUnits="false"
+                                        BackgroundColor="#f1f1f1"
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Aspect="AspectFit"
+                                        Source="{Binding Imagen}"/>
+
+                                    <Frame
+                                        x:Name="vAgotado"
+                                        HasShadow="True"
+                                        Grid.Row="0"
+                                        MinimumWidthRequest="25"
+                                        CornerRadius="25"
+                                        Margin="90,110,0,0"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        IsVisible="{Binding Agotado}">
+
+                                        <Frame.BackgroundColor>
+
+                                            <OnPlatform x:TypeArguments="Color" iOS="#ff0404" Android="#ff0404" />
+
+                                        </Frame.BackgroundColor>
+
+                                        <Frame.Padding>
+
+                                            <OnPlatform x:TypeArguments="Thickness" iOS="7,3,7,3" Android="2,1,2,1" />
+
+                                        </Frame.Padding>
+
+                                        <Frame.HeightRequest>
+
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="60" Android="65" />
+
+                                        </Frame.HeightRequest>
+
+                                        <Label
+                                            Text="Agotado"
+                                            TextColor="White"
+                                            FontSize="12"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand" />
+                                    </Frame>
+
+                                </Grid>
+
+                                <Label
+                                    Grid.Row="2"
+                                    Text="{Binding producto}"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Style="{StaticResource SmallLabelStyle}"/>
+
+                                <StackLayout
+                                    Grid.Row="3"
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="0">
+
+                                    <Grid
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand"
+                                        RowSpacing="3"
+                                        IsVisible="{Binding ConPromo}">
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label
+                                            Grid.Row="0"
+                                            Text="{Binding SobrePreciostring}"
+                                            HorizontalOptions="CenterAndExpand"
+                                            HorizontalTextAlignment="Center"
+                                            Style="{StaticResource PetitLabelStyle}"/>
+
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="Center"
+                                            Spacing="0">
+
+                                            <BoxView
+                                                Grid.Row="0"
+                                                HeightRequest="2"
+                                                Rotation="0"
+                                                BackgroundColor="#eb068c"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Margin="0,0,0,0"/>
+
+                                        </StackLayout>
+
+                                    </Grid>
+
+                                    <Label
+                                        Text="{Binding precioCarrito}"
+                                        HorizontalOptions="CenterAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        FontAttributes="Bold"
+                                        Style="{StaticResource SmallLabelStyle}"/>
+
+                                </StackLayout>
+
+                                <StackLayout
+                                    Grid.Row="4"
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Vertical"
+                                    VerticalOptions="EndAndExpand"
+                                    Spacing="0">
+
+                                    <Label
+                                        Text="{Binding TituloVer}"
+                                        Padding="5"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="#eb068c"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="EndAndExpand"
+                                        Style="{StaticResource SmallLabelStyle}"/>
+
+                                </StackLayout>
+
+                            </Grid>
+
+                        </Frame>
+
+                    </DataTemplate>
+
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

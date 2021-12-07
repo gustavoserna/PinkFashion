@@ -2,20 +2,24 @@
   <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ViewModels/InicioViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/Inicio.xaml">
     <Files>
-      <File FileName="PinkFashion/Views/Inicio.xaml" Line="551" Column="1" />
-      <File FileName="PinkFashion/ViewModels/InicioViewModel.cs" Line="29" Column="49" />
+      <File FileName="PinkFashion/Views/FamiliaVista.xaml" Line="22" Column="46" />
+      <File FileName="PinkFashion/Views/FamiliaVista.xaml.cs" Line="19" Column="2" />
+      <File FileName="PinkFashion/ViewModels/FamiliaVistaViewModel.cs" Line="80" Column="59" />
+      <File FileName="PinkFashion/Views/Inicio.xaml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
-              <Node name="ViewModels" expanded="True">
-                <Node name="InicioViewModel.cs" selected="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="FamiliaVista.xaml" expanded="True" />
+                <Node name="Inicio.xaml" expanded="True" selected="True" />
+                <Node name="ProductosCategoria.xaml" expanded="True" />
               </Node>
-              <Node name="Views" expanded="True" />
             </Node>
           </Node>
         </State>
