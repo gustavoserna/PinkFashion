@@ -156,6 +156,18 @@ namespace PinkFashion.ViewModels
             });
         }
 
+        public ICommand ItemTappedCommand
+        {  
+
+            get 
+            {
+                return new Command<Familia>(async (Familia model) =>
+                { 
+                    await Navigation.PushAsync(new FamiliaVista(model));
+                });
+            }
+        }
+
         public ICommand CategoriaCommand
         {
             get
