@@ -26,6 +26,8 @@ namespace PinkFashion.ViewModels
         public Command LoadFavoritosCommand { get; set; }
         public string favoritosOpcion = "1";
 
+
+
         json_object json_ob = new json_object();
         json_objectprod json_obprod = new json_objectprod();
         json_objectc json_obc = new json_objectc();
@@ -36,6 +38,33 @@ namespace PinkFashion.ViewModels
         {
             get { return isRefreshingFavoritos; }
             set { SetProperty(ref isRefreshingFavoritos, value); }
+        }
+
+        bool isUnderlinedMasVendidos = false;
+        public TextDecorations IsUnderlinedMasVendidos
+        {
+            get { if (isUnderlinedMasVendidos)
+                {  return TextDecorations.Underline; }
+                else { return TextDecorations.None; } }
+        }
+
+        bool isUnderlinedNuevosProductos = false;
+        public TextDecorations IsUnderlinedNuevosProductos
+        {
+            get { if (isUnderlinedNuevosProductos)
+                { return TextDecorations.Underline; }
+                else { return TextDecorations.None; } }
+        }
+
+        bool isUnderlinedDescuentos = false;
+        public TextDecorations IsUnderlinedDescuentos
+        {
+            get
+            {
+                if (isUnderlinedDescuentos)
+                { return TextDecorations.Underline; }
+                else { return TextDecorations.None; }
+            }
         }
 
         bool _loader = false;
@@ -190,6 +219,14 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
+                    if (isUnderlinedMasVendidos)
+                    {
+                        isUnderlinedMasVendidos = false;
+                    }
+                    else
+                    {
+                        isUnderlinedMasVendidos = true;
+                    }
                     favoritosOpcion = "1";
                     LoadFavoritosCommand.Execute(null);
                 });
@@ -202,11 +239,21 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
+                    if (isUnderlinedDescuentos)
+                    {
+                        isUnderlinedDescuentos = false;
+                    }
+                    else
+                    {
+                        isUnderlinedDescuentos = true;
+                    }
                     favoritosOpcion = "2";
                     LoadFavoritosCommand.Execute(null);
                 });
             }
         }
+
+       
 
         public ICommand NuevosProductosCommand
         {
@@ -214,12 +261,18 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
+                    if(isUnderlinedNuevosProductos)
+                    {
+                        isUnderlinedNuevosProductos = false;
+                    } else
+                    {
+                        isUnderlinedNuevosProductos = true;
+                    }
                     favoritosOpcion = "3";
                     LoadFavoritosCommand.Execute(null);
                 });
             }
         }
-
 
         async Task ExecuteLoadInicioCommand()
         {
@@ -417,7 +470,7 @@ namespace PinkFashion.ViewModels
                 return;
 
             IsRefreshingFavoritos = true;
-
+            
             try
             {
                 LosFavoritos.Clear();
