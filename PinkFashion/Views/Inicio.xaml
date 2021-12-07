@@ -213,7 +213,7 @@
                                     HorizontalScrollBarVisibility="Never"
                                     BackgroundColor="Transparent"
                                     FlowItemsSource="{Binding familias}"
-                                    FlowItemTappedCommand="{Binding ItemTappedCommand}"
+                                    FlowItemTappedCommand="{Binding BindingContext.ItemTappedCommand, Source={x:Reference InicioPage}  }"
                                     IsPullToRefreshEnabled="False">
 
                                     <local:FlowListView_R.FlowColumnTemplate>
