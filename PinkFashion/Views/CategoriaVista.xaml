@@ -6,8 +6,8 @@
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
     xmlns:local="clr-namespace:PinkFashion.Controls;assembly=PinkFashion"
-    x:Name="FamiliaPage"
-    x:Class="PinkFashion.Views.FamiliaVista">
+    x:Name="CategoriaPage"
+    x:Class="PinkFashion.Views.CategoriaVista">
 
     <NavigationPage.TitleView>
 

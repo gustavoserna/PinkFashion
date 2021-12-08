@@ -9,7 +9,6 @@ using Xamarin.Forms.Xaml;
 
 namespace PinkFashion.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CategoriaVista : ContentPage
     {
         public CategoriaVista()
