@@ -38,6 +38,17 @@ namespace PinkFashion.ViewModels
             set { SetProperty(ref isRefreshingFavoritos, value); }
         }
 
+        public ICommand ProductoTappedCommand
+        {
+            get
+            {
+                return new Command<Producto_>(async (Producto_ model) =>
+                {
+                    await Navigation.PushAsync(new Producto(model));
+                });
+            }
+        }
+
         TextDecorations isUnderlinedMasVendidos = TextDecorations.None;
         public TextDecorations IsUnderlinedMasVendidos
         {
