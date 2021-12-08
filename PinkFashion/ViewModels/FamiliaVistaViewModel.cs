@@ -4,8 +4,10 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Newtonsoft.Json;
 using PinkFashion.Models;
+using PinkFashion.Views;
 using Xamarin.Forms;
 
 namespace PinkFashion.ViewModels
@@ -15,12 +17,35 @@ namespace PinkFashion.ViewModels
         json_object json_ob = new json_object();
 
         Familia familia;
+        string idMarca = "";
 
         public ObservableCollection<ColeccionCategorias> ColCategorias { get; set; }
         public ObservableCollection<Categoria_> Categorias { get; set; }
         public ObservableCollection<Producto_> Productos { get; set; }
 
         public Command LoadProductosCommand { get; set; }
+        public Command LoadCategoriasCommand { get; set; }
+
+        string _NameFamilia;
+        public string NameFamilia
+        {
+            get { return _NameFamilia; }
+            set { SetProperty(ref _NameFamilia, value); }
+        }
+
+        bool _ListViewVisible = true;
+        public bool ListViewVisible
+        {
+            get { return _ListViewVisible; }
+            set { SetProperty(ref _ListViewVisible, value); }
+        }
+
+        bool _NoEncontradoVisible = false;
+        public bool NoEncontradoVisible
+        {
+            get { return _NoEncontradoVisible; }
+            set { SetProperty(ref _NoEncontradoVisible, value); }
+        }
 
         public FamiliaVistaViewModel(Familia familia)
         {
@@ -28,36 +53,23 @@ namespace PinkFashion.ViewModels
             Productos = new ObservableCollection<Producto_>();
             ColCategorias = new ObservableCollection<ColeccionCategorias>();
             Categorias = new ObservableCollection<Categoria_>();
+            NameFamilia = familia.clasificaciones;
 
             LoadProductosCommand = new Command(async () =>
             {
                 await ExecuteLoadProductosCommand();
             });
+
+            LoadCategoriasCommand = new Command(async () =>
+            {
+                await ExecuteLoadCategoriasCommand();
+            });
         }
 
-        async Task ExecuteLoadProductosCommand()
+        async Task ExecuteLoadCategoriasCommand()
         {
-            if (IsBusy)
-                return;
-
-            IsBusy = true;
-
             try
             {
-                Productos.Clear();
-                IEnumerable<Producto_> productos = null;
-                List<Producto_> lista = new List<Producto_>();
-                await GetProductos(this.familia).ContinueWith(t =>
-                {
-                    if (t.Status == TaskStatus.RanToCompletion)
-                    {
-                        for (int i = 0; i < t.Result.Length; i++)
-                        {
-                            lista.Add(t.Result[i]);
-                        }
-                    }
-                });
-
                 ColCategorias.Clear();
                 List<Categoria_> listacategorias_for_col = new List<Categoria_>();
 
@@ -98,13 +110,52 @@ namespace PinkFashion.ViewModels
 
                     ColCategorias.Add(coleccion);
                 }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+        }
 
+        async Task ExecuteLoadProductosCommand()
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+            try
+            {
+                Productos.Clear();
+                IEnumerable<Producto_> productos = null;
+                List<Producto_> lista = new List<Producto_>();
+                await GetProductos(this.familia).ContinueWith(t =>
+                {
+                    if (t.Status == TaskStatus.RanToCompletion)
+                    {
+                        for (int i = 0; i < t.Result.Length; i++)
+                        {
+                            lista.Add(t.Result[i]);
+                        }
+                    }
+                });
 
                 productos = lista;
 
                 foreach (var item in productos)
                 {
                     Productos.Add(item);
+                }
+
+                if(Productos.Count == 0)
+                {
+                    ListViewVisible = false;
+                    NoEncontradoVisible = true;
+                }
+                else
+                {
+                    ListViewVisible = true;
+                    NoEncontradoVisible = false;
                 }
             }
             catch (Exception ex)
@@ -117,12 +168,41 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        public ICommand AbrirMarcasCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    MessagingCenter.Subscribe<MarcasViewModel, string>(this, "idMarca", (sender, arg) =>
+                    {
+                        this.idMarca = arg;
+                        LoadProductosCommand.Execute(null);
+                    });
+
+                    var page = new NavigationPage(new MarcasVista(this.familia));
+                    page.BarBackgroundColor = App.bgColor;
+                    page.BarTextColor = App.textColor;
+                    App.Current.MainPage.Navigation.PushModalAsync(page);
+                });
+            }
+        }
+
         public async Task<Producto_[]> GetProductos(Familia familia)
         {
             try
             {
                 var client = new HttpClient();
-                StringContent str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion, Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str = null;
+                if (idMarca.Equals(""))
+                {
+                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion, Encoding.UTF8, "application/x-www-form-urlencoded");
+                }
+                else
+                {
+                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
+
+                }
                 var respuesta = await client.PostAsync(Constantes.url + "Productos/App.php", str);
                 var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
                 System.Diagnostics.Debug.WriteLine("Productos: " + json);
@@ -150,7 +230,7 @@ namespace PinkFashion.ViewModels
             try
             {
                 var client = new HttpClient();
-                StringContent str = new StringContent("op=categorias", Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str = new StringContent("op=categorias&idFamilia=" + this.familia.id_clasificacion, Encoding.UTF8, "application/x-www-form-urlencoded");
                 var respuesta = await client.PostAsync(Constantes.url + "Listas/App.php", str);
                 var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
                 System.Diagnostics.Debug.WriteLine("Categorias: " + json);

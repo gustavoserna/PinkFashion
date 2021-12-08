@@ -6,6 +6,7 @@
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
     xmlns:local="clr-namespace:PinkFashion.Controls;assembly=PinkFashion"
+    x:Name="FamiliaPage"
     x:Class="PinkFashion.Views.FamiliaVista">
 
     <NavigationPage.TitleView>
@@ -73,7 +74,23 @@
 
     <ContentPage.Content>
 
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
+
+            <!-- Titulo -->
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Padding="10"
+                BackgroundColor="Transparent">
+
+                <Label
+                    Text="{Binding NameFamilia}"
+                    FontSize="18"
+                    TextColor="#eb068c"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+
+            </StackLayout>
+            <!-- End titulo -->
 
             <!-- Menu -->
             <carousel:CarouselViewControl
@@ -85,14 +102,17 @@
                 ArrowsSize="20"
                 ArrowsBackgroundColor="Transparent"
                 ItemsSource="{Binding ColCategorias}"
-                BackgroundColor="Transparent"
-                HeightRequest="30">
+                BackgroundColor="White"
+                HeightRequest="60">
 
                 <carousel:CarouselViewControl.ItemTemplate>
 
                     <DataTemplate>
 
-                        <Grid Padding="10,0,0,0" BackgroundColor="Transparent">
+                        <Grid Padding="10,0,0,0"
+                              BackgroundColor="Transparent"
+                              VerticalOptions="CenterAndExpand"
+                              HorizontalOptions="CenterAndExpand">
 
                             <local:FlowListView_R
                                 FlowColumnCount="3"
@@ -109,11 +129,12 @@
 
                                     <DataTemplate>
 
-                                        <StackLayout Padding="5">
+                                        <StackLayout Padding="5" VerticalOptions="CenterAndExpand">
 
                                             <Label
                                                 Text="{Binding Categoria}"
                                                 HorizontalOptions="CenterAndExpand"
+                                                VerticalOptions="CenterAndExpand"
                                                 TextColor="#333" />
 
                                         </StackLayout>
@@ -133,12 +154,70 @@
             </carousel:CarouselViewControl>
             <!-- End Menu -->
 
+            <!-- Filtros -->
+            <StackLayout
+                BackgroundColor="Transparent"
+                Padding="10"
+                HorizontalOptions="FillAndExpand">
+
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="FillAndExpand">
+
+                    <Image
+                        HeightRequest="30"
+                        Source="add.png"
+                        VerticalOptions="CenterAndExpand" />
+
+                    <Label
+                        Text="Filtrar por Marca"
+                        FontSize="14"
+                        TextDecorations="Underline"
+                        VerticalOptions="CenterAndExpand">
+
+                        <Label.GestureRecognizers>
+
+                            <TapGestureRecognizer
+                                CommandParameter="{Binding .}"
+                                Command="{Binding Path=BindingContext.AbrirMarcasCommand,  Source={x:Reference FamiliaPage}}"/>
+
+                        </Label.GestureRecognizers>
+
+                    </Label>
+
+                </StackLayout>
+
+            </StackLayout>
+            <!-- End Filtros -->
+
+            <BoxView
+                HeightRequest="1"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#f1f1f1" />
+
+            <StackLayout
+                IsVisible="{Binding NoEncontradoVisible}"
+                BackgroundColor="Transparent"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+
+                <Label
+                    Text="No encontramos productos con esa búsqueda."
+                    FontSize="16"
+                    TextColor="#666"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+
+            </StackLayout>
+
             <flv:FlowListView 
                 x:Name="listview"
                 FlowColumnCount="2"
                 SeparatorColor="#f1f1f1"
                 HasUnevenRows="true"
                 FlowItemsSource="{Binding Productos}"
+                IsVisible="{Binding ListViewVisible}"
                 IsRefreshing="{Binding IsBusy}" BackgroundColor="White">
 
                 <flv:FlowListView.FlowColumnTemplate>
@@ -155,12 +234,6 @@
                                 HorizontalOptions="FillAndExpand"
                                 Padding="0"
                                 BackgroundColor="White">
-
-                                <Label
-                                    Text="{Binding marca}"
-                                    HorizontalTextAlignment="Center"
-                                    HorizontalOptions="CenterAndExpand"
-                                    Style="{StaticResource MediumLabelStyle}"/>
 
                                 <Grid>
 
@@ -219,6 +292,13 @@
                                     Text="{Binding producto}"
                                     HorizontalTextAlignment="Center"
                                     HorizontalOptions="CenterAndExpand"
+                                    FontAttributes="Bold"
+                                    Style="{StaticResource SmallLabelStyle}"/>
+
+                                <Label
+                                    Text="{Binding marca}"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="CenterAndExpand"
                                     Style="{StaticResource SmallLabelStyle}"/>
 
                                 <StackLayout
@@ -265,7 +345,6 @@
                                         Text="{Binding precioCarrito}"
                                         HorizontalOptions="CenterAndExpand"
                                         HorizontalTextAlignment="Center"
-                                        FontAttributes="Bold"
                                         Style="{StaticResource SmallLabelStyle}"/>
 
                                 </StackLayout>
