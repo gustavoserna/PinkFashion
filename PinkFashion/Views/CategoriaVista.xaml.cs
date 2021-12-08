@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PinkFashion.Models;
+using PinkFashion.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +13,8 @@ namespace PinkFashion.Views
 {
     public partial class CategoriaVista : ContentPage
     {
-        public CategoriaVista()
+        CategoriaViewModel categoriaViewModel;
+        public CategoriaVista(Categoria_ categoria)
         {
             InitializeComponent();
         }

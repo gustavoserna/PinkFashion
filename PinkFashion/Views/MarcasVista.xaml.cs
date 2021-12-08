@@ -10,6 +10,23 @@ namespace PinkFashion.Views
     {
         MarcasViewModel marcasViewModel;
 
+        public MarcasVista(Categoria_ categoria)
+        {
+            InitializeComponent();
+            Title = "Marcas";
+
+            var close = new ToolbarItem()
+            {
+                Text = "Cerrar"
+            };
+            close.Command = new Command(() =>
+            {
+                Navigation.PopModalAsync();
+            });
+            ToolbarItems.Add(close);
+            BindingContext = marcasViewModel = new MarcasViewModel(categoria);
+        }
+
         public MarcasVista(Familia familia)
         {
             InitializeComponent();
