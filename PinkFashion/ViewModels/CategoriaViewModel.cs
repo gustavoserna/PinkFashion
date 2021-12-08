@@ -134,10 +134,10 @@ namespace PinkFashion.ViewModels
                         LoadProductosCommand.Execute(null);
                     });
 
-                    //var page = new NavigationPage(new MarcasVista(this.));
-                    //page.BarBackgroundColor = App.bgColor;
-                    //page.BarTextColor = App.textColor;
-                    //App.Current.MainPage.Navigation.PushModalAsync(page);
+                    var page = new NavigationPage(new MarcasVista(this.categoria));
+                    page.BarBackgroundColor = App.bgColor;
+                    page.BarTextColor = App.textColor;
+                    App.Current.MainPage.Navigation.PushModalAsync(page);
                 });
             }
         }

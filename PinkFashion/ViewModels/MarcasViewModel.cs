@@ -16,10 +16,22 @@ namespace PinkFashion.ViewModels
         json_object json_ob = new json_object();
 
         Familia familia;
+        Categoria_ categoria;
 
         public ObservableCollection<Marcas_> Marcas { get; set; }
 
         public Command LoadMarcasCommand { get; set; }
+
+        public MarcasViewModel(Categoria_ categoria)
+        {
+            this.categoria = categoria;
+            Marcas = new ObservableCollection<Marcas_>();
+
+            LoadMarcasCommand = new Command(async () =>
+            {
+                await ExecuteLoadMarcasCommand();
+            });
+        }
 
         public MarcasViewModel(Familia familia)
         {
