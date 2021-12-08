@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace PinkFashion.ViewModels
 {
-    class CategoriaViewModel : BaseViewModel
+    class CategoriaViewModel : InsigniaViewModel
     {
         Categoria_ categoria;
         string idCategoria = "";
