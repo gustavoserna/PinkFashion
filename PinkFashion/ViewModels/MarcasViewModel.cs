@@ -103,7 +103,14 @@ namespace PinkFashion.ViewModels
             try
             {
                 var client = new HttpClient();
-                StringContent str = new StringContent("op=marcas&idFamilia=" + this.familia.id_clasificacion, Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str;
+                if(this.familia != null)
+                {
+                    str = new StringContent("op=marcas&idFamilia=" + this.familia.id_clasificacion, Encoding.UTF8, "application/x-www-form-urlencoded");
+                } else
+                {
+                    str = new StringContent("op=marcas&idFamilia=" + this.categoria.IdCategoria, Encoding.UTF8, "application/x-www-form-urlencoded");
+                }
                 var respuesta = await client.PostAsync(Constantes.url + "Listas/App.php", str);
                 var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
                 System.Diagnostics.Debug.WriteLine("Marcas: " + json);

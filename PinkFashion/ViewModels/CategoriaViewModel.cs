@@ -16,6 +16,7 @@ namespace PinkFashion.ViewModels
     {
         Categoria_ categoria;
         string idCategoria = "";
+        string idSubcategoria = "";
         string idMarca = "";
         json_object json_ob = new json_object();
         public ObservableCollection<ColeccionSubcategorias> ColSubCategorias { get; set; }
@@ -176,6 +177,18 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        public ICommand RemoverFiltrosCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    this.idMarca = "";
+                    LoadProductosCommand.Execute(null);
+                });
+            }
+        }
+
         public ICommand AbrirMarcasCommand
         {
             get
@@ -196,20 +209,42 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        public ICommand SubcategoriaTappedCommand
+        {
+            get
+            {
+                return new Command<Subcategoria_>(async (Subcategoria_ subcategoria) =>
+                {
+                    idSubcategoria = subcategoria.idsubcategorias;
+                    LoadProductosCommand.Execute(null);
+                });
+            }
+        }
+
         public async Task<Producto_[]> GetProductos()
         {
             try
             {
                 var client = new HttpClient();
                 StringContent str = null;
-                if (idMarca.Equals(""))
+                if (!idSubcategoria.Equals(""))
+                {
+                    if (idMarca.Equals(""))
+                    {
+                        str = new StringContent("op=ObtenerProductosSubCategoria&idcategoria=" + this.categoria.IdCategoria + "&idsubcategoria=" + this.idSubcategoria, Encoding.UTF8, "application/x-www-form-urlencoded");
+                    }
+                    else
+                    {
+                        str = new StringContent("op=ObtenerProductosSubCategoria&idsubcategoria=" + this.idSubcategoria + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
+                    }
+                }
+                else if (idMarca.Equals(""))
                 {
                     str = new StringContent("op=ObtenerProductosCategoria&idcategoria=" + this.categoria.IdCategoria, Encoding.UTF8, "application/x-www-form-urlencoded");
                 }
                 else
                 {
                     str = new StringContent("op=ObtenerProductosCategoria&idcategoria=" + this.categoria.IdCategoria + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
-
                 }
                 var respuesta = await client.PostAsync(Constantes.url + "Productos/App.php", str);
                 var json = respuesta.Content.ReadAsStringAsync().Result.Trim();

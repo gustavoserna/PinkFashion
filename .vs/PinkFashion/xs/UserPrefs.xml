@@ -2,13 +2,14 @@
   <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ViewModels/ProductoViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ViewModels/CategoriaViewModel.cs">
     <Files>
-      <File FileName="PinkFashion/Views/Producto.xaml" Line="460" Column="34" />
-      <File FileName="PinkFashion/ViewModels/ProductoViewModel.cs" Line="21" Column="59" />
-      <File FileName="PinkFashion/Views/Inicio.xaml" Line="351" Column="61" />
+      <File FileName="PinkFashion/Views/Producto.xaml" Line="489" Column="43" />
+      <File FileName="PinkFashion/Views/Inicio.xaml" Line="353" Column="45" />
+      <File FileName="PinkFashion/ViewModels/ProductoViewModel.cs" Line="276" Column="34" />
       <File FileName="PinkFashion/Views/FamiliaVista.xaml" Line="127" Column="81" />
-      <File FileName="PinkFashion/Views/CategoriaVista.xaml" Line="143" Column="81" />
+      <File FileName="PinkFashion/Views/CategoriaVista.xaml" Line="148" Column="81" />
+      <File FileName="PinkFashion/ViewModels/CategoriaViewModel.cs" Line="211" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +18,7 @@
             <Node name="PinkFashion" expanded="True">
               <Node name="Models" expanded="True" />
               <Node name="ViewModels" expanded="True">
-                <Node name="ProductoViewModel.cs" selected="True" />
+                <Node name="CategoriaViewModel.cs" selected="True" />
               </Node>
               <Node name="Views" expanded="True">
                 <Node name="CategoriaVista.xaml" expanded="True" />
@@ -39,5 +40,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.R58NB32EELY" />
 </Properties>

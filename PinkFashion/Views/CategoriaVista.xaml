@@ -126,7 +126,7 @@
                                 HorizontalScrollBarVisibility="Never"
                                 BackgroundColor="Transparent"
                                 FlowItemsSource="{Binding subcategorias}"
-                                FlowItemTappedCommand="{Binding BindingContext.ItemTappedCommand, Source={x:Reference CategoriaPage}  }"
+                                FlowItemTappedCommand="{Binding BindingContext.SubcategoriaTappedCommand, Source={x:Reference CategoriaPage}  }"
                                 IsPullToRefreshEnabled="False"
                                 HeightRequest="60">
 
@@ -191,6 +191,20 @@
 
                         </Label.GestureRecognizers>
 
+                    </Label>
+
+                    <Label
+                        Text="Remover filtros"
+                        FontSize="14"
+                        TextDecorations="Underline"
+                        VerticalOptions="CenterAndExpand">
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                CommandParameter="{Binding .}"
+                                Command="{Binding Path=BindingContext.RemoverFiltrosCommand,  Source={x:Reference CategoriaPage}}"/>
+                        </Label.GestureRecognizers>
+                        
                     </Label>
 
                 </StackLayout>
