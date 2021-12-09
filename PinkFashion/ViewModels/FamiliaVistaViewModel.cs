@@ -168,6 +168,18 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        public ICommand ItemTappedCommand
+        {
+
+            get
+            {
+                return new Command<Categoria_>(async (Categoria_ model) =>
+                {
+                    await App.Current.MainPage.Navigation.PushAsync(new CategoriaVista(model));
+                });
+            }
+        }
+
         public ICommand AbrirMarcasCommand
         {
             get

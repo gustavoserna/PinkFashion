@@ -1,0 +1,242 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj": {}
+  },
+  "projects": {
+    "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj",
+        "projectName": "PinkFashion.Android",
+        "projectPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj",
+        "packagesPath": "/Users/gustavoserna/.nuget/packages/",
+        "outputPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/gustavoserna/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid11.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid11.0": {
+            "projectReferences": {
+              "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj": {
+                "projectPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid11.0": {
+          "dependencies": {
+            "CardsView": {
+              "target": "Package",
+              "version": "[2.8.0, )"
+            },
+            "CarouselView.FormsPlugin": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Com.OneSignal": {
+              "target": "Package",
+              "version": "[3.10.6, )"
+            },
+            "Conekta.Xamarin": {
+              "target": "Package",
+              "version": "[1.0.6, )"
+            },
+            "DLToolkit.Forms.Controls.FlowListView": {
+              "target": "Package",
+              "version": "[2.0.11, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Plugin.CurrentActivity": {
+              "target": "Package",
+              "version": "[2.1.0.4, )"
+            },
+            "Sharpnado.Presentation.Forms": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            },
+            "Xam.Plugins.Forms.ImageCircle": {
+              "target": "Package",
+              "version": "[3.1.1.1-beta, )"
+            },
+            "Xamarin.Auth": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Xamarin.Build.Download": {
+              "target": "Package",
+              "version": "[0.10.0, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
+            "Xamarin.Firebase.Analytics": {
+              "target": "Package",
+              "version": "[119.0.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2083, )"
+            },
+            "Xamarin.Forms.AppLinks": {
+              "target": "Package",
+              "version": "[5.0.0.2083, )"
+            },
+            "Xamarin.Forms.OpenWhatsApp": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "Xamarin.Forms.PancakeView": {
+              "target": "Package",
+              "version": "[2.3.0.759, )"
+            },
+            "Xamarin.GooglePlayServices.Base": {
+              "target": "Package",
+              "version": "[117.6.0, )"
+            },
+            "XamarinFastEntry.Behaviors": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            }
+          }
+        }
+      }
+    },
+    "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj",
+        "projectName": "PinkFashion",
+        "projectPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj",
+        "packagesPath": "/Users/gustavoserna/.nuget/packages/",
+        "outputPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/gustavoserna/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "CardsView": {
+              "target": "Package",
+              "version": "[2.8.0, )"
+            },
+            "CarouselView.FormsPlugin": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Com.OneSignal": {
+              "target": "Package",
+              "version": "[3.10.6, )"
+            },
+            "Conekta.Xamarin": {
+              "target": "Package",
+              "version": "[1.0.6, )"
+            },
+            "DLToolkit.Forms.Controls.FlowListView": {
+              "target": "Package",
+              "version": "[2.0.11, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Sharpnado.Presentation.Forms": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            },
+            "Xam.Plugins.Forms.ImageCircle": {
+              "target": "Package",
+              "version": "[3.1.1.1-beta, )"
+            },
+            "Xamarin.Auth": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2083, )"
+            },
+            "Xamarin.Forms.OpenWhatsApp": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "Xamarin.Forms.PancakeView": {
+              "target": "Package",
+              "version": "[2.3.0.759, )"
+            },
+            "XamarinFastEntry.Behaviors": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

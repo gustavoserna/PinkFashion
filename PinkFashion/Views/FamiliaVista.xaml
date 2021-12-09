@@ -15,13 +15,14 @@
 
             <Grid.ColumnDefinitions>
 
-                <ColumnDefinition Width="25*"/>
+                <!--<ColumnDefinition Width="25*"/>-->
+                <ColumnDefinition Width="10*"/>
                 <ColumnDefinition Width="53*"/>
                 <ColumnDefinition Width="30*"/>
 
             </Grid.ColumnDefinitions>
 
-            <Image x:Name="cuenta" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Source="cuenta.png"  HeightRequest="30" />
+            <!--<Image x:Name="cuenta" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Source="cuenta.png"  HeightRequest="30" />-->
 
             <Image x:Name="logo" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="logo.png"  HeightRequest="45" />
 
@@ -76,22 +77,6 @@
 
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
 
-            <!-- Titulo -->
-            <StackLayout
-                HorizontalOptions="FillAndExpand"
-                Padding="10"
-                BackgroundColor="Transparent">
-
-                <Label
-                    Text="{Binding NameFamilia}"
-                    FontSize="18"
-                    TextColor="#eb068c"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand" />
-
-            </StackLayout>
-            <!-- End titulo -->
-
             <!-- Menu -->
             <carousel:CarouselViewControl
                 InterPageSpacing="0"
@@ -100,6 +85,7 @@
                 ArrowsParentMargin="0"
                 ArrowsTintColor="#eb068c"
                 ArrowsSize="20"
+                HorizontalArrowsPosition="Center"
                 ArrowsBackgroundColor="Transparent"
                 ItemsSource="{Binding ColCategorias}"
                 BackgroundColor="White"
@@ -112,7 +98,8 @@
                         <Grid Padding="10,0,0,0"
                               BackgroundColor="Transparent"
                               VerticalOptions="CenterAndExpand"
-                              HorizontalOptions="CenterAndExpand">
+                              HorizontalOptions="CenterAndExpand"
+                              HeightRequest="60">
 
                             <local:FlowListView_R
                                 FlowColumnCount="3"
@@ -123,13 +110,17 @@
                                 HorizontalScrollBarVisibility="Never"
                                 BackgroundColor="Transparent"
                                 FlowItemsSource="{Binding categorias}"
-                                IsPullToRefreshEnabled="False">
+                                FlowItemTappedCommand="{Binding BindingContext.ItemTappedCommand, Source={x:Reference FamiliaPage}  }"
+                                IsPullToRefreshEnabled="False"
+                                HeightRequest="60">
 
                                 <local:FlowListView_R.FlowColumnTemplate>
 
                                     <DataTemplate>
 
-                                        <StackLayout Padding="5" VerticalOptions="CenterAndExpand">
+                                        <StackLayout
+                                            HeightRequest="60"
+                                            VerticalOptions="CenterAndExpand">
 
                                             <Label
                                                 Text="{Binding Categoria}"
@@ -154,9 +145,25 @@
             </carousel:CarouselViewControl>
             <!-- End Menu -->
 
+            <!-- Titulo -->
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Padding="10"
+                BackgroundColor="Transparent">
+
+                <Label
+                    Text="{Binding NameFamilia}"
+                    FontSize="18"
+                    TextColor="#eb068c"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+
+            </StackLayout>
+            <!-- End titulo -->
+
             <!-- Filtros -->
             <StackLayout
-                BackgroundColor="Transparent"
+                BackgroundColor="White"
                 Padding="10"
                 HorizontalOptions="FillAndExpand">
 

@@ -4,7 +4,24 @@ using System.Text;
 
 namespace PinkFashion.Models
 {
-    class Subcategoria_
+    public class Subcategoria_
     {
+
+        public string nombre { get; set; }
+        public string idsubcategorias { get; set; }
+        public string idcategoria { get; set; }
+        string _imagen;
+        public string imagen
+        {
+            get
+            {
+                return Constantes.root_url + _imagen;
+            }
+            set
+            {
+                _imagen = value;
+            }
+        }
+
     }
 }

@@ -78,7 +78,7 @@ namespace PinkFashion.ViewModels
                 Productos.Clear();
                 IEnumerable<Producto_> productos = null;
                 List<Producto_> lista = new List<Producto_>();
-                await GetProductos(this.categoria).ContinueWith(t =>
+                await GetProductos().ContinueWith(t =>
                 {
                     if (t.Status == TaskStatus.RanToCompletion)
                     {
@@ -88,7 +88,7 @@ namespace PinkFashion.ViewModels
                         }
                     }
                 });
-
+                
                 productos = lista;
 
                 foreach (var item in productos)
@@ -119,7 +119,53 @@ namespace PinkFashion.ViewModels
 
         async Task ExecuteLoadSubcategoriasCommand()
         {
+            try
+            {
+                ColSubCategorias.Clear();
+                List<Subcategoria_> listasubcategorias_for_col = new List<Subcategoria_>();
 
+                Subcategorias.Clear();
+                List<Subcategoria_> listasubcategorias = new List<Subcategoria_>();
+
+                await GetSubcategorias().ContinueWith(t =>
+                {
+                    if (t.Status == TaskStatus.RanToCompletion)
+                    {
+                        foreach (Subcategoria_ subcategoria in t.Result)
+                        {
+                            listasubcategorias.Add(subcategoria);
+                            listasubcategorias_for_col.Add(subcategoria);
+                        }
+                    }
+                });
+
+                //carousel subcategorias
+                double totalSlidesSubcategorias = Math.Ceiling((Double)listasubcategorias_for_col.Count / 3);
+                for (int i = 0; i < totalSlidesSubcategorias; i++)
+                {
+                    ColeccionSubcategorias coleccion = new ColeccionSubcategorias();
+                    coleccion.subcategorias = new List<Subcategoria_>();
+
+                    for (int k = 0; k <= listasubcategorias_for_col.Count; k++)
+                    {
+                        if (k < 3 && listasubcategorias_for_col.Count > 0)
+                        {
+                            coleccion.subcategorias.Add(listasubcategorias_for_col[0]);
+                            listasubcategorias_for_col.RemoveAt(0);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    ColSubCategorias.Add(coleccion);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
         }
 
         public ICommand AbrirMarcasCommand
@@ -142,19 +188,19 @@ namespace PinkFashion.ViewModels
             }
         }
 
-        public async Task<Producto_[]> GetProductos(Categoria_ categoria)
+        public async Task<Producto_[]> GetProductos()
         {
             try
             {
                 var client = new HttpClient();
                 StringContent str = null;
-                if (idCategoria.Equals(""))
+                if (idMarca.Equals(""))
                 {
-                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + categoria.IdCategoria, Encoding.UTF8, "application/x-www-form-urlencoded");
+                    str = new StringContent("op=ObtenerProductosCategoria&idcategoria=" + this.categoria.IdCategoria, Encoding.UTF8, "application/x-www-form-urlencoded");
                 }
                 else
                 {
-                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + categoria.IdCategoria + "&idCategoria=" + idCategoria, Encoding.UTF8, "application/x-www-form-urlencoded");
+                    str = new StringContent("op=ObtenerProductosCategoria&idcategoria=" + this.categoria.IdCategoria + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
 
                 }
                 var respuesta = await client.PostAsync(Constantes.url + "Productos/App.php", str);
@@ -179,32 +225,32 @@ namespace PinkFashion.ViewModels
 
         }
 
-        //public async Task<Categoria_[]> GetSubcategorias()
-        //{
-            //try
-            //{
-            //    var client = new HttpClient();
-            //    StringContent str = new StringContent("op=categorias&idFamilia=" + this.familia.id_clasificacion, Encoding.UTF8, "application/x-www-form-urlencoded");
-            //    var respuesta = await client.PostAsync(Constantes.url + "Listas/App.php", str);
-            //    var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
-            //    System.Diagnostics.Debug.WriteLine("Categorias: " + json);
+        public async Task<Subcategoria_[]> GetSubcategorias()
+        {
+            try
+            {
+                var client = new HttpClient();
+                StringContent str = new StringContent("op=subcategorias&idCategoria=" + this.categoria.IdCategoria, Encoding.UTF8, "application/x-www-form-urlencoded");
+                var respuesta = await client.PostAsync(Constantes.url + "Listas/App.php", str);
+                var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
+                System.Diagnostics.Debug.WriteLine("Subcategorias: " + json);
 
 
-            //    if (json != "")
-            //    {
-            //        json_ob = JsonConvert.DeserializeObject<json_object>(json);
-            //    }
-            //    else
-            //    {
-            //        return json_ob.categorias = null;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    System.Diagnostics.Debug.WriteLine(ex.Message);
-            //}
-            //return json_ob.categorias;
-        //}
+                if (json != "")
+                {
+                    json_ob = JsonConvert.DeserializeObject<json_object>(json);
+                }
+                else
+                {
+                    return json_ob.subcategorias = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            return json_ob.subcategorias;
+        }
     }
 
     public class json_object
@@ -212,8 +258,8 @@ namespace PinkFashion.ViewModels
         [JsonProperty("ListadoProductos")]
         public Producto_[] productos { get; set; }
 
-        [JsonProperty("EntidadCategorias")]
-        public Categoria_[] categorias { get; set; }
+        [JsonProperty("EntidadSubcategorias")]
+        public Subcategoria_[] subcategorias { get; set; }
 
     }
 }

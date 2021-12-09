@@ -6,5 +6,6 @@ namespace PinkFashion.Models
 {
     class ColeccionSubcategorias
     {
+        public List<Subcategoria_> subcategorias { get; set; }
     }
 }

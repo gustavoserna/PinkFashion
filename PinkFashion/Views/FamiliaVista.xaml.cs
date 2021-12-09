@@ -14,7 +14,7 @@ namespace PinkFashion.Views
         {
             InitializeComponent();
 
-            var clickCuenta = new TapGestureRecognizer();
+            /*var clickCuenta = new TapGestureRecognizer();
             clickCuenta.Tapped += async (s, e) =>
             {
 
@@ -25,7 +25,7 @@ namespace PinkFashion.Views
 
 
             };
-            cuenta.GestureRecognizers.Add(clickCuenta);
+            cuenta.GestureRecognizers.Add(clickCuenta);*/
 
             var clickCarrito = new TapGestureRecognizer();
             clickCarrito.Tapped += async (s, e) =>
