@@ -325,7 +325,7 @@
                                         VerticalScrollBarVisibility="Never"
                                         HorizontalScrollBarVisibility="Never"
                                         BackgroundColor="Transparent"
-                                        FlowItemTappedCommand="{Binding ProductoTappedCommand}"
+                                        FlowItemTappedCommand="{Binding BindingContext.ProductoTappedCommand, Source={x:Reference InicioPage}  }"
                                         FlowItemsSource="{Binding superprecios}"
                                         IsPullToRefreshEnabled="False">
 
@@ -494,6 +494,7 @@
                         HasUnevenRows="true"
                         FlowItemsSource="{Binding LosFavoritos}"
                         IsRefreshing="{Binding IsRefreshingFavoritos}"
+                        FlowItemTappedCommand="{Binding BindingContext.ProductoTappedCommand, Source={x:Reference InicioPage}  }"
                         BackgroundColor="White">
 
                         <flv:FlowListView.FlowColumnTemplate>

@@ -19,7 +19,6 @@ namespace PinkFashion.ViewModels
         string idMarca = "";
         json_object json_ob = new json_object();
         public ObservableCollection<ColeccionSubcategorias> ColSubCategorias { get; set; }
-        public ObservableCollection<Subcategoria_> Subcategorias { get; set; }
         public ObservableCollection<Producto_> Productos { get; set; }
 
         public Command LoadProductosCommand { get; set; }
@@ -52,7 +51,6 @@ namespace PinkFashion.ViewModels
             this.categoria = categoria;
             Productos = new ObservableCollection<Producto_>();
             ColSubCategorias = new ObservableCollection<ColeccionSubcategorias>();
-            Subcategorias = new ObservableCollection<Subcategoria_>();
             NameCategoria = categoria.Categoria;
 
             LoadProductosCommand = new Command(async () =>
@@ -124,7 +122,6 @@ namespace PinkFashion.ViewModels
                 ColSubCategorias.Clear();
                 List<Subcategoria_> listasubcategorias_for_col = new List<Subcategoria_>();
 
-                Subcategorias.Clear();
                 List<Subcategoria_> listasubcategorias = new List<Subcategoria_>();
 
                 await GetSubcategorias().ContinueWith(t =>
@@ -165,6 +162,17 @@ namespace PinkFashion.ViewModels
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+        }
+
+        public ICommand ProductoTappedCommand
+        {
+            get
+            {
+                return new Command<Producto_>(async (Producto_ model) =>
+                {
+                    await App.Current.MainPage.Navigation.PushAsync(new Producto(model));
+                });
             }
         }
 

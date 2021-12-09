@@ -15,6 +15,7 @@
 
             <Grid.ColumnDefinitions>
 
+                <!--<ColumnDefinition Width="25*"/>-->
                 <ColumnDefinition Width="10*"/>
                 <ColumnDefinition Width="53*"/>
                 <ColumnDefinition Width="30*"/>
@@ -100,10 +101,11 @@
                 ArrowsParentMargin="0"
                 ArrowsTintColor="#eb068c"
                 ArrowsSize="20"
+                HorizontalArrowsPosition="Center"
                 ArrowsBackgroundColor="Transparent"
                 ItemsSource="{Binding ColSubCategorias}"
                 BackgroundColor="White"
-                HeightRequest="30">
+                HeightRequest="60">
 
                 <carousel:CarouselViewControl.ItemTemplate>
 
@@ -112,7 +114,8 @@
                         <Grid Padding="10,0,0,0"
                               BackgroundColor="Transparent"
                               VerticalOptions="CenterAndExpand"
-                              HorizontalOptions="CenterAndExpand">
+                              HorizontalOptions="CenterAndExpand"
+                              HeightRequest="60">
 
                             <local:FlowListView_R
                                 FlowColumnCount="3"
@@ -123,16 +126,21 @@
                                 HorizontalScrollBarVisibility="Never"
                                 BackgroundColor="Transparent"
                                 FlowItemsSource="{Binding subcategorias}"
-                                IsPullToRefreshEnabled="False">
+                                FlowItemTappedCommand="{Binding BindingContext.ItemTappedCommand, Source={x:Reference CategoriaPage}  }"
+                                IsPullToRefreshEnabled="False"
+                                HeightRequest="60">
 
                                 <local:FlowListView_R.FlowColumnTemplate>
 
                                     <DataTemplate>
 
-                                        <StackLayout Padding="5" VerticalOptions="CenterAndExpand">
+                                        <StackLayout
+                                            HeightRequest="60"
+                                            VerticalOptions="CenterAndExpand">
 
                                             <Label
                                                 Text="{Binding nombre}"
+                                                HorizontalTextAlignment="Center"
                                                 HorizontalOptions="CenterAndExpand"
                                                 VerticalOptions="CenterAndExpand"
                                                 TextColor="#333" />
@@ -166,7 +174,7 @@
 
                     <Image
                         HeightRequest="30"
-                        Source="add.png"
+                        Source="filtromarca.png"
                         VerticalOptions="CenterAndExpand" />
 
                     <Label
@@ -218,6 +226,7 @@
                 HasUnevenRows="true"
                 FlowItemsSource="{Binding Productos}"
                 IsVisible="{Binding ListViewVisible}"
+                FlowItemTappedCommand="{Binding BindingContext.ProductoTappedCommand, Source={x:Reference CategoriaPage}  }"
                 IsRefreshing="{Binding IsBusy}" BackgroundColor="White">
 
                 <flv:FlowListView.FlowColumnTemplate>

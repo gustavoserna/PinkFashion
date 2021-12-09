@@ -304,14 +304,12 @@ namespace PinkFashion.ViewModels
                 List<Familia> listafamilias_for_col = new List<Familia>();
 
                 InicioVista.Familias.Clear();
-                IEnumerable<Familia> familias = null;
                 List<Familia> listafamilias = new List<Familia>();
 
                 ColSuperPrecio.Clear();
                 List<Producto_> listasuperprecios_for_col = new List<Producto_>();
 
                 InicioVista.SuperPrecios.Clear();
-                IEnumerable<Producto_> superprecios = null;
                 List<Producto_> listasuperprecios = new List<Producto_>();
 
                 InicioVista.LayoutApp.Clear();

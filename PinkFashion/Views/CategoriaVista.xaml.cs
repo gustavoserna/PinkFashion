@@ -31,7 +31,7 @@ namespace PinkFashion.Views
                 categoriaViewModel.LoadProductosCommand.Execute(null);
             }
 
-            if (categoriaViewModel.Subcategorias.Count == 0)
+            if (categoriaViewModel.ColSubCategorias.Count == 0)
             {
                 categoriaViewModel.LoadSubcategoriasCommand.Execute(null);
             } 

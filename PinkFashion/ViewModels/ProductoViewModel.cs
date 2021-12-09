@@ -18,6 +18,9 @@ namespace PinkFashion.ViewModels
     {
         public Producto_ Productos { get; set; }
 
+        public ObservableCollection<ColeccionProductos> ColRelacionados { get; set; }
+        public ObservableCollection<ColeccionVariantes> ColVariantes { get; set; }
+
         public Command LoadProductosCommand { get; set; }
 
         json_object json_ob = new json_object();
@@ -181,6 +184,9 @@ namespace PinkFashion.ViewModels
             Productos = new Producto_();
             Productos.VariantesProductos = new ObservableCollection<VariantesProducto>();
             Productos.ProductosRelacionados = new ObservableCollection<Producto_>();
+            ColVariantes = new ObservableCollection<ColeccionVariantes>();
+            ColRelacionados = new ObservableCollection<ColeccionProductos>();
+
             LoadProductosCommand = new Command(async () =>
             {
                 await ExecuteLoadProductosCommand();
@@ -196,9 +202,15 @@ namespace PinkFashion.ViewModels
 
             try
             {
+                ColVariantes.Clear();
+                List<VariantesProducto> listavariantes_for_col = new List<VariantesProducto>();
+
                 Productos.VariantesProductos.Clear();
                 IEnumerable<VariantesProducto> variantes = null;
                 List<VariantesProducto> lista = new List<VariantesProducto>();
+
+                ColRelacionados.Clear();
+                List<Producto_> listarelacionados_for_col = new List<Producto_>();
 
                 Productos.ProductosRelacionados.Clear();
                 IEnumerable<Producto_> relacionados = null;
@@ -215,17 +227,65 @@ namespace PinkFashion.ViewModels
                         descripcion = t.Result.descripcion;
                         producto = t.Result.producto;
                         Precio = t.Result.Precio;
-                        for (int i = 0; i < t.Result.VariantesProductos.Count; i++)
+                        foreach(VariantesProducto variante in t.Result.VariantesProductos)
                         {
-                            lista.Add(t.Result.VariantesProductos[i]);
+                            lista.Add(variante);
+                            listavariantes_for_col.Add(variante);
                         }
-                        for (int i = 0; i < t.Result.ProductosRelacionados.Count; i++)
+                        foreach(Producto_ producto in t.Result.ProductosRelacionados)
                         {
-                            listarelaciones.Add(t.Result.ProductosRelacionados[i]);
+                            listarelaciones.Add(producto);
+                            listarelacionados_for_col.Add(producto);
                         }
 
                     }
                 });
+
+                //carousel variantes
+                double totalSlidesVariantes = Math.Ceiling((Double)listavariantes_for_col.Count / 2);
+                for (int i = 0; i < totalSlidesVariantes; i++)
+                {
+                    ColeccionVariantes coleccion = new ColeccionVariantes();
+                    coleccion.variantes = new List<VariantesProducto>();
+
+                    for (int k = 0; k <= listavariantes_for_col.Count; k++)
+                    {
+                        if (k < 2 && listavariantes_for_col.Count > 0)
+                        {
+                            coleccion.variantes.Add(listavariantes_for_col[0]);
+                            listavariantes_for_col.RemoveAt(0);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    ColVariantes.Add(coleccion);
+                }
+
+                //carousel relacionados
+                double totalSlidesRelacionados = Math.Ceiling((Double)listarelacionados_for_col.Count / 2);
+                for (int i = 0; i < totalSlidesRelacionados; i++)
+                {
+                    ColeccionProductos coleccion = new ColeccionProductos();
+                    coleccion.productos = new List<Producto_>();
+
+                    for (int k = 0; k <= listarelacionados_for_col.Count; k++)
+                    {
+                        if (k < 2 && listarelacionados_for_col.Count > 0)
+                        {
+                            coleccion.productos.Add(listarelacionados_for_col[0]);
+                            listarelacionados_for_col.RemoveAt(0);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    ColRelacionados.Add(coleccion);
+                }
 
                 variantes = lista;
                 relacionados = listarelaciones;

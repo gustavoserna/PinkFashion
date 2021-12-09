@@ -197,6 +197,7 @@
     <BundleResource Include="Resources\WhatsApp_verde.png" />
     <BundleResource Include="Resources\facebook.png" />
     <BundleResource Include="Resources\google.png" />
+    <BundleResource Include="Resources\filtromarca.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

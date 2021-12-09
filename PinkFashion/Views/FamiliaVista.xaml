@@ -124,6 +124,7 @@
 
                                             <Label
                                                 Text="{Binding Categoria}"
+                                                HorizontalTextAlignment="Center"
                                                 HorizontalOptions="CenterAndExpand"
                                                 VerticalOptions="CenterAndExpand"
                                                 TextColor="#333" />
@@ -173,7 +174,7 @@
 
                     <Image
                         HeightRequest="30"
-                        Source="add.png"
+                        Source="filtromarca.png"
                         VerticalOptions="CenterAndExpand" />
 
                     <Label
@@ -225,6 +226,7 @@
                 HasUnevenRows="true"
                 FlowItemsSource="{Binding Productos}"
                 IsVisible="{Binding ListViewVisible}"
+                FlowItemTappedCommand="{Binding BindingContext.ProductoTappedCommand, Source={x:Reference FamiliaPage}  }"
                 IsRefreshing="{Binding IsBusy}" BackgroundColor="White">
 
                 <flv:FlowListView.FlowColumnTemplate>

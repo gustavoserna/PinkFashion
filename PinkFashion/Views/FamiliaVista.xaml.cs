@@ -72,7 +72,7 @@ namespace PinkFashion.Views
                 familiaVistaViewModel.LoadProductosCommand.Execute(null);
             }
 
-            if(familiaVistaViewModel.Categorias.Count == 0)
+            if(familiaVistaViewModel.ColCategorias.Count == 0)
             {
                 familiaVistaViewModel.LoadCategoriasCommand.Execute(null);
             }

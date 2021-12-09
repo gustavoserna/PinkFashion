@@ -20,7 +20,6 @@ namespace PinkFashion.ViewModels
         string idMarca = "";
 
         public ObservableCollection<ColeccionCategorias> ColCategorias { get; set; }
-        public ObservableCollection<Categoria_> Categorias { get; set; }
         public ObservableCollection<Producto_> Productos { get; set; }
 
         public Command LoadProductosCommand { get; set; }
@@ -52,7 +51,6 @@ namespace PinkFashion.ViewModels
             this.familia = familia;
             Productos = new ObservableCollection<Producto_>();
             ColCategorias = new ObservableCollection<ColeccionCategorias>();
-            Categorias = new ObservableCollection<Categoria_>();
             NameFamilia = familia.clasificaciones;
 
             LoadProductosCommand = new Command(async () =>
@@ -73,7 +71,6 @@ namespace PinkFashion.ViewModels
                 ColCategorias.Clear();
                 List<Categoria_> listacategorias_for_col = new List<Categoria_>();
 
-                Categorias.Clear();
                 List<Categoria_> listacategorias = new List<Categoria_>();
 
                 await GetCategorias().ContinueWith(t =>
@@ -165,6 +162,17 @@ namespace PinkFashion.ViewModels
             finally
             {
                 IsBusy = false;
+            }
+        }
+
+        public ICommand ProductoTappedCommand
+        {
+            get
+            {
+                return new Command<Producto_>(async (Producto_ model) =>
+                {
+                    await App.Current.MainPage.Navigation.PushAsync(new Producto(model));
+                });
             }
         }
 
