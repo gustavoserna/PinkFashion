@@ -186,6 +186,20 @@
 
                     </Label>
 
+                    <Label
+                        Text="Remover filtros"
+                        FontSize="14"
+                        TextDecorations="Underline"
+                        VerticalOptions="CenterAndExpand">
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                CommandParameter="{Binding .}"
+                                Command="{Binding Path=BindingContext.RemoverFiltrosCommand,  Source={x:Reference CategoriaPage}}"/>
+                        </Label.GestureRecognizers>
+                        
+                    </Label>
+
                 </StackLayout>
 
             </StackLayout>

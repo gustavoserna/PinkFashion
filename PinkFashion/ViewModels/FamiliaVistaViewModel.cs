@@ -180,6 +180,18 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        public ICommand RemoverFiltrosCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    this.idMarca = "";
+                    LoadProductosCommand.Execute(null);
+                });
+            }
+        }
+
         public ICommand AbrirMarcasCommand
         {
             get
