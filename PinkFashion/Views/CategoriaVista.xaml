@@ -123,6 +123,7 @@
                                 HorizontalScrollBarVisibility="Never"
                                 BackgroundColor="Transparent"
                                 FlowItemsSource="{Binding subcategorias}"
+                                FlowItemTappedCommand="{Binding BindingContext.SubcategoriaTappedCommand, Source={x:Reference CategoriaPage}  }"
                                 IsPullToRefreshEnabled="False">
 
                                 <local:FlowListView_R.FlowColumnTemplate>

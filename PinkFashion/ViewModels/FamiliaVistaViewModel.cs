@@ -82,6 +82,7 @@ namespace PinkFashion.ViewModels
                     {
                         foreach (Categoria_ categoria in t.Result)
                         {
+                            categoria.IdFamilia = familia.id_clasificacion;
                             listacategorias.Add(categoria);
                             listacategorias_for_col.Add(categoria);
                         }
@@ -170,7 +171,6 @@ namespace PinkFashion.ViewModels
 
         public ICommand ItemTappedCommand
         {
-
             get
             {
                 return new Command<Categoria_>(async (Categoria_ model) =>
