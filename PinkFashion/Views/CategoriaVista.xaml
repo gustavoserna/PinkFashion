@@ -11,18 +11,33 @@
 
     <NavigationPage.TitleView>
 
+        <StackLayout
+            HorizontalOptions="FillAndExpand">
+
+            <Image
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Source="logo.png"
+                HeightRequest="35" />
+
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    
+    <!--<NavigationPage.TitleView>
+
         <Grid  HorizontalOptions="FillAndExpand">
 
             <Grid.ColumnDefinitions>
 
-                <!--<ColumnDefinition Width="25*"/>-->
+                --><!--<ColumnDefinition Width="25*"/>--><!--
                 <ColumnDefinition Width="10*"/>
                 <ColumnDefinition Width="53*"/>
                 <ColumnDefinition Width="30*"/>
 
             </Grid.ColumnDefinitions>
 
-            <!--<Image x:Name="cuenta" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Source="cuenta.png"  HeightRequest="30" />-->
+            --><!--<Image x:Name="cuenta" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Source="cuenta.png"  HeightRequest="30" />--><!--
 
             <Image x:Name="logo" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="logo.png"  HeightRequest="45" />
 
@@ -71,7 +86,7 @@
 
         </Grid>
 
-    </NavigationPage.TitleView>
+    </NavigationPage.TitleView>-->
 
     <ContentPage.Content>
 
