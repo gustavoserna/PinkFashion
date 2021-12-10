@@ -45,7 +45,7 @@ namespace PinkFashion.Views
 
 
             };
-            cuenta.GestureRecognizers.Add(clickCuenta);
+            //cuenta.GestureRecognizers.Add(clickCuenta);
 
             var clickCarrito = new TapGestureRecognizer();
             clickCarrito.Tapped += async (s, e) =>
@@ -79,7 +79,7 @@ namespace PinkFashion.Views
                 }
 
             };
-            carrito.GestureRecognizers.Add(clickCarrito);
+            //carrito.GestureRecognizers.Add(clickCarrito);
 
             var clickAbandonados = new TapGestureRecognizer();
             clickAbandonados.Tapped += (s, e) =>

@@ -106,6 +106,8 @@
                     <ffimageloading:CachedImage
                         Grid.Row="0"
                         x:Name="img"
+                        ErrorPlaceholder="errorloading.png"
+                        LoadingPlaceholder="loading.png"
                         DownsampleUseDipUnits="false"
                         VerticalOptions="CenterAndExpand"
                         HorizontalOptions="CenterAndExpand"
@@ -215,6 +217,8 @@
 
                                                         <ffimageloading:CachedImage
                                                             DownsampleUseDipUnits="false"
+                                                            LoadingPlaceholder="loading.png"
+                                                            ErrorPlaceholder="errorloading.png"
                                                             VerticalOptions="CenterAndExpand"
                                                             HorizontalOptions="CenterAndExpand"
                                                             BackgroundColor="White"
@@ -529,6 +533,8 @@
                                                             </Grid.RowDefinitions>
 
                                                             <ffimageloading:CachedImage
+                                                                LoadingPlaceholder="loading.png"
+                                                                ErrorPlaceholder="errorloading.png"
                                                                 DownsampleUseDipUnits="false"
                                                                 VerticalOptions="CenterAndExpand"
                                                                 HorizontalOptions="CenterAndExpand"

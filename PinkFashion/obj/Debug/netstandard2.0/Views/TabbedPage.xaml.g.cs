@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("PinkFashion.Views.DireccionMapa.xaml", "Views/DireccionMapa.xaml", typeof(global::PinkFashion.Views.DireccionMapa))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("PinkFashion.Views.TabbedPage.xaml", "Views/TabbedPage.xaml", typeof(global::PinkFashion.Views.TabbedPage))]
 
 namespace PinkFashion.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/DireccionMapa.xaml")]
-    public partial class DireccionMapa : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/TabbedPage.xaml")]
+    public partial class TabbedPage : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(DireccionMapa));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TabbedPage));
         }
     }
 }

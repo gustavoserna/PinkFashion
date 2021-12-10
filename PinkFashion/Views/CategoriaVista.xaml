@@ -265,6 +265,8 @@
                                     </Grid.RowDefinitions>
 
                                     <ffimageloading:CachedImage
+                                        ErrorPlaceholder="errorloading.png"
+                                        LoadingPlaceholder="loading.png"
                                         DownsampleUseDipUnits="false"
                                         BackgroundColor="#f1f1f1"
                                         VerticalOptions="Start"

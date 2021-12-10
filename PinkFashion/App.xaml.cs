@@ -113,12 +113,12 @@ namespace PinkFashion
         public NavigationPage Iniciar()
         {
             GetPushToken();
-            return new NavigationPage(new Inicio())
+            return new NavigationPage(new MyTabbedPage())
             {
-                BarBackgroundColor = bgColor,
-                BarTextColor = textColor
+                BarBackgroundColor = App.bgColor,
+                BarTextColor = App.textColor
             };
-            
+
         }
 
         async Task ExecuteGetContadorCommand()

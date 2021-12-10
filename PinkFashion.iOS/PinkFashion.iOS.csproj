@@ -198,6 +198,17 @@
     <BundleResource Include="Resources\facebook.png" />
     <BundleResource Include="Resources\google.png" />
     <BundleResource Include="Resources\filtromarca.png" />
+    <BundleResource Include="Resources\errorloading.png" />
+    <BundleResource Include="Resources\loading.png" />
+    <BundleResource Include="Resources\gbag.png" />
+    <BundleResource Include="Resources\gbag%402x.png" />
+    <BundleResource Include="Resources\gsettings%403x.png" />
+    <BundleResource Include="Resources\ghome.png" />
+    <BundleResource Include="Resources\ghome%402x.png" />
+    <BundleResource Include="Resources\gbag%403x.png" />
+    <BundleResource Include="Resources\gsettings.png" />
+    <BundleResource Include="Resources\ghome%403x.png" />
+    <BundleResource Include="Resources\gsettings%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

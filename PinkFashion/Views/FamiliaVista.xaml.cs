@@ -14,53 +14,6 @@ namespace PinkFashion.Views
         {
             InitializeComponent();
 
-            /*var clickCuenta = new TapGestureRecognizer();
-            clickCuenta.Tapped += async (s, e) =>
-            {
-
-                var page = new NavigationPage(new Cuenta());
-                page.BarBackgroundColor = App.bgColor;
-                page.BarTextColor = App.textColor;
-                await Navigation.PushModalAsync(page);
-
-
-            };
-            cuenta.GestureRecognizers.Add(clickCuenta);*/
-
-            var clickCarrito = new TapGestureRecognizer();
-            clickCarrito.Tapped += async (s, e) =>
-            {
-                if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
-                {
-                    if (Application.Current.Properties["sesion"].Equals("activa"))
-                    {
-                        var page = new NavigationPage(new Carrito());
-                        page.BarBackgroundColor = App.bgColor;
-                        page.BarTextColor = App.textColor;
-                        await Navigation.PushModalAsync(page);
-
-                    }
-                    else
-                    {
-                        bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
-                        if (ac)
-                        {
-                            await Navigation.PushAsync(new Login());
-                        }
-                    }
-                }
-                else
-                {
-                    bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
-                    if (ac)
-                    {
-                        await Navigation.PushAsync(new Login());
-                    }
-                }
-
-            };
-            carrito.GestureRecognizers.Add(clickCarrito);
-
             BindingContext = familiaVistaViewModel = new FamiliaVistaViewModel(familia);
         }
 
