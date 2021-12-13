@@ -365,11 +365,11 @@
                                 CornerRadius="5"
                                 HeightRequest="37"
                                 WidthRequest="40">
-                                <!-- <Frame.GestureRecognizers>
+                                 <Frame.GestureRecognizers>
                                         <TapGestureRecognizer
                                             CommandParameter="{Binding .}"
                                             Command="{Binding Path=BindingContext.MenosCommand,  Source={x:Reference ProductoPage}}"/>
-                                     </Frame.GestureRecognizers>-->
+                                     </Frame.GestureRecognizers>
 
                                 <Label
                                     Text="-"
@@ -389,11 +389,11 @@
                                 CornerRadius="5"
                                 HeightRequest="37"
                                 WidthRequest="40">
-                                <!-- <Frame.GestureRecognizers>
+                                 <Frame.GestureRecognizers>
                                         <TapGestureRecognizer
                                             CommandParameter="{Binding .}"
                                             Command="{Binding Path=BindingContext.MasCommand,  Source={x:Reference ProductoPage}}"/>
-                                     </Frame.GestureRecognizers>-->
+                                     </Frame.GestureRecognizers>
 
                                 <Label
                                     Text="+"

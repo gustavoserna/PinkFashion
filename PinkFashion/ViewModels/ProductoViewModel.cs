@@ -354,6 +354,7 @@ namespace PinkFashion.ViewModels
         {
             get
             {
+                MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", +1);
                 return new Command<Producto_>(async (Producto_ model) =>
                 {
                     int cant = Int32.Parse(model.Cantidad.ToString());
@@ -371,6 +372,7 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<Producto_>(async (Producto_ model) =>
                 {
+                    MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", -1);
                     int cant = Int32.Parse(model.Cantidad.ToString());
                     if (cant == 0)
                     {
