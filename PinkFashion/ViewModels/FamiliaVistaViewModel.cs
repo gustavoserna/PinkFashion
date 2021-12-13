@@ -14,6 +14,8 @@ namespace PinkFashion.ViewModels
 {
     public class FamiliaVistaViewModel : InsigniaViewModel
     {
+        public INavigation Navigation { get; set; }
+
         json_object json_ob = new json_object();
 
         Familia familia;
@@ -46,9 +48,10 @@ namespace PinkFashion.ViewModels
             set { SetProperty(ref _NoEncontradoVisible, value); }
         }
 
-        public FamiliaVistaViewModel(Familia familia)
+        public FamiliaVistaViewModel(Familia familia, INavigation navigation)
         {
             this.familia = familia;
+            this.Navigation = navigation;
             Productos = new ObservableCollection<Producto_>();
             ColCategorias = new ObservableCollection<ColeccionCategorias>();
             NameFamilia = familia.clasificaciones;
@@ -172,7 +175,7 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<Producto_>(async (Producto_ model) =>
                 {
-                    await App.Current.MainPage.Navigation.PushAsync(new Producto(model));
+                    await Navigation.PushAsync(new Producto(model));
                 });
             }
         }
@@ -183,7 +186,7 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<Categoria_>(async (Categoria_ model) =>
                 {
-                    await App.Current.MainPage.Navigation.PushAsync(new CategoriaVista(model));
+                    await Navigation.PushAsync(new CategoriaVista(model));
                 });
             }
         }

@@ -14,7 +14,7 @@ namespace PinkFashion.Views
         {
             InitializeComponent();
 
-            BindingContext = familiaVistaViewModel = new FamiliaVistaViewModel(familia);
+            BindingContext = familiaVistaViewModel = new FamiliaVistaViewModel(familia, Navigation);
         }
 
         protected override void OnAppearing()

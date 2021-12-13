@@ -14,6 +14,7 @@ namespace PinkFashion.ViewModels
 {
     class CategoriaViewModel : InsigniaViewModel
     {
+        public INavigation Navigation { get; set; }
         Categoria_ categoria;
         string idCategoria = "";
         string idSubcategoria = "";
@@ -47,9 +48,10 @@ namespace PinkFashion.ViewModels
             set { SetProperty(ref _NoEncontradoVisible, value); }
         }
 
-        public CategoriaViewModel(Categoria_ categoria)
+        public CategoriaViewModel(Categoria_ categoria, INavigation navigation)
         {
             this.categoria = categoria;
+            this.Navigation = navigation;
             Productos = new ObservableCollection<Producto_>();
             ColSubCategorias = new ObservableCollection<ColeccionSubcategorias>();
             NameCategoria = categoria.Categoria;
@@ -172,7 +174,7 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<Producto_>(async (Producto_ model) =>
                 {
-                    await App.Current.MainPage.Navigation.PushAsync(new Producto(model));
+                    await Navigation.PushAsync(new Producto(model));
                 });
             }
         }

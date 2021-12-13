@@ -22,8 +22,6 @@ namespace PinkFashion.Views
         {
             InitializeComponent();
             Title = "Carrito";
-            lblTitulo.TextColor = App.textColor;
-            lblCerrar.TextColor = App.textColor;
 
             if (Application.Current.Properties.ContainsKey("Abreviado"))
             {
@@ -37,12 +35,6 @@ namespace PinkFashion.Views
 
 
             BindingContext = carritoViewModel = new CarritoViewModel(this);
-            var clickCerrar = new TapGestureRecognizer();
-            clickCerrar.Tapped += (s, e) =>
-            {
-                Navigation.PopModalAsync();
-            };
-            cerrar.GestureRecognizers.Add(clickCerrar);
 
             var clickDireccion = new TapGestureRecognizer();
             clickDireccion.Tapped += (s, e) =>

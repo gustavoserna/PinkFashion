@@ -19,7 +19,7 @@ namespace PinkFashion.Views
         {
             InitializeComponent();
 
-            BindingContext = categoriaViewModel = new CategoriaViewModel(categoria);
+            BindingContext = categoriaViewModel = new CategoriaViewModel(categoria, Navigation);
         }
 
         protected override void OnAppearing()

@@ -5,34 +5,20 @@
              x:Class="PinkFashion.Views.Carrito"
              x:Name="CarritoPage"
              BackgroundColor="White">
+
     <NavigationPage.TitleView>
-        
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-            
-            <Grid.ColumnDefinitions>
-           
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                
-            </Grid.ColumnDefinitions>
-            
-            <StackLayout x:Name="cerrar" Grid.Column="0" HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                
-                <Label x:Name="lblCerrar" Text="Cerrar" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="17" />
-                                
-            </StackLayout>
-            
-            <Label x:Name="lblTitulo" Text="Mi carrito" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="17" FontAttributes="Bold" />
-            
-            <StackLayout x:Name="btnPagar" Grid.Column="2" HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-             
-            <!--<Label x:Name="lblPagar" Text="Comprar" Margin="0,0,10,0" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" FontSize="17" />-->
-                          
-            </StackLayout>  
-            
-        </Grid>
-            
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand">
+
+            <Image
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Source="logo.png"
+                HeightRequest="35" />
+
+        </StackLayout>
+
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
