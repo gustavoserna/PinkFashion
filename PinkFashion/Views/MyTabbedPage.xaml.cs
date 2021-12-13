@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using PinkFashion.Controls;
+using Plugin.Badge.Abstractions;
+using PinkFashion.ViewModels;
 
 namespace PinkFashion.Views
 {
-    public partial class MyTabbedPage : Xamarin.Forms.TabbedPage
+    public partial class MyTabbedPage : TabbedPage_R
     {
+        MyTabbedPageViewModel myTabbedPageViewModel;
         public MyTabbedPage()
         {
             InitializeComponent();
+            
             NavigationPage.SetHasNavigationBar(this, false);
-
+            BindingContext = myTabbedPageViewModel = new MyTabbedPageViewModel();
             //deshabilitar el swipe en android
             this.On<Xamarin.Forms.PlatformConfiguration.Android>().SetIsSwipePagingEnabled(false);
 
@@ -41,6 +45,10 @@ namespace PinkFashion.Views
                 IconImageSource = "gbag.png",
                 Title = "Mi Bolsa"
             };
+
+            //si es android se usa el plugin del badge
+            if (Device.RuntimePlatform == Device.Android)
+                bagNavigationPage.SetBinding(TabBadge.BadgeTextProperty, new Binding("Badge"));
 
             NavigationPage settingsNavigationPage = new NavigationPage(new Cuenta())
             {

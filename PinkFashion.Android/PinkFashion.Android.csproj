@@ -64,6 +64,9 @@
     <Reference Include="Mono.Android.Export" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Plugin.Badge">
+      <Version>2.3.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Sharpnado.Presentation.Forms">
@@ -157,208 +160,310 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
     <AndroidResource Include="Resources\drawable\cart.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\cuenta.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\logo.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\configura.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\tright.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\help.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\entrega.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\bglogin.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\add.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\amex.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\discover.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\jcb.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\mastercard.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\mex.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\nocard.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\visa.jpg">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\ticlose.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\btndelete.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\oxxo.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\tarjeta.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\TERMINOS.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\WHATSAPP.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\USUARIO.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\FAQ.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\DIRECCIONES.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\PEDIDOS.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\PAGOS.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\vendidos.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\promos.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\novedades.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\banners.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\facturas.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\icon.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\iconopaypal.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\PinBlogger.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\blogger.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\formularioblogger.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\checkpink.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\checkgris.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\buzon.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable-hdpi\ic_stat_onesignal_default.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\closeback.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\visible.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\novisible.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\WhatsApp_verde.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\filtromarca.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\errorloading.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\loading.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\gbag.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\ghome.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\gsettings.png">
-      <SubType></SubType>
-      <Generator></Generator>
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
@@ -367,9 +472,7 @@
       <Name>PinkFashion</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Renderers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AndroidAsset Include="Assets\Font Awesome 5 Free-Solid-900.otf" />
   </ItemGroup>

@@ -81,6 +81,20 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Badge/2.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.5.0.356"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Plugin.Badge.Abstractions.dll": {},
+          "lib/MonoAndroid10/Plugin.Badge.Droid.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Plugin.Badge.Abstractions.dll": {},
+          "lib/MonoAndroid10/Plugin.Badge.Droid.dll": {}
+        }
+      },
       "Plugin.CurrentActivity/2.1.0.4": {
         "type": "package",
         "frameworkAssemblies": [
@@ -2513,6 +2527,7 @@
           "Conekta.Xamarin": "1.0.6",
           "DLToolkit.Forms.Controls.FlowListView": "2.0.11",
           "Newtonsoft.Json": "13.0.1",
+          "Plugin.Badge": "2.3.1",
           "Sharpnado.Presentation.Forms": "1.7.1",
           "Xam.Plugins.Forms.ImageCircle": "3.1.1.1-beta",
           "Xamarin.Auth": "1.7.0",
@@ -2663,6 +2678,48 @@
         "newtonsoft.json.13.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Plugin.Badge/2.3.1": {
+      "sha512": "EvADZTwR0WvdJ7goZfcpHVbCMPXMTWEhBPEOp0JgTfx/w34STlUJClBnYIUGetE9jy6792pvjb5lgT00732NiA==",
+      "type": "package",
+      "path": "plugin.badge/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Plugin.Badge.Abstractions.deps.json",
+        "lib/MonoAndroid10/Plugin.Badge.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Badge.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.Badge.Droid.dll",
+        "lib/MonoAndroid10/Plugin.Badge.Droid.pdb",
+        "lib/Xamarin.iOS10/Plugin.Badge.Abstractions.deps.json",
+        "lib/Xamarin.iOS10/Plugin.Badge.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Badge.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.Badge.iOS.dll",
+        "lib/net45/Plugin.Badge.Abstractions.deps.json",
+        "lib/net45/Plugin.Badge.Abstractions.dll",
+        "lib/net45/Plugin.Badge.Abstractions.pdb",
+        "lib/net45/Plugin.Badge.WPF.dll",
+        "lib/net45/Plugin.Badge.WPF.pdb",
+        "lib/netstandard1.4/Plugin.Badge.Abstractions.deps.json",
+        "lib/netstandard1.4/Plugin.Badge.Abstractions.dll",
+        "lib/netstandard1.4/Plugin.Badge.Abstractions.pdb",
+        "lib/portable-net45+win8+wpa81+wp8/Plugin.Badge.Abstractions.deps.json",
+        "lib/portable-net45+win8+wpa81+wp8/Plugin.Badge.Abstractions.dll",
+        "lib/portable-net45+win8+wpa81+wp8/Plugin.Badge.Abstractions.pdb",
+        "lib/uap10.0/Plugin.Badge.Abstractions.dll",
+        "lib/uap10.0/Plugin.Badge.Abstractions.pdb",
+        "lib/uap10.0/Plugin.Badge.UWP.dll",
+        "lib/uap10.0/Plugin.Badge.UWP.pdb",
+        "lib/uap10.0/Plugin.Badge.UWP.pri",
+        "lib/uap10.0/Plugin.Badge.UWP/HeaderTemplate.xaml",
+        "lib/uap10.0/Plugin.Badge.UWP/Plugin.Badge.UWP.xr.xml",
+        "lib/xamarinmac20/Plugin.Badge.Abstractions.deps.json",
+        "lib/xamarinmac20/Plugin.Badge.Abstractions.dll",
+        "lib/xamarinmac20/Plugin.Badge.Abstractions.pdb",
+        "lib/xamarinmac20/Plugin.Badge.Mac.dll",
+        "plugin.badge.2.3.1.nupkg.sha512",
+        "plugin.badge.nuspec"
       ]
     },
     "Plugin.CurrentActivity/2.1.0.4": {
@@ -5313,6 +5370,7 @@
       "DLToolkit.Forms.Controls.FlowListView >= 2.0.11",
       "Newtonsoft.Json >= 13.0.1",
       "PinkFashion >= 1.0.0",
+      "Plugin.Badge >= 2.3.1",
       "Plugin.CurrentActivity >= 2.1.0.4",
       "Sharpnado.Presentation.Forms >= 1.7.1",
       "Xam.Plugins.Forms.ImageCircle >= 3.1.1.1-beta",
@@ -5330,32 +5388,39 @@
     ]
   },
   "packageFolders": {
-    "/Users/gustavoserna/.nuget/packages/": {}
+    "C:\\Users\\Han-S\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Han-S\\source\\repos\\PinkFashion10Dic\\PinkFashion\\PinkFashion.Android\\PinkFashion.Android.csproj",
       "projectName": "PinkFashion.Android",
-      "projectPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj",
-      "packagesPath": "/Users/gustavoserna/.nuget/packages/",
-      "outputPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/obj/",
+      "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion10Dic\\PinkFashion\\PinkFashion.Android\\PinkFashion.Android.csproj",
+      "packagesPath": "C:\\Users\\Han-S\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion10Dic\\PinkFashion\\PinkFashion.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "/Users/gustavoserna/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Han-S\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "monoandroid11.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj": {
-              "projectPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj"
+            "C:\\Users\\Han-S\\source\\repos\\PinkFashion10Dic\\PinkFashion\\PinkFashion\\PinkFashion.csproj": {
+              "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion10Dic\\PinkFashion\\PinkFashion\\PinkFashion.csproj"
             }
           }
         }
@@ -5387,6 +5452,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.1, )"
+          },
+          "Plugin.Badge": {
+            "target": "Package",
+            "version": "[2.3.1, )"
           },
           "Plugin.CurrentActivity": {
             "target": "Package",

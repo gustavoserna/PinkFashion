@@ -316,9 +316,10 @@ namespace PinkFashion.ViewModels
         {
             get
             {
-                return new Command<ProductoTemporal>(async (ProductoTemporal model) =>
-                {
-                    int cant = Int32.Parse(model.Cantidad.ToString());
+               return new Command<ProductoTemporal>(async (ProductoTemporal model) =>
+               {
+                   MessagingCenter.Send<CarritoViewModel, int>(this, "Badge", +1);
+                   int cant = Int32.Parse(model.Cantidad.ToString());
                     cant++;
                     model.Accion = "mas";
                     model.Cantidad = cant;
@@ -354,6 +355,7 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<ProductoTemporal>(async (ProductoTemporal model) =>
                 {
+                    MessagingCenter.Send<CarritoViewModel, int>(this, "Badge", -1);
                     int cant = Int32.Parse(model.Cantidad.ToString());
 
                     if (cant > 0)
