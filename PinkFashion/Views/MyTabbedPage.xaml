@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<TabbedPage
+<Controls:TabbedPage_R
     xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:Controls="clr-namespace:PinkFashion.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="PinkFashion.Views.MyTabbedPage">
+    x:Class="PinkFashion.Views.MyTabbedPage"
+    Badge="{Binding Badge}" >
 
-</TabbedPage>
+</Controls:TabbedPage_R>
