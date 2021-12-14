@@ -40,6 +40,19 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        int _EntCantidad = 1;
+        public int EntCantidad
+        {
+            get
+            {
+                return _EntCantidad;
+            }
+            set
+            {
+                SetProperty(ref _EntCantidad, value);
+            }
+        }
+
         string _Marca = "";
         public string marca
         {
@@ -354,14 +367,23 @@ namespace PinkFashion.ViewModels
         {
             get
             {
-                MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", +1);
                 return new Command<Producto_>(async (Producto_ model) =>
                 {
-                    int cant = Int32.Parse(model.Cantidad.ToString());
-                    cant++;
-                    model.Cantidad = cant;
-                    model.ImporteDouble = model.ImporteDouble + model.precioDouble;
-                    await ModPedidoTmp(model);
+                    if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
+                    {
+                        MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", +1);
+                        EntCantidad++;
+                    }
+                    else
+                    {
+                        bool ac = await App.Current.MainPage.DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
+                        if (ac)
+                        {
+                            await App.Current.MainPage.Navigation.PushModalAsync(new Login());
+
+
+                        }
+                    }
                 });
             }
         }
@@ -372,21 +394,27 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<Producto_>(async (Producto_ model) =>
                 {
-                    MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", -1);
-                    int cant = Int32.Parse(model.Cantidad.ToString());
-                    if (cant == 0)
+                    if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
                     {
-                        //App.Cart = 0;
-                        noProductos = 0;
-                        await ExecuteLoadProductosCommand();
+                        if (EntCantidad > 0)
+                        {
+                            EntCantidad--;
+                            MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", -1);
+                        }
+                        if (EntCantidad == 0)
+                        {
+                            EntCantidad = 0;
+                        }
                     }
-                    if (cant > 0)
+                    else
                     {
-                        cant--;
-                        model.Cantidad = cant;
-                        model.ImporteDouble = model.ImporteDouble - model.precioDouble;
-                        await ModPedidoTmp(model);
+                        bool ac = await App.Current.MainPage.DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
+                        if (ac)
+                        {
+                            await App.Current.MainPage.Navigation.PushModalAsync(new Login());
 
+
+                        }
                     }
                 });
             }

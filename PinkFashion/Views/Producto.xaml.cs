@@ -41,7 +41,7 @@ namespace PinkFashion.Views
                 ListaVariantes.IsVisible = false;
             }
 
-            EntCantidad.Text = "1";
+            /*EntCantidad.Text = "1";
             var clickMas = new TapGestureRecognizer();
             clickMas.Tapped += async (s, e) =>
             {
@@ -64,9 +64,9 @@ namespace PinkFashion.Views
 
 
             };
-            btnMas.GestureRecognizers.Add(clickMas);
+            btnMas.GestureRecognizers.Add(clickMas);*/
 
-            var clickMenos = new TapGestureRecognizer();
+            /*var clickMenos = new TapGestureRecognizer();
             clickMenos.Tapped += async (s, e) =>
             {
                 if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
@@ -94,10 +94,10 @@ namespace PinkFashion.Views
                     }
                 }
 
-            };
-            btnMenos.GestureRecognizers.Add(clickMenos);
+            };*/
+            //btnMenos.GestureRecognizers.Add(clickMenos);
 
-            var clickAgrega = new TapGestureRecognizer();
+            /*var clickAgrega = new TapGestureRecognizer();
             clickAgrega.Tapped += async (s, e) =>
             {
                 if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
@@ -127,21 +127,11 @@ namespace PinkFashion.Views
                 }
 
             };
-            btnAgregar.GestureRecognizers.Add(clickAgrega);
-
-            var clickCarrito = new TapGestureRecognizer();
-            clickCarrito.Tapped += (s, e) =>
-            {
-                var page = new NavigationPage(new Carrito());
-                page.BarBackgroundColor = App.bgColor;
-                page.BarTextColor = App.textColor;
-                Navigation.PushModalAsync(page);
-            };
-            carrito.GestureRecognizers.Add(clickCarrito);
+            btnAgregar.GestureRecognizers.Add(clickAgrega);*/
         }
 
 
-        public async Task Enviar()
+        /*public async Task Enviar()
         {
             
                 ProductoTemporal pedido = new ProductoTemporal();
@@ -170,7 +160,7 @@ namespace PinkFashion.Views
                     }
                 
                 }
-        }
+        }*/
 
         public async Task Contador()
         {

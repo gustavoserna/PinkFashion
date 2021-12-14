@@ -2,14 +2,12 @@
   <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/Cuenta.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/Producto.xaml.cs">
     <Files>
-      <File FileName="PinkFashion/Views/Inicio.xaml.cs" Line="42" Column="55" />
-      <File FileName="PinkFashion/ViewModels/InicioViewModel.cs" />
       <File FileName="PinkFashion/Views/Carrito.xaml.cs" />
-      <File FileName="PinkFashion/Views/Carrito.xaml" />
-      <File FileName="PinkFashion/Views/Cuenta.xaml" Line="33" Column="16" />
-      <File FileName="PinkFashion/Views/Cuenta.xaml.cs" />
+      <File FileName="PinkFashion/Views/Producto.xaml" Line="364" Column="62" />
+      <File FileName="PinkFashion/Views/Producto.xaml.cs" Line="74" Column="54" />
+      <File FileName="PinkFashion/ViewModels/ProductoViewModel.cs" Line="28" Column="28" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,8 +16,11 @@
             <Node name="PinkFashion" expanded="True">
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Cuenta.xaml" selected="True" />
-                <Node name="MyTabbedPage.xaml" expanded="True" />
+                <Node name="Cuenta.xaml" expanded="True" />
+                <Node name="Inicio.xaml" expanded="True" />
+                <Node name="Producto.xaml" expanded="True">
+                  <Node name="Producto.xaml.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
