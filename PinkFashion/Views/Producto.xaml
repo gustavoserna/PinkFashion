@@ -302,7 +302,8 @@
                             VerticalOptions="FillAndExpand"
                             Orientation="Horizontal">
 
-                            <Frame
+                            <StackLayout>
+                                <Frame
                                 x:Name="btnMenos"
                                 Padding="0"
                                 VerticalOptions="CenterAndExpand"
@@ -312,22 +313,22 @@
                                 HeightRequest="37"
                                 WidthRequest="40">
 
-                                    <Frame.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                            CommandParameter="{Binding .}"
-                                            Command="{Binding Path=BindingContext.MenosCommand,  Source={x:Reference ProductoPage}}"/>
-                                    </Frame.GestureRecognizers>
-
-                                <Label
+                                    <Label
                                     Text="-"
                                     FontSize="15"
                                     TextColor="#eb068c"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="CenterAndExpand" />
+                                </Frame>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            CommandParameter="{Binding .}"
+                                            Command="{Binding Path=BindingContext.MenosCommand,  Source={x:Reference ProductoPage}}"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
 
-                            </Frame>
-
-                            <Frame
+                            <StackLayout>
+                                <Frame
                                 x:Name="btnMas"
                                 Padding="0"
                                 VerticalOptions="CenterAndExpand"
@@ -337,20 +338,20 @@
                                 HeightRequest="37"
                                 WidthRequest="40">
 
-                                    <Frame.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                            CommandParameter="{Binding .}"
-                                            Command="{Binding Path=BindingContext.MasCommand,  Source={x:Reference ProductoPage}}"/>
-                                     </Frame.GestureRecognizers>
-
-                                <Label
+                                    <Label
                                     Text="+"
                                     FontSize="15"
                                     TextColor="#eb068c"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="CenterAndExpand" />
                             </Frame>
-
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            CommandParameter="{Binding .}"
+                                            Command="{Binding Path=BindingContext.MasCommand,  Source={x:Reference ProductoPage}}"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                            
                             <Frame
                                 x:Name="btnCantidad"
                                 Padding="0"
@@ -402,6 +403,12 @@
                                 TextColor="#fff"
                                 FontSize="16" />
 
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                CommandParameter="{Binding .}"
+                                           Command="{Binding Path=BindingContext.AgregaCommand,  Source={x:Reference ProductoPage}}">
+                                </TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
                         </Frame>
 
                     </StackLayout>

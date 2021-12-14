@@ -97,70 +97,17 @@ namespace PinkFashion.Views
             };*/
             //btnMenos.GestureRecognizers.Add(clickMenos);
 
-            /*var clickAgrega = new TapGestureRecognizer();
+            var clickAgrega = new TapGestureRecognizer();
             clickAgrega.Tapped += async (s, e) =>
             {
-                if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
-                {
-                    if (Application.Current.Properties["sesion"].Equals("activa"))
-                    {
-                        productoViewModel.noProductos = productoViewModel.noProductos + Convert.ToInt32(Math.Truncate(Convert.ToDouble(EntCantidad.Text)));
-                        App.Cart = App.Cart + Convert.ToInt32(Math.Truncate(Convert.ToDouble(EntCantidad.Text)));
-                        await Enviar();
-                    }
-                    else
-                    {
-                        bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
-                        if (ac)
-                        {
-                            await Navigation.PushAsync(new Login());
-                        }
-                    }
-                }
-                else
-                {
-                    bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
-                    if (ac)
-                    {
-                        await Navigation.PushAsync(new Login());
-                    }
-                }
 
+                
             };
-            btnAgregar.GestureRecognizers.Add(clickAgrega);*/
+            btnAgregar.GestureRecognizers.Add(clickAgrega);
         }
 
 
-        /*public async Task Enviar()
-        {
-            
-                ProductoTemporal pedido = new ProductoTemporal();
-                pedido.Cantidad = Convert.ToDouble(EntCantidad.Text);
-                pedido.Precio = producto.precioCarritoDouble;
-                pedido.ConVariante = producto.ConVariante;
-                pedido.IdVariante_Producto = productoViewModel.idvariantes_producto;
-                pedido.IdCliente = Application.Current.Properties["IdCliente"].ToString();
-                pedido.IdProducto = producto.idproducto;
-                pedido.FechaHora = "";
-
-                string respuesa = await productoViewModel.addProdPedidoTmp(pedido);
-                if (respuesa=="1")
-                {
-                    await DisplayAlert("Listo", "Producto agregado al carrito", "Ok");
-                }
-                else
-                {
-                    if (respuesa == "")
-                    {
-                        await DisplayAlert("Precaución", "Verifica la existencia", "Ok");
-                    }
-                    else
-                    {
-                        await DisplayAlert("Precaución", respuesa, "Ok");
-                    }
-                
-                }
-        }*/
+        
 
         public async Task Contador()
         {
