@@ -10,6 +10,7 @@ namespace PinkFashion.Views
         public AfiliadosBloggers()
         {
             InitializeComponent();
+            Title = "Afiliados";
             if (Application.Current.Properties.ContainsKey("IdCliente"))
             {
                 vCliente = Convert.ToString(Application.Current.Properties["IdCliente"]);

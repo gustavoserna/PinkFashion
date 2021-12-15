@@ -2,25 +2,27 @@
   <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/PerfilUsuario.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ContentViews/Header.xaml">
     <Files>
-      <File FileName="PinkFashion/Views/MyTabbedPage.xaml.cs" Line="69" Column="21" />
-      <File FileName="PinkFashion/Views/Login.xaml.cs" Line="51" Column="35" />
-      <File FileName="PinkFashion/Views/Login.xaml" Line="42" Column="120" />
-      <File FileName="PinkFashion/ViewModels/SM.cs" Line="116" Column="14" />
-      <File FileName="PinkFashion/Views/Cuenta.xaml.cs" Line="48" Column="64" />
-      <File FileName="PinkFashion/Views/Cuenta.xaml" Line="7" Column="5" />
-      <File FileName="PinkFashion/Views/PerfilUsuario.xaml" Line="11" Column="47" />
+      <File FileName="PinkFashion/Views/Cuenta.xaml" Line="6" Column="5" />
+      <File FileName="PinkFashion/Views/PerfilUsuario.xaml.cs" Line="16" Column="33" />
+      <File FileName="PinkFashion/Views/Cuenta.xaml.cs" Line="228" Column="66" />
+      <File FileName="PinkFashion/ContentViews/Header.xaml" Line="19" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
-              <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="PerfilUsuario.xaml" expanded="True" selected="True" />
-                <Node name="Registro.xaml" expanded="True" />
+              <Node name="ContentViews" expanded="True">
+                <Node name="Header.xaml" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True" />
+            </Node>
+            <Node name="PinkFashion.Android" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="layout" expanded="True" />
+                <Node name="values" expanded="True" />
               </Node>
             </Node>
           </Node>

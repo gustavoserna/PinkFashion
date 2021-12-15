@@ -13,7 +13,7 @@ namespace PinkFashion.Views
         public MetodoPago()
         {
             InitializeComponent();
-            Title = "Metodos de pago";
+            Title = "Métodos de Pago";
 
             BindingContext = metodoPagoViewModel = new MetodoPagoViewModel();
 

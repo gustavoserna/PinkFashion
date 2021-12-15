@@ -10,6 +10,7 @@ namespace PinkFashion.Views
         public Buzon()
         {
             InitializeComponent();
+            Title = "Mi Buzón";
             if (Application.Current.Properties.ContainsKey("IdCliente"))
             {
                 vCliente = Convert.ToString(Application.Current.Properties["IdCliente"]);

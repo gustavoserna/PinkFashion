@@ -6,20 +6,12 @@
              xmlns:local="clr-namespace:PinkFashion.Controls;assembly=PinkFashion"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:ContentViews="clr-namespace:PinkFashion.ContentViews"
              x:Class="PinkFashion.Views.Inicio" x:Name="InicioPage" BackgroundColor="White">
 
     <NavigationPage.TitleView>
 
-        <StackLayout
-            HorizontalOptions="FillAndExpand">
-
-            <Image
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Source="logo.png"
-                HeightRequest="35" />
-
-        </StackLayout>
+        <ContentViews:Header />
 
     </NavigationPage.TitleView>
 

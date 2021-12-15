@@ -23,7 +23,7 @@ namespace PinkFashion.Views
 
             //lblTitulo.Text = producto.producto;
             this.producto = producto;
-            BindingContext = productoViewModel = new ProductoViewModel(producto.idproducto);
+            BindingContext = productoViewModel = new ProductoViewModel(producto, Navigation);
 
             string strEvento = producto.producto + "|" + producto.marca + "|Pink Fashion Store";
             App.eventTracker.SendScreen(strEvento, nameof(Producto));
@@ -103,7 +103,7 @@ namespace PinkFashion.Views
 
                 
             };
-            btnAgregar.GestureRecognizers.Add(clickAgrega);
+            //btnAgregar.GestureRecognizers.Add(clickAgrega);
         }
 
 

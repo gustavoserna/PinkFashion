@@ -12,17 +12,6 @@ namespace PinkFashion.Views
         public Cuenta()
         {
             InitializeComponent();
-            Title = "Cuenta";
-
-            var close = new ToolbarItem();
-            close.Text = "Cerrar";
-
-            close.Command = new Command(o =>
-            {
-                Navigation.PopModalAsync();
-            });
-
-            ToolbarItems.Add(close);
 
             if (Application.Current.Properties.ContainsKey("Blogger"))
             {

@@ -16,6 +16,10 @@ namespace PinkFashion.ViewModels
 {
     public class ProductoViewModel : InsigniaViewModel
     {
+        INavigation Navigation;
+
+        Producto_ producto_;
+
         public Producto_ Productos { get; set; }
 
         public ObservableCollection<ColeccionProductos> ColRelacionados { get; set; }
@@ -24,8 +28,6 @@ namespace PinkFashion.ViewModels
         public Command LoadProductosCommand { get; set; }
 
         json_object json_ob = new json_object();
-
-        string id_producto;
 
         int _cantidad = 0;
         public int Cantidad
@@ -191,9 +193,10 @@ namespace PinkFashion.ViewModels
             set { SetProperty(ref _cont, value); }
         }
 
-        public ProductoViewModel(string id_producto)
+        public ProductoViewModel(Producto_ producto, INavigation navigation)
         {
-            this.id_producto = id_producto;
+            Navigation = navigation;
+            producto_ = producto;
             Productos = new Producto_();
             Productos.VariantesProductos = new ObservableCollection<VariantesProducto>();
             Productos.ProductosRelacionados = new ObservableCollection<Producto_>();
@@ -229,7 +232,7 @@ namespace PinkFashion.ViewModels
                 IEnumerable<Producto_> relacionados = null;
                 List<Producto_> listarelaciones = new List<Producto_>();
 
-                await GetProductos(id_producto).ContinueWith(t =>
+                await GetProductos(producto_.idproducto).ContinueWith(t =>
                 {
                     if (t.Status == TaskStatus.RanToCompletion)
                     {
@@ -353,28 +356,28 @@ namespace PinkFashion.ViewModels
         public async Task Enviar()
         {
             ProductoTemporal pedido = new ProductoTemporal();
-            pedido.Cantidad = Convert.ToDouble(EntCantidad.Text);
-            pedido.Precio = producto.precioCarritoDouble;
-            pedido.ConVariante = producto.ConVariante;
-            pedido.IdVariante_Producto = productoViewModel.idvariantes_producto;
+            pedido.Cantidad = Convert.ToDouble(EntCantidad);
+            pedido.Precio = producto_.precioCarritoDouble;
+            pedido.ConVariante = producto_.ConVariante;
+            pedido.IdVariante_Producto = idvariantes_producto;
             pedido.IdCliente = Application.Current.Properties["IdCliente"].ToString();
-            pedido.IdProducto = producto.idproducto;
+            pedido.IdProducto = producto_.idproducto;
             pedido.FechaHora = "";
 
-            string respuesa = await productoViewModel.addProdPedidoTmp(pedido);
+            string respuesa = await addProdPedidoTmp(pedido);
             if (respuesa == "1")
             {
-                await DisplayAlert("Listo", "Producto agregado al carrito", "Ok");
+                await App.Current.MainPage.DisplayAlert("Listo", "Producto agregado al carrito", "Ok");
             }
             else
             {
                 if (respuesa == "")
                 {
-                    await DisplayAlert("Precaución", "Verifica la existencia", "Ok");
+                    await App.Current.MainPage.DisplayAlert("Precaución", "Verifica la existencia", "Ok");
                 }
                 else
                 {
-                    await DisplayAlert("Precaución", respuesa, "Ok");
+                    await App.Current.MainPage.DisplayAlert("Precaución", respuesa, "Ok");
                 }
 
             }
@@ -386,34 +389,32 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(async () =>
                 {
-                    //model.Cantidad = 1;
-                    //model.ImporteDouble = model.ImporteDouble + model.precioDouble;
-                    //await addPedidoTmp(model);
                     if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
                     {
                         if (Application.Current.Properties["sesion"].Equals("activa"))
                         {
-                            noProductos = noProductos + Convert.ToInt32(Math.Truncate(Convert.ToDouble(EntCantidad.Text)));
-                            App.Cart = App.Cart + Convert.ToInt32(Math.Truncate(Convert.ToDouble(EntCantidad.Text)));
+                            noProductos += EntCantidad;
+                            MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", noProductos);
                             await Enviar();
                         }
                         else
                         {
-                            //bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
-                            //if (ac)
-                            //{
-                            //    await Navigation.PushAsync(new Login());
-                            //}
+                            bool ac = await App.Current.MainPage.DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
+                            if (ac)
+                            {
+                                await Navigation.PushModalAsync(new Login());
+                            }
                         }
                     }
                     else
                     {
-                        //bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
-                        //if (ac)
-                        //{
-                        //    await Navigation.PushAsync(new Login());
-                        //}
+                        bool ac = await App.Current.MainPage.DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
+                        if (ac)
+                        {
+                            await Navigation.PushModalAsync(new Login());
+                        }
                     }
+
                 });
             }
         }
@@ -422,15 +423,10 @@ namespace PinkFashion.ViewModels
         {
             get
             {
-<<<<<<< HEAD
-=======
-                //return new Command<Producto_>(async (Producto_ model) =>
->>>>>>> 6160acfa21ccb5cec8444b031e018185d7e71da0
                 return new Command(async () =>
                 {
                     if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
                     {
-                        //MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", +1);
                         EntCantidad++;
                     }
                     else
@@ -453,13 +449,11 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(async () =>
                 {
-                    System.Diagnostics.Debug.WriteLine("menos...");
                     if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
                     {
                         if (EntCantidad > 0)
                         {
                             EntCantidad--;
-                            //MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", -1);
                         }
                         if (EntCantidad == 0)
                         {
@@ -528,7 +522,7 @@ namespace PinkFashion.ViewModels
                 
                 ProductoTemporal temporal = new ProductoTemporal();                
                 temporal.IdCliente = Application.Current.Properties["IdCliente"].ToString();
-                temporal.IdProducto = id_producto;
+                temporal.IdProducto = producto_.idproducto;
                 temporal.IdVariante_Producto = vproducto.idvariantes_producto;
                 temporal.Cantidad = vproducto.Cantidad;
                 temporal.Precio = vproducto.precioDouble;
@@ -554,7 +548,7 @@ namespace PinkFashion.ViewModels
             {
                 ProductoTemporal temporal = new ProductoTemporal();
                 temporal.IdCliente = Application.Current.Properties["IdCliente"].ToString();
-                temporal.IdProducto = id_producto;
+                temporal.IdProducto = producto_.idproducto;
                 temporal.IdVariante_Producto = vproducto.idvariantes_producto;
                 temporal.Cantidad = vproducto.Cantidad;
                 temporal.Precio = vproducto.precioDouble;

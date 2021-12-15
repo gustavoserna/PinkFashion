@@ -4,20 +4,12 @@
              xmlns:renderers="clr-namespace:PinkFashion.Renderers"
              x:Class="PinkFashion.Views.Carrito"
              x:Name="CarritoPage"
+             xmlns:ContentViews="clr-namespace:PinkFashion.ContentViews"
              BackgroundColor="White">
 
     <NavigationPage.TitleView>
 
-        <StackLayout
-            HorizontalOptions="FillAndExpand">
-
-            <Image
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Source="logo.png"
-                HeightRequest="35" />
-
-        </StackLayout>
+        <ContentViews:Header />
 
     </NavigationPage.TitleView>
 

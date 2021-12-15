@@ -302,13 +302,7 @@
                             VerticalOptions="FillAndExpand"
                             Orientation="Horizontal">
 
-<<<<<<< HEAD
                             <Frame
-=======
-                            <StackLayout>
-                                <Frame
-                                x:Name="btnMenos"
->>>>>>> 6160acfa21ccb5cec8444b031e018185d7e71da0
                                 Padding="0"
                                 VerticalOptions="CenterAndExpand"
                                 BorderColor="#eb068c"
@@ -317,23 +311,21 @@
                                 HeightRequest="37"
                                 WidthRequest="40">
 
-                                    <Label
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding Path=BindingContext.MenosCommand,  Source={x:Reference ProductoPage}}"/>
+                                </Frame.GestureRecognizers>
+
+                                <Label
                                     Text="-"
                                     FontSize="15"
                                     TextColor="#eb068c"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="CenterAndExpand" />
-                                </Frame>
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer
-                                            CommandParameter="{Binding .}"
-                                            Command="{Binding Path=BindingContext.MenosCommand,  Source={x:Reference ProductoPage}}"/>
-                                </StackLayout.GestureRecognizers>
-                            </StackLayout>
+                            </Frame>
 
-                            <StackLayout>
-                                <Frame
-                                x:Name="btnMas"
+                            <Frame
                                 Padding="0"
                                 VerticalOptions="CenterAndExpand"
                                 BorderColor="#eb068c"
@@ -342,22 +334,21 @@
                                 HeightRequest="37"
                                 WidthRequest="40">
 
-                                    <Label
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding Path=BindingContext.MasCommand,  Source={x:Reference ProductoPage}}"/>
+                                </Frame.GestureRecognizers>
+
+                                <Label
                                     Text="+"
                                     FontSize="15"
                                     TextColor="#eb068c"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="CenterAndExpand" />
                             </Frame>
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer
-                                            CommandParameter="{Binding .}"
-                                            Command="{Binding Path=BindingContext.MasCommand,  Source={x:Reference ProductoPage}}"/>
-                                </StackLayout.GestureRecognizers>
-                            </StackLayout>
-                            
+
                             <Frame
-                                x:Name="btnCantidad"
                                 Padding="0"
                                 VerticalOptions="CenterAndExpand"
                                 BorderColor="#eb068c"
@@ -373,8 +364,6 @@
                                     TextColor="#fff"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="CenterAndExpand" />
-
-                                    <!--<Entry x:Name="EntCantidad" Keyboard="Numeric" FontSize="15"  TextColor="#fff"  BackgroundColor="#eb068c" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="40" />-->
 
                             </Frame>
 

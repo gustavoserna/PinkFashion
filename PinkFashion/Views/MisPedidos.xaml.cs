@@ -13,7 +13,7 @@ namespace PinkFashion.Views
         public MisPedidos(string tipo = "push")
         {
             InitializeComponent();
-            Title = "Mis pedidos";
+            Title = "Mis Pedidos";
             
             BindingContext = misPedidosViewModel = new MisPedidosViewModel();
 

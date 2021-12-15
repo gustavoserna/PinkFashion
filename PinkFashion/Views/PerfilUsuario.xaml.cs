@@ -13,7 +13,7 @@ namespace PinkFashion.Views
         public PerfilUsuario()
         {
             InitializeComponent();
-            Title = "Perfil";
+            Title = "Mi Perfil";
             App.eventTracker.SendScreen(strEvento, nameof(PerfilUsuario));
             SM sM = new SM();
             //telefono.IsEnabled = false;

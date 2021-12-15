@@ -33,6 +33,7 @@
     <Folder Include="Tarjeta\" />
     <Folder Include="AuthHelpers\" />
     <Folder Include="Controls\" />
+    <Folder Include="ContentViews\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\Registro.xaml.cs">
@@ -60,5 +61,7 @@
     <None Remove="CarouselView.FormsPlugin" />
     <None Remove="Controls\" />
     <None Remove="Xamarin.FFImageLoading.Forms" />
+    <None Remove="ViewCells\" />
+    <None Remove="ContentViews\" />
   </ItemGroup>
 </Project>

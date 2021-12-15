@@ -12,6 +12,7 @@ namespace PinkFashion.Views
         public PinAfiliadosBloggers()
         {
             InitializeComponent();
+            Title = "Afiliados";
                         
             if (Application.Current.Properties.ContainsKey("IdCliente"))
             {
