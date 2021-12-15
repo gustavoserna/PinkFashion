@@ -350,15 +350,70 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        public async Task Enviar()
+        {
+            ProductoTemporal pedido = new ProductoTemporal();
+            pedido.Cantidad = Convert.ToDouble(EntCantidad.Text);
+            pedido.Precio = producto.precioCarritoDouble;
+            pedido.ConVariante = producto.ConVariante;
+            pedido.IdVariante_Producto = productoViewModel.idvariantes_producto;
+            pedido.IdCliente = Application.Current.Properties["IdCliente"].ToString();
+            pedido.IdProducto = producto.idproducto;
+            pedido.FechaHora = "";
+
+            string respuesa = await productoViewModel.addProdPedidoTmp(pedido);
+            if (respuesa == "1")
+            {
+                await DisplayAlert("Listo", "Producto agregado al carrito", "Ok");
+            }
+            else
+            {
+                if (respuesa == "")
+                {
+                    await DisplayAlert("Precaución", "Verifica la existencia", "Ok");
+                }
+                else
+                {
+                    await DisplayAlert("Precaución", respuesa, "Ok");
+                }
+
+            }
+        }
+
         public ICommand AgregaCommand
         {
             get
             {
-                return new Command<Producto_>(async (Producto_ model) =>
+                return new Command(async () =>
                 {
-                    model.Cantidad = 1;
-                    model.ImporteDouble = model.ImporteDouble + model.precioDouble;
-                    await addPedidoTmp(model);
+                    //model.Cantidad = 1;
+                    //model.ImporteDouble = model.ImporteDouble + model.precioDouble;
+                    //await addPedidoTmp(model);
+                    if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
+                    {
+                        if (Application.Current.Properties["sesion"].Equals("activa"))
+                        {
+                            noProductos = noProductos + Convert.ToInt32(Math.Truncate(Convert.ToDouble(EntCantidad.Text)));
+                            App.Cart = App.Cart + Convert.ToInt32(Math.Truncate(Convert.ToDouble(EntCantidad.Text)));
+                            await Enviar();
+                        }
+                        else
+                        {
+                            //bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
+                            //if (ac)
+                            //{
+                            //    await Navigation.PushAsync(new Login());
+                            //}
+                        }
+                    }
+                    else
+                    {
+                        //bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
+                        //if (ac)
+                        //{
+                        //    await Navigation.PushAsync(new Login());
+                        //}
+                    }
                 });
             }
         }
@@ -367,11 +422,15 @@ namespace PinkFashion.ViewModels
         {
             get
             {
+<<<<<<< HEAD
+=======
+                //return new Command<Producto_>(async (Producto_ model) =>
+>>>>>>> 6160acfa21ccb5cec8444b031e018185d7e71da0
                 return new Command(async () =>
                 {
                     if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
                     {
-                        MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", +1);
+                        //MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", +1);
                         EntCantidad++;
                     }
                     else
@@ -392,7 +451,7 @@ namespace PinkFashion.ViewModels
         {
             get
             {
-                return new Command<Producto_>(async (Producto_ model) =>
+                return new Command(async () =>
                 {
                     System.Diagnostics.Debug.WriteLine("menos...");
                     if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
@@ -400,7 +459,7 @@ namespace PinkFashion.ViewModels
                         if (EntCantidad > 0)
                         {
                             EntCantidad--;
-                            MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", -1);
+                            //MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", -1);
                         }
                         if (EntCantidad == 0)
                         {

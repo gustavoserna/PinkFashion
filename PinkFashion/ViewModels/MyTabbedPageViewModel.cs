@@ -22,13 +22,11 @@ namespace PinkFashion.ViewModels
                 if (!(arg == -1 && Badge <= 0))
                 {
                     Badge = Badge + (arg);
-                }});
+                }
+            });
             MessagingCenter.Subscribe<ProductoViewModel, int>(this, "Badge", (sender, arg) =>
             {
-                if (!(arg == -1 && Badge <= 0))
-                {
-                    Badge = Badge + (arg);
-                }
+                Badge += arg;
             });
         }
     }

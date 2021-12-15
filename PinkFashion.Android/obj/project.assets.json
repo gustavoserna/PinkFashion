@@ -5388,32 +5388,39 @@
     ]
   },
   "packageFolders": {
-    "/Users/gustavoserna/.nuget/packages/": {}
+    "C:\\Users\\Han-S\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14DicV2\\PinkFashion\\PinkFashion.Android\\PinkFashion.Android.csproj",
       "projectName": "PinkFashion.Android",
-      "projectPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj",
-      "packagesPath": "/Users/gustavoserna/.nuget/packages/",
-      "outputPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/obj/",
+      "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14DicV2\\PinkFashion\\PinkFashion.Android\\PinkFashion.Android.csproj",
+      "packagesPath": "C:\\Users\\Han-S\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14DicV2\\PinkFashion\\PinkFashion.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "/Users/gustavoserna/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Han-S\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "monoandroid11.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj": {
-              "projectPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj"
+            "C:\\Users\\Han-S\\source\\repos\\PinkFashion14DicV2\\PinkFashion\\PinkFashion\\PinkFashion.csproj": {
+              "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14DicV2\\PinkFashion\\PinkFashion\\PinkFashion.csproj"
             }
           }
         }
