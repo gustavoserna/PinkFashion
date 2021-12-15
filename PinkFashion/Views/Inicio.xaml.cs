@@ -20,7 +20,6 @@ namespace PinkFashion.Views
 
         InicioViewModel inicioViewModel;
         MyTabbedPageViewModel tabbedPageViewModel;
-        
 
         public Inicio()
         {
@@ -93,6 +92,21 @@ namespace PinkFashion.Views
             //lbAbandonado.GestureRecognizers.Add(clickAbandonados);
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (inicioViewModel.ColFamilias.Count == 0)
+            {
+                inicioViewModel.LoadInicioCommand.Execute(null);
+            }
+
+            inicioViewModel.noProductos = App.Cart;
+            inicioViewModel.Monedero = App.Monedero;
+            inicioViewModel.EnviosGratis = App.EnvioGratis;
+            inicioViewModel.Abandonados = App.Abandonados;
+            App.eventTracker.SendScreen("Inicio|PinkFashionStore", nameof(Inicio));
+
+        }
 
         async void OnBtnWhatsappClicked(object sender, EventArgs args)
         {
