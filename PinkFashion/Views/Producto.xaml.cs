@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Newtonsoft.Json.Linq;
 using PinkFashion.Models;
 using PinkFashion.ViewModels;
@@ -143,12 +144,10 @@ namespace PinkFashion.Views
             {
                 System.Diagnostics.Debug.WriteLine("Error:" + ex.Message);
             }
-
         }
 
         protected override void OnAppearing()
         {
-
             base.OnAppearing();
             productoViewModel.LoadProductosCommand.Execute(null);
             //productoViewModel.noProductos = App.Cart;

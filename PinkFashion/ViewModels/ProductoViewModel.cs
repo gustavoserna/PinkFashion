@@ -367,6 +367,7 @@ namespace PinkFashion.ViewModels
             string respuesa = await addProdPedidoTmp(pedido);
             if (respuesa == "1")
             {
+                MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", noProductos);
                 await App.Current.MainPage.DisplayAlert("Listo", "Producto agregado al carrito", "Ok");
             }
             else
@@ -394,7 +395,6 @@ namespace PinkFashion.ViewModels
                         if (Application.Current.Properties["sesion"].Equals("activa"))
                         {
                             noProductos += EntCantidad;
-                            MessagingCenter.Send<ProductoViewModel, int>(this, "Badge", noProductos);
                             await Enviar();
                         }
                         else

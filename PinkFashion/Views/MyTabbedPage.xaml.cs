@@ -58,6 +58,12 @@ namespace PinkFashion.Views
             Children.Add(settingsNavigationPage);
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            myTabbedPageViewModel.LoadingCommand.Execute(null);
+        }
+
         protected override void OnCurrentPageChanged()
         {
             base.OnCurrentPageChanged();
