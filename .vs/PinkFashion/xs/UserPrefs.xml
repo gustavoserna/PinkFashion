@@ -2,12 +2,15 @@
   <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/Producto.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/PerfilUsuario.xaml">
     <Files>
-      <File FileName="PinkFashion/Views/Carrito.xaml.cs" />
-      <File FileName="PinkFashion/Views/Producto.xaml" Line="364" Column="62" />
-      <File FileName="PinkFashion/Views/Producto.xaml.cs" Line="74" Column="54" />
-      <File FileName="PinkFashion/ViewModels/ProductoViewModel.cs" Line="28" Column="28" NotebookId="1" />
+      <File FileName="PinkFashion/Views/MyTabbedPage.xaml.cs" Line="69" Column="21" />
+      <File FileName="PinkFashion/Views/Login.xaml.cs" Line="51" Column="35" />
+      <File FileName="PinkFashion/Views/Login.xaml" Line="42" Column="120" />
+      <File FileName="PinkFashion/ViewModels/SM.cs" Line="116" Column="14" />
+      <File FileName="PinkFashion/Views/Cuenta.xaml.cs" Line="48" Column="64" />
+      <File FileName="PinkFashion/Views/Cuenta.xaml" Line="7" Column="5" />
+      <File FileName="PinkFashion/Views/PerfilUsuario.xaml" Line="11" Column="47" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,11 +19,8 @@
             <Node name="PinkFashion" expanded="True">
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Cuenta.xaml" expanded="True" />
-                <Node name="Inicio.xaml" expanded="True" />
-                <Node name="Producto.xaml" expanded="True">
-                  <Node name="Producto.xaml.cs" selected="True" />
-                </Node>
+                <Node name="PerfilUsuario.xaml" expanded="True" selected="True" />
+                <Node name="Registro.xaml" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -37,5 +37,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.R58NB32EELY" />
 </Properties>

@@ -34,7 +34,7 @@ namespace PinkFashion.Views
             }
 
 
-            BindingContext = carritoViewModel = new CarritoViewModel(this);
+            BindingContext = carritoViewModel = new CarritoViewModel(this, Navigation);
 
             var clickDireccion = new TapGestureRecognizer();
             clickDireccion.Tapped += (s, e) =>
@@ -417,33 +417,39 @@ namespace PinkFashion.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            App.eventTracker.SendScreen(strEvento, nameof(Carrito));
-            carritoViewModel.LoadItemsCommand.Execute(null);
-            carritoViewModel.noProductos = App.Cart;
-            carritoViewModel.Monedero = App.Monedero;
-            carritoViewModel.EnviosGratis = App.EnvioGratis;
-            carritoViewModel.Abandonados = App.Abandonados;
-            carritoViewModel.TituloEnviosGratis = App.TituloEnvioGratis;
-            carritoViewModel.TituloMonedero = App.TituloMonedero;
-            if (App.Abandonados == 1)
+            if (App.Current.Properties.ContainsKey("IdCliente") && App.Current.Properties.ContainsKey("sesion"))
             {
-                carritoViewModel.visibleAbandonado = true;
-            }
-            else
-            {
-                carritoViewModel.visibleAbandonado = false;
-            }
+                carritoViewModel.SesionIniciada = true;
+                carritoViewModel.SesionNoIniciada = false;
 
-            if (root)
-            {
-                Producto.root = true;
-                Navigation.PopModalAsync();
-                root = false;
-            }
+                App.eventTracker.SendScreen(strEvento, nameof(Carrito));
+                carritoViewModel.LoadItemsCommand.Execute(null);
+                carritoViewModel.noProductos = App.Cart;
+                carritoViewModel.Monedero = App.Monedero;
+                carritoViewModel.EnviosGratis = App.EnvioGratis;
+                carritoViewModel.Abandonados = App.Abandonados;
+                carritoViewModel.TituloEnviosGratis = App.TituloEnvioGratis;
+                carritoViewModel.TituloMonedero = App.TituloMonedero;
+                if (App.Abandonados == 1)
+                {
+                    carritoViewModel.visibleAbandonado = true;
+                }
+                else
+                {
+                    carritoViewModel.visibleAbandonado = false;
+                }
 
-            
+                if (root)
+                {
+                    Producto.root = true;
+                    Navigation.PopModalAsync();
+                    root = false;
+                }
+            } else
+            {
+                carritoViewModel.SesionIniciada = false;
+                carritoViewModel.SesionNoIniciada = true;
+            }
         }
-
-        
     }
 }

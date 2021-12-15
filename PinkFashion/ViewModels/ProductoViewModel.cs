@@ -367,7 +367,7 @@ namespace PinkFashion.ViewModels
         {
             get
             {
-                return new Command<Producto_>(async (Producto_ model) =>
+                return new Command(async () =>
                 {
                     if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
                     {
@@ -394,6 +394,7 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<Producto_>(async (Producto_ model) =>
                 {
+                    System.Diagnostics.Debug.WriteLine("menos...");
                     if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
                     {
                         if (EntCantidad > 0)

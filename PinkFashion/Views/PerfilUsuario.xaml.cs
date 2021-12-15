@@ -64,11 +64,7 @@ namespace PinkFashion.Views
             clickLogout.Tapped += async (s, e) =>
             {
                 await sM.vaciarDatos();
-                Application.Current.MainPage = new NavigationPage(new Inicio())
-                {
-                    BarBackgroundColor = App.bgColor,
-                    BarTextColor = App.textColor
-                };
+                await Navigation.PopAsync();
             };
             btnlogout.GestureRecognizers.Add(clickLogout);
 

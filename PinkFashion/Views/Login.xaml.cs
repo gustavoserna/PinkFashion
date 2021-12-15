@@ -48,7 +48,7 @@ namespace PinkFashion.Views
                     loader.IsVisible = true;
                 });
 
-                await sM.iniciarSesion(usuario.Text, clave.Text);
+                await sM.iniciarSesion(usuario.Text, clave.Text, Navigation);
 
                 Device.BeginInvokeOnMainThread(() =>
                 {

@@ -55,6 +55,32 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        bool _SesionIniciada = false;
+        public bool SesionIniciada
+        {
+            get
+            {
+                return _SesionIniciada;
+            }
+            set
+            {
+                SetProperty(ref _SesionIniciada, value);
+            }
+        }
+
+        bool _SesionNoIniciada = true;
+        public bool SesionNoIniciada
+        {
+            get
+            {
+                return _SesionNoIniciada;
+            }
+            set
+            {
+                SetProperty(ref _SesionNoIniciada, value);
+            }
+        }
+
         string _Direc = "";
         public string Direc
         {
@@ -261,9 +287,10 @@ namespace PinkFashion.ViewModels
         }
         Page page;
 
-        public CarritoViewModel(Page page)
+        public CarritoViewModel(Page page, INavigation navigation)
         {
             this.page = page;
+            Navigation = navigation;
             Items = new PedidoTemporal();
             Items.productos = new ObservableCollection<ProductoTemporal>();
             Items.Tarjetas = new ObservableCollection<Card>();
@@ -293,6 +320,17 @@ namespace PinkFashion.ViewModels
                 await ExecuteLoadItemsCommand();
             });
     
+        }
+
+        public ICommand IniciarSesionCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    Navigation.PushModalAsync(new Login());
+                });
+            }
         }
 
         public ICommand AgregaCommand

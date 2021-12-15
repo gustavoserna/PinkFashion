@@ -204,7 +204,7 @@ namespace PinkFashion.Views
 
             base.OnAppearing();
             productoViewModel.LoadProductosCommand.Execute(null);
-            productoViewModel.noProductos = App.Cart;
+            //productoViewModel.noProductos = App.Cart;
             productoViewModel.Monedero = App.Monedero;
             productoViewModel.EnviosGratis = App.EnvioGratis;
             if (root)

@@ -11,6 +11,7 @@ namespace PinkFashion.Views
     public partial class MyTabbedPage : TabbedPage_R
     {
         MyTabbedPageViewModel myTabbedPageViewModel;
+
         public MyTabbedPage()
         {
             InitializeComponent();
@@ -31,12 +32,6 @@ namespace PinkFashion.Views
                 IconImageSource = "ghome.png",
                 Title = "Inicio",
             };
-
-            /*Page homePage = new Inicio()
-            {
-                IconImageSource = "ghome.png",
-                Title = "Inicio",
-            };*/
 
             NavigationPage bagNavigationPage = new NavigationPage(new Carrito())
             {
@@ -66,20 +61,12 @@ namespace PinkFashion.Views
         protected override void OnCurrentPageChanged()
         {
             base.OnCurrentPageChanged();
-
             if(CurrentPage.Title.Equals("Mi Bolsa"))
             {
+
                 if (!App.Current.Properties.ContainsKey("IdCliente") || !App.Current.Properties.ContainsKey("sesion"))
                 {
-                    Device.BeginInvokeOnMainThread(async () => {
-
-                        bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
-                        if (ac)
-                        {
-                            await Navigation.PushModalAsync(new Login());
-                        }
-
-                    });
+                    Navigation.PushModalAsync(new Login());
                 }
             }
         }

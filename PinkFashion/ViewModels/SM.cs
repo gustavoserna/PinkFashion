@@ -12,13 +12,15 @@ namespace PinkFashion.ViewModels
 {
     public class SM : InsigniaViewModel
     {
+        INavigation Navigation;
         public static Datos datosPerfil = new Datos();
         string clave = string.Empty;
 
-        public async Task iniciarSesion(string correo, string pass)
+        public async Task iniciarSesion(string correo, string pass, INavigation navigation)
         {
             try
             {
+                this.Navigation = navigation;
                 string vFechaNac = "";
                 var client = new HttpClient();
                 StringContent str = new StringContent("op=login&username=" + correo + "&password=" + pass, Encoding.UTF8, "application/x-www-form-urlencoded");
@@ -107,21 +109,12 @@ namespace PinkFashion.ViewModels
             
             if (!perfil.Encontrado.Equals("vacio"))
             {
-                Application.Current.MainPage = new NavigationPage(new Inicio())
-                {
-                    BarBackgroundColor = App.bgColor,
-                    BarTextColor = App.textColor
-                };
+                await Navigation.PopModalAsync();
 
             }
             else
             {
-                
-                Application.Current.MainPage = new NavigationPage(new VerificarTelefono())
-                {
-                    BarBackgroundColor = App.bgColor,
-                    BarTextColor = App.textColor
-                };
+                await Navigation.PushAsync(new VerificarTelefono());
             }
 
         }
