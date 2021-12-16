@@ -19,6 +19,8 @@ namespace PinkFashion.Views
         {
             InitializeComponent();
 
+            Title = categoria.Categoria;
+
             BindingContext = categoriaViewModel = new CategoriaViewModel(categoria, Navigation);
         }
 

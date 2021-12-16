@@ -14,6 +14,8 @@ namespace PinkFashion.Views
         {
             InitializeComponent();
 
+            Title = familia.clasificaciones;
+
             BindingContext = familiaVistaViewModel = new FamiliaVistaViewModel(familia, Navigation);
         }
 

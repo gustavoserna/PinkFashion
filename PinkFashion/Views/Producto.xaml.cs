@@ -21,6 +21,7 @@ namespace PinkFashion.Views
         public Producto(Producto_ producto)
         {
             InitializeComponent();
+            Title = producto.producto;
 
             //lblTitulo.Text = producto.producto;
             this.producto = producto;

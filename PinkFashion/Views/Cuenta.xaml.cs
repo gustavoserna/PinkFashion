@@ -41,7 +41,7 @@ namespace PinkFashion.Views
                         bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                         if (ac)
                         {
-                            await Navigation.PushAsync(new Login());
+                            await Navigation.PushModalAsync(new Login());
                         }
                     }
                 }
@@ -50,7 +50,7 @@ namespace PinkFashion.Views
                     bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                     if (ac)
                     {
-                        await Navigation.PushAsync(new Login());
+                        await Navigation.PushModalAsync(new Login());
                     }
                 }
 
@@ -73,7 +73,7 @@ namespace PinkFashion.Views
                         bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                         if (ac)
                         {
-                            await Navigation.PushAsync(new Login());
+                            await Navigation.PushModalAsync(new Login());
                         }
                     }
                 }
@@ -82,7 +82,7 @@ namespace PinkFashion.Views
                     bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                     if (ac)
                     {
-                        await Navigation.PushAsync(new Login());
+                        await Navigation.PushModalAsync(new Login());
                     }
                 }
             };
@@ -104,7 +104,7 @@ namespace PinkFashion.Views
                         bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                         if (ac)
                         {
-                            await Navigation.PushAsync(new Login());
+                            await Navigation.PushModalAsync(new Login());
                         }
                     }
                 }
@@ -113,7 +113,7 @@ namespace PinkFashion.Views
                     bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                     if (ac)
                     {
-                        await Navigation.PushAsync(new Login());
+                        await Navigation.PushModalAsync(new Login());
                     }
                 }
 
@@ -136,7 +136,7 @@ namespace PinkFashion.Views
                         bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                         if (ac)
                         {
-                            await Navigation.PushAsync(new Login());
+                            await Navigation.PushModalAsync(new Login());
                         }
                     }
                 }
@@ -145,7 +145,7 @@ namespace PinkFashion.Views
                     bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                     if (ac)
                     {
-                        await Navigation.PushAsync(new Login());
+                        await Navigation.PushModalAsync(new Login());
                     }
                 }
 
@@ -168,7 +168,7 @@ namespace PinkFashion.Views
                         bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                         if (ac)
                         {
-                            await Navigation.PushAsync(new Login());
+                            await Navigation.PushModalAsync(new Login());
                         }
                     }
                 }
@@ -177,7 +177,7 @@ namespace PinkFashion.Views
                     bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                     if (ac)
                     {
-                        await Navigation.PushAsync(new Login());
+                        await Navigation.PushModalAsync(new Login());
                     }
                 }
             };
@@ -199,7 +199,7 @@ namespace PinkFashion.Views
                         bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                         if (ac)
                         {
-                            await Navigation.PushAsync(new Login());
+                            await Navigation.PushModalAsync(new Login());
                         }
                     }
                 }
@@ -208,7 +208,7 @@ namespace PinkFashion.Views
                     bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                     if (ac)
                     {
-                        await Navigation.PushAsync(new Login());
+                        await Navigation.PushModalAsync(new Login());
                     }
                 }
 
@@ -232,7 +232,7 @@ namespace PinkFashion.Views
                         bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                         if (ac)
                         {
-                            await Navigation.PushAsync(new Login());
+                            await Navigation.PushModalAsync(new Login());
                         }
                     }
                 }
@@ -241,7 +241,7 @@ namespace PinkFashion.Views
                     bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
                     if (ac)
                     {
-                        await Navigation.PushAsync(new Login());
+                        await Navigation.PushModalAsync(new Login());
                     }
                 }
 

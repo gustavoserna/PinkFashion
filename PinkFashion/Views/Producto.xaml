@@ -13,21 +13,6 @@
              x:Name="ProductoPage"
              BackgroundColor="White">
 
-    <NavigationPage.TitleView>
-
-        <StackLayout
-            HorizontalOptions="FillAndExpand">
-
-            <Image
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Source="logo.png"
-                HeightRequest="35" />
-
-        </StackLayout>
-
-    </NavigationPage.TitleView>
-
     <ContentPage.Content>
 
         <ScrollView

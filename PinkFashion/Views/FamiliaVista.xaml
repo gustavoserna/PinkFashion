@@ -9,21 +9,6 @@
     x:Name="FamiliaPage"
     x:Class="PinkFashion.Views.FamiliaVista">
 
-    <NavigationPage.TitleView>
-
-        <StackLayout
-            HorizontalOptions="FillAndExpand">
-
-            <Image
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Source="logo.png"
-                HeightRequest="35" />
-
-        </StackLayout>
-
-    </NavigationPage.TitleView>
-
     <ContentPage.Content>
 
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
@@ -98,7 +83,7 @@
             <!-- End Menu -->
 
             <!-- Titulo -->
-            <StackLayout
+            <!--<StackLayout
                 HorizontalOptions="FillAndExpand"
                 Padding="10"
                 BackgroundColor="Transparent">
@@ -110,7 +95,7 @@
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand" />
 
-            </StackLayout>
+            </StackLayout>-->
             <!-- End titulo -->
 
             <!-- Filtros -->
