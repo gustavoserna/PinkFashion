@@ -20,6 +20,7 @@ namespace PinkFashion.ViewModels
 
         Familia familia;
         string idMarca = "";
+        string filtroPrecio = "";
 
         public ObservableCollection<ColeccionCategorias> ColCategorias { get; set; }
         public ObservableCollection<Producto_> Productos { get; set; }
@@ -198,6 +199,19 @@ namespace PinkFashion.ViewModels
                 return new Command(() =>
                 {
                     this.idMarca = "";
+                    this.filtroPrecio = "";
+                    LoadProductosCommand.Execute(null);
+                });
+            }
+        }
+
+        public ICommand FiltroPrecioCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    this.filtroPrecio = "menorMayor";
                     LoadProductosCommand.Execute(null);
                 });
             }
@@ -229,15 +243,24 @@ namespace PinkFashion.ViewModels
             {
                 var client = new HttpClient();
                 StringContent str = null;
-                if (idMarca.Equals(""))
+
+                if(!idMarca.Equals("") && filtroPrecio.Equals(""))
                 {
-                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion, Encoding.UTF8, "application/x-www-form-urlencoded");
+                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
+                }
+                else if(!filtroPrecio.Equals("") && idMarca.Equals(""))
+                {
+                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion + "&filtroPrecio=" + filtroPrecio, Encoding.UTF8, "application/x-www-form-urlencoded");
+                }
+                else if(!filtroPrecio.Equals("") && !idMarca.Equals(""))
+                {
+                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion + "&filtroPrecio=" + filtroPrecio + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
                 }
                 else
                 {
-                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
-
+                    str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion, Encoding.UTF8, "application/x-www-form-urlencoded");
                 }
+
                 var respuesta = await client.PostAsync(Constantes.url + "Productos/App.php", str);
                 var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
                 System.Diagnostics.Debug.WriteLine("Productos: " + json);

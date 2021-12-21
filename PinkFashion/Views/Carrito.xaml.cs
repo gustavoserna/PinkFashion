@@ -229,17 +229,15 @@ namespace PinkFashion.Views
                                             NavigationPage.SetHasNavigationBar(this, false);
                                             //string respuesta = "Test";
                                             string respuesta = await carritoViewModel.ConfirmaCompra(vCliente, vDireccion, vFpago, vEnvio, vToken, Meses);
-                                            await DisplayAlert("Información", respuesta, "Ok");
+                                            await DisplayAlert("Información", "Gracias por tu compra", "Ok");
                                             /*Application.Current.MainPage = new NavigationPage(new Inicio())
                                             {
                                                 BarBackgroundColor = App.bgColor,
                                                 BarTextColor = App.textColor
                                             };
                                             */
-                                            
-                                            await Application.Current.MainPage.Navigation.PopModalAsync();
 
-                                            await Application.Current.MainPage.Navigation.PushAsync(new MisPedidos());
+                                            await Navigation.PushAsync(new MisPedidos());
 
 
                                             Device.BeginInvokeOnMainThread(() =>
@@ -259,16 +257,15 @@ namespace PinkFashion.Views
                                     NavigationPage.SetHasNavigationBar(this, false);
 
                                     string respuesta = await carritoViewModel.ConfirmaCompra(vCliente, vDireccion, vFpago, vEnvio, vToken, Meses);
-                                    await DisplayAlert("Información", respuesta, "Ok");
+                                    await DisplayAlert("Información", "Gracias por tu compra", "Ok");
                                     /*Application.Current.MainPage = new NavigationPage(new Inicio())
                                     {
                                         BarBackgroundColor = App.bgColor,
                                         BarTextColor = App.textColor
                                     };
                                     */
-                                    await Application.Current.MainPage.Navigation.PopModalAsync();
 
-                                    await Application.Current.MainPage.Navigation.PushAsync(new MisPedidos());
+                                    await Navigation.PushAsync(new MisPedidos());
 
                                     Device.BeginInvokeOnMainThread(() =>
                                     {
@@ -302,7 +299,11 @@ namespace PinkFashion.Views
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                System.Diagnostics.Debug.WriteLine(ex);
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    cargando.IsVisible = false;
+                });
                 await DisplayAlert("Error", "Intentalo de nuevo mas tarde", "Ok");
             }
 

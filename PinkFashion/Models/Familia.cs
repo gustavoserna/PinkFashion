@@ -12,7 +12,7 @@ namespace PinkFashion.Models
         {
             get
             {
-                return Constantes.root_url + "/BannersFamilias/Autorizadas/" + _imagen;
+                return Constantes.root_url + "BannersFamilias/Autorizadas/" + _imagen;
             }
             set
             {

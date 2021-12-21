@@ -11,6 +11,7 @@ namespace PinkFashion.Models
         public string IdCliente { get; set; }
         public string Cuenta { get; set; }
         public string Token { get; set; }
+        public string DeviceSession { get; set; }
 
         string _cuentadigitos;
         public string CuentaDigitos

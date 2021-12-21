@@ -140,6 +140,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Openpay.Xamarin/1.0.25.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Openpay.Xamarin.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Openpay.Xamarin.dll": {}
+        }
+      },
       "Plugin.Badge/2.3.1": {
         "type": "package",
         "dependencies": {
@@ -998,6 +1010,7 @@
           "Conekta.Xamarin": "1.0.6",
           "DLToolkit.Forms.Controls.FlowListView": "2.0.11",
           "Newtonsoft.Json": "13.0.1",
+          "Openpay.Xamarin": "1.0.25.3",
           "Plugin.Badge": "2.3.1",
           "Sharpnado.Presentation.Forms": "1.7.1",
           "Xam.Plugins.Forms.ImageCircle": "3.1.1.1-beta",
@@ -1156,6 +1169,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Openpay.Xamarin/1.0.25.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Openpay.Xamarin.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Openpay.Xamarin.dll": {}
+        }
+      },
       "Plugin.Badge/2.3.1": {
         "type": "package",
         "dependencies": {
@@ -1950,6 +1975,7 @@
           "Conekta.Xamarin": "1.0.6",
           "DLToolkit.Forms.Controls.FlowListView": "2.0.11",
           "Newtonsoft.Json": "13.0.1",
+          "Openpay.Xamarin": "1.0.25.3",
           "Plugin.Badge": "2.3.1",
           "Sharpnado.Presentation.Forms": "1.7.1",
           "Xam.Plugins.Forms.ImageCircle": "3.1.1.1-beta",
@@ -2108,6 +2134,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Openpay.Xamarin/1.0.25.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Openpay.Xamarin.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Openpay.Xamarin.dll": {}
+        }
+      },
       "Plugin.Badge/2.3.1": {
         "type": "package",
         "dependencies": {
@@ -2902,6 +2940,7 @@
           "Conekta.Xamarin": "1.0.6",
           "DLToolkit.Forms.Controls.FlowListView": "2.0.11",
           "Newtonsoft.Json": "13.0.1",
+          "Openpay.Xamarin": "1.0.25.3",
           "Plugin.Badge": "2.3.1",
           "Sharpnado.Presentation.Forms": "1.7.1",
           "Xam.Plugins.Forms.ImageCircle": "3.1.1.1-beta",
@@ -3060,6 +3099,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Openpay.Xamarin/1.0.25.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Openpay.Xamarin.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Openpay.Xamarin.dll": {}
+        }
+      },
       "Plugin.Badge/2.3.1": {
         "type": "package",
         "dependencies": {
@@ -3854,6 +3905,7 @@
           "Conekta.Xamarin": "1.0.6",
           "DLToolkit.Forms.Controls.FlowListView": "2.0.11",
           "Newtonsoft.Json": "13.0.1",
+          "Openpay.Xamarin": "1.0.25.3",
           "Plugin.Badge": "2.3.1",
           "Sharpnado.Presentation.Forms": "1.7.1",
           "Xam.Plugins.Forms.ImageCircle": "3.1.1.1-beta",
@@ -4071,6 +4123,20 @@
         "newtonsoft.json.13.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Openpay.Xamarin/1.0.25.3": {
+      "sha512": "CoEFoeywG1ZpPGSauX/l/ZbkJ6rl8ZBWXJNUyZJxxZ8ZeqdVXkuV2dbSCO8vKVk6hkaOR5/d2i5EUiR1ZDwq5Q==",
+      "type": "package",
+      "path": "openpay.xamarin/1.0.25.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid81/Openpay.Xamarin.dll",
+        "lib/netstandard2.0/Openpay.Xamarin.dll",
+        "lib/xamarinios10/Openpay.Xamarin.dll",
+        "openpay.xamarin.1.0.25.3.nupkg.sha512",
+        "openpay.xamarin.nuspec"
       ]
     },
     "Plugin.Badge/2.3.1": {

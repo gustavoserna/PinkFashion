@@ -186,6 +186,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Openpay.Xamarin": {
+              "target": "Package",
+              "version": "[1.0.25.3, )"
+            },
             "Plugin.Badge": {
               "target": "Package",
               "version": "[2.3.1, )"

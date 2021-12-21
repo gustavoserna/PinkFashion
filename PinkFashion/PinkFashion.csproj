@@ -27,6 +27,7 @@
     <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="6.0.0" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Openpay.Xamarin" Version="1.0.25.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
@@ -63,5 +64,6 @@
     <None Remove="Xamarin.FFImageLoading.Forms" />
     <None Remove="ViewCells\" />
     <None Remove="ContentViews\" />
+    <None Remove="Openpay.Xamarin" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pTaA9TYx0EdLt3bcqJ/m1FFDUIkVAJ8c4mxmTFp40W2qNyKSked3IyGrmvcGZidm3EtYk5oaUYlK3tjj2AyEKg==",
+  "dgSpecHash": "gBkRwyA69q2pJeBGTth64VujknBT/Zm2iGX46anSOGj4THzdUftbyMGnPq9IzQugqXQxVisIy4fD29229woskg==",
   "success": true,
   "projectFilePath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.iOS/PinkFashion.iOS.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "/Users/gustavoserna/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/gustavoserna/.nuget/packages/openpay.xamarin/1.0.25.3/openpay.xamarin.1.0.25.3.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/plugin.badge/2.3.1/plugin.badge.2.3.1.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/sharpnado.materialframe/1.1.1/sharpnado.materialframe.1.1.1.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/sharpnado.presentation.forms/1.7.1/sharpnado.presentation.forms.1.7.1.nupkg.sha512",

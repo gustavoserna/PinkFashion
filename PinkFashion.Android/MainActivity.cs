@@ -62,6 +62,7 @@ namespace PinkFashion.Droid
             
             OneSignal.Current.RegisterForPushNotifications();
             CardsViewRenderer.Preserve();
+            global::Openpay.Xamarin.OpenpayAndroidImpl.Init(this);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

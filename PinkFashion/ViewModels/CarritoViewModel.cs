@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Openpay.Xamarin;
 using PinkFashion.Models;
 using PinkFashion.Views;
 using Xamarin.Forms;
@@ -16,6 +17,7 @@ namespace PinkFashion.ViewModels
 {
     public class CarritoViewModel : InsigniaViewModel
     {
+        string deviceSession = "";
         public INavigation Navigation { get; set; }
 
         public PedidoTemporal Items { get; set; }
@@ -589,7 +591,7 @@ namespace PinkFashion.ViewModels
 
             var json = JsonConvert.SerializeObject(card);
             var client = new HttpClient();
-            StringContent str = new StringContent("op=EliminarTarjetaCliente&item=" + json, Encoding.UTF8, "application/x-www-form-urlencoded");
+            StringContent str = new StringContent("op=DeleteTarjetaOpenPay&IdTarjeta=" + card.IdTarjeta + "&idCliente=" + Application.Current.Properties["IdCliente"], Encoding.UTF8, "application/x-www-form-urlencoded");
             await client.PostAsync(Constantes.url + "Sesion/App.php", str);
         }
 
@@ -1122,8 +1124,10 @@ namespace PinkFashion.ViewModels
             string regresar = "";
             try
             {
+                deviceSession = await CrossOpenpay.Current.CreateDeviceSessionId();
+                string idTarjeta = Application.Current.Properties["IDMetodoPago"].ToString();
                 var client = new HttpClient();
-                StringContent str = new StringContent("op=confirmarCompra&idcliente=" + idcliente + "&iddireccion=" + idDireccion + "&idformapago=" + FPago + "&Envio=" + Envio + "&Token=" + Token + "&Meses=" + meses, Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str = new StringContent("op=PagoOpenPay&idcliente=" + idcliente + "&iddireccion=" + idDireccion + "&idformapago=" + FPago + "&Envio=" + Envio + "&idTarjeta=" + idTarjeta + "&Meses=" + meses + "&deviceSesion=" + this.deviceSession, Encoding.UTF8, "application/x-www-form-urlencoded");
                 var consulta = await client.PostAsync(Constantes.url + "Pedidos/App.php", str);
                 var respuesta = consulta.Content.ReadAsStringAsync().Result;
                 regresar = respuesta; //respuesta.Replace('"', '-');
@@ -1131,7 +1135,7 @@ namespace PinkFashion.ViewModels
 
                 totalpedido = 0;
                 noProductos = 0;
-                App.Cart = 0;
+                MessagingCenter.Send<CarritoViewModel, int>(this, "BadgeCero", 0);
 
                 //Obtiene datos de variables iniciales
 
@@ -1154,7 +1158,7 @@ namespace PinkFashion.ViewModels
                 }
                 else
                 {
-                    App.Cart = 0;
+                    MessagingCenter.Send<CarritoViewModel, int>(this, "BadgeCero", 0);
                 }
 
 
@@ -1284,7 +1288,7 @@ namespace PinkFashion.ViewModels
                 
 
                 
-                StringContent str = new StringContent("op=SelectPedidosTemporal&idCliente=" + Application.Current.Properties["IdCliente"], Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str = new StringContent("op=SelectPedidosTemporalOpenPay&idCliente=" + Application.Current.Properties["IdCliente"], Encoding.UTF8, "application/x-www-form-urlencoded");
                 var respuesta = await client.PostAsync(Constantes.url + "Pedidos/App.php", str);
                 var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
                 System.Diagnostics.Debug.WriteLine("pedidos temporales: " + json);

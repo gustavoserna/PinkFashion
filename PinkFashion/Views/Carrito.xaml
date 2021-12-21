@@ -183,7 +183,7 @@
                                             <ColumnDefinition Width="70*"></ColumnDefinition>
                                             <ColumnDefinition Width="30*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <Frame Grid.Row="0" Grid.Column="0" Padding="0" Opacity=".6" BackgroundColor="Gray" CornerRadius ="3" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35" >
+                                        <Frame Grid.Row="0" Grid.Column="0" Padding="0" Opacity="1" BackgroundColor="White" BorderColor="#eb068c" CornerRadius="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35" >
                                             <renderers:Entry_Pago
                                             x:Name="vCodigoPromo"
                                             Text=""
@@ -195,11 +195,11 @@
                                             HorizontalOptions="FillAndExpand"/>
 
                                         </Frame>
-                                        <Frame Grid.Row="0" Grid.Column="1" Padding="0" Opacity=".8" BackgroundColor="#545454" CornerRadius ="3" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
-                                            <Label x:Name="lblConfirmaPromo" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#fff"  FontSize="16" FontAttributes="Bold" />
+                                        <Frame Grid.Row="0" Grid.Column="1" Padding="0" Opacity="1" BackgroundColor="#eb068c" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
+                                            <Label x:Name="lblConfirmaPromo" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="Black"  FontSize="16" FontAttributes="Bold" />
                                         </Frame>
 
-                                        <Frame Grid.Row="1" Grid.Column="0" Padding="0" Opacity=".6" BackgroundColor="Gray" CornerRadius ="3" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
+                                        <Frame Grid.Row="1" Grid.Column="0" Padding="0" Opacity="1" BackgroundColor="White" BorderColor="#eb068c" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
                                             <renderers:Entry_Pago
                                             x:Name="vMonedero"
                                             Text=""
@@ -211,8 +211,8 @@
                                             HorizontalOptions="FillAndExpand"/>
 
                                         </Frame>
-                                        <Frame Grid.Row="1" Grid.Column="1"  Padding="0" Opacity=".8" BackgroundColor="#545454" CornerRadius ="3" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
-                                            <Label x:Name="lblConfirmaMonedero" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#fff"  FontSize="16" FontAttributes="Bold" />
+                                        <Frame Grid.Row="1" Grid.Column="1"  Padding="0" Opacity="1" BackgroundColor="#eb068c" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
+                                            <Label x:Name="lblConfirmaMonedero" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="Black"  FontSize="16" FontAttributes="Bold" />
                                         </Frame>
 
                                     </Grid>

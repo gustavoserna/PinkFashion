@@ -8,6 +8,9 @@ using Newtonsoft.Json;
 using PinkFashion.ViewModels;
 using Xamarin.Forms;
 using PinkFashion.Models;
+using Openpay.Xamarin;
+using Openpay.Xamarin.Abstractions;
+using Card = PinkFashion.Models.Card;
 
 namespace PinkFashion.Views
 {
@@ -15,6 +18,8 @@ namespace PinkFashion.Views
     {
         string tipo = "";
         string strEvento = "Método Pago|Pink Fashion Store";
+        private Token _token;
+        private string _deviceSessionId = "";
         public AgregarMetodo(string tipo = "push")
         {
             InitializeComponent();
@@ -100,64 +105,96 @@ namespace PinkFashion.Views
         }
 
 
-        public async Task InsertarMetodo(Card metodo)
+        public async Task<string> InsertarMetodo(Card metodo)
         {
+            var respuesta = "";
             try
             {
+                string[] exp = expira.Text.Split('/');
+                int mes = Convert.ToInt32(exp[0]);
+                int año = Convert.ToInt32(exp[1]);
+                int v_cvc = Convert.ToInt32(cvc.Text);
+
                 var item = JsonConvert.SerializeObject(metodo);
                 System.Diagnostics.Debug.WriteLine(item);
                 var client = new HttpClient();
-                StringContent str = new StringContent("op=InsertaTarjetaCliente&item=" + item, Encoding.UTF8, "application/x-www-form-urlencoded");
-                await client.PostAsync(Constantes.url + "Sesion/App.php", str);
+                StringContent str = new StringContent("" +
+                    "op=guardarTarjetaOpenPay" +
+                    "&token_id=" + metodo.Token +
+                    "&deviceSesion=" + metodo.DeviceSession +
+                    "&Smes=" + mes +
+                    "&Sano=" + año +
+                    "&noTarjeta=" + metodo.Cuenta +
+                    "&inputCVC=" + v_cvc +
+                    "&idCliente=" + Application.Current.Properties["IdCliente"].ToString()
+                    , Encoding.UTF8, "application/x-www-form-urlencoded");
+                var consulta = await client.PostAsync(Constantes.open_pay_url + "Sesion/App.php", str);
+                respuesta = consulta.Content.ReadAsStringAsync().Result;
+                //var res = respuesta; //respuesta.Replace('"', '-');
+
             }
             catch (Exception ex)
             {
                 await DisplayAlert("Error", "Ocurrió un error al registrar los datos, inténtalo de nuevo mas tarde", "Ok");
                 System.Diagnostics.Debug.WriteLine(ex.Message);
+                respuesta = ex.Message;
+
             }
+            return respuesta;
 
         }
 
         public async Task Agregar()
         {
-            string token = "";
             string[] exp = expira.Text.Split('/');
             int mes = Convert.ToInt32(exp[0]);
             int año = Convert.ToInt32(exp[1]);
             string cuenta = string.Concat(tarjeta.Text.Where(c => !char.IsWhiteSpace(c)));
+
+            string Tarjetabiente = nombre.Text;
+            int v_cvc = Convert.ToInt32(cvc.Text);
             System.Diagnostics.Debug.WriteLine(cuenta);
-
-            // Nuevas Llaves Coneckta 2020 
-            //token = await new ConektaTokenizer("key_EkzSgKsDjq3oksxqBwGgnMA", RuntimePlatform.iOS).GetTokenAsync(cuenta, nombre.Text, cvc.Text, año, mes);  //Test
-            token = await new ConektaTokenizer("key_a4KDtxki6vWpz4uXMx21U4w", RuntimePlatform.iOS).GetTokenAsync(cuenta, nombre.Text, cvc.Text, año, mes);      //Produccion
-
-
-            Card metodoPago = new Card();
-            metodoPago.IdTarjeta = 0;
-            metodoPago.IdCliente = Application.Current.Properties["IdCliente"].ToString();
-            if (cuenta.Length == 16)
-            {
-                metodoPago.Cuenta = cuenta[12].ToString() + cuenta[13].ToString() + cuenta[14].ToString() + cuenta[15].ToString();
-            }
-            else
-            {
-                metodoPago.Cuenta = cuenta[11].ToString() + cuenta[12].ToString() + cuenta[13].ToString() + cuenta[14].ToString();
-            }
-            metodoPago.Token = token;
-
             try
             {
-                await InsertarMetodo(metodoPago);
-                if (tipo.Equals("push"))
-                    await Navigation.PopAsync();
-                else
-                    await Navigation.PopModalAsync();
+                if (CrossOpenpay.IsSupported)
+                {
+                    Openpay.Xamarin.Abstractions.Card card = new Openpay.Xamarin.Abstractions.Card
+                    {
+                        HolderName = Tarjetabiente,
+                        Number = cuenta,
+                        ExpirationMonth = mes.ToString(),
+                        ExpirationYear = año.ToString(),
+                        Cvv2 = v_cvc
+                    };
 
+                    _token = await CrossOpenpay.Current.CreateTokenFromCard(card);
+                    _deviceSessionId = await CrossOpenpay.Current.CreateDeviceSessionId();
+
+                    Card metodoPago = new Card();
+                    metodoPago.IdTarjeta = 0;
+                    metodoPago.IdCliente = Application.Current.Properties["IdCliente"].ToString();
+                    if (cuenta.Length == 16)
+                    {
+                        metodoPago.Cuenta = cuenta[12].ToString() + cuenta[13].ToString() + cuenta[14].ToString() + cuenta[15].ToString();
+                    }
+                    else
+                    {
+                        metodoPago.Cuenta = cuenta[11].ToString() + cuenta[12].ToString() + cuenta[13].ToString() + cuenta[14].ToString();
+                    }
+                    metodoPago.Token = _token.Id.ToString();
+                    metodoPago.DeviceSession = _deviceSessionId.ToString();
+                    string respuesta = await InsertarMetodo(metodoPago);
+                    respuesta = respuesta == null ? "" : respuesta;
+                    if (tipo.Equals("push"))
+                        await Navigation.PopAsync();
+                    else
+                        await Navigation.PopModalAsync();
+
+                }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                await DisplayAlert("Error", "Ocurrió un error al registrar los datos, inténtalo de nuevo mas tarde", "Ok");
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                await Application.Current.MainPage.DisplayAlert($"Error: {exception.Message}", "Error", "Ok");
             }
         }
     }

@@ -119,14 +119,14 @@ namespace PinkFashion.ViewModels
             
             var json = JsonConvert.SerializeObject(card);
             var client = new HttpClient();
-            StringContent str = new StringContent("op=EliminarTarjetaCliente&item=" + json, Encoding.UTF8, "application/x-www-form-urlencoded");
+            StringContent str = new StringContent("op=DeleteTarjetaOpenPay&IdTarjeta=" + card.IdTarjeta + "&idCliente=" + Application.Current.Properties["IdCliente"], Encoding.UTF8, "application/x-www-form-urlencoded");
             await client.PostAsync(Constantes.url + "Sesion/App.php", str);
         }
 
         public async Task<Card[]> GetTarjetas()
         {
             var client = new HttpClient();
-            StringContent str = new StringContent("op=getTarjetas&IdCliente=" + Application.Current.Properties["IdCliente"], Encoding.UTF8, "application/x-www-form-urlencoded");
+            StringContent str = new StringContent("op=getTarjetasOpenPay&IdCliente=" + Application.Current.Properties["IdCliente"], Encoding.UTF8, "application/x-www-form-urlencoded");
             var respuesta = await client.PostAsync(Constantes.url + "Sesion/App.php", str);
             var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
             System.Diagnostics.Debug.WriteLine("Tarjetas: " + json);

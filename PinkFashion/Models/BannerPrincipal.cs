@@ -15,7 +15,7 @@ namespace PinkFashion.Models
         {
             get
             {
-                return Constantes.root_url + "/SliderApp/" + _ImgBanner;
+                return Constantes.root_url + "SlidersPrincipal/" + _ImgBanner;
             }
             set
             {

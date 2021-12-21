@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "y+JCIeU8CtuzrHFyMGEwK2GeuU+9OIeZlJQcRS5rhLwYRN3xaIwvHYEe7Y9PIz3Us5UQF/NLIrkD4el1BMb/bQ==",
+  "dgSpecHash": "bjwWRmwpuSuPxfBWohDjxoapRrX5geVSVsXzSnjZY3yB4MoX7I9CeamCCETjUfdoPUhcb/8BoPFsigxa410Mrw==",
   "success": true,
   "projectFilePath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion.Android/PinkFashion.Android.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "/Users/gustavoserna/.nuget/packages/conekta.xamarin/1.0.6/conekta.xamarin.1.0.6.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/dltoolkit.forms.controls.flowlistview/2.0.11/dltoolkit.forms.controls.flowlistview.2.0.11.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/gustavoserna/.nuget/packages/openpay.xamarin/1.0.25.3/openpay.xamarin.1.0.25.3.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/plugin.badge/2.3.1/plugin.badge.2.3.1.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/plugin.currentactivity/2.1.0.4/plugin.currentactivity.2.1.0.4.nupkg.sha512",
     "/Users/gustavoserna/.nuget/packages/sharpnado.materialframe/1.1.1/sharpnado.materialframe.1.1.1.nupkg.sha512",

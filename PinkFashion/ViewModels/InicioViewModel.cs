@@ -392,10 +392,10 @@ namespace PinkFashion.ViewModels
 
                     for (int k = 0; k <= listafamilias_for_col.Count; k++)
                     {
-                        if (k < 3 && listafamilias_for_col.Count > 0)
+                        if (k < 3 /* && listafamilias_for_col.Count > 0*/)
                         {
-                            coleccion.familias.Add(listafamilias_for_col[0]);
-                            listafamilias_for_col.RemoveAt(0);
+                            coleccion.familias.Add(listafamilias_for_col[k]);
+                            //listafamilias_for_col.RemoveAt(0);
                         }
                         else
                         {
@@ -405,6 +405,8 @@ namespace PinkFashion.ViewModels
 
                     ColFamilias.Add(coleccion);
                 }
+
+                System.Diagnostics.Debug.WriteLine("Familias: " + JsonConvert.SerializeObject(ColFamilias));
 
                 //carousel superprecios
                 double totalSlidesSuperPrecios = Math.Ceiling((Double)listasuperprecios_for_col.Count / 2);

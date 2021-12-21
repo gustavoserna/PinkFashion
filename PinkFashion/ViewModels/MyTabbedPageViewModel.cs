@@ -91,6 +91,10 @@ namespace PinkFashion.ViewModels
                     Badge = Badge + (arg);
                 }
             });
+            MessagingCenter.Subscribe<CarritoViewModel, int>(this, "BadgeCero", (sender, arg) =>
+            {
+                Badge = 0;
+            });
             MessagingCenter.Subscribe<ProductoViewModel, int>(this, "Badge", (sender, arg) =>
             {
                 Badge = arg;

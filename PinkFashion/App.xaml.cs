@@ -10,6 +10,7 @@ using Sharpnado.Presentation.Forms.RenderedViews;
 using Newtonsoft.Json.Linq;
 using Com.OneSignal;
 using PinkFashion.Renderers;
+using Openpay.Xamarin;
 
 //using Plugin.FirebaseAnalytics;
 
@@ -18,6 +19,9 @@ namespace PinkFashion
 {
     public partial class App : Application
     {
+        private const string MerchantId = "mxuqndqsuoyxq1sewavo";
+        private const string ApiKey = "pk_44b9489c6f854a95b6f69f9661155ee6";
+
         public static string pushTokenString = string.Empty;
         public static Color bgColor = Color.White;
         public static Color textColor = Color.FromHex("#eb068c");
@@ -98,7 +102,10 @@ namespace PinkFashion
         protected override void OnStart()
         {
             //await ExecuteGetContadorCommand();
-            
+            if (CrossOpenpay.IsSupported)
+            {
+                CrossOpenpay.Current.Initialize(MerchantId, ApiKey, false);
+            }
 
         }
 
