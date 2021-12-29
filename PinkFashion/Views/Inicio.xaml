@@ -84,11 +84,14 @@
                     x:Name="CarouselViewG"
                     InterPageSpacing="0"
                     ShowIndicators="True"
-                    ShowArrows="False"
+                    ShowArrows="True"
+                    ArrowsBackgroundColor="Transparent"
+                    InfiniteScrolling="True"
                     IndicatorsTintColor="White"
                     CurrentPageIndicatorTintColor="#eb068c"
                     ItemsSource="{Binding InicioVista.Banners}"
-                    HeightRequest="160">
+                    HeightRequest="160"
+                    >
 
                     <carousel:CarouselViewControl.ItemTemplate>
 
@@ -133,7 +136,7 @@
                     Margin="0,5,0,0"
                     InterPageSpacing="0"
                     ShowIndicators="True"
-                    ShowArrows="False"
+                    ShowArrows="True"
                     ArrowsBackgroundColor="Transparent"
                     IndicatorsTintColor="#ccc"
                     CurrentPageIndicatorTintColor="#eb068c"
@@ -247,12 +250,12 @@
                         ShowArrows="True"
                         ArrowsParentMargin="0"
                         ArrowsTintColor="#eb068c"
-                        HorizontalArrowsPosition="Center"
+                        HorizontalArrowsPosition="Top"
                         ArrowsSize="35"
                         ArrowsBackgroundColor="Transparent"
                         ItemsSource="{Binding ColSuperPrecio}"
                         BackgroundColor="Transparent"
-                        HeightRequest="290">
+                        HeightRequest="210">
 
                         <carousel:CarouselViewControl.ItemTemplate>
 
@@ -260,7 +263,7 @@
 
                                 <Grid
                                     BackgroundColor="Transparent"
-                                    Padding="5,0,5,0">
+                                    Padding="5,0,0,0">
 
                                     <local:FlowListView_R
                                         FlowColumnCount="2"
@@ -281,7 +284,7 @@
                                                 <Frame
                                                     HasShadow="False"
                                                     Padding="0"
-                                                    Margin="10,0,10,0"
+                                                    Margin="10,0,0,0"
                                                     BackgroundColor="Transparent"
                                                     VerticalOptions="StartAndExpand"
                                                     HorizontalOptions="CenterAndExpand"
@@ -374,7 +377,7 @@
                             <Label
                                 Grid.Row="0"
                                 Grid.Column="0"
-                                Text="Más vendidos"
+                                Text="Productos más &#10; vendidos"
                                 TextDecorations="{Binding IsUnderlinedMasVendidos}"
                                 TextColor="Black"
                                 HorizontalTextAlignment="Center"
@@ -413,7 +416,7 @@
                                 Grid.Row="1"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
-                                Text="Nuevos Productos"
+                                Text="Nuevos productos"
                                 TextColor="Black"
                                 TextDecorations="{Binding IsUnderlinedNuevosProductos}"
                                 HorizontalTextAlignment="Center"
@@ -486,7 +489,7 @@
                 </StackLayout>
                 <!-- end nuestros favoritos -->
 
-                <ImageButton Grid.Row="0" Source="WhatsApp_verde.png" BorderColor="Transparent" BorderWidth="0" HorizontalOptions="End" WidthRequest="50" HeightRequest="50" Margin="0,0,20,22" VerticalOptions="End" Clicked="OnBtnWhatsappClicked"/>
+                <ImageButton Grid.Row="0" Source="WhatsApp_verde.png" BorderColor="Transparent" BackgroundColor="Transparent" BorderWidth="0" HorizontalOptions="End" WidthRequest="50" HeightRequest="50" Margin="0,0,20,22" VerticalOptions="End" Clicked="OnBtnWhatsappClicked"/>
 
 
             </StackLayout>

@@ -60,6 +60,7 @@
 
                                             <Label
                                                 Text="{Binding Categoria}"
+                                                TextDecorations="{Binding CategoriaTextDecoration}"
                                                 HorizontalTextAlignment="Center"
                                                 HorizontalOptions="CenterAndExpand"
                                                 VerticalOptions="CenterAndExpand"
@@ -258,7 +259,20 @@
                                         Aspect="AspectFit"
                                         Source="{Binding Imagen}"/>
 
-                                    <Frame
+                                    <Label
+                                                                Rotation="-45"
+                                                                Grid.Row="0"
+                                                                x:Name="vAgotado"
+                                                                Text="Agotado"
+                                                                FontFamily="Arial"
+                                                                IsVisible="{Binding Agotado}"
+                                                                VerticalOptions="CenterAndExpand"
+                                                                HorizontalOptions="CenterAndExpand"
+                                                                TextColor="#eb068c"
+                                                                FontSize="15" />
+
+
+                                    <!--<Frame
                                         x:Name="vAgotado"
                                         HasShadow="True"
                                         Grid.Row="0"
@@ -293,7 +307,7 @@
                                             FontSize="12"
                                             HorizontalOptions="CenterAndExpand"
                                             VerticalOptions="CenterAndExpand" />
-                                    </Frame>
+                                    </Frame>-->
 
                                 </Grid>
 
@@ -356,6 +370,7 @@
                                         HorizontalTextAlignment="Center"
                                         Style="{StaticResource SmallLabelStyle}"/>
 
+                                  
                                 </StackLayout>
 
                                 <StackLayout

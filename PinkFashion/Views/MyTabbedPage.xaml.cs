@@ -38,7 +38,7 @@ namespace PinkFashion.Views
                 BarBackgroundColor = App.bgColor,
                 BarTextColor = App.textColor,
                 IconImageSource = "gbag.png",
-                Title = "Mi Bolsa"
+                Title = "Mi carrito"
             };
 
             //si es android se usa el plugin del badge
@@ -49,7 +49,7 @@ namespace PinkFashion.Views
             {
                 BarBackgroundColor = App.bgColor,
                 BarTextColor = App.textColor,
-                IconImageSource = "gsettings.png",
+                IconImageSource = "gusuario.png",
                 Title = "Mi Cuenta"
             };
 
