@@ -166,9 +166,9 @@
                                 VerticalOptions="CenterAndExpand" />
 
                             <Label
-                                Text="Filtrar por Precio:"
+                                Text="{Binding TextoFiltroPrecio}"
+                                TextDecorations="Underline"
                                 FontSize="14"
-                                TextDecorations="None"
                                 HorizontalOptions="Start"
                                 VerticalOptions="CenterAndExpand">
 
@@ -180,35 +180,6 @@
 
                                 </Label.GestureRecognizers>
 
-                            </Label>
-
-                            <Label
-                                Text="Mayor"
-                                FontSize="14"
-                                TextDecorations="None"
-                                HorizontalOptions="Center">
-
-                                <Label.GestureRecognizers>
-
-                                    <TapGestureRecognizer
-                                        CommandParameter="{Binding .}"
-                                        Command="{Binding Path=BindingContext.FiltroPrecioCommand,  Source={x:Reference CategoriaPage}}"/>
-
-                                </Label.GestureRecognizers>
-                            </Label>
-
-                            <Label
-                                Text="Menor"
-                                FontSize="14"
-                                TextDecorations="None"
-                                HorizontalOptions="End">
-                                <Label.GestureRecognizers>
-
-                                    <TapGestureRecognizer
-                                        CommandParameter="{Binding .}"
-                                        Command="{Binding Path=BindingContext.FiltroPrecioCommand,  Source={x:Reference CategoriaPage}}"/>
-
-                                </Label.GestureRecognizers>
                             </Label>
 
                         </StackLayout>

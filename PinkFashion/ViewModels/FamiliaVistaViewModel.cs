@@ -22,6 +22,27 @@ namespace PinkFashion.ViewModels
         string idMarca = "";
         string filtroPrecio = "";
 
+        public string textoFiltroPrecio = "Ordenar de menor a mayor";
+        public string TextoFiltroPrecio
+        {
+            get
+            {
+                return textoFiltroPrecio;
+            }
+            set
+            {
+                SetProperty(ref textoFiltroPrecio, value);
+            }
+        }
+
+
+        public bool menorMayor = true;
+        public bool MenorMayor
+        {
+            get { return menorMayor; }
+            set { SetProperty(ref menorMayor, value); }
+        }
+
         public ObservableCollection<ColeccionCategorias> ColCategorias { get; set; }
         public ObservableCollection<Producto_> Productos { get; set; }
 
@@ -149,7 +170,7 @@ namespace PinkFashion.ViewModels
                     Productos.Add(item);
                 }
 
-                if(Productos.Count == 0)
+                if (Productos.Count == 0)
                 {
                     ListViewVisible = false;
                     NoEncontradoVisible = true;
@@ -211,7 +232,17 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
-                    this.filtroPrecio = "menorMayor";
+                    if (MenorMayor)
+                    {
+                        TextoFiltroPrecio = "De mayor a menor";
+                        this.filtroPrecio = "menorMayor";
+                    }
+                    else
+                    {
+                        TextoFiltroPrecio = "De menor a mayor";
+                        this.filtroPrecio = "mayorMenor";
+                    }
+                    MenorMayor = !MenorMayor;
                     LoadProductosCommand.Execute(null);
                 });
             }
@@ -244,15 +275,15 @@ namespace PinkFashion.ViewModels
                 var client = new HttpClient();
                 StringContent str = null;
 
-                if(!idMarca.Equals("") && filtroPrecio.Equals(""))
+                if (!idMarca.Equals("") && filtroPrecio.Equals(""))
                 {
                     str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
                 }
-                else if(!filtroPrecio.Equals("") && idMarca.Equals(""))
+                else if (!filtroPrecio.Equals("") && idMarca.Equals(""))
                 {
                     str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion + "&filtroPrecio=" + filtroPrecio, Encoding.UTF8, "application/x-www-form-urlencoded");
                 }
-                else if(!filtroPrecio.Equals("") && !idMarca.Equals(""))
+                else if (!filtroPrecio.Equals("") && !idMarca.Equals(""))
                 {
                     str = new StringContent("op=ObtenerProductosFamilia&idfamilia=" + familia.id_clasificacion + "&filtroPrecio=" + filtroPrecio + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
                 }

@@ -23,6 +23,29 @@ namespace PinkFashion.ViewModels
         string idSubcategoria = "";
         string idMarca = "";
         string filtroPrecio = "";
+
+
+
+        bool menorMayor = true;
+        bool MenorMayor
+        {
+            get { return menorMayor; }
+            set { SetProperty(ref menorMayor, value); }
+        }
+
+        string textoFiltroPrecio = "Ordenar de menor a mayor";
+        public string TextoFiltroPrecio
+        {
+            get
+            {
+                return textoFiltroPrecio;
+            }
+            set
+            {
+                SetProperty(ref textoFiltroPrecio, value);
+            }
+        }
+
         json_object json_ob = new json_object();
         public ObservableCollection<ColeccionSubcategorias> ColSubCategorias { get; set; }
         public ObservableCollection<Producto_> Productos { get; set; }
@@ -31,7 +54,7 @@ namespace PinkFashion.ViewModels
         public Command LoadSubcategoriasCommand { get; set; }
 
         public string _NameCategoria;
-        
+
         public string NameCategoria
         {
             get { return _NameCategoria; }
@@ -93,7 +116,7 @@ namespace PinkFashion.ViewModels
                         }
                     }
                 });
-                
+
                 productos = lista;
 
                 foreach (var item in productos)
@@ -122,7 +145,7 @@ namespace PinkFashion.ViewModels
             }
         }
 
-        
+
         async Task ExecuteLoadSubcategoriasCommand()
         {
             try
@@ -144,9 +167,10 @@ namespace PinkFashion.ViewModels
                                 subcategoria.IsUnderlined = false;
                                 listasubcategorias.Add(subcategoria);
                                 listasubcategorias_for_col.Add(subcategoria);
-                            } else
+                            }
+                            else
                             {
-                                if(subcategoria.idsubcategorias.Equals(idSubcategoria))
+                                if (subcategoria.idsubcategorias.Equals(idSubcategoria))
                                 {
                                     subcategoria.IsUnderlined = true;
                                     listasubcategorias.Insert(0, subcategoria);
@@ -221,7 +245,17 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
-                    this.filtroPrecio = "menorMayor";
+                    if (MenorMayor)
+                    {
+                        TextoFiltroPrecio = "Ordenar de mayor a menor";
+                        this.filtroPrecio = "menorMayor";
+                    }
+                    else
+                    {
+                        TextoFiltroPrecio = "Ordenar de menor a mayor";
+                        this.filtroPrecio = "mayorMenor";
+                    }
+                    this.MenorMayor = !MenorMayor;
                     LoadProductosCommand.Execute(null);
                 });
             }
@@ -257,7 +291,7 @@ namespace PinkFashion.ViewModels
                     //Y esta vez aplicar el subrayado a idSubcategoria
                     boolSubrayaSubcategoria = true;
                     idSubcategoria = subcategoria.idsubcategorias;
-                    
+
                     LoadSubcategoriasCommand.Execute(null);
                     LoadProductosCommand.Execute(null);
                 });
@@ -276,11 +310,11 @@ namespace PinkFashion.ViewModels
                     {
                         str = new StringContent("op=ObtenerProductosSubCategoria&idsubcategoria=" + this.idSubcategoria + "&idMarca=" + idMarca, Encoding.UTF8, "application/x-www-form-urlencoded");
                     }
-                    else if(!filtroPrecio.Equals("") && idMarca.Equals(""))
+                    else if (!filtroPrecio.Equals("") && idMarca.Equals(""))
                     {
                         str = new StringContent("op=ObtenerProductosSubCategoria&idsubcategoria=" + this.idSubcategoria + "&filtroPrecio=" + filtroPrecio, Encoding.UTF8, "application/x-www-form-urlencoded");
                     }
-                    else if(!filtroPrecio.Equals("") && !idMarca.Equals(""))
+                    else if (!filtroPrecio.Equals("") && !idMarca.Equals(""))
                     {
                         str = new StringContent("op=ObtenerProductosSubCategoria&idsubcategoria=" + this.idSubcategoria + "&idMarca=" + idMarca + "&filtroPrecio=" + filtroPrecio, Encoding.UTF8, "application/x-www-form-urlencoded");
                     }
