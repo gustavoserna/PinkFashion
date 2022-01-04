@@ -2,25 +2,30 @@
   <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ViewModels/CarritoViewModel.cs">
     <Files>
       <File FileName="PinkFashion/ViewModels/CarritoViewModel.cs" Line="650" Column="25" />
-      <File FileName="PinkFashion/Views/Carrito.xaml.cs" Line="324" Column="39" />
-      <File FileName="PinkFashion/Views/Carrito.xaml" Line="39" Column="46" />
-      <File FileName="PinkFashion/ViewModels/MyTabbedPageViewModel.cs" Line="97" Column="16" />
+      <File FileName="PinkFashion/Views/Carrito.xaml.cs" />
+      <File FileName="PinkFashion/Views/Carrito.xaml" />
+      <File FileName="PinkFashion/ViewModels/MyTabbedPageViewModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
-            <Node name="PinkFashion.Android" expanded="True" selected="True" />
+            <Node name="PinkFashion" expanded="True">
+              <Node name="ViewModels" expanded="True">
+                <Node name="CarritoViewModel.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="PinkFashion.Android" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <Debugger.DebugSourceFolders>
     <String>/Users/gustavoserna/Library/Caches/VisualStudio/8.0/Symbols/mono/mono/b4a385816ed4f1398d0184c38f19f560e868fd80</String>
   </Debugger.DebugSourceFolders>
@@ -28,5 +33,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.R58NB32EELY" />
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
 </Properties>
