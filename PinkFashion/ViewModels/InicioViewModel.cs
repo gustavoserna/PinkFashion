@@ -585,7 +585,7 @@ namespace PinkFashion.ViewModels
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                System.Diagnostics.Debug.WriteLine(ex);
             }
             return json_ob.iniciomodel[0];
 

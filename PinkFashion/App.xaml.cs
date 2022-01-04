@@ -24,7 +24,7 @@ namespace PinkFashion
 
         public static string pushTokenString = string.Empty;
         public static Color bgColor = Color.White;
-        public static Color textColor = Color.FromHex("#eb068c");
+        public static Color textColor = Color.FromHex("#ff509f");
         public static int Cart = 0;
         public static string EnvioGratis = "";
         public static string Monedero = "";

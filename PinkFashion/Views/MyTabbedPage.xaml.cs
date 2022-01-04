@@ -49,7 +49,7 @@ namespace PinkFashion.Views
             {
                 BarBackgroundColor = App.bgColor,
                 BarTextColor = App.textColor,
-                IconImageSource = "gusuario.png",
+                IconImageSource = "gsettings.png",
                 Title = "Mi Cuenta"
             };
 
@@ -67,7 +67,7 @@ namespace PinkFashion.Views
         protected override void OnCurrentPageChanged()
         {
             base.OnCurrentPageChanged();
-            if(CurrentPage.Title.Equals("Mi Bolsa"))
+            if(CurrentPage.Title.Equals("Mi Carrito"))
             {
 
                 if (!App.Current.Properties.ContainsKey("IdCliente") || !App.Current.Properties.ContainsKey("sesion"))

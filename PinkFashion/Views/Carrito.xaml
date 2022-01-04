@@ -303,7 +303,7 @@
                                             </Grid.ColumnDefinitions>
 
                                             <RadioButton Grid.Row="0" Grid.Column="0"
-                                                         Content="OXXO PAY" TextColor="#eb068c" FontSize="12"
+                                                         Content="Efectivo" TextColor="#eb068c" FontSize="12"
                                                          GroupName="MetodoPago"
                                                          CheckedChanged="OnPagoCheckedChanged" BackgroundColor="White"/>
                                             <Image Grid.Row="0" Grid.Column="1" Source="oxxo.png" BackgroundColor="White" Aspect="AspectFit" HeightRequest="50"/>

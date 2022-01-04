@@ -392,7 +392,7 @@ namespace PinkFashion.Views
                         SelTarjeta = "";
                     }
                 }
-                if (button.Content.ToString() == "OXXO PAY")
+                if (button.Content.ToString() == "Efectivo")
                 {
                     MostrarTarjeta.IsVisible = false;
                     TipoPago = "E";

@@ -1,24 +1,20 @@
 ﻿<Properties StartupConfiguration="{2DB7379D-B184-41C0-8A90-925ED1D1FD62}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
-  </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ViewModels/CarritoViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/MyTabbedPage.xaml.cs">
     <Files>
-      <File FileName="PinkFashion/ViewModels/CarritoViewModel.cs" Line="650" Column="25" />
-      <File FileName="PinkFashion/Views/Carrito.xaml.cs" />
-      <File FileName="PinkFashion/Views/Carrito.xaml" />
-      <File FileName="PinkFashion/ViewModels/MyTabbedPageViewModel.cs" />
+      <File FileName="PinkFashion.Android/Resources/values/styles.xml" Line="13" Column="42" />
+      <File FileName="PinkFashion/Views/MyTabbedPage.xaml.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
-              <Node name="ViewModels" expanded="True">
-                <Node name="CarritoViewModel.cs" selected="True" />
+              <Node name="Views" expanded="True">
+                <Node name="MyTabbedPage.xaml" expanded="True">
+                  <Node name="MyTabbedPage.xaml.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
-            <Node name="PinkFashion.Android" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -33,5 +29,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android PreferredExecutionTarget="Android.R58NB32EELY" />
 </Properties>
