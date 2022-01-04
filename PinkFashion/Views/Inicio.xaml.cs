@@ -12,6 +12,7 @@ using System.Collections.ObjectModel;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms.OpenWhatsApp;
 using System.Windows.Input;
+using System.Timers;
 
 namespace PinkFashion.Views
 {
@@ -20,6 +21,7 @@ namespace PinkFashion.Views
 
         InicioViewModel inicioViewModel;
         MyTabbedPageViewModel tabbedPageViewModel;
+        private Timer timer;
 
         public Inicio()
         {
@@ -106,7 +108,23 @@ namespace PinkFashion.Views
             inicioViewModel.Abandonados = App.Abandonados;
             App.eventTracker.SendScreen("Inicio|PinkFashionStore", nameof(Inicio));
 
+            //timer = new Timer(TimeSpan.FromSeconds(5).TotalMilliseconds) { AutoReset = true, Enabled = true };
+            //timer.Elapsed += TimerElapsed;
         }
+
+        //private void TimerElapsed(object sender, EventArgs e)
+        //{
+        //    Device.BeginInvokeOnMainThread(() =>
+        //    {
+        //        CarouselViewG.Position = CarouselViewG.Position + 1;
+        //    });
+        //}
+
+        //protected override void OnDisappearing()
+        //{
+        //    base.OnDisappearing();
+        //    timer?.Dispose();
+        //}
 
         async void OnBtnWhatsappClicked(object sender, EventArgs args)
         {

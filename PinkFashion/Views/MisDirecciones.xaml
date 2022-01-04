@@ -39,7 +39,7 @@
                                     
                                     </StackLayout>
                                     
-                                    <Image Source="btndelete.png" HeightRequest="22" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Margin="0,0,20,0">
+                                    <Image Source="btndelete_black.png" HeightRequest="18" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Margin="0,0,20,0">
                                     
                                         <Image.GestureRecognizers>
                                             

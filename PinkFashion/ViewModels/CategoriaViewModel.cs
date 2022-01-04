@@ -16,6 +16,9 @@ namespace PinkFashion.ViewModels
     {
         public INavigation Navigation { get; set; }
         Categoria_ categoria;
+
+        bool boolSubrayaSubcategoria = false;
+
         string idCategoria = "";
         string idSubcategoria = "";
         string idMarca = "";
@@ -119,6 +122,7 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        
         async Task ExecuteLoadSubcategoriasCommand()
         {
             try
@@ -134,8 +138,25 @@ namespace PinkFashion.ViewModels
                     {
                         foreach (Subcategoria_ subcategoria in t.Result)
                         {
-                            listasubcategorias.Add(subcategoria);
-                            listasubcategorias_for_col.Add(subcategoria);
+                            //Vease SubcategoriaTappedCommand
+                            if (String.IsNullOrEmpty(idSubcategoria))
+                            {
+                                subcategoria.IsUnderlined = false;
+                                listasubcategorias.Add(subcategoria);
+                                listasubcategorias_for_col.Add(subcategoria);
+                            } else
+                            {
+                                if(subcategoria.idsubcategorias.Equals(idSubcategoria))
+                                {
+                                    subcategoria.IsUnderlined = true;
+                                    listasubcategorias.Insert(0, subcategoria);
+                                    listasubcategorias_for_col.Insert(0, subcategoria);
+                                    continue;
+                                }
+                                subcategoria.IsUnderlined = false;
+                                listasubcategorias.Add(subcategoria);
+                                listasubcategorias_for_col.Add(subcategoria);
+                            }
                         }
                     }
                 });
@@ -232,7 +253,12 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<Subcategoria_>(async (Subcategoria_ subcategoria) =>
                 {
+                    //Vuevlo a ejecutar LoadSubCategorias para volver a hacer el binding
+                    //Y esta vez aplicar el subrayado a idSubcategoria
+                    boolSubrayaSubcategoria = true;
                     idSubcategoria = subcategoria.idsubcategorias;
+                    
+                    LoadSubcategoriasCommand.Execute(null);
                     LoadProductosCommand.Execute(null);
                 });
             }

@@ -76,6 +76,7 @@
 
                                             <Label
                                                 Text="{Binding nombre}"
+                                                TextDecorations="{Binding LabelTextDecoration}"
                                                 HorizontalTextAlignment="Center"
                                                 HorizontalOptions="CenterAndExpand"
                                                 VerticalOptions="CenterAndExpand"
@@ -125,6 +126,7 @@
                                 Text="Filtrar por Marca"
                                 FontSize="14"
                                 TextDecorations="Underline"
+                                HorizontalOptions="Start"
                                 VerticalOptions="CenterAndExpand">
 
                                 <Label.GestureRecognizers>
@@ -133,6 +135,20 @@
                                         CommandParameter="{Binding .}"
                                         Command="{Binding Path=BindingContext.AbrirMarcasCommand,  Source={x:Reference CategoriaPage}}"/>
 
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+                                Text="Remover filtros"
+                                FontSize="14"
+                                TextDecorations="Underline"
+                                HorizontalOptions="End"
+                                VerticalOptions="CenterAndExpand">
+
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding Path=BindingContext.RemoverFiltrosCommand,  Source={x:Reference CategoriaPage}}"/>
                                 </Label.GestureRecognizers>
 
                             </Label>
@@ -150,9 +166,10 @@
                                 VerticalOptions="CenterAndExpand" />
 
                             <Label
-                                Text="Filtrar por Precio"
+                                Text="Filtrar por Precio:"
                                 FontSize="14"
-                                TextDecorations="Underline"
+                                TextDecorations="None"
+                                HorizontalOptions="Start"
                                 VerticalOptions="CenterAndExpand">
 
                                 <Label.GestureRecognizers>
@@ -165,10 +182,39 @@
 
                             </Label>
 
+                            <Label
+                                Text="Mayor"
+                                FontSize="14"
+                                TextDecorations="None"
+                                HorizontalOptions="Center">
+
+                                <Label.GestureRecognizers>
+
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding Path=BindingContext.FiltroPrecioCommand,  Source={x:Reference CategoriaPage}}"/>
+
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+                                Text="Menor"
+                                FontSize="14"
+                                TextDecorations="None"
+                                HorizontalOptions="End">
+                                <Label.GestureRecognizers>
+
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding Path=BindingContext.FiltroPrecioCommand,  Source={x:Reference CategoriaPage}}"/>
+
+                                </Label.GestureRecognizers>
+                            </Label>
+
                         </StackLayout>
 
                         <!-- Remover Filtros -->
-                        <StackLayout
+                        <!--<StackLayout
                             HorizontalOptions="FillAndExpand"
                             Orientation="Horizontal">
 
@@ -186,7 +232,7 @@
                         
                             </Label>
 
-                        </StackLayout>
+                        </StackLayout>-->
 
 
                     </StackLayout>

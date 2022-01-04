@@ -229,7 +229,7 @@
                         x:Name="vSobrePrecio"
                         HorizontalOptions="CenterAndExpand"
                         HorizontalTextAlignment="Center"
-                        Style="{StaticResource PetitLabelStyle}"/>
+                        Style="{StaticResource PetitLabelStyle}" FontSize="Medium"/>
 
                     <StackLayout
                         Grid.Row="0"
@@ -251,15 +251,15 @@
 
                 <Label
                     x:Name="vPrecio"
-                    HorizontalTextAlignment="Center"
-                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="End"
                     Style="{StaticResource MediumLabelStyle}" />
 
                 <Label
                     Text="Descripción"
                     FontSize="12"
                     TextColor="Black"
-                    FontAttributes="Bold" />
+                    FontAttributes="Bold" 
+                    />
 
                 <Label
                     x:Name="vDescripcion"
@@ -314,6 +314,25 @@
                                 Padding="0"
                                 VerticalOptions="CenterAndExpand"
                                 BorderColor="#eb068c"
+                                BackgroundColor="#eb068c"
+                                HasShadow="false"
+                                CornerRadius="5"
+                                HeightRequest="37"
+                                WidthRequest="50">
+
+                                <Label
+                                    Text="{Binding EntCantidad}"
+                                    FontSize="15"
+                                    TextColor="#fff"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="CenterAndExpand" />
+
+                            </Frame>
+
+                            <Frame
+                                Padding="0"
+                                VerticalOptions="CenterAndExpand"
+                                BorderColor="#eb068c"
                                 HasShadow="false"
                                 CornerRadius="5"
                                 HeightRequest="37"
@@ -331,25 +350,6 @@
                                     TextColor="#eb068c"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="CenterAndExpand" />
-                            </Frame>
-
-                            <Frame
-                                Padding="0"
-                                VerticalOptions="CenterAndExpand"
-                                BorderColor="#eb068c"
-                                BackgroundColor="#eb068c"
-                                HasShadow="false"
-                                CornerRadius="5"
-                                HeightRequest="37"
-                                WidthRequest="50">
-
-                                <Label
-                                    Text="{Binding EntCantidad}"
-                                    FontSize="15"
-                                    TextColor="#fff"
-                                    VerticalOptions="CenterAndExpand"
-                                    HorizontalOptions="CenterAndExpand" />
-
                             </Frame>
 
                             <Label
