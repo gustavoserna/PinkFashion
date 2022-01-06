@@ -1,8 +1,8 @@
-﻿<Properties StartupConfiguration="{CD157A8F-3486-4654-B2B4-6358F3A9D435}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.Default">
+﻿<Properties StartupConfiguration="{2DB7379D-B184-41C0-8A90-925ED1D1FD62}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS automaticSigning="True" TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CCF71FE2-ACA5-4BD3-A57E-F29BD92225CB">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="6TL8DL53FA" TeamId="6JH6324FJU" />
   </MonoDevelop.Ide.ItemProperties.PinkFashion.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion.iOS/Entitlements.plist">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="PinkFashion/App.xaml.cs" Line="58" Column="14" />
       <File FileName="PinkFashion/App.xaml" />
@@ -15,22 +15,17 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
-            <Node name="PinkFashion" expanded="True">
-              <Node name="App.xaml" expanded="True" />
-            </Node>
-            <Node name="PinkFashion.iOS" expanded="True">
-              <Node name="Entitlements.plist" selected="True" />
-            </Node>
+            <Node name="PinkFashion.Android" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
 </Properties>
