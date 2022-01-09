@@ -47,8 +47,8 @@
                                         </StackLayout>
 
                                         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Vertical">
-                                            <Frame Padding="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BorderColor="#eb068c" HasShadow="false" CornerRadius="5" HeightRequest="40" WidthRequest="100">
-                                                        <Label Text="Detalle" FontAttributes="Bold" TextColor="#eb068c" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Style="{StaticResource MediumLabelStyle}" />
+                                            <Frame Padding="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BorderColor="#FF69B4" HasShadow="false" CornerRadius="5" HeightRequest="40" WidthRequest="100">
+                                                <Label Text="Detalle" FontAttributes="Bold" TextColor="#FF69B4" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Style="{StaticResource MediumLabelStyle}" />
                                                     
                                             </Frame>
                                             

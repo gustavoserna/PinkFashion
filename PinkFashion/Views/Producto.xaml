@@ -49,35 +49,17 @@
 
                     <!--<Label x:Name="vAgotado" Rotation="-45" Opacity=".8" Grid.Row="0"  Text="Agotado" FontFamily="Arial" IsVisible="{Binding Agotado}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="#eb068c" FontSize="18" />-->
 
-                    <Frame
-                        x:Name="vAgotado"
-                        HasShadow="True"
-                        Grid.Row="0"
-                        MinimumWidthRequest="25"
-                        CornerRadius="25"
-                        Margin="90,110,0,0"
-                        HorizontalOptions="End"
-                        VerticalOptions="End"
-                        IsVisible="{Binding Agotado}">
-
-                        <Frame.BackgroundColor>
-                            <OnPlatform x:TypeArguments="Color" iOS="#ff0404" Android="#ff0404" />
-                        </Frame.BackgroundColor>
-                        <Frame.Padding>
-                            <OnPlatform x:TypeArguments="Thickness" iOS="7,3,7,3" Android="2,1,2,1" />
-                        </Frame.Padding>
-                        <Frame.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double" iOS="60" Android="65" />
-                        </Frame.HeightRequest>
-
-                        <Label
-                            Text="Agotado"
-                            TextColor="White"
-                            FontSize="12"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand" />
-
-                    </Frame>
+                    <Label
+                                                            Rotation="-45"
+                                                            Grid.Row="0"
+                                                            x:Name="vAgotado"
+                                                            Text="Agotado"
+                                                            FontFamily="Arial"
+                                                            IsVisible="{Binding Agotado}"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            TextColor="#eb068c"
+                                                            FontSize="15" />
 
                 </Grid>
                 <!-- End Imagen Producto -->
@@ -494,21 +476,25 @@
                                                     <StackLayout
                                                         HorizontalOptions="FillAndExpand">
 
+                                                        <StackLayout HeightRequest="20">
                                                         <Label
                                                             Text="{Binding producto}"
                                                             HorizontalOptions="CenterAndExpand"
                                                             HorizontalTextAlignment="Center"
                                                             TextColor="Black"
                                                             FontAttributes="Bold"
-                                                            FontSize="14" />
+                                                            FontSize="13"
+                                                            Margin="0, 0, 0, 15"/>
 
+                                                        </StackLayout>
                                                         <Label
                                                             Text="{Binding marca}"
                                                             HorizontalOptions="CenterAndExpand"
                                                             HorizontalTextAlignment="Center"
                                                             TextColor="#666"
                                                             FontAttributes="Bold"
-                                                            FontSize="12" />
+                                                            FontSize="12"
+                                                            Margin="0, 5, 15, 0"/>
 
                                                         <StackLayout
                                                             HorizontalOptions="FillAndExpand"

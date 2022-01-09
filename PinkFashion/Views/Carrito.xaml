@@ -43,8 +43,8 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30" />
                     </Grid.RowDefinitions>
-                    <StackLayout x:Name="StackName" Grid.Row="0" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0" >
-                        <StackLayout BackgroundColor="#eb068c" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="0" >
+                    <StackLayout x:Name="StackName" Grid.Row="0" BackgroundColor="#FF69B4" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0" >
+                        <StackLayout BackgroundColor="#FF69B4" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="0" >
                             <!--<Label x:Name="lbNombre" TextColor="WhiteSmoke" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>-->
                             <!--<Label x:Name="lbMonedero" Text="{Binding Monedero, StringFormat='Tu monedero ${0:D}'}" TextColor="WhiteSmoke" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->
                             <StackLayout x:Name="StackAbandonado" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Padding="0" IsVisible="{Binding visibleAbandonado}">
@@ -186,7 +186,7 @@
                                             <renderers:Entry_Pago
                                             x:Name="vCodigoPromo"
                                             Text=""
-                                            Placeholder="Código Promocional"
+                                            Placeholder="   Código Promocional"
                                             TextColor="#545454"
                                             PlaceholderColor="#545454"
                                             BackgroundColor="White"
@@ -194,15 +194,15 @@
                                             HorizontalOptions="FillAndExpand"/>
 
                                         </Frame>
-                                        <Frame Grid.Row="0" Grid.Column="1" Padding="0" Opacity="1" BackgroundColor="#eb068c" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
+                                        <Frame Grid.Row="0" Grid.Column="1" Padding="0" Opacity="1" BackgroundColor="#FF69B4" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
                                             <Label x:Name="lblConfirmaPromo" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"  FontSize="16" FontAttributes="Bold" />
                                         </Frame>
 
-                                        <Frame Grid.Row="1" Grid.Column="0" Padding="0" Opacity="1" BackgroundColor="White" BorderColor="#eb068c" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
+                                        <Frame Grid.Row="1" Grid.Column="0" Padding="0" Opacity="1" BackgroundColor="White" BorderColor="#FF69B4" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
                                             <renderers:Entry_Pago
                                             x:Name="vMonedero"
                                             Text=""
-                                            Placeholder="Monedero Electrónico"
+                                            Placeholder="   Monedero Electrónico"
                                             TextColor="#545454"
                                             PlaceholderColor="#545454"
                                             BackgroundColor="White"
@@ -210,10 +210,9 @@
                                             HorizontalOptions="FillAndExpand"/>
 
                                         </Frame>
-                                        <Frame Grid.Row="1" Grid.Column="1"  Padding="0" Opacity="1" BackgroundColor="#eb068c" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
-                                            <Label x:Name="lblConfirmaMonedero" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"  FontSize="16" FontAttributes="Bold" />
+                                        <Frame Grid.Row="0" Grid.Column="1" Padding="0" Opacity="1" BackgroundColor="#FF69B4" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
+                                            <Label x:Name="lblConfirmaPromo" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"  FontSize="16" FontAttributes="Bold" />
                                         </Frame>
-
                                     </Grid>
                                 </StackLayout>
 
@@ -225,7 +224,7 @@
 
                                     <StackLayout Grid.Column="0" x:Name="btnRegresar" HorizontalOptions="FillAndExpand" >
                                         <Button
-                                                                        BackgroundColor="#eb068c"
+                                                                        BackgroundColor="#FF69B4"
                                                                         FontSize="14"
                                                                         TextColor="#fff"
                                                                         Padding="3"

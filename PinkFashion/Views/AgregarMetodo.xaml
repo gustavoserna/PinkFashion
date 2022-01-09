@@ -171,7 +171,7 @@
                     <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" x:Name="btnAgregar" HorizontalOptions="CenterAndExpand" >
                         <Button
                     
-                            BackgroundColor="#545454"
+                            BackgroundColor="#FF69B4"
                             FontSize="15"
                             TextColor="#fff"
                             Padding="10"

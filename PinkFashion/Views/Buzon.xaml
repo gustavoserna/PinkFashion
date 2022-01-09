@@ -5,7 +5,7 @@
              x:Class="PinkFashion.Views.Buzon">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-            <StackLayout BackgroundColor="#eb068c" Padding="10" HorizontalOptions="FillAndExpand"> 
+            <StackLayout BackgroundColor="#FF69B4" Padding="10" HorizontalOptions="FillAndExpand"> 
                  <Label Text="Buzón de Correos" FontSize="25" FontAttributes="Italic" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
             </StackLayout>
             <controls:HybridWebView
