@@ -68,10 +68,9 @@ namespace PinkFashion.Views
                 pass2.Text = usuarioRegistroFB.clave;
             }
 
-            var listo = new ToolbarItem();
-            listo.Text = "Crear cuenta";
 
-            listo.Command = new Command(async o =>
+            var clickCrear = new TapGestureRecognizer();
+            clickCrear.Tapped += async (s, e) =>
             {
                 if (mail.Text.Equals("") || pass1.Text.Equals("") || pass2.Text.Equals("") || nombre.Text.Equals("") || apellidos.Text.Equals("") || /*telefono.Text.Equals("") ||*/ !switchT.IsToggled)
                 {
@@ -91,7 +90,7 @@ namespace PinkFashion.Views
                         {
                             await enviarUsuario();
                         }
-                       
+
                     }
                     catch (Exception ex)
                     {
@@ -99,9 +98,8 @@ namespace PinkFashion.Views
                         await DisplayAlert("Error", "Ocurrió un error, inténtalo de nuevo mas tarde.", "Ok");
                     }
                 }
-            });
-
-            ToolbarItems.Add(listo);
+            };
+            btnCrearCuenta.GestureRecognizers.Add(clickCrear);
         }
 
         public async Task enviarUsuario()

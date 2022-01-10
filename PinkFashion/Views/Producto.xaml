@@ -211,7 +211,7 @@
                         x:Name="vSobrePrecio"
                         HorizontalOptions="CenterAndExpand"
                         HorizontalTextAlignment="Center"
-                        Style="{StaticResource PetitLabelStyle}" FontSize="Medium"/>
+                        Style="{StaticResource PetitLabelStyle}" FontSize="Small"/>
 
                     <StackLayout
                         Grid.Row="0"
@@ -220,7 +220,8 @@
                         Spacing="0">
 
                         <BoxView
-                            HeightRequest="2"
+                            HeightRequest="1"
+                            WidthRequest="90"
                             Rotation="0"
                             BackgroundColor="#eb068c"
                             HorizontalOptions="CenterAndExpand"

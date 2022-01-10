@@ -252,10 +252,11 @@ namespace PinkFashion.Views
             var clickAyuda = new TapGestureRecognizer();
             clickAyuda.Tapped += async (s, e) =>
             {
-                string strEvento = "Q&A|Pink Fashion Store";
-                App.eventTracker.SendScreen(strEvento, "PreguntasFrecuentes");
+                await Navigation.PushAsync(new FAQ());
+                //string strEvento = "Q&A|Pink Fashion Store";
+                //App.eventTracker.SendScreen(strEvento, "PreguntasFrecuentes");
                 
-                await Launcher.OpenAsync("https://pinkfashionstore.com/preguntas.php");
+                //await Launcher.OpenAsync("https://pinkfashionstore.com/preguntas.php");
 
             };
             btnAyuda.GestureRecognizers.Add(clickAyuda);
@@ -271,11 +272,13 @@ namespace PinkFashion.Views
             btnFormularioBB.GestureRecognizers.Add(clickEresBB);
 
             var clickFacturar = new TapGestureRecognizer();
-            clickFacturar.Tapped += async (s, e) =>
+            clickFacturar.Tapped += (s, e) =>
             {
-                string strEvento = "Facturación|Pink Fashion Store";
-                App.eventTracker.SendScreen(strEvento, "Facturacion");
-                await DisplayAlert("Información", "Para facturar tus pedidos entra a https://pinkfashionstore.com inicia sesión y en tu historial encontrarás la opción. Gracias por tu preferencia, estamos para atenderte.", "Ok");                
+                Chat.Open("+528711223702", "Hola, deseo facturar");
+                App.eventTracker.SendScreen("Whatsapp|PinkFashionStore", "Whatsapp");
+                //string strEvento = "Facturación|Pink Fashion Store";
+                //App.eventTracker.SendScreen(strEvento, "Facturacion");
+                //await DisplayAlert("Información", "Para facturar tus pedidos entra a https://pinkfashionstore.com inicia sesión y en tu historial encontrarás la opción. Gracias por tu preferencia, estamos para atenderte.", "Ok");                
             };
             btnFacturar.GestureRecognizers.Add(clickFacturar);
 

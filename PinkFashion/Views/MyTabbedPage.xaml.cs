@@ -73,6 +73,9 @@ namespace PinkFashion.Views
                 if (!App.Current.Properties.ContainsKey("IdCliente") || !App.Current.Properties.ContainsKey("sesion"))
                 {
                     Navigation.PushModalAsync(new Login());
+                } else
+                {
+                    Navigation.PushAsync(new Carrito());
                 }
             }
         }

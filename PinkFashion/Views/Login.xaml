@@ -3,10 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PinkFashion.Renderers;assembly=PinkFashion"
              x:Class="PinkFashion.Views.Login"
-             BackgroundImage="bglogin.png">
+              xmlns:ContentViews="clr-namespace:PinkFashion.ContentViews"
+             BackgroundColor="#FBFBFB">
+
+    <NavigationPage.TitleView>
+
+        <ContentViews:Header />
+
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <!--<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100*"/>
@@ -14,114 +22,166 @@
             
             <Grid.RowDefinitions>
                 <RowDefinition Height="100*" />
-            </Grid.RowDefinitions>
+            </Grid.RowDefinitions>-->
             
-            <Image Grid.Row="0" Grid.Column="0" Source="bglogin.png" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-            
-            <ScrollView Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            
+            <!--<Image Grid.Row="0" Grid.Column="0" Source="bglogin.png" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />-->
+            <!--Grid.Row="0" Grid.Column="0"-->
+        <ScrollView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                
+
                     <StackLayout x:Name="loader" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        
+
                         <ActivityIndicator IsRunning="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                        
+
                     </StackLayout>
-                    
-                    <Grid x:Name="datos" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        
+
+                    <!--<Grid x:Name="datos" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
                         <Grid.RowDefinitions>
-                            
+
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
+                        </Grid.RowDefinitions>-->
 
-                        
-                        <Image Source="logo.png" Margin="25" Grid.Row="0" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="300" />
 
-                        <!-- inputs -->
-                        <StackLayout Grid.Row="1" VerticalOptions="CenterAndExpand" Spacing="5" Padding="10,0,10,0" Margin="0,10,0,0"> 
-                            <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="7" Margin="3,3,3,3" >
-                            
-                            <local:Entry_R x:Name="usuario" HeightRequest="45" Opacity=".7" Placeholder="Usuario" Keyboard="Chat" TextColor="#fff" PlaceholderColor="#fff" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" FontSize="15">
-                            
-                                <Entry.Keyboard>
-                                    
-                                    <Keyboard x:FactoryMethod="Create">
-                                        
-                                      <x:Arguments>
-                                            
-                                        <KeyboardFlags>None</KeyboardFlags>
-                                            
-                                      </x:Arguments>
-                                        
-                                    </Keyboard>
-                                    
-                                </Entry.Keyboard>
-                                
-                            </local:Entry_R>
-                            </Frame>
+                        <!--<Image Source="logo.png" Margin="25" Grid.Row="0" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="300" />-->
+                        <!--<StackLayout HorizontalOptions="FillAndExpand" Padding="20,30,20,20">
 
-                            <Frame BorderColor="#a6a6a6" BackgroundColor="#eb068c" Grid.Row="0" HeightRequest="45" Padding="0" HasShadow="False" Opacity=".7" CornerRadius="7" Margin="3,3,3,3" >
-                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
-                                    <local:Entry_R x:Name="clave" HeightRequest="45" Opacity=".7" Placeholder="Contraseña" IsPassword="true" TextColor="#fff" PlaceholderColor="#fff" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" FontSize="15" />
-                                    <Image x:Name="btnMostrarPass" HeightRequest="35" Source="novisible.png" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,0,5"/>                                
-                                </StackLayout>
-                            </Frame>
-
-                                
-                            <StackLayout x:Name="btnLogin" HorizontalOptions="FillAndExpand" Padding="20,30,20,20">
-                                    
-                                <Label Text="Iniciar sesión" TextColor="#eb068c" FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
-                                    
-                            </StackLayout>
-                            <!-- olvidar cuenta -->
-                            <StackLayout x:Name="btnRecupera" HorizontalOptions="FillAndExpand" Padding="10,0,10,0">
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                   
-                                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
-                                        
-                                            <Label Text="¿Olvidaste tu contraseña?" FontSize="14" TextColor="WhiteSmoke" VerticalOptions="CenterAndExpand" />
-                                
-                                        </StackLayout>
-                                    
-                                </StackLayout>
-                                    
-                                        
-                            </StackLayout>
+                            <Label Text="Iniciar sesión" TextColor="#Black"  FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
 
                         </StackLayout>
-                        
-                        <!-- crear y fb y apple -->
-                        <Grid Grid.Row="2" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
-                            
-                            <Grid.RowDefinitions>
-                                
-                                <RowDefinition Height="70" />
-                            
-                            </Grid.RowDefinitions>
-                            
-                            <StackLayout x:Name="btnCrear" Grid.Row="1" HorizontalOptions="FillAndExpand" Padding="10,0,10,0" Spacing="5">
-                            
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                   
-                                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
-                                        
-                                        <Image Source="mail.png" HeightRequest="25" VerticalOptions="CenterAndExpand" />
-                                        
-                                        <Label Text="Crear una cuenta" FontSize="14" TextColor="WhiteSmoke" VerticalOptions="CenterAndExpand" />
-                                    
-                                    </StackLayout>
-                                    
-                                </StackLayout>
 
+                        <StackLayout HorizontalOptions="FillAndExpand" Padding="20,30,20,20">
+
+                            <Label Text="Por favor ingresa el correo con el que te registraste y la contraseña" TextColor="#Black"  FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+
+                        </StackLayout>-->
+
+
+                        <!-- inputs -->
+
+                        <!--<StackLayout Grid.Row="1" VerticalOptions="Start" Spacing="5" Padding="10, 0, 10, 0" Margin="0,10,0,0">
+                            <Label Text="Iniciar sesión"  HeightRequest="40" WidthRequest="170"  FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                        </StackLayout>-->
+
+                        <!--<StackLayout VerticalOptions="Start" Spacing="5" Padding="10, 0, 10, 0" Margin="0, 10, 0, 0">
+                            <Label Text="Por favor, ingresa el correo con el que te registraste y contraseña" HeightRequest="40" WidthRequest="170"  FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                        </StackLayout>-->
+
+                <StackLayout VerticalOptions="Start" Spacing="5" Margin="0, 0, 10, 0">
+                    <Image Source="logo.png" HorizontalOptions="Center" HeightRequest="40" WidthRequest="160"></Image>
+                </StackLayout>
+
+                <StackLayout VerticalOptions="Start" Spacing="5" HorizontalOptions="FillAndExpand">
+                    <Label FontSize="18" TextColor="White" BackgroundColor="#FF69B4" HorizontalOptions="CenterAndExpand">
+                        Envíos gratis desde 799</Label>
+                </StackLayout>
+
+                <StackLayout VerticalOptions="Start" Spacing="5" HorizontalOptions="Center">
+                            <Label Text="Iniciar sesión"  FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                        </StackLayout>
+
+                        <StackLayout VerticalOptions="Start" Spacing="5" HorizontalOptions="Center">
+                            <Label Text="Por favor ingresa el correo con el que te registraste y contraseña"  FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Margin="10, 10, 10, 10"/>
+                        </StackLayout>
+
+                        <StackLayout VerticalOptions="Start" Spacing="5" Padding="10,0,10,0" Margin="0,10,0,0">
+
+                            <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" Margin="3,3,3,3" >
+
+                                <local:Entry_R x:Name="usuario" HeightRequest="45" Opacity=".7" Placeholder="Usuario" Keyboard="Chat" TextColor="#fff" PlaceholderColor="#fff" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" FontSize="15">
+
+                                    <Entry.Keyboard>
+
+                                        <Keyboard x:FactoryMethod="Create">
+
+                                            <x:Arguments>
+
+                                                <KeyboardFlags>None</KeyboardFlags>
+
+                                            </x:Arguments>
+
+                                        </Keyboard>
+
+                                    </Entry.Keyboard>
+
+                                </local:Entry_R>
+                            </Frame>
+
+                            <Frame BorderColor="#a6a6a6" BackgroundColor="white" Grid.Row="0" HeightRequest="45" Padding="0" HasShadow="False" Opacity=".7" Margin="3,3,3,3" >
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
+                                    <local:Entry_R x:Name="clave" HeightRequest="45" Opacity=".7" Placeholder="Contraseña" IsPassword="true" TextColor="#fff" PlaceholderColor="#fff" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" FontSize="15" />
+                                    <Image x:Name="btnMostrarPass" HeightRequest="35" Source="novisible.png" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,0,5"/>
+                                </StackLayout>
+                            </Frame>
+
+
+
+                            <!-- olvidar cuenta -->
+                    <StackLayout x:Name="btnRecupera" HorizontalOptions="FillAndExpand" Padding="10,0,10,0">
+                                <Label Text="¿Olvidaste tu contraseña?" FontSize="14" TextColor="WhiteSmoke" VerticalOptions="CenterAndExpand" />
+                            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+
+                                        
+
+                                    </StackLayout>
+
+                                </StackLayout>-->
 
 
                             </StackLayout>
-                        
-                        </Grid>
+
+                    <StackLayout HorizontalOptions="FillAndExpand">
+
+                        <Label Text="¿Olvidaste tu contraseña?" TextColor="Black"  FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+
+                    </StackLayout>
+
+                    <StackLayout x:Name="btnLogin"  HorizontalOptions="FillAndExpand" Padding="20,30,20,20">
+
+                                <Label Text="Iniciar sesión" BackgroundColor="#FF69B4"  FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#FBFBFB" Padding="10, 10, 10, 10" />
+
+                     </StackLayout>
+
+                    <StackLayout x:Name="btnCrear" HorizontalOptions="FillAndExpand" Padding="10,0,10,0" Spacing="5">
+
+                        <Label Text="Crear una cuenta" FontSize="14" FontAttributes="Bold"  TextColor="Black" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"/>
+                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+
+                                <Image Source="mail.png" HeightRequest="25" VerticalOptions="CenterAndExpand" />
+
+                                
+
+                            </StackLayout>
+
+                        </StackLayout>-->
+
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+                         <!--crear y fb y apple 
+                        <Grid Grid.Row="4" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
+
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition Height="70" />
+
+                            </Grid.RowDefinitions>
+
+                            
+
+
+                        </Grid>-->
 
                         <!--
                         <Grid Grid.Row="3" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
@@ -179,13 +239,13 @@
                         
                         </Grid>
                         -->
-                    </Grid>
-                    
+                    <!--</Grid>-->
+
                 </StackLayout>
-            
+
             </ScrollView>
             
-        </Grid>
+        <!--</Grid>-->
         
     </ContentPage.Content>
 </ContentPage>

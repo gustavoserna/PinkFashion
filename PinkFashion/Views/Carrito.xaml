@@ -210,8 +210,8 @@
                                             HorizontalOptions="FillAndExpand"/>
 
                                         </Frame>
-                                        <Frame Grid.Row="0" Grid.Column="1" Padding="0" Opacity="1" BackgroundColor="#FF69B4" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
-                                            <Label x:Name="lblConfirmaPromo" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"  FontSize="16" FontAttributes="Bold" />
+                                        <Frame Grid.Row="1" Grid.Column="1" Padding="0" Opacity="1" BackgroundColor="#FF69B4" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
+                                            <Label x:Name="lblConfirmaMonedero" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"  FontSize="16" FontAttributes="Bold" />
                                         </Frame>
                                     </Grid>
                                 </StackLayout>

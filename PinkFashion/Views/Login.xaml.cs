@@ -44,7 +44,7 @@ namespace PinkFashion.Views
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    datos.IsVisible = false;
+                    //datos.IsVisible = false;
                     loader.IsVisible = true;
                 });
 
@@ -52,7 +52,7 @@ namespace PinkFashion.Views
 
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    datos.IsVisible = true;
+                    //datos.IsVisible = true;
                     loader.IsVisible = false;
                 });
 
