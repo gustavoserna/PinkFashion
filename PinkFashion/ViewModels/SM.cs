@@ -27,20 +27,18 @@ namespace PinkFashion.ViewModels
                 var consulta = await client.PostAsync(new Uri(Constantes.url + "Sesion/App.php"), str);
                 var json = consulta.Content.ReadAsStringAsync().Result.Trim();
 
-                System.Diagnostics.Debug.WriteLine("perfil login:  " + json);
-
                 JArray obj = JArray.Parse(json);
                 Perfil perfil = new Perfil();
                 perfil.IdCliente = obj[0]["IdCliente"].ToString();
-                perfil.NIT = obj[0]["NIT"].ToString();
+                perfil.NIT = obj[0]["NIT"]==null ? "" : obj[0]["NIT"].ToString();
                 perfil.Nombre = obj[0]["Nombre"].ToString();
                 perfil.Apellidos = obj[0]["Apellidos"].ToString();
                 perfil.clave = obj[0]["Clave"].ToString();
                 perfil.Cuenta = obj[0]["correo"].ToString();
-                perfil.Genero = obj[0]["Genero"].ToString();
+                perfil.Genero = obj[0]["Genero"]==null ? "": obj[0]["Genero"].ToString();
                 perfil.EsBlogger = obj[0]["EsBlogger"].ToString();
 
-                if (obj[0]["FechaNac"].ToString()==null || obj[0]["FechaNac"].ToString() == "")
+                if (obj[0]["FechaNac"]==null || String.IsNullOrEmpty(obj[0]["FechaNac"].ToString()))
                 {
                     vFechaNac = "";
                 }
@@ -56,8 +54,8 @@ namespace PinkFashion.ViewModels
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine("Error: "+ex.ToString());
                 await Application.Current.MainPage.DisplayAlert("Error", "Usuario y/o contraseña incorrectos", "Ok");
-                System.Diagnostics.Debug.WriteLine("Error:" + ex.Message);
             }
         }
 
@@ -106,11 +104,10 @@ namespace PinkFashion.ViewModels
             Application.Current.Properties["IDDireccion"] = "";
             Application.Current.Properties["Direccion"] = "";
             await Application.Current.SavePropertiesAsync();
-            
+
             if (!perfil.Encontrado.Equals("vacio"))
             {
                 await Navigation.PopModalAsync();
-
             }
             else
             {

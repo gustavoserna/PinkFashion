@@ -43,11 +43,14 @@ namespace PinkFashion.Views
                 {
                     await DisplayAlert("Error", "Por favor proporciona un número", "Ok");
                 }
-            };
+            };           
             btnNumero.GestureRecognizers.Add(clickEnviarSMS);
             btnCodigo2.GestureRecognizers.Add(clickEnviarSMS);
 
+
+            System.Diagnostics.Debug.WriteLine("validar codigo");
             var clickValidarCodigo = new TapGestureRecognizer();
+            System.Diagnostics.Debug.WriteLine("validar codigo tapped");
             clickValidarCodigo.Tapped += async (s, e) =>
             {
                 Device.BeginInvokeOnMainThread(() =>
@@ -104,7 +107,6 @@ namespace PinkFashion.Views
                 }
             };
             btnCodigo.GestureRecognizers.Add(clickValidarCodigo);
-
             var clickLogin = new TapGestureRecognizer();
             clickLogin.Tapped += (s, e) =>
             {

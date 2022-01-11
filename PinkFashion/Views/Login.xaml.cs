@@ -70,7 +70,14 @@ namespace PinkFashion.Views
             var clickCrear = new TapGestureRecognizer();
             clickCrear.Tapped += (s, e) =>
             {
-                Navigation.PushModalAsync(new Registro());
+                Navigation.PushModalAsync(
+                    new NavigationPage(new Registro())
+                    {
+                        BarBackgroundColor = App.bgColor,
+                        BarTextColor = App.textColor
+                    }
+             );
+
             };
             btnCrear.GestureRecognizers.Add(clickCrear);
 

@@ -40,6 +40,7 @@ namespace PinkFashion
         public App()
         {
             InitializeComponent();
+            
             eventTracker = DependencyService.Get<IEventTracker>();
             Device.SetFlags(new string[] { "RadioButton_Experimental", "Shapes__Experimental" });
             eventTracker.SendEvent("PinkFashionStore");

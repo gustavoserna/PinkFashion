@@ -153,7 +153,7 @@ namespace PinkFashion.Views
                 else
                 {
                     SM sM = new SM();
-                    await sM.iniciarSesion(usuarioRegistro.correo, usuarioRegistro.clave, Navigation);
+                    await sM.iniciarSesion(usuarioRegistro.correo, usuarioRegistro.clave, this.Navigation);
 
                 }
             }

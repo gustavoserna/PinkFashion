@@ -77,7 +77,7 @@
 
                 <StackLayout VerticalOptions="Start" Spacing="5" HorizontalOptions="FillAndExpand">
                     <Label FontSize="18" TextColor="White" BackgroundColor="#FF69B4" HorizontalOptions="CenterAndExpand">
-                        Envíos gratis desde 799</Label>
+                        Envíos gratis desde $799</Label>
                 </StackLayout>
 
                 <StackLayout VerticalOptions="Start" Spacing="5" HorizontalOptions="Center">
