@@ -1501,11 +1501,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Han-S\\source\\repos\\PinkFashion4Enero\\PinkFashion\\PinkFashion\\PinkFashion.csproj",
+      "projectUniqueName": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14Enero\\PinkFashion\\PinkFashion\\PinkFashion.csproj",
       "projectName": "PinkFashion",
-      "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion4Enero\\PinkFashion\\PinkFashion\\PinkFashion.csproj",
+      "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14Enero\\PinkFashion\\PinkFashion\\PinkFashion.csproj",
       "packagesPath": "C:\\Users\\Han-S\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion4Enero\\PinkFashion\\PinkFashion\\obj\\",
+      "outputPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14Enero\\PinkFashion\\PinkFashion\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

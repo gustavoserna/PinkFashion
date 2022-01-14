@@ -218,7 +218,7 @@
                             </StackLayout>
                             
                         </StackLayout>
-                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
 
                     <StackLayout x:Name="btnPinBloguers" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
