@@ -339,4 +339,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\gusuario.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filtroNoBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checkgrey.png" />
+  </ItemGroup>
 </Project>

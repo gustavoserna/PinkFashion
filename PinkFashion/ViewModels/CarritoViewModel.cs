@@ -689,6 +689,9 @@ namespace PinkFashion.ViewModels
                         Application.Current.Properties["CostoEnvio"] = itemDir.CostoEnvio;
                         await Application.Current.SavePropertiesAsync();
                         await CalcularCostoEnvio();
+                    } else
+                    {
+                        itemDir.imagen = "checkgrey.png";
                     }
                     Items.Direcciones.Add(itemDir);
                 }
@@ -873,7 +876,7 @@ namespace PinkFashion.ViewModels
                     }
                     else
                     {
-                        itemDir.imagen = "checkgris.png";                        
+                        itemDir.imagen = "checkgrey.png";                        
                     }
                 }
                 //fin

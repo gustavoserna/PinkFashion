@@ -10,10 +10,10 @@ using Xamarin.Forms.Xaml;
 namespace PinkFashion.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FAQ : ContentPage
+    public partial class TerminosCondiciones : ContentPage
     {
-        string strEvento = "FAQ|Pink Fashion Store";
-        public FAQ()
+        string strEvento = "Términos y condiciones|Pink Fashion Store";
+        public TerminosCondiciones()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace PinkFashion.Views
         {
             base.OnAppearing();
             App.eventTracker.SendScreen(strEvento, nameof(FAQ));
-            webViewElement.Source = "https://pinkfashionstore.com/preguntas.php";
+            webViewElement.Source = "http://pinkfashionstore.com/terminoscondiciones.php";
 
             webViewElement.RegisterAction(DisplayDataFromJavascript);
 

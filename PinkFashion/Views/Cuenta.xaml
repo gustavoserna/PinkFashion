@@ -127,7 +127,7 @@
                                 
                                 <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
                                     
-                                    <Label Text="Mis Direcciones" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                    <Label Text="Direcciones" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
                                 
                                     <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
                                 
@@ -155,7 +155,7 @@
                                 
                                 <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
                                     
-                                    <Label Text="Método de Pago" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                    <Label Text="Métodos de Pago" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
                                 
                                     <Image Source="tright.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
                                 

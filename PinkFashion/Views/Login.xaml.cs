@@ -85,7 +85,8 @@ namespace PinkFashion.Views
             clickRecuperar.Tapped += async (s, e) =>
             {
                 //Navigation.PushAsync(new RecuperarCuenta());
-                await Launcher.OpenAsync("https://pinkfashionstore.com/recuperar.php");
+                //await Launcher.OpenAsync("https://pinkfashionstore.com/recuperar.php");
+                await Navigation.PushAsync(new RecuperarContrasena());
             };
             btnRecupera.GestureRecognizers.Add(clickRecuperar);
 

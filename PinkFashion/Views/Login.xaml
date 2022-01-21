@@ -71,13 +71,13 @@
                             <Label Text="Por favor, ingresa el correo con el que te registraste y contraseña" HeightRequest="40" WidthRequest="170"  FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
                         </StackLayout>-->
 
-                <StackLayout VerticalOptions="Start" Spacing="5" Margin="0, 0, 10, 0">
+                <StackLayout VerticalOptions="Start" Spacing="5" Margin="0, 130, 10, 0">
                     <Image Source="logo.png" HorizontalOptions="Center" HeightRequest="40" WidthRequest="160"></Image>
                 </StackLayout>
 
-                <StackLayout VerticalOptions="Start" Spacing="5" HorizontalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="Start" Padding="10, 10, 10, 10" Spacing="5" HorizontalOptions="FillAndExpand">
                     <Label FontSize="18" TextColor="White" BackgroundColor="#FF69B4" HorizontalOptions="CenterAndExpand">
-                        Envíos gratis desde $799</Label>
+                        Envíos gratis desde $599</Label>
                 </StackLayout>
 
                 <StackLayout VerticalOptions="Start" Spacing="5" HorizontalOptions="Center">
@@ -114,7 +114,7 @@
                             <Frame BorderColor="#a6a6a6" BackgroundColor="white" Grid.Row="0" HeightRequest="45" Padding="0" HasShadow="False" Opacity=".7" Margin="3,3,3,3" >
                                 <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
                                     <local:Entry_R x:Name="clave" HeightRequest="45" Opacity=".7" Placeholder="Contraseña" IsPassword="true" TextColor="#fff" PlaceholderColor="#fff" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" FontSize="15" />
-                                    <Image x:Name="btnMostrarPass" HeightRequest="35" Source="novisible.png" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,0,5"/>
+                                    <Image x:Name="btnMostrarPass" HeightRequest="20" Source="novisible.png" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,0,5"/>
                                 </StackLayout>
                             </Frame>
 

@@ -119,13 +119,13 @@
 
                             <Image
                                 HeightRequest="30"
-                                Source="filtromarca.png"
+                                Source="filtroNoBg.png"
                                 VerticalOptions="CenterAndExpand" />
 
                             <Label
                                 Text="Filtrar por Marca"
                                 FontSize="14"
-                                TextDecorations="Underline"
+                                TextDecorations="None"
                                 HorizontalOptions="Start"
                                 VerticalOptions="CenterAndExpand">
 
@@ -141,7 +141,7 @@
                             <Label
                                 Text="Remover filtros"
                                 FontSize="14"
-                                TextDecorations="Underline"
+                                TextDecorations="None"
                                 HorizontalOptions="End"
                                 VerticalOptions="CenterAndExpand">
 
@@ -162,12 +162,12 @@
 
                             <Image
                                 HeightRequest="30"
-                                Source="filtromarca.png"
+                                Source="filtroNoBg.png"
                                 VerticalOptions="CenterAndExpand" />
 
                             <Label
                                 Text="{Binding TextoFiltroPrecio}"
-                                TextDecorations="Underline"
+                                TextDecorations="None"
                                 FontSize="14"
                                 HorizontalOptions="Start"
                                 VerticalOptions="CenterAndExpand">

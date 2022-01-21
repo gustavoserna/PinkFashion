@@ -24,6 +24,15 @@ namespace PinkFashion.ViewModels
         string idMarca = "";
         string filtroPrecio = "";
 
+        private TextDecorations isUnderlinedFiltrarPorMarca = TextDecorations.None;
+
+        public TextDecorations IsUnderlinedFiltrarPorMarca
+        {
+            get { return isUnderlinedFiltrarPorMarca; }
+            set { SetProperty(ref isUnderlinedFiltrarPorMarca, value); }
+        }
+
+        private 
 
 
         bool menorMayor = true;

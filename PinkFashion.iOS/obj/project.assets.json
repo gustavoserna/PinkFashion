@@ -7619,11 +7619,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14Enero\\PinkFashion\\PinkFashion.iOS\\PinkFashion.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Han-S\\source\\repos\\PinkFashion20Enero\\PinkFashion\\PinkFashion.iOS\\PinkFashion.iOS.csproj",
       "projectName": "PinkFashion.iOS",
-      "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14Enero\\PinkFashion\\PinkFashion.iOS\\PinkFashion.iOS.csproj",
+      "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion20Enero\\PinkFashion\\PinkFashion.iOS\\PinkFashion.iOS.csproj",
       "packagesPath": "C:\\Users\\Han-S\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14Enero\\PinkFashion\\PinkFashion.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion20Enero\\PinkFashion\\PinkFashion.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -7644,8 +7644,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Han-S\\source\\repos\\PinkFashion14Enero\\PinkFashion\\PinkFashion\\PinkFashion.csproj": {
-              "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion14Enero\\PinkFashion\\PinkFashion\\PinkFashion.csproj"
+            "C:\\Users\\Han-S\\source\\repos\\PinkFashion20Enero\\PinkFashion\\PinkFashion\\PinkFashion.csproj": {
+              "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion20Enero\\PinkFashion\\PinkFashion\\PinkFashion.csproj"
             }
           }
         }

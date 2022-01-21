@@ -10,10 +10,10 @@ using Xamarin.Forms.Xaml;
 namespace PinkFashion.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FAQ : ContentPage
+    public partial class RecuperarContrasena : ContentPage
     {
         string strEvento = "FAQ|Pink Fashion Store";
-        public FAQ()
+        public RecuperarContrasena()
         {
             InitializeComponent();
         }
@@ -22,10 +22,8 @@ namespace PinkFashion.Views
         {
             base.OnAppearing();
             App.eventTracker.SendScreen(strEvento, nameof(FAQ));
-            webViewElement.Source = "https://pinkfashionstore.com/preguntas.php";
-
+            webViewElement.Source = "https://pinkfashionstore.com/recuperar.php";
             webViewElement.RegisterAction(DisplayDataFromJavascript);
-
         }
 
         private void DisplayDataFromJavascript(string data)

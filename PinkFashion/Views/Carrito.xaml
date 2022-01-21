@@ -271,7 +271,7 @@
                                                         <StackLayout HorizontalOptions="FillAndExpand" Padding="20,5,20,5">
                                                             <Label Text="{Binding Alias}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource MediumLabelStyle}"/>
                                                         </StackLayout>
-                                                        <Image Source="btndelete_black.png" HeightRequest="22" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Margin="0,0,20,0">
+                                                        <Image Source="checkgris.png" HeightRequest="22" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Margin="0,0,20,0">
                                                             <Image.GestureRecognizers>
                                                                 <TapGestureRecognizer
                                                                             CommandParameter="{Binding .}"
@@ -308,7 +308,7 @@
                                             <Image Grid.Row="0" Grid.Column="1" Source="oxxo.png" BackgroundColor="White" Aspect="AspectFit" HeightRequest="50"/>
 
                                             <RadioButton Grid.Row="1" Grid.Column="0" 
-                                                         Content="PAYPAL" TextColor="#eb068c" FontSize="12"
+                                                         Content="PayPal" TextColor="#eb068c" FontSize="12"
                                                          GroupName="MetodoPago"
                                                          CheckedChanged="OnPagoCheckedChanged" BackgroundColor="White"/>
 
