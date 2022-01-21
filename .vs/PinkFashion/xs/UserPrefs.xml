@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{2DB7379D-B184-41C0-8A90-925ED1D1FD62}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/CategoriaVista.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/Producto.xaml">
     <Files>
-      <File FileName="PinkFashion/Views/FamiliaVista.xaml" Line="130" Column="68" />
-      <File FileName="PinkFashion/Views/CategoriaVista.xaml" Line="22" Column="23" />
-      <File FileName="PinkFashion/ViewModels/FamiliaVistaViewModel.cs" Line="275" Column="66" />
-      <File FileName="PinkFashion/ViewModels/CategoriaViewModel.cs" Line="1" Column="1" />
+      <File FileName="PinkFashion/Views/FamiliaVista.xaml" Line="126" Column="37" />
+      <File FileName="PinkFashion/Views/CategoriaVista.xaml" Line="126" Column="37" />
+      <File FileName="PinkFashion/ViewModels/FamiliaVistaViewModel.cs" Line="238" Column="22" />
+      <File FileName="PinkFashion/ViewModels/CategoriaViewModel.cs" Line="238" Column="1" />
+      <File FileName="PinkFashion/Views/Producto.xaml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
-              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="CategoriaVista.xaml" selected="True" />
+                <Node name="Producto.xaml" selected="True" />
               </Node>
             </Node>
           </Node>
