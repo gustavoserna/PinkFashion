@@ -55,6 +55,19 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        public string textoFiltroMarca = "Filtrar por marca";
+        public string TextoFiltroMarca
+        {
+            get
+            {
+                return textoFiltroMarca;
+            }
+            set
+            {
+                SetProperty(ref textoFiltroMarca, value);
+            }
+        }
+
         json_object json_ob = new json_object();
         public ObservableCollection<ColeccionSubcategorias> ColSubCategorias { get; set; }
         public ObservableCollection<Producto_> Productos { get; set; }
@@ -243,6 +256,8 @@ namespace PinkFashion.ViewModels
                     this.idMarca = "";
                     this.filtroPrecio = "";
                     this.idSubcategoria = "";
+                    TextoFiltroPrecio = "Ordenar de menor a mayor";
+                    TextoFiltroMarca = "Filtrar por marca";
                     LoadProductosCommand.Execute(null);
                 });
             }
@@ -276,9 +291,10 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
-                    MessagingCenter.Subscribe<MarcasViewModel, string>(this, "idMarca", (sender, arg) =>
+                    MessagingCenter.Subscribe<MarcasViewModel, Marcas_>(this, "marca", (sender, arg) =>
                     {
-                        this.idMarca = arg;
+                        this.idMarca = arg.IdMarca;
+                        TextoFiltroMarca = "Filtrar por marca: " + arg.Marca;
                         LoadProductosCommand.Execute(null);
                     });
 

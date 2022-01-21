@@ -117,41 +117,53 @@
                             HorizontalOptions="FillAndExpand"
                             Orientation="Horizontal">
 
-                            <Image
-                                HeightRequest="30"
-                                Source="filtroNoBg.png"
-                                VerticalOptions="CenterAndExpand" />
+                            <StackLayout
+                                Orientation="Horizontal"
+                                HorizontalOptions="StartAndExpand">
 
-                            <Label
-                                Text="Filtrar por Marca"
-                                FontSize="14"
-                                TextDecorations="None"
-                                VerticalOptions="CenterAndExpand">
+                                <Image
+                                    HeightRequest="15"
+                                    Opacity=".6"
+                                    Source="filtroMarca.png"
+                                    VerticalOptions="CenterAndExpand" />
 
-                                <Label.GestureRecognizers>
+                                <Label
+                                    Text="{Binding TextoFiltroMarca}"
+                                    FontSize="14"
+                                    TextDecorations="None"
+                                    VerticalOptions="CenterAndExpand">
 
-                                    <TapGestureRecognizer
-                                        CommandParameter="{Binding .}"
-                                        Command="{Binding Path=BindingContext.AbrirMarcasCommand,  Source={x:Reference FamiliaPage}}"/>
+                                    <Label.GestureRecognizers>
 
-                                </Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            CommandParameter="{Binding .}"
+                                            Command="{Binding Path=BindingContext.AbrirMarcasCommand,  Source={x:Reference FamiliaPage}}"/>
 
-                            </Label>
+                                    </Label.GestureRecognizers>
 
-                            <Label
-                                Text="Remover filtros"
-                                FontSize="14"
-                                TextDecorations="None"
-                                HorizontalOptions="End"
-                                VerticalOptions="CenterAndExpand">
+                                </Label>
 
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer
-                                        CommandParameter="{Binding .}"
-                                        Command="{Binding Path=BindingContext.RemoverFiltrosCommand,  Source={x:Reference FamiliaPage}}"/>
-                                </Label.GestureRecognizers>
+                            </StackLayout>
 
-                            </Label>
+                            <StackLayout
+                                Orientation="Horizontal"
+                                HorizontalOptions="End">
+
+                                <Label
+                                    Text="Remover filtros"
+                                    FontSize="14"
+                                    TextDecorations="None"
+                                    VerticalOptions="CenterAndExpand">
+
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            CommandParameter="{Binding .}"
+                                            Command="{Binding Path=BindingContext.RemoverFiltrosCommand,  Source={x:Reference FamiliaPage}}"/>
+                                    </Label.GestureRecognizers>
+
+                                </Label>
+
+                            </StackLayout>
 
                         </StackLayout>
 
@@ -161,8 +173,9 @@
                             Orientation="Horizontal">
 
                             <Image
-                                HeightRequest="30"
-                                Source="filtroNoBg.png"
+                                HeightRequest="15"
+                                Opacity=".6"
+                                Source="filtroPrecio.png"
                                 VerticalOptions="CenterAndExpand" />
 
                             <Label

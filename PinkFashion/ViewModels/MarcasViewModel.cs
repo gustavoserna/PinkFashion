@@ -92,7 +92,7 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<Marcas_>(async (Marcas_ model) =>
                 {
-                    MessagingCenter.Send<MarcasViewModel, string>(this, "idMarca", model.IdMarca);
+                    MessagingCenter.Send<MarcasViewModel, Marcas_>(this, "marca", model);
                     await App.Current.MainPage.Navigation.PopModalAsync();
                 });
             }

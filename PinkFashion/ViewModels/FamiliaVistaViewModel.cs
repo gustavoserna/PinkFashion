@@ -35,6 +35,19 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        public string textoFiltroMarca = "Filtrar por marca";
+        public string TextoFiltroMarca
+        {
+            get
+            {
+                return textoFiltroMarca;
+            }
+            set
+            {
+                SetProperty(ref textoFiltroMarca, value);
+            }
+        }
+
 
         public bool menorMayor = true;
         public bool MenorMayor
@@ -221,6 +234,8 @@ namespace PinkFashion.ViewModels
                 {
                     this.idMarca = "";
                     this.filtroPrecio = "";
+                    TextoFiltroPrecio = "Ordenar de menor a mayor";
+                    TextoFiltroMarca = "Filtrar por marca";
                     LoadProductosCommand.Execute(null);
                 });
             }
@@ -234,12 +249,12 @@ namespace PinkFashion.ViewModels
                 {
                     if (MenorMayor)
                     {
-                        TextoFiltroPrecio = "De mayor a menor";
+                        TextoFiltroPrecio = "Ordenar de mayor a menor";
                         this.filtroPrecio = "menorMayor";
                     }
                     else
                     {
-                        TextoFiltroPrecio = "De menor a mayor";
+                        TextoFiltroPrecio = "Ordenar de menor a mayor";
                         this.filtroPrecio = "mayorMenor";
                     }
                     MenorMayor = !MenorMayor;
@@ -254,9 +269,10 @@ namespace PinkFashion.ViewModels
             {
                 return new Command(() =>
                 {
-                    MessagingCenter.Subscribe<MarcasViewModel, string>(this, "idMarca", (sender, arg) =>
+                    MessagingCenter.Subscribe<MarcasViewModel, Marcas_>(this, "marca", (sender, arg) =>
                     {
-                        this.idMarca = arg;
+                        this.idMarca = arg.IdMarca;
+                        TextoFiltroMarca = "Filtrar por marca: " + arg.Marca;
                         LoadProductosCommand.Execute(null);
                     });
 

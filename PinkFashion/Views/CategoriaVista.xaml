@@ -117,41 +117,53 @@
                             HorizontalOptions="FillAndExpand"
                             Orientation="Horizontal">
 
-                            <Image
-                                HeightRequest="30"
-                                Source="filtroNoBg.png"
-                                VerticalOptions="CenterAndExpand" />
+                            <StackLayout
+                                Orientation="Horizontal"
+                                HorizontalOptions="StartAndExpand">
 
-                            <Label
-                                Text="Filtrar por Marca"
-                                FontSize="14"
-                                TextDecorations="None"
-                                HorizontalOptions="Start"
-                                VerticalOptions="CenterAndExpand">
+                                <Image
+                                    HeightRequest="15"
+                                    Opacity=".6"
+                                    Source="filtroMarca.png"
+                                    VerticalOptions="CenterAndExpand" />
 
-                                <Label.GestureRecognizers>
+                                <Label
+                                    Text="{Binding TextoFiltroMarca}"
+                                    FontSize="14"
+                                    TextDecorations="None"
+                                    VerticalOptions="CenterAndExpand">
 
-                                    <TapGestureRecognizer
-                                        CommandParameter="{Binding .}"
-                                        Command="{Binding Path=BindingContext.AbrirMarcasCommand,  Source={x:Reference CategoriaPage}}"/>
+                                    <Label.GestureRecognizers>
 
-                                </Label.GestureRecognizers>
-                            </Label>
+                                        <TapGestureRecognizer
+                                            CommandParameter="{Binding .}"
+                                            Command="{Binding Path=BindingContext.AbrirMarcasCommand,  Source={x:Reference FamiliaPage}}"/>
 
-                            <Label
-                                Text="Remover filtros"
-                                FontSize="14"
-                                TextDecorations="None"
-                                HorizontalOptions="End"
-                                VerticalOptions="CenterAndExpand">
+                                    </Label.GestureRecognizers>
 
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer
-                                        CommandParameter="{Binding .}"
-                                        Command="{Binding Path=BindingContext.RemoverFiltrosCommand,  Source={x:Reference CategoriaPage}}"/>
-                                </Label.GestureRecognizers>
+                                </Label>
 
-                            </Label>
+                            </StackLayout>
+
+                            <StackLayout
+                                Orientation="Horizontal"
+                                HorizontalOptions="End">
+
+                                <Label
+                                    Text="Remover filtros"
+                                    FontSize="14"
+                                    TextDecorations="None"
+                                    VerticalOptions="CenterAndExpand">
+
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            CommandParameter="{Binding .}"
+                                            Command="{Binding Path=BindingContext.RemoverFiltrosCommand,  Source={x:Reference FamiliaPage}}"/>
+                                    </Label.GestureRecognizers>
+
+                                </Label>
+
+                            </StackLayout>
 
                         </StackLayout>
 
@@ -161,51 +173,28 @@
                             Orientation="Horizontal">
 
                             <Image
-                                HeightRequest="30"
-                                Source="filtroNoBg.png"
+                                HeightRequest="15"
+                                Opacity=".6"
+                                Source="filtroPrecio.png"
                                 VerticalOptions="CenterAndExpand" />
 
                             <Label
                                 Text="{Binding TextoFiltroPrecio}"
-                                TextDecorations="None"
                                 FontSize="14"
-                                HorizontalOptions="Start"
+                                TextDecorations="None"
                                 VerticalOptions="CenterAndExpand">
 
                                 <Label.GestureRecognizers>
 
                                     <TapGestureRecognizer
                                         CommandParameter="{Binding .}"
-                                        Command="{Binding Path=BindingContext.FiltroPrecioCommand,  Source={x:Reference CategoriaPage}}"/>
+                                        Command="{Binding Path=BindingContext.FiltroPrecioCommand,  Source={x:Reference FamiliaPage}}"/>
 
                                 </Label.GestureRecognizers>
 
                             </Label>
 
                         </StackLayout>
-
-                        <!-- Remover Filtros -->
-                        <!--<StackLayout
-                            HorizontalOptions="FillAndExpand"
-                            Orientation="Horizontal">
-
-                            <Label
-                                Text="Remover filtros"
-                                FontSize="14"
-                                TextDecorations="Underline"
-                                VerticalOptions="CenterAndExpand">
-
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer
-                                        CommandParameter="{Binding .}"
-                                        Command="{Binding Path=BindingContext.RemoverFiltrosCommand,  Source={x:Reference CategoriaPage}}"/>
-                                </Label.GestureRecognizers>
-                        
-                            </Label>
-
-                        </StackLayout>-->
-
-
                     </StackLayout>
 
                 </StackLayout>
