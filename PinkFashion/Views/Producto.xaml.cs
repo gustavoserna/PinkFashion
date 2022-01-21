@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PinkFashion.Models;
 using PinkFashion.ViewModels;
@@ -22,6 +23,7 @@ namespace PinkFashion.Views
         {
             InitializeComponent();
             Title = producto.producto;
+            System.Diagnostics.Debug.WriteLine("PRODUCTO:" + JsonConvert.SerializeObject(producto));
 
             //lblTitulo.Text = producto.producto;
             this.producto = producto;

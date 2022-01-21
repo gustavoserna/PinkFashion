@@ -431,6 +431,8 @@ namespace PinkFashion.ViewModels
                     ColSuperPrecio.Add(coleccion);
                 }
 
+                System.Diagnostics.Debug.WriteLine("SUPERPRECIOS: " + JsonConvert.SerializeObject(ColSuperPrecio));
+
                 categorias = listacategorias;
                 layoutapp = listalayout;
                 banner = listabanner;

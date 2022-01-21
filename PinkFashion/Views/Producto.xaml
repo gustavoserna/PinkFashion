@@ -47,7 +47,7 @@
                         HeightRequest="250"
                         Source="{Binding Imagen}"/>
 
-                    <!--<Label x:Name="vAgotado" Rotation="-45" Opacity=".8" Grid.Row="0"  Text="Agotado" FontFamily="Arial" IsVisible="{Binding Agotado}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="#eb068c" FontSize="18" />-->
+                    <!--<Label x:Name="vAgotado" Rotation="-45" Opacity=".8" Grid.Row="0"  Text="Agotado" FontFamily="Arial" IsVisible="{Binding Agotado}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="#ff509f" FontSize="18" />-->
 
                     <Label
                                                             Rotation="-45"
@@ -58,7 +58,7 @@
                                                             IsVisible="{Binding Agotado}"
                                                             VerticalOptions="CenterAndExpand"
                                                             HorizontalOptions="CenterAndExpand"
-                                                            TextColor="#eb068c"
+                                                            TextColor="#ff509f"
                                                             FontSize="15" />
 
                 </Grid>
@@ -80,10 +80,10 @@
                         InterPageSpacing="0"
                         ShowIndicators="True"
                         IndicatorsTintColor="#ccc"
-                        CurrentPageIndicatorTintColor="#eb068c"
+                        CurrentPageIndicatorTintColor="#ff509f"
                         ShowArrows="True"
                         ArrowsParentMargin="0"
-                        ArrowsTintColor="#eb068c"
+                        ArrowsTintColor="#ff509f"
                         HorizontalArrowsPosition="Center"
                         ArrowsSize="35"
                         ArrowsBackgroundColor="White"
@@ -149,7 +149,7 @@
                                                             IsVisible="{Binding Agotado}"
                                                             VerticalOptions="CenterAndExpand"
                                                             HorizontalOptions="CenterAndExpand"
-                                                            TextColor="#eb068c"
+                                                            TextColor="#ff509f"
                                                             FontSize="15" />
 
                                                     </Grid>
@@ -181,7 +181,7 @@
 
                 <Label
                     x:Name="vProducto"
-                    TextColor="#eb068c"
+                    TextColor="#ff509f"
                     FontSize="16" />
 
                 <Label
@@ -230,22 +230,20 @@
                             HeightRequest="1"
                             WidthRequest="90"
                             Rotation="0"
-                            BackgroundColor="#eb068c"
+                            BackgroundColor="#ff509f"
                             HorizontalOptions="StartAndExpand"
                             Margin="0,0,0,0"/>
 
                     </StackLayout>
 
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        x:Name="vPrecio"
-                        HorizontalOptions="End"
-                        HorizontalTextAlignment="End"
-                        Style="{StaticResource MediumLabelStyle}" />
-
                 </Grid>
                 <!-- End Sobreprecio -->
+
+                <Label
+                    x:Name="vPrecio"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource MediumLabelStyle}" />
 
                 <Label
                     Text="Descripción"
@@ -283,7 +281,7 @@
                             <Frame
                                 Padding="0"
                                 VerticalOptions="CenterAndExpand"
-                                BorderColor="#eb068c"
+                                BorderColor="#ff509f"
                                 HasShadow="false"
                                 CornerRadius="5"
                                 HeightRequest="37"
@@ -298,7 +296,7 @@
                                 <Label
                                     Text="-"
                                     FontSize="15"
-                                    TextColor="#eb068c"
+                                    TextColor="#ff509f"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="CenterAndExpand" />
                             </Frame>
@@ -306,8 +304,8 @@
                             <Frame
                                 Padding="0"
                                 VerticalOptions="CenterAndExpand"
-                                BorderColor="#eb068c"
-                                BackgroundColor="#eb068c"
+                                BorderColor="#ff509f"
+                                BackgroundColor="#ff509f"
                                 HasShadow="false"
                                 CornerRadius="5"
                                 HeightRequest="37"
@@ -325,7 +323,7 @@
                             <Frame
                                 Padding="0"
                                 VerticalOptions="CenterAndExpand"
-                                BorderColor="#eb068c"
+                                BorderColor="#ff509f"
                                 HasShadow="false"
                                 CornerRadius="5"
                                 HeightRequest="37"
@@ -340,7 +338,7 @@
                                 <Label
                                     Text="+"
                                     FontSize="15"
-                                    TextColor="#eb068c"
+                                    TextColor="#ff509f"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="CenterAndExpand" />
                             </Frame>
@@ -359,8 +357,8 @@
                             Padding="0"
                             VerticalOptions="CenterAndExpand"
                             HorizontalOptions="EndAndExpand"
-                            BorderColor="#eb068c"
-                            BackgroundColor="#eb068c"
+                            BorderColor="#ff509f"
+                            BackgroundColor="#ff509f"
                             HasShadow="false"
                             CornerRadius="5"
                             HeightRequest="37"
@@ -406,10 +404,10 @@
                         InterPageSpacing="0"
                         ShowIndicators="True"
                         IndicatorsTintColor="#ccc"
-                        CurrentPageIndicatorTintColor="#eb068c"
+                        CurrentPageIndicatorTintColor="#ff509f"
                         ShowArrows="True"
                         ArrowsParentMargin="0"
-                        ArrowsTintColor="#eb068c"
+                        ArrowsTintColor="#ff509f"
                         HorizontalArrowsPosition="Center"
                         ArrowsSize="35"
                         ArrowsBackgroundColor="White"
@@ -477,7 +475,7 @@
                                                                 IsVisible="{Binding Agotado}"
                                                                 VerticalOptions="CenterAndExpand"
                                                                 HorizontalOptions="CenterAndExpand"
-                                                                TextColor="#eb068c"
+                                                                TextColor="#ff509f"
                                                                 FontSize="15" />
 
                                                         </Grid>
@@ -539,7 +537,7 @@
                                                                         Grid.Row="0"
                                                                         HeightRequest="2"
                                                                         Rotation="0"
-                                                                        BackgroundColor="#eb068c"
+                                                                        BackgroundColor="#ff509f"
                                                                         HorizontalOptions="CenterAndExpand"
                                                                         Margin="0,0,0,0"/>
 
