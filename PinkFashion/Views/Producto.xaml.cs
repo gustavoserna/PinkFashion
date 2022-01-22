@@ -36,7 +36,9 @@ namespace PinkFashion.Views
             vProducto.Text = producto.producto;
             vPrecio.Text = producto.precioCarrito;
             vSobrePrecio.Text = producto.SobrePreciostring;
-            BloqueSobrePrecio.IsVisible = Convert.ToBoolean(producto.ConPromo);
+            //BloqueSobrePrecio.IsVisible = Convert.ToBoolean(producto.ConPromo);
+            vSobrePrecio.IsVisible = Convert.ToBoolean(producto.ConPromo);
+            vBoxViewSobreprecio.IsVisible = Convert.ToBoolean(producto.ConPromo);
             //vAgotado.IsVisible = Convert.ToBoolean(producto.Agotado);
             vDescripcion.Text = producto.descripcion;
             vTituloVer.Text = producto.TituloVer;

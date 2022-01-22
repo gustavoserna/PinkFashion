@@ -285,6 +285,7 @@ namespace PinkFashion.Views
             var clickTerminos = new TapGestureRecognizer();
             clickTerminos.Tapped += async (s, e) =>
             {
+                await Navigation.PushAsync(new TerminosCondiciones());
                 //string strEvento = "Terminos y Condiciones|Pink Fashion Store";
                 //App.eventTracker.SendScreen(strEvento, "TerminosyCondiciones");
                 //await Launcher.OpenAsync("https://pinkfashionstore.com/terminoscondiciones.php");

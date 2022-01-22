@@ -228,6 +228,7 @@
 
                         <BoxView
                             HeightRequest="1"
+                            x:Name="vBoxViewSobreprecio"
                             WidthRequest="90"
                             Rotation="0"
                             BackgroundColor="#ff509f"
@@ -236,14 +237,16 @@
 
                     </StackLayout>
 
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        x:Name="vPrecio"
+                        HorizontalOptions="EndAndExpand"
+                        HorizontalTextAlignment="End"
+                        Style="{StaticResource MediumLabelStyle}" />
+
                 </Grid>
                 <!-- End Sobreprecio -->
-
-                <Label
-                    x:Name="vPrecio"
-                    HorizontalOptions="CenterAndExpand"
-                    HorizontalTextAlignment="Center"
-                    Style="{StaticResource MediumLabelStyle}" />
 
                 <Label
                     Text="Descripción"
