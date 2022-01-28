@@ -49,7 +49,7 @@ namespace PinkFashion.ViewModels
             }
         }
 
-        TextDecorations isUnderlinedMasVendidos = TextDecorations.None;
+        TextDecorations isUnderlinedMasVendidos = TextDecorations.Underline;
         public TextDecorations IsUnderlinedMasVendidos
         {
             get { return isUnderlinedMasVendidos; }
