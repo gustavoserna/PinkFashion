@@ -29,6 +29,8 @@ namespace PinkFashion.Views
             this.producto = producto;
             BindingContext = productoViewModel = new ProductoViewModel(producto, Navigation);
 
+            System.Diagnostics.Debug.WriteLine("Imagen del producto: "+this.producto.Imagen);
+
             string strEvento = producto.producto + "|" + producto.marca + "|Pink Fashion Store";
             App.eventTracker.SendScreen(strEvento, nameof(Producto));
 

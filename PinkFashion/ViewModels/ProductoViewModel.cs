@@ -245,6 +245,10 @@ namespace PinkFashion.ViewModels
                         Precio = t.Result.Precio;
                         foreach(VariantesProducto variante in t.Result.VariantesProductos)
                         {
+                            System.Diagnostics.Debug.WriteLine("Variante:-------------------------------");
+                            System.Diagnostics.Debug.WriteLine("Variante con url :"+variante.url_variante);
+                            variante.Imagen_Variante = variante.url_variante;
+                            System.Diagnostics.Debug.WriteLine("Img variante:"+variante.Imagen_Variante);
                             lista.Add(variante);
                             listavariantes_for_col.Add(variante);
                         }
@@ -662,7 +666,7 @@ namespace PinkFashion.ViewModels
                 StringContent str = new StringContent("op=ObtenerProducto&Idproducto=" + id_producto, Encoding.UTF8, "application/x-www-form-urlencoded");
                 var respuesta = await client.PostAsync(Constantes.url + "Productos/App.php", str);
                 var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
-                System.Diagnostics.Debug.WriteLine("productos: " + json);
+                System.Diagnostics.Debug.WriteLine("productos con variantes: " + json);
                 if (json != "")
                 {
                     json_ob = JsonConvert.DeserializeObject<json_object>(json);
