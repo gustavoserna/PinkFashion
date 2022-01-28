@@ -18,7 +18,8 @@ namespace PinkFashion.Models
         {
             get
             {
-                return Constantes.root_url + url_variante;
+                return String.Format(Constantes.url_img, this.idproducto, this._imagen);
+                //return Constantes.root_url + url_variante;
             }
             set
             {
