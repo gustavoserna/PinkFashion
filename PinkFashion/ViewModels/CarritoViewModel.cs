@@ -860,6 +860,8 @@ namespace PinkFashion.ViewModels
 
         public async Task SelDireccion(Direccion SelDirec)
         {
+
+            System.Diagnostics.Debug.WriteLine("Direccion seleccionada: "+SelDirec.IdClienteDir);
             try
             {
 
@@ -868,6 +870,7 @@ namespace PinkFashion.ViewModels
                     if (SelDirec.IdClienteDir == itemDir.IdClienteDir)
                     {
                         itemDir.imagen = "checkpink.png";
+                        System.Diagnostics.Debug.WriteLine("La dirección ha sido encontrada");
                         Application.Current.Properties["IDDireccion"] = itemDir.IdClienteDir;
                         Application.Current.Properties["Direccion"] = itemDir.MiDireccion;
                         Application.Current.Properties["CostoEnvio"] = itemDir.CostoEnvio;

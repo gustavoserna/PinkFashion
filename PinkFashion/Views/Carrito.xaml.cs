@@ -418,7 +418,7 @@ namespace PinkFashion.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (App.Current.Properties.ContainsKey("IdCliente") && App.Current.Properties.ContainsKey("sesion"))
+            try 
             {
                 carritoViewModel.SesionIniciada = true;
                 carritoViewModel.SesionNoIniciada = false;
@@ -446,11 +446,18 @@ namespace PinkFashion.Views
                     Navigation.PopModalAsync();
                     root = false;
                 }
-            } else
+            }
+            catch (Exception ex)
             {
                 carritoViewModel.SesionIniciada = false;
                 carritoViewModel.SesionNoIniciada = true;
             }
+            //if (App.Current.Properties.ContainsKey("IdCliente") && App.Current.Properties.ContainsKey("sesion"))
+            //{
+            //} else
+            //{
+                
+            //}
         }
     }
 }

@@ -666,7 +666,7 @@ namespace PinkFashion.ViewModels
                 StringContent str = new StringContent("op=ObtenerProducto&Idproducto=" + id_producto, Encoding.UTF8, "application/x-www-form-urlencoded");
                 var respuesta = await client.PostAsync(Constantes.url + "Productos/App.php", str);
                 var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
-                System.Diagnostics.Debug.WriteLine("productos con variantes: " + json);
+                System.Diagnostics.Debug.WriteLine("respuesta de productos con variantes: " + json);
                 if (json != "")
                 {
                     json_ob = JsonConvert.DeserializeObject<json_object>(json);
