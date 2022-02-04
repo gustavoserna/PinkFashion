@@ -23,6 +23,12 @@ namespace PinkFashion.Views
             InitializeComponent();
             Title = "Carrito";
 
+            MessagingCenter.Subscribe<MyTabbedPage>(this, "Load", (sender) =>
+            {
+                System.Diagnostics.Debug.WriteLine("INIT CARRITO");
+                initCarrito();
+            });
+
             if (Application.Current.Properties.ContainsKey("Abreviado"))
             {
                 //lbNombre.Text = "Hola " + Application.Current.Properties["Abreviado"].ToString();
@@ -414,11 +420,51 @@ namespace PinkFashion.Views
             }
 
         }
-        
+
+        public void initCarrito()
+        {
+            if (App.Current.Properties.ContainsKey("IdCliente") && App.Current.Properties.ContainsKey("sesion"))
+            {
+                carritoViewModel.SesionIniciada = true;
+                carritoViewModel.SesionNoIniciada = false;
+
+                App.eventTracker.SendScreen(strEvento, nameof(Carrito));
+                carritoViewModel.LoadItemsCommand.Execute(null);
+                carritoViewModel.noProductos = App.Cart;
+                carritoViewModel.Monedero = App.Monedero;
+                carritoViewModel.EnviosGratis = App.EnvioGratis;
+                carritoViewModel.Abandonados = App.Abandonados;
+                carritoViewModel.TituloEnviosGratis = App.TituloEnvioGratis;
+                carritoViewModel.TituloMonedero = App.TituloMonedero;
+                if (App.Abandonados == 1)
+                {
+                    carritoViewModel.visibleAbandonado = true;
+                }
+                else
+                {
+                    carritoViewModel.visibleAbandonado = false;
+                }
+
+                if (root)
+                {
+                    Producto.root = true;
+                    Navigation.PopModalAsync();
+                    root = false;
+                }
+            }
+            else
+            {
+                carritoViewModel.SesionIniciada = false;
+                carritoViewModel.SesionNoIniciada = true;
+            }
+        }
+
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            try 
+            //initCarrito();
+            /*try 
             {
                 carritoViewModel.SesionIniciada = true;
                 carritoViewModel.SesionNoIniciada = false;
@@ -451,13 +497,7 @@ namespace PinkFashion.Views
             {
                 carritoViewModel.SesionIniciada = false;
                 carritoViewModel.SesionNoIniciada = true;
-            }
-            //if (App.Current.Properties.ContainsKey("IdCliente") && App.Current.Properties.ContainsKey("sesion"))
-            //{
-            //} else
-            //{
-                
-            //}
+            }*/
         }
     }
 }

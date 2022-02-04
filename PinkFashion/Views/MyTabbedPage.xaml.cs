@@ -38,7 +38,7 @@ namespace PinkFashion.Views
                 BarBackgroundColor = App.bgColor,
                 BarTextColor = App.textColor,
                 IconImageSource = "gbag.png",
-                Title = "Mi carrito"
+                Title = "Mi Carrito"
             };
 
             //si es android se usa el plugin del badge
@@ -69,14 +69,15 @@ namespace PinkFashion.Views
             base.OnCurrentPageChanged();
             if(CurrentPage.Title.Equals("Mi Carrito"))
             {
+                MessagingCenter.Send<MyTabbedPage>(this, "Load");
 
-                if (!App.Current.Properties.ContainsKey("IdCliente") || !App.Current.Properties.ContainsKey("sesion"))
+                /*if (!App.Current.Properties.ContainsKey("IdCliente") || !App.Current.Properties.ContainsKey("sesion"))
                 {
                     Navigation.PushModalAsync(new Login());
                 } else
                 {
                     Navigation.PushAsync(new Carrito());
-                }
+                }*/
             }
         }
     }

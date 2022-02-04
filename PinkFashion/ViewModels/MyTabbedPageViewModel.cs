@@ -84,12 +84,13 @@ namespace PinkFashion.ViewModels
         public MyTabbedPageViewModel()
         {
             _badge = 0;
-            MessagingCenter.Subscribe<CarritoViewModel, int>(this, "Badge", (sender, arg) =>
+            MessagingCenter.Subscribe<CarritoViewModel, int>(this, "Badge", async (sender, arg) =>
             {
-                if (!(arg == -1 && Badge <= 0))
+                /*if (!(arg == -1 && Badge <= 0))
                 {
                     Badge = Badge + (arg);
-                }
+                }*/
+                await this.Contador();
             });
             MessagingCenter.Subscribe<CarritoViewModel, int>(this, "BadgeCero", (sender, arg) =>
             {

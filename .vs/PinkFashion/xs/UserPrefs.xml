@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{2DB7379D-B184-41C0-8A90-925ED1D1FD62}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/Producto.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ViewModels/MyTabbedPageViewModel.cs">
     <Files>
-      <File FileName="PinkFashion/Views/FamiliaVista.xaml" Line="126" Column="37" />
-      <File FileName="PinkFashion/Views/CategoriaVista.xaml" Line="126" Column="37" />
-      <File FileName="PinkFashion/ViewModels/FamiliaVistaViewModel.cs" Line="238" Column="22" />
-      <File FileName="PinkFashion/ViewModels/CategoriaViewModel.cs" Line="238" Column="1" />
-      <File FileName="PinkFashion/Views/Producto.xaml" Line="1" Column="1" />
+      <File FileName="PinkFashion/ViewModels/CarritoViewModel.cs" Line="361" Column="20" />
+      <File FileName="PinkFashion/Constantes.cs" Line="12" Column="35" />
+      <File FileName="PinkFashion/Views/Carrito.xaml.cs" Line="466" Column="15" />
+      <File FileName="PinkFashion/Views/MyTabbedPage.xaml.cs" Line="80" Column="20" />
+      <File FileName="PinkFashion/ViewModels/MyTabbedPageViewModel.cs" Line="92" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
-              <Node name="Views" expanded="True">
-                <Node name="Producto.xaml" selected="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="MyTabbedPageViewModel.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -22,7 +22,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
