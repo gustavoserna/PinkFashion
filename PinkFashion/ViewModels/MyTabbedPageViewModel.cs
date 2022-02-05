@@ -41,6 +41,7 @@ namespace PinkFashion.ViewModels
 
                 var obj = JObject.Parse(json);
                 string displayNoProductos = (string)obj.SelectToken("NoArticulos");
+                System.Diagnostics.Debug.WriteLine("NO ARTS:" + displayNoProductos);
                 string displayIDAlianza = (string)obj.SelectToken("IDAlianza");
 
                 if (!string.IsNullOrEmpty(displayNoProductos))
@@ -86,11 +87,11 @@ namespace PinkFashion.ViewModels
             _badge = 0;
             MessagingCenter.Subscribe<CarritoViewModel, int>(this, "Badge", async (sender, arg) =>
             {
-                /*if (!(arg == -1 && Badge <= 0))
+                if (!(arg == -1 && Badge <= 0))
                 {
                     Badge = Badge + (arg);
-                }*/
-                await this.Contador();
+                }
+                //await this.Contador();
             });
             MessagingCenter.Subscribe<CarritoViewModel, int>(this, "BadgeCero", (sender, arg) =>
             {

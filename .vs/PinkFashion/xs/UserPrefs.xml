@@ -1,21 +1,17 @@
 ﻿<Properties StartupConfiguration="{2DB7379D-B184-41C0-8A90-925ED1D1FD62}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ViewModels/MyTabbedPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="PinkFashion/ViewModels/CarritoViewModel.cs" Line="361" Column="20" />
-      <File FileName="PinkFashion/Constantes.cs" Line="12" Column="35" />
-      <File FileName="PinkFashion/Views/Carrito.xaml.cs" Line="466" Column="15" />
+      <File FileName="PinkFashion/ViewModels/CarritoViewModel.cs" Line="1138" Column="47" />
+      <File FileName="PinkFashion/Views/Carrito.xaml.cs" Line="265" Column="88" />
       <File FileName="PinkFashion/Views/MyTabbedPage.xaml.cs" Line="80" Column="20" />
-      <File FileName="PinkFashion/ViewModels/MyTabbedPageViewModel.cs" Line="92" Column="18" />
+      <File FileName="PinkFashion/ViewModels/MyTabbedPageViewModel.cs" Line="44" Column="83" />
+      <File FileName="PinkFashion/Views/Carrito.xaml" Line="391" Column="51" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
-            <Node name="PinkFashion" expanded="True">
-              <Node name="ViewModels" expanded="True">
-                <Node name="MyTabbedPageViewModel.cs" selected="True" />
-              </Node>
-            </Node>
+            <Node name="PinkFashion.Android" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -27,5 +23,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android PreferredExecutionTarget="Android.R58NB32EELY" />
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
 </Properties>

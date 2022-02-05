@@ -358,7 +358,6 @@ namespace PinkFashion.ViewModels
             {
                return new Command<ProductoTemporal>(async (ProductoTemporal model) =>
                {
-                   MessagingCenter.Send<CarritoViewModel, int>(this, "Badge", +1);
                    int cant = Int32.Parse(model.Cantidad.ToString());
                     cant++;
                     model.Accion = "mas";
@@ -368,8 +367,8 @@ namespace PinkFashion.ViewModels
                     string respuesta = await addPedidoTmp(model);
                     if (respuesta == "1")
                     {
-                        
-                        noProductos++;
+                       MessagingCenter.Send<CarritoViewModel, int>(this, "Badge", +1);
+                       noProductos++;
                         App.Cart++;
                         //mod total pedido
                         totalpedido = totalpedido + model.Precio;
@@ -395,7 +394,6 @@ namespace PinkFashion.ViewModels
             {
                 return new Command<ProductoTemporal>(async (ProductoTemporal model) =>
                 {
-                    MessagingCenter.Send<CarritoViewModel, int>(this, "Badge", -1);
                     int cant = Int32.Parse(model.Cantidad.ToString());
 
                     if (cant > 0)
@@ -411,6 +409,7 @@ namespace PinkFashion.ViewModels
                         {
                             noProductos--;
                             App.Cart--;
+                            MessagingCenter.Send<CarritoViewModel, int>(this, "Badge", -1);
                             //mod total pedido
                             totalpedido = totalpedido - model.Precio;
                             totalpedidostring = totalpedido.ToString("c");
@@ -1131,13 +1130,17 @@ namespace PinkFashion.ViewModels
             try
             {
                 deviceSession = await CrossOpenpay.Current.CreateDeviceSessionId();
-                string idTarjeta = Application.Current.Properties["IDMetodoPago"].ToString();
+                string idTarjeta = "";
+                if(Application.Current.Properties.ContainsKey("IDMetodoPago"))
+                {
+                    idTarjeta = Application.Current.Properties["IDMetodoPago"].ToString();
+                } 
                 var client = new HttpClient();
                 StringContent str = new StringContent("op=PagoOpenPay&idcliente=" + idcliente + "&iddireccion=" + idDireccion + "&idformapago=" + FPago + "&Envio=" + Envio + "&idTarjeta=" + idTarjeta + "&Meses=" + meses + "&deviceSesion=" + this.deviceSession, Encoding.UTF8, "application/x-www-form-urlencoded");
                 var consulta = await client.PostAsync(Constantes.url + "Pedidos/App.php", str);
                 var respuesta = consulta.Content.ReadAsStringAsync().Result;
                 regresar = respuesta; //respuesta.Replace('"', '-');
-                
+                System.Diagnostics.Debug.WriteLine("RESPUESTA EFECTIVO: " + respuesta);
 
                 totalpedido = 0;
                 noProductos = 0;

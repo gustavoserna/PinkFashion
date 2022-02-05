@@ -37,50 +37,50 @@
 	.section	.rodata.map_aname.6,"aMS",%progbits,1
 	.type	.L.map_aname.6, %object
 .L.map_aname.6:
-	.asciz	"CarouselView.FormsPlugin.Droid"
-	.size	.L.map_aname.6, 31
+	.asciz	"PinkFashion.Android"
+	.size	.L.map_aname.6, 20
 
 	.section	.rodata.map_aname.7,"aMS",%progbits,1
 	.type	.L.map_aname.7, %object
 .L.map_aname.7:
-	.asciz	"Xamarin.AndroidX.Lifecycle.Common"
-	.size	.L.map_aname.7, 34
+	.asciz	"CarouselView.FormsPlugin.Droid"
+	.size	.L.map_aname.7, 31
 
 	.section	.rodata.map_aname.8,"aMS",%progbits,1
 	.type	.L.map_aname.8, %object
 .L.map_aname.8:
-	.asciz	"Xamarin.GooglePlayServices.Tasks"
-	.size	.L.map_aname.8, 33
+	.asciz	"Xamarin.AndroidX.Lifecycle.Common"
+	.size	.L.map_aname.8, 34
 
 	.section	.rodata.map_aname.9,"aMS",%progbits,1
 	.type	.L.map_aname.9, %object
 .L.map_aname.9:
-	.asciz	"Sharpnado.Shadows.Android"
-	.size	.L.map_aname.9, 26
+	.asciz	"Xamarin.GooglePlayServices.Tasks"
+	.size	.L.map_aname.9, 33
 
 	.section	.rodata.map_aname.10,"aMS",%progbits,1
 	.type	.L.map_aname.10, %object
 .L.map_aname.10:
-	.asciz	"Plugin.Badge.Droid"
-	.size	.L.map_aname.10, 19
+	.asciz	"Sharpnado.Shadows.Android"
+	.size	.L.map_aname.10, 26
 
 	.section	.rodata.map_aname.11,"aMS",%progbits,1
 	.type	.L.map_aname.11, %object
 .L.map_aname.11:
-	.asciz	"PanCardView.Droid"
-	.size	.L.map_aname.11, 18
+	.asciz	"Plugin.Badge.Droid"
+	.size	.L.map_aname.11, 19
 
 	.section	.rodata.map_aname.12,"aMS",%progbits,1
 	.type	.L.map_aname.12, %object
 .L.map_aname.12:
-	.asciz	"OneSignal.Android.Binding"
-	.size	.L.map_aname.12, 26
+	.asciz	"PanCardView.Droid"
+	.size	.L.map_aname.12, 18
 
 	.section	.rodata.map_aname.13,"aMS",%progbits,1
 	.type	.L.map_aname.13, %object
 .L.map_aname.13:
-	.asciz	"PinkFashion.Android"
-	.size	.L.map_aname.13, 20
+	.asciz	"OneSignal.Android.Binding"
+	.size	.L.map_aname.13, 26
 
 	.section	.rodata.map_aname.14,"aMS",%progbits,1
 	.type	.L.map_aname.14, %object
