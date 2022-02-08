@@ -16,6 +16,7 @@ namespace PinkFashion.Views
         public FAQ()
         {
             InitializeComponent();
+            Title = "Preguntas Frecuentes";
         }
 
         protected override void OnAppearing()

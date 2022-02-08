@@ -17,7 +17,7 @@ namespace PinkFashion.Views
         public Facturacion()
         {
             InitializeComponent();
-            Title = "Afiliados";
+            Title = "Deseas Facturar";
 
             if (Application.Current.Properties.ContainsKey("IdCliente"))
             {

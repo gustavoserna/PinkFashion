@@ -13,9 +13,11 @@ namespace PinkFashion.Views
     public partial class TerminosCondiciones : ContentPage
     {
         string strEvento = "Términos y condiciones|Pink Fashion Store";
+        
         public TerminosCondiciones()
         {
             InitializeComponent();
+            Title = "Términos y condiciones";
         }
 
         protected override void OnAppearing()
