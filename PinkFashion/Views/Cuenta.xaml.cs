@@ -261,21 +261,45 @@ namespace PinkFashion.Views
             };
             btnAyuda.GestureRecognizers.Add(clickAyuda);
 
-            var clickEresBB = new TapGestureRecognizer();
-            clickEresBB.Tapped += async (s, e) =>
-            {
-                string strEvento = "Eres BB|Pink Fashion Store";
-                App.eventTracker.SendScreen(strEvento, "BB");
-                await Launcher.OpenAsync("https://pinkfashionstore.com/eresBB.php");
+            //La parte de BeautyBlogger fue removida de la aplicación a petición de los clientes
+            //var clickEresBB = new TapGestureRecognizer();
+            //clickEresBB.Tapped += async (s, e) =>
+            //{
+            //    string strEvento = "Eres BB|Pink Fashion Store";
+            //    App.eventTracker.SendScreen(strEvento, "BB");
+            //    await Launcher.OpenAsync("https://pinkfashionstore.com/eresBB.php");
 
-            };
-            btnFormularioBB.GestureRecognizers.Add(clickEresBB);
+            //};
+            //btnFormularioBB.GestureRecognizers.Add(clickEresBB);
 
             var clickFacturar = new TapGestureRecognizer();
-            clickFacturar.Tapped += (s, e) =>
+            clickFacturar.Tapped += async (s, e) =>
             {
-                Chat.Open("+528711223702", "Hola, deseo facturar");
-                App.eventTracker.SendScreen("Whatsapp|PinkFashionStore", "Whatsapp");
+                if (Application.Current.Properties.ContainsKey("IdCliente") && Application.Current.Properties.ContainsKey("sesion"))
+                {
+                    if (Application.Current.Properties["sesion"].Equals("activa"))
+                    {
+                        await Navigation.PushAsync(new Facturacion());
+                    }
+                    else
+                    {
+                        bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
+                        if (ac)
+                        {
+                            await Navigation.PushModalAsync(new Login());
+                        }
+                    }
+                }
+                else
+                {
+                    bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
+                    if (ac)
+                    {
+                        await Navigation.PushModalAsync(new Login());
+                    }
+                }
+                //Chat.Open("+528711223702", "Hola, deseo facturar");
+                //App.eventTracker.SendScreen("Whatsapp|PinkFashionStore", "Whatsapp");
                 //string strEvento = "Facturación|Pink Fashion Store";
                 //App.eventTracker.SendScreen(strEvento, "Facturacion");
                 //await DisplayAlert("Información", "Para facturar tus pedidos entra a https://pinkfashionstore.com inicia sesión y en tu historial encontrarás la opción. Gracias por tu preferencia, estamos para atenderte.", "Ok");                

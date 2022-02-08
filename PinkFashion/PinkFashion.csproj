@@ -67,6 +67,9 @@
     <None Remove="Openpay.Xamarin" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="Views\Facturacion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\FAQ.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

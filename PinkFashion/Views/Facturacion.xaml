@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:controls="clr-namespace:PinkFashion.Renderers"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PinkFashion.Views.Facturacion">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+            <controls:HybridWebView
+                x:Name="webViewElement"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

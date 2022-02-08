@@ -22,7 +22,7 @@ namespace PinkFashion.Views
         {
             base.OnAppearing();
             App.eventTracker.SendScreen(strEvento, nameof(FAQ));
-            webViewElement.Source = "http://pinkfashionstore.com/terminoscondiciones.php";
+            webViewElement.Source = "https://pink.resosistemas.mx/TerminosApp.php";
 
             webViewElement.RegisterAction(DisplayDataFromJavascript);
 

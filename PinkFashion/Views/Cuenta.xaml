@@ -276,17 +276,17 @@
                     </StackLayout>
 
                     <!-- Formulario Bloggers -->
-                    <StackLayout x:Name="btnFormularioBB" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                    <!--<StackLayout x:Name="btnFormularioBB" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
                         
-                        <!--<BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="-10,-10,-10,5" />-->
+                        --><!--<BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="-10,-10,-10,5" />--><!--
                         
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
                             
-                            <!--<Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            --><!--<Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
                             
                                 <Image Source="formularioblogger.png" HeightRequest="20"/>
                                 
-                            </Frame>-->
+                            </Frame>--><!--
                             
                             <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
                                 
@@ -302,7 +302,7 @@
                             
                         </StackLayout>
                         <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
-                    </StackLayout>
+                    </StackLayout>-->
 
                     <!-- Terminos -->
                     <StackLayout x:Name="btnTerminos" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
