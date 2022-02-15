@@ -269,7 +269,13 @@
                                                             </Image.GestureRecognizers>
                                                         </Image>
                                                         <StackLayout HorizontalOptions="FillAndExpand" Padding="20,5,20,5">
-                                                            <Label Text="{Binding Alias}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource MediumLabelStyle}"/>
+                                                            <Label Text="{Binding Alias}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource MediumLabelStyle}">
+                                                                <Label.GestureRecognizers>
+                                                                    <TapGestureRecognizer
+                                                                            CommandParameter="{Binding .}"
+                                                                            Command="{Binding Path=BindingContext.SelDireccionCommand,  Source={x:Reference CarritoPage}}"/>
+                                                                </Label.GestureRecognizers>
+                                                            </Label>
                                                         </StackLayout>
                                                         <Image Source="checkgris.png" HeightRequest="22" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Margin="0,0,20,0">
                                                             <Image.GestureRecognizers>
@@ -286,15 +292,16 @@
                                     </CollectionView>
                                 </Grid>
 
-                                <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Padding="15" BackgroundColor="White">
+                                <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Padding="15" BackgroundColor="White"
+                                             HeightRequest="350" >
                                     <Label Text="Método de Pago: " FontSize="16" FontAttributes="Italic" TextColor="#eb068c" HorizontalOptions="Start" />
-                                    <Frame Padding="5" VerticalOptions="CenterAndExpand" BorderColor="#eb068c" HasShadow="false" CornerRadius="5" HeightRequest="150" WidthRequest="40" BackgroundColor="White">
+                                    <Frame Padding="5" VerticalOptions="CenterAndExpand" BorderColor="#eb068c" HasShadow="false" CornerRadius="5" HeightRequest="200" WidthRequest="40" BackgroundColor="White">
                                         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
 
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="60" />
+                                                <RowDefinition Height="60" />
+                                                <RowDefinition Height="60" />
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="3*"></ColumnDefinition>

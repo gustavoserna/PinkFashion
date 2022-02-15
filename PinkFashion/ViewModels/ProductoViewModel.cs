@@ -193,6 +193,14 @@ namespace PinkFashion.ViewModels
             set { SetProperty(ref _cont, value); }
         }
 
+        double _HeightRequest;
+
+        public double HeightRequest
+        {
+            get { return _HeightRequest; }
+            set { SetProperty(ref _HeightRequest, value);  }
+        }
+
         public ProductoViewModel(Producto_ producto, INavigation navigation)
         {
             Navigation = navigation;
@@ -209,6 +217,8 @@ namespace PinkFashion.ViewModels
             });
         }
 
+
+        private double ALTURA_COL_RELACIONADOS = 180;
         async Task ExecuteLoadProductosCommand()
         {
             if (IsBusy)
@@ -305,6 +315,14 @@ namespace PinkFashion.ViewModels
                     }
 
                     ColRelacionados.Add(coleccion);
+                    if(ColRelacionados.Count > 0)
+                    {
+                        //HeightRequest = Math.Ceiling(ColRelacionados.Count / 2d) * ALTURA_COL_RELACIONADOS;
+                        HeightRequest = 180d;
+                    } else
+                    {
+                        HeightRequest = 0;
+                    }
                 }
 
                 variantes = lista;

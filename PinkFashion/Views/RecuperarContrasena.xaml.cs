@@ -12,10 +12,11 @@ namespace PinkFashion.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RecuperarContrasena : ContentPage
     {
-        string strEvento = "FAQ|Pink Fashion Store";
+        string strEvento = "¿Olvidaste tu contraseña?|Pink Fashion Store";
         public RecuperarContrasena()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            Title = "¿Olvidaste tu contraseña?";
         }
 
         protected override void OnAppearing()

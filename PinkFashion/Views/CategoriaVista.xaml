@@ -41,7 +41,7 @@
                 ArrowsBackgroundColor="Transparent"
                 ItemsSource="{Binding ColSubCategorias}"
                 BackgroundColor="White"
-                HeightRequest="60">
+                HeightRequest="80">
 
                 <carousel:CarouselViewControl.ItemTemplate>
 
@@ -264,7 +264,18 @@
                                         Aspect="AspectFit"
                                         Source="{Binding Imagen}"/>
 
-                                    <Frame
+                                    <Label
+                                                                Rotation="-45"
+                                                                Grid.Row="0"
+                                                                x:Name="vAgotado"
+                                                                Text="Agotado"
+                                                                FontFamily="Arial"
+                                                                IsVisible="{Binding Agotado}"
+                                                                VerticalOptions="CenterAndExpand"
+                                                                HorizontalOptions="CenterAndExpand"
+                                                                TextColor="#ff509f"
+                                                                FontSize="15" />
+                                    <!--<Frame
                                         x:Name="vAgotado"
                                         HasShadow="True"
                                         Grid.Row="0"
@@ -299,7 +310,7 @@
                                             FontSize="12"
                                             HorizontalOptions="CenterAndExpand"
                                             VerticalOptions="CenterAndExpand" />
-                                    </Frame>
+                                    </Frame>-->
 
                                 </Grid>
 

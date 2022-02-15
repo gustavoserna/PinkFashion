@@ -48,7 +48,7 @@
                                 FlowItemsSource="{Binding categorias}"
                                 FlowItemTappedCommand="{Binding BindingContext.ItemTappedCommand, Source={x:Reference FamiliaPage}  }"
                                 IsPullToRefreshEnabled="False"
-                                HeightRequest="60">
+                                HeightRequest="80">
 
                                 <local:FlowListView_R.FlowColumnTemplate>
 

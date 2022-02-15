@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.ComponentModel;
 
 namespace PinkFashion.Models
@@ -24,7 +25,11 @@ namespace PinkFashion.Models
         {
             get
             {
-                return Constantes.root_url + _imagen;
+                System.Diagnostics.Debug.WriteLine(
+                    "Imagen de producto temporal: " +
+                    String.Format(Constantes.url_img, this.IdProducto, this._imagen)
+                    );
+                return String.Format(Constantes.url_img, this.IdProducto, this._imagen);
             }
             set
             {
