@@ -83,7 +83,7 @@ namespace PinkFashion.iOS.Renderers
             if (item == null || icon == null) return;
             //UITabBar.Appearance.SelectionIndicatorImage = BackroundSeleccion(Color.FromHex("#dd023b").ToUIColor(), new CGSize((UIScreen.MainScreen.Bounds.Width / base.ViewControllers.Length) * .5, TabBar.Bounds.Size.Height + 4), new CGSize(UIScreen.MainScreen.Bounds.Width / base.ViewControllers.Length, 4));
 
-            if (item.Title.Equals("Bolsa")) //si el titulo es Mi carrito agrega la insignia
+            if (item.Title.Equals("Mi Carrito")) //si el titulo es Mi carrito agrega la insignia
             {
                 item.BadgeValue = Badge.ToString();
                 itemAux = item;
