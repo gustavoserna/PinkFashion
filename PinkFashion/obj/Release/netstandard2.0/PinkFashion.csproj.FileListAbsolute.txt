@@ -50,3 +50,4 @@
 /Users/gustavoserna/Projects/PinkFashion/PinkFashion/obj/Release/netstandard2.0/PinkFashion.dll
 /Users/gustavoserna/Projects/PinkFashion/PinkFashion/obj/Release/netstandard2.0/ref/PinkFashion.dll
 /Users/gustavoserna/Projects/PinkFashion/PinkFashion/obj/Release/netstandard2.0/PinkFashion.pdb
+/Users/gustavoserna/Projects/PinkFashion/PinkFashion/obj/Release/netstandard2.0/Views/Facturacion.xaml.g.cs

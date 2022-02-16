@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using CarouselView.FormsPlugin.iOS;
 using Com.OneSignal;
 using FFImageLoading.Forms.Platform;
 using Foundation;
@@ -30,8 +31,10 @@ namespace PinkFashion.iOS
         {
             Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
+            Xamarin.Forms.Forms.SetFlags("Brush_Experimental");
             SharpnadoInitializer.Initialize(enableInternalLogger: false, enableInternalDebugLogger: false);
             global::Xamarin.Forms.Forms.Init();
+            CarouselViewRenderer.Init();
             Firebase.Core.App.Configure();
             CardsViewRenderer.Preserve();
             CachedImageRenderer.Init();

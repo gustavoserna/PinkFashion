@@ -1,17 +1,19 @@
 ﻿<Properties StartupConfiguration="{2DB7379D-B184-41C0-8A90-925ED1D1FD62}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Controls/TabbedPage_R.cs">
     <Files>
-      <File FileName="PinkFashion/ViewModels/CarritoViewModel.cs" Line="1138" Column="47" />
-      <File FileName="PinkFashion/Views/Carrito.xaml.cs" Line="265" Column="88" />
-      <File FileName="PinkFashion/Views/MyTabbedPage.xaml.cs" Line="80" Column="20" />
-      <File FileName="PinkFashion/ViewModels/MyTabbedPageViewModel.cs" Line="44" Column="83" />
-      <File FileName="PinkFashion/Views/Carrito.xaml" Line="391" Column="51" />
+      <File FileName="PinkFashion.iOS/AppDelegate.cs" Line="37" Column="41" />
+      <File FileName="PinkFashion.iOS/Renderers/TabbedPage_Renderer.cs" />
+      <File FileName="PinkFashion/Controls/TabbedPage_R.cs" Line="5" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
-            <Node name="PinkFashion.Android" selected="True" />
+            <Node name="PinkFashion" expanded="True">
+              <Node name="Controls" expanded="True">
+                <Node name="TabbedPage_R.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
