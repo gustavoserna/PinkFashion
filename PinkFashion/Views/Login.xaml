@@ -20,7 +20,7 @@
 
             <StackLayout
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand">
+                VerticalOptions="StartAndExpand">
 
                 <StackLayout x:Name="loader" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
@@ -31,7 +31,7 @@
                 <StackLayout
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
-                    Padding="10"
+                    Padding="10, 5, 10, 10"
                     Spacing="15">
 
                     <Image
@@ -67,7 +67,7 @@
 
                     <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" Margin="3,3,3,3" >
 
-                        <local:Entry_R x:Name="usuario" HeightRequest="45" Opacity=".7" Placeholder="Usuario" Keyboard="Chat" TextColor="#fff" PlaceholderColor="#fff" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" FontSize="15">
+                        <local:Entry_R x:Name="usuario" HeightRequest="45" Opacity=".7" Placeholder="Usuario" Keyboard="Chat" TextColor="black" PlaceholderColor="#fff" BackgroundColor="white" HorizontalOptions="FillAndExpand" FontSize="15">
 
                             <Entry.Keyboard>
 
@@ -91,7 +91,7 @@
 
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
 
-                            <local:Entry_R x:Name="clave" HeightRequest="45" Opacity=".7" Placeholder="Contraseña" IsPassword="true" TextColor="#fff" PlaceholderColor="#fff" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" FontSize="15" />
+                            <local:Entry_R x:Name="clave" HeightRequest="45" Opacity=".7" Placeholder="Contraseña" IsPassword="true" TextColor="black" PlaceholderColor="#fff" BackgroundColor="white" HorizontalOptions="FillAndExpand" FontSize="15" />
 
                             <Image x:Name="btnMostrarPass" HeightRequest="20" Source="novisible.png" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,5,0"/>
 

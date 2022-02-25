@@ -38,6 +38,15 @@ namespace PinkFashion.ViewModels
             set { SetProperty(ref isRefreshingFavoritos, value); }
         }
 
+
+        double _HeightListView;
+
+        public double HeightListView
+        {
+            get { return _HeightListView; }
+            set { SetProperty(ref _HeightListView, value);  }
+        }
+
         public ICommand ProductoTappedCommand
         {
             get
@@ -476,6 +485,8 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        double ALTURA_PRODUCTO_INDIVIDUAL = 180;
+
         async Task ExecuteLoadFavoritosCommand()
         {
             if (IsRefreshingFavoritos)
@@ -499,6 +510,7 @@ namespace PinkFashion.ViewModels
                             lista.Add(producto);
                         }
 
+
                     }
                 });
 
@@ -508,6 +520,7 @@ namespace PinkFashion.ViewModels
                 {
                     LosFavoritos.Add(producto);
                 }
+                HeightListView = Math.Ceiling((LosFavoritos.Count / 2d)) * ALTURA_PRODUCTO_INDIVIDUAL;
 
             }
             catch (Exception ex)

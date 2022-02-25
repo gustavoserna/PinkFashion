@@ -650,6 +650,17 @@ namespace PinkFashion.ViewModels
                     }
                 });
 
+                //System.Diagnostics.Debug.WriteLine("---------------------------------------------");
+                //System.Diagnostics.Debug.WriteLine("Debugueando imagenes");
+                //foreach(MarcaGroup m in Grupo)
+                //{
+                //    foreach(ProductoTemporal p in MarcaGroup)
+                //    {
+
+                //    }
+                //}
+                //System.Diagnostics.Debug.WriteLine("---------------------------------------------");
+
                 productos = lista;
                 tarjetas = listaTarjetas;
                 if (listaTarjetas.Count == 0)

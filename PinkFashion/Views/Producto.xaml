@@ -204,6 +204,7 @@
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -238,8 +239,8 @@
                     </StackLayout>
 
                     <Label
-                        Grid.Row="0"
-                        Grid.Column="1"
+                        Grid.Row="1"
+                        Grid.Column="0"
                         x:Name="vPrecio"
                         HorizontalOptions="EndAndExpand"
                         HorizontalTextAlignment="End"
@@ -416,7 +417,7 @@
                         ArrowsBackgroundColor="White"
                         ItemsSource="{Binding ColRelacionados}"
                         BackgroundColor="White"
-                        HeightRequest="250">
+                        HeightRequest="200">
 
                         <carousel:CarouselViewControl.ItemTemplate>
 
