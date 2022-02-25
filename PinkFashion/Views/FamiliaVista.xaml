@@ -24,8 +24,8 @@
                 HorizontalArrowsPosition="Center"
                 ArrowsBackgroundColor="Transparent"
                 ItemsSource="{Binding ColCategorias}"
-                BackgroundColor="White"
-                HeightRequest="60">
+                BackgroundColor="#f1f1f1"
+                HeightRequest="80">
 
                 <carousel:CarouselViewControl.ItemTemplate>
 
@@ -33,9 +33,9 @@
 
                         <Grid Padding="10,0,0,0"
                               BackgroundColor="Transparent"
-                              VerticalOptions="CenterAndExpand"
+                              VerticalOptions="Center"
                               HorizontalOptions="CenterAndExpand"
-                              HeightRequest="60">
+                              HeightRequest="80">
 
                             <local:FlowListView_R
                                 FlowColumnCount="3"
@@ -44,6 +44,7 @@
                                 SeparatorVisibility="None"
                                 VerticalScrollBarVisibility="Never"
                                 HorizontalScrollBarVisibility="Never"
+                                VerticalOptions="Center"
                                 BackgroundColor="Transparent"
                                 FlowItemsSource="{Binding categorias}"
                                 FlowItemTappedCommand="{Binding BindingContext.ItemTappedCommand, Source={x:Reference FamiliaPage}  }"
@@ -55,15 +56,15 @@
                                     <DataTemplate>
 
                                         <StackLayout
-                                            HeightRequest="60"
-                                            VerticalOptions="CenterAndExpand">
+                                            HeightRequest="80"
+                                            VerticalOptions="Center">
 
                                             <Label
                                                 Text="{Binding Categoria}"
                                                 TextDecorations="{Binding CategoriaTextDecoration}"
                                                 HorizontalTextAlignment="Center"
                                                 HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="CenterAndExpand"
+                                                VerticalOptions="Center"
                                                 TextColor="#333" />
 
                                         </StackLayout>

@@ -1,17 +1,21 @@
-﻿<Properties StartupConfiguration="{2DB7379D-B184-41C0-8A90-925ED1D1FD62}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Controls/TabbedPage_R.cs">
+﻿<Properties StartupConfiguration="{CD157A8F-3486-4654-B2B4-6358F3A9D435}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.4F137F5E-B242-4425-8A7B-8CBA29252871" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ViewModels/MyTabbedPageViewModel.cs">
     <Files>
-      <File FileName="PinkFashion.iOS/AppDelegate.cs" Line="37" Column="41" />
-      <File FileName="PinkFashion.iOS/Renderers/TabbedPage_Renderer.cs" />
-      <File FileName="PinkFashion/Controls/TabbedPage_R.cs" Line="5" Column="36" />
+      <File FileName="PinkFashion/Views/CategoriaVista.xaml" Line="53" Column="50" />
+      <File FileName="PinkFashion/Views/FamiliaVista.xaml" Line="67" Column="72" />
+      <File FileName="PinkFashion/Views/Carrito.xaml" Line="90" Column="33" />
+      <File FileName="PinkFashion/ViewModels/CarritoViewModel.cs" Line="727" Column="20" />
+      <File FileName="PinkFashion/ViewModels/MyTabbedPageViewModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
-              <Node name="Controls" expanded="True">
-                <Node name="TabbedPage_R.cs" selected="True" />
+              <Node name="ContentViews" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="MyTabbedPageViewModel.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -20,7 +24,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

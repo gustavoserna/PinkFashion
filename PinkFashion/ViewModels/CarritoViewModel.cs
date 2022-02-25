@@ -714,10 +714,17 @@ namespace PinkFashion.ViewModels
                     Grupo.Add(new MarcaGroup(item.Key, new List<ProductoTemporal>(productos.Where(x => x.Marca == item.Key))));
                 }
 
-                if (Items.productos.Count == 0)
+                /*if (Items.productos.Count == 0)
+                {
+                    var list = new List<ProductoTemporal>();
+                    list.Add(new ProductoTemporal());
+                    Grupo.Add(new MarcaGroup("", list));
                     noencontrado = true;
+                }
                 else
+                {
                     noencontrado = false;
+                }*/
 
             }
             catch (Exception ex)

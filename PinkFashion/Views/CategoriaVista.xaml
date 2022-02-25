@@ -40,7 +40,7 @@
                 HorizontalArrowsPosition="Center"
                 ArrowsBackgroundColor="Transparent"
                 ItemsSource="{Binding ColSubCategorias}"
-                BackgroundColor="White"
+                BackgroundColor="#f1f1f1"
                 HeightRequest="80">
 
                 <carousel:CarouselViewControl.ItemTemplate>
@@ -48,10 +48,9 @@
                     <DataTemplate>
 
                         <Grid Padding="10,0,0,0"
-                              BackgroundColor="Transparent"
-                              VerticalOptions="CenterAndExpand"
+                              VerticalOptions="Center"
                               HorizontalOptions="CenterAndExpand"
-                              HeightRequest="60">
+                              HeightRequest="80">
 
                             <local:FlowListView_R
                                 FlowColumnCount="3"
@@ -60,26 +59,27 @@
                                 SeparatorVisibility="None"
                                 VerticalScrollBarVisibility="Never"
                                 HorizontalScrollBarVisibility="Never"
+                                VerticalOptions="Center"
                                 BackgroundColor="Transparent"
                                 FlowItemsSource="{Binding subcategorias}"
                                 FlowItemTappedCommand="{Binding BindingContext.SubcategoriaTappedCommand, Source={x:Reference CategoriaPage}  }"
                                 IsPullToRefreshEnabled="False"
-                                HeightRequest="60">
+                                HeightRequest="80">
 
                                 <local:FlowListView_R.FlowColumnTemplate>
 
                                     <DataTemplate>
 
                                         <StackLayout
-                                            HeightRequest="60"
-                                            VerticalOptions="CenterAndExpand">
+                                            HeightRequest="80"
+                                            VerticalOptions="Center">
 
                                             <Label
                                                 Text="{Binding nombre}"
                                                 TextDecorations="{Binding LabelTextDecoration}"
                                                 HorizontalTextAlignment="Center"
                                                 HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="CenterAndExpand"
+                                                VerticalOptions="Center"
                                                 TextColor="#333" />
 
                                         </StackLayout>
@@ -101,7 +101,6 @@
 
             <!-- Filtros -->
             <StackLayout
-                BackgroundColor="Transparent"
                 Padding="10"
                 HorizontalOptions="FillAndExpand">
 
