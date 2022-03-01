@@ -189,6 +189,7 @@ namespace PinkFashion.Views
 
             try
             {
+                carritoViewModel.IsBusy = true;
                 if (!carritoViewModel.noencontrado)
                 {
                     if (Application.Current.Properties.ContainsKey("IDDireccion"))
@@ -228,56 +229,19 @@ namespace PinkFashion.Views
                                         else
                                         {
                                             vToken = Application.Current.Properties["TokenTarjeta"].ToString();
-                                            Device.BeginInvokeOnMainThread(() =>
-                                            {
-                                                cargando.IsVisible = true;
-                                            });
-                                            NavigationPage.SetHasNavigationBar(this, false);
-                                            //string respuesta = "Test";
                                             string respuesta = await carritoViewModel.ConfirmaCompra(vCliente, vDireccion, vFpago, vEnvio, vToken, Meses);
-                                            await DisplayAlert("Información", "Gracias por tu compra", "Ok");
-                                            /*Application.Current.MainPage = new NavigationPage(new Inicio())
-                                            {
-                                                BarBackgroundColor = App.bgColor,
-                                                BarTextColor = App.textColor
-                                            };
-                                            */
-
-                                            await Navigation.PushAsync(new MisPedidos());
-
-
-                                            Device.BeginInvokeOnMainThread(() =>
-                                            {
-                                                cargando.IsVisible = false;
-                                            });
-                                            NavigationPage.SetHasNavigationBar(this, true);
+                                            carritoViewModel.NoArticulos = true;
+                                            carritoViewModel.SesionIniciada = false;
+                                            await DisplayAlert("Información", "Gracias por tu compra", "Ok");await Navigation.PushAsync(new MisPedidos());
                                         }
                                     }
                                 }
                                 if (TipoPago == "E")
                                 {
-                                    Device.BeginInvokeOnMainThread(() =>
-                                    {
-                                        cargando.IsVisible = true;
-                                    });
-                                    NavigationPage.SetHasNavigationBar(this, false);
-
                                     string respuesta = await carritoViewModel.ConfirmaCompra(vCliente, vDireccion, vFpago, vEnvio, vToken, Meses);
+                                    carritoViewModel.NoArticulos = true;
+                                    carritoViewModel.SesionIniciada = false;
                                     await DisplayAlert("Información", "Gracias por tu compra", "Ok");
-                                    /*Application.Current.MainPage = new NavigationPage(new Inicio())
-                                    {
-                                        BarBackgroundColor = App.bgColor,
-                                        BarTextColor = App.textColor
-                                    };
-                                    */
-
-                                    await Navigation.PushAsync(new MisPedidos());
-
-                                    Device.BeginInvokeOnMainThread(() =>
-                                    {
-                                        cargando.IsVisible = false;
-                                    });
-                                    NavigationPage.SetHasNavigationBar(this, true);
                                 }
                                 if (TipoPago == "Paypal")
                                 {
@@ -306,11 +270,11 @@ namespace PinkFashion.Views
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex);
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    cargando.IsVisible = false;
-                });
                 await DisplayAlert("Error", "Intentalo de nuevo mas tarde", "Ok");
+            }
+            finally
+            {
+                carritoViewModel.IsBusy = false;
             }
 
         }
@@ -425,7 +389,7 @@ namespace PinkFashion.Views
         {
             if (App.Current.Properties.ContainsKey("IdCliente") && App.Current.Properties.ContainsKey("sesion"))
             {
-                carritoViewModel.SesionIniciada = true;
+                //carritoViewModel.SesionIniciada = true;
                 carritoViewModel.SesionNoIniciada = false;
 
                 App.eventTracker.SendScreen(strEvento, nameof(Carrito));

@@ -1,21 +1,23 @@
 ﻿<Properties StartupConfiguration="{CD157A8F-3486-4654-B2B4-6358F3A9D435}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.4F137F5E-B242-4425-8A7B-8CBA29252871" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/ViewModels/MyTabbedPageViewModel.cs">
+  <MonoDevelop.Ide.ItemProperties.PinkFashion.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7BB2F7D2-DE76-4F7D-B6D6-1443C484ECEC" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PinkFashion/Views/Carrito.xaml.cs">
     <Files>
       <File FileName="PinkFashion/Views/CategoriaVista.xaml" Line="53" Column="50" />
-      <File FileName="PinkFashion/Views/FamiliaVista.xaml" Line="67" Column="72" />
-      <File FileName="PinkFashion/Views/Carrito.xaml" Line="90" Column="33" />
-      <File FileName="PinkFashion/ViewModels/CarritoViewModel.cs" Line="727" Column="20" />
-      <File FileName="PinkFashion/ViewModels/MyTabbedPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="PinkFashion/Views/FamiliaVista.xaml" />
+      <File FileName="PinkFashion/Views/Carrito.xaml" Line="129" Column="48" />
+      <File FileName="PinkFashion/ViewModels/CarritoViewModel.cs" Line="644" Column="43" />
+      <File FileName="PinkFashion/Views/Carrito.xaml.cs" Line="251" Column="51" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinkFashion" expanded="True">
             <Node name="PinkFashion" expanded="True">
-              <Node name="ContentViews" expanded="True" />
-              <Node name="ViewModels" expanded="True">
-                <Node name="MyTabbedPageViewModel.cs" selected="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Carrito.xaml" expanded="True">
+                  <Node name="Carrito.xaml.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

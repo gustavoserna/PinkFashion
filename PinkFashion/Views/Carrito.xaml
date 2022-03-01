@@ -15,13 +15,20 @@
 
     <ContentPage.Content>
 
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Padding="0" >
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="White"
+            Padding="0">
 
-            <StackLayout IsVisible="{Binding SesionNoIniciada}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="50">
+            <StackLayout
+                IsVisible="{Binding SesionNoIniciada}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Padding="50">
 
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer
-                                Command="{Binding Path=BindingContext.IniciarSesionCommand,  Source={x:Reference CarritoPage}}"/>
+                    <TapGestureRecognizer Command="{Binding Path=BindingContext.IniciarSesionCommand,  Source={x:Reference CarritoPage}}"/>
                 </StackLayout.GestureRecognizers>
 
                 <Label
@@ -33,157 +40,408 @@
 
             </StackLayout>
 
-            <StackLayout IsVisible="{Binding SesionIniciada}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout
+                IsVisible="{Binding NoArticulos}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Padding="50">
 
-                <StackLayout x:Name="cargando" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <ActivityIndicator IsRunning="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                </StackLayout>
+                <Label
+                    Text="Aún no tienes artículos en tu carrito."
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="#666"
+                    FontSize="18" />
 
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30" />
-                    </Grid.RowDefinitions>
-                    <StackLayout x:Name="StackName" Grid.Row="0" BackgroundColor="#FF69B4" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0" >
-                        <StackLayout BackgroundColor="#FF69B4" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="0" >
-                            <!--<Label x:Name="lbNombre" TextColor="WhiteSmoke" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>-->
-                            <!--<Label x:Name="lbMonedero" Text="{Binding Monedero, StringFormat='Tu monedero ${0:D}'}" TextColor="WhiteSmoke" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->
-                            <StackLayout x:Name="StackAbandonado" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Padding="0" IsVisible="{Binding visibleAbandonado}">
-                                <Label x:Name="lbAbandonado" Text="Tienes un carrito abandonado, click Aquí" TextColor="WhiteSmoke" IsVisible="false" HorizontalOptions="Center" HorizontalTextAlignment="Center"  VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <ScrollView
+                IsVisible="{Binding SesionIniciada}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+
+                <StackLayout
+                    Spacing="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+
+                    <!--<StackLayout x:Name="cargando" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <ActivityIndicator IsRunning="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>-->
+
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout
+                            x:Name="StackName"
+                            Grid.Row="0"
+                            BackgroundColor="#FF69B4"
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            Padding="0" >
+
+                            <StackLayout
+                                BackgroundColor="#FF69B4"
+                                HorizontalOptions="CenterAndExpand"
+                                Orientation="Horizontal"
+                                Padding="0" >
+
+                                <StackLayout
+                                    x:Name="StackAbandonado"
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Padding="0"
+                                    IsVisible="{Binding visibleAbandonado}">
+
+                                    <Label
+                                        x:Name="lbAbandonado"
+                                        Text="Tienes un carrito abandonado, click Aquí"
+                                        TextColor="WhiteSmoke"
+                                        IsVisible="false"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalOptions="CenterAndExpand"/>
+
+                                </StackLayout>
+
+                                <Label
+                                    x:Name="lbMonedero"
+                                    Text="{Binding TituloMonedero}"
+                                    TextColor="WhiteSmoke"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="CenterAndExpand"/>
+
+                                <Label
+                                    x:Name="lbEnvios"
+                                    Text="{Binding TituloEnviosGratis}"
+                                    TextColor="WhiteSmoke"
+                                    IsVisible="false"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="CenterAndExpand"/>
+
                             </StackLayout>
-                            <Label x:Name="lbMonedero" Text="{Binding TituloMonedero}" TextColor="WhiteSmoke" HorizontalOptions="Center" HorizontalTextAlignment="Center"  VerticalOptions="CenterAndExpand"/>
-                            <Label x:Name="lbEnvios" Text="{Binding TituloEnviosGratis}" TextColor="WhiteSmoke" IsVisible="false" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+
                         </StackLayout>
-                    </StackLayout>
-                </Grid>
-                <StackLayout x:Name="loader" Padding="20" IsVisible="{Binding noencontrado}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <Image Source="vacio.png" HeightRequest="50" />
-                    <Label Text="No hay artículos en tu carrito" TextColor="#ccc" FontSize="18" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
-                </StackLayout>
-                <ListView
+
+                    </Grid>
+
+                    <!--<StackLayout x:Name="loader" Padding="20" IsVisible="{Binding noencontrado}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Image Source="vacio.png" HeightRequest="50" />
+                        <Label Text="No hay artículos en tu carrito" TextColor="#ccc" FontSize="18" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+                    </StackLayout>-->
+
+                    <ListView
                         x:Name="listview"
-                         ItemsSource="{Binding Grupo}" HasUnevenRows="true"
-                         RefreshCommand="{Binding LoadItemsCommand}"
-                         IsPullToRefreshEnabled="true"
-                         IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                         CachingStrategy="RecycleElement"
-                         GroupDisplayBinding="{Binding Marca}"
-                         IsGroupingEnabled="true" BackgroundColor="White">
-                    <ListView.Header>
-                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                        ItemsSource="{Binding Grupo}"
+                        HasUnevenRows="true"
+                        RefreshCommand="{Binding LoadItemsCommand}"
+                        IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                        CachingStrategy="RecycleElement"
+                        GroupDisplayBinding="{Binding Marca}"
+                        HeightRequest="{Binding HeightLV}"
+                        IsGroupingEnabled="true"
+                        BackgroundColor="White">
 
-                        </Grid>
-                    </ListView.Header>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell >
-                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="10,0,10,0" BackgroundColor="{DynamicResource PageBackgroundColor}" >
-                                    <Image Source="{Binding Imagen}" HeightRequest="50" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" >
-                                        <Image.GestureRecognizers>
-                                            <TapGestureRecognizer
-                                                        CommandParameter="{Binding .}"
-                                                        Command="{Binding Path=BindingContext.SelProductoCarritoCommand,  Source={x:Reference CarritoPage}}"/>
-                                        </Image.GestureRecognizers>
-                                    </Image>
-                                    <StackLayout Orientation="Vertical" Padding="5,0,0,0" HorizontalOptions="FillAndExpand" Margin="5">
-                                        <Label Text="{Binding NombreProducto}" FontAttributes="Bold" Style="{StaticResource SmallLabelCollStyle}"/>
-                                        <StackLayout Orientation="Horizontal" Padding="0,0,0,0" HorizontalOptions="Start" Margin="0">
-                                            <Label Text="{Binding _Precio}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" Style="{StaticResource SmallLabelCollStyle}"/>
-                                            <Label Text="{Binding _Descuento}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" Style="{StaticResource SmallLabelCollStyle}"/>
-                                            <Label Text="{Binding _Total}" Style="{StaticResource SmallLabelCollStyle}" />
+                        <ListView.ItemTemplate>
+
+                            <DataTemplate>
+
+                                <ViewCell>
+
+                                    <StackLayout
+                                        HorizontalOptions="FillAndExpand"
+                                        Orientation="Horizontal"
+                                        Padding="10,0,10,0"
+                                        BackgroundColor="{DynamicResource PageBackgroundColor}" >
+
+                                        <Image
+                                            Source="{Binding Imagen}"
+                                            HeightRequest="50"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="CenterAndExpand" >
+
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    CommandParameter="{Binding .}"
+                                                    Command="{Binding Path=BindingContext.SelProductoCarritoCommand,  Source={x:Reference CarritoPage}}"/>
+                                            </Image.GestureRecognizers>
+
+                                        </Image>
+
+                                        <StackLayout
+                                            Orientation="Vertical"
+                                            Padding="0"
+                                            HorizontalOptions="FillAndExpand"
+                                            Margin="5">
+
+                                            <Label
+                                                Text="{Binding NombreProducto}"
+                                                FontAttributes="Bold"
+                                                Style="{StaticResource SmallLabelCollStyle}"/>
+
+                                            <StackLayout
+                                                Orientation="Horizontal"
+                                                Padding="0"
+                                                HorizontalOptions="Start"
+                                                Margin="0">
+
+                                                <Label
+                                                    Text="{Binding _Precio}"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    HorizontalTextAlignment="Center"
+                                                    Style="{StaticResource SmallLabelCollStyle}"/>
+
+                                                <Label
+                                                    Text="{Binding _Descuento}"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    HorizontalTextAlignment="Center"
+                                                    Style="{StaticResource SmallLabelCollStyle}"/>
+
+                                                <Label
+                                                    Text="{Binding _Total}"
+                                                    Style="{StaticResource SmallLabelCollStyle}" />
+
+                                            </StackLayout>
+
                                         </StackLayout>
+
+                                        <StackLayout
+                                            HorizontalOptions="End"
+                                            VerticalOptions="FillAndExpand"
+                                            Orientation="Horizontal">
+
+                                            <Frame
+                                                x:Name="btnMenos"
+                                                Padding="0"
+                                                VerticalOptions="CenterAndExpand"
+                                                BorderColor="#545454"
+                                                HasShadow="false"
+                                                CornerRadius="5"
+                                                HeightRequest="25"
+                                                WidthRequest="40">
+
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        CommandParameter="{Binding .}"
+                                                        Command="{Binding Path=BindingContext.MenosCommand,  Source={x:Reference CarritoPage}}"/>
+                                                </Frame.GestureRecognizers>
+
+                                                <Label
+                                                    Text="-"
+                                                    FontSize="15"
+                                                    TextColor="#545454"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    HorizontalOptions="CenterAndExpand" />
+
+                                            </Frame>
+
+                                            <Frame
+                                                x:Name="btnCantidad"
+                                                Padding="0"
+                                                VerticalOptions="CenterAndExpand"
+                                                BorderColor="#545454"
+                                                BackgroundColor="#545454"
+                                                HasShadow="false"
+                                                CornerRadius="5"
+                                                HeightRequest="25"
+                                                WidthRequest="50">
+
+                                                <Label
+                                                    x:Name="lblCantidad"
+                                                    Text="{Binding Cantidad}"
+                                                    FontSize="15"
+                                                    TextColor="#fff"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    HorizontalOptions="CenterAndExpand" />
+
+                                            </Frame>
+
+                                            <Frame
+                                                x:Name="btnMas"
+                                                Padding="0"
+                                                VerticalOptions="CenterAndExpand"
+                                                BorderColor="#545454"
+                                                HasShadow="false"
+                                                CornerRadius="5"
+                                                HeightRequest="25"
+                                                WidthRequest="40">
+
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        CommandParameter="{Binding .}"
+                                                        Command="{Binding Path=BindingContext.MasCommand,  Source={x:Reference CarritoPage}}"/>
+                                                </Frame.GestureRecognizers>
+
+                                                <Label
+                                                    Text="+"
+                                                    FontSize="15"
+                                                    TextColor="#545454"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    HorizontalOptions="CenterAndExpand" />
+
+                                            </Frame>
+
+                                        </StackLayout>
+
                                     </StackLayout>
 
-                                    <StackLayout HorizontalOptions="End" VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                                        <Frame x:Name="btnMenos" Padding="0" VerticalOptions="CenterAndExpand" BorderColor="#545454" HasShadow="false" CornerRadius="5" HeightRequest="25" WidthRequest="40">
+                                </ViewCell>
 
-                                            <Frame.GestureRecognizers>
+                            </DataTemplate>
 
-                                                <TapGestureRecognizer
-                                                                CommandParameter="{Binding .}"
-                                                                Command="{Binding Path=BindingContext.MenosCommand,  Source={x:Reference CarritoPage}}"/>
+                        </ListView.ItemTemplate>
 
-                                            </Frame.GestureRecognizers>
+                    </ListView>
 
-                                            <Label Text="-" FontSize="15" TextColor="#545454" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                    <!-- Direcciones y Tarjetas -->
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Padding="0"
+                        Margin="0"
+                        BackgroundColor="White">
 
-                                        </Frame>
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            Padding="15,0,15,15"
+                            Spacing="5"
+                            BackgroundColor="White">
 
-                                        <Frame x:Name="btnCantidad" Padding="0" VerticalOptions="CenterAndExpand" BorderColor="#545454" BackgroundColor="#545454" HasShadow="false" CornerRadius="5" HeightRequest="25" WidthRequest="50">
+                            <BoxView
+                                HeightRequest="1"
+                                HorizontalOptions="FillAndExpand"
+                                BackgroundColor="#cccccc"
+                                Margin="-15,0,-15,10" />
 
-                                            <Label x:Name="lblCantidad" Text="{Binding Cantidad}" FontSize="15" TextColor="#fff" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal">
 
-                                        </Frame>
+                                <Label
+                                    Text="Subtotal"
+                                    TextColor="#545454"
+                                    FontSize="16"
+                                    HorizontalOptions="Start" />
 
-                                        <Frame x:Name="btnMas" Padding="0" VerticalOptions="CenterAndExpand" BorderColor="#545454" HasShadow="false" CornerRadius="5" HeightRequest="25" WidthRequest="40">
+                                <Label
+                                    x:Name="lblSubTotal"
+                                    Text="{Binding totalpedidostring}"
+                                    TextColor="#545454"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    HorizontalOptions="EndAndExpand" />
 
-                                            <Frame.GestureRecognizers>
+                            </StackLayout>
 
-                                                <TapGestureRecognizer
-                                                                CommandParameter="{Binding .}"
-                                                                Command="{Binding Path=BindingContext.MasCommand,  Source={x:Reference CarritoPage}}"/>
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal">
 
-                                            </Frame.GestureRecognizers>
+                                <Label
+                                    Text="Monedero Electrónico"
+                                    TextColor="#545454"
+                                    FontSize="16"
+                                    HorizontalOptions="End" />
 
-                                            <Label Text="+" FontSize="15" TextColor="#545454" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                                <Label
+                                    x:Name="lblMonedero"
+                                    Text="{Binding Monederostring}"
+                                    TextColor="#545454"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    HorizontalOptions="EndAndExpand" />
 
-                                        </Frame>
+                            </StackLayout>
 
-                                    </StackLayout>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal">
 
-                    </ListView.ItemTemplate>
-                    <ListView.Footer>
-                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0" BackgroundColor="White">
-                            <StackLayout HorizontalOptions="FillAndExpand" Padding="15,0,15,15" Spacing="5" BackgroundColor="White">
+                                <Label
+                                    Text="Costo de envío"
+                                    TextColor="#545454"
+                                    FontSize="16"
+                                    HorizontalOptions="End"
+                                    IsVisible="true" />
 
-                                <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#cccccc" Margin="-15,0,-15,10" />
-                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label
+                                    x:Name="lblCostoEnvio"
+                                    Text="{Binding TotalCostoEnvio}"
+                                    TextColor="#545454"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    HorizontalOptions="EndAndExpand"
+                                    IsVisible="true"/>
 
-                                    <Label Text="Subtotal" TextColor="#545454" FontSize="16" HorizontalOptions="Start" />
+                            </StackLayout>
 
-                                    <Label x:Name="lblSubTotal" Text="{Binding totalpedidostring}" TextColor="#545454" FontAttributes="Bold" FontSize="16" HorizontalOptions="EndAndExpand" />
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal">
 
-                                </StackLayout>
+                                <Label
+                                    Text="Total"
+                                    TextColor="#545454"
+                                    FontSize="16"
+                                    HorizontalOptions="End"
+                                    IsVisible="true"/>
 
-                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label
+                                    x:Name="lblTotal"
+                                    Text="{Binding granTotal}"
+                                    TextColor="#545454"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    HorizontalOptions="EndAndExpand"
+                                    IsVisible="true"/>
 
-                                    <Label Text="Monedero Electrónico" TextColor="#545454" FontSize="16" HorizontalOptions="End" />
+                            </StackLayout>
 
-                                    <Label x:Name="lblMonedero" Text="{Binding Monederostring}" TextColor="#545454" FontAttributes="Bold" FontSize="16" HorizontalOptions="EndAndExpand" />
+                            <BoxView
+                                HeightRequest="1"
+                                HorizontalOptions="FillAndExpand"
+                                BackgroundColor="#cccccc"
+                                Margin="-15,0,-15,10" />
 
-                                </StackLayout>
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal"
+                                Padding="10">
 
-                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Grid
+                                    VerticalOptions="FillAndExpand"
+                                    HorizontalOptions="FillAndExpand"
+                                    BackgroundColor="White">
 
-                                    <Label Text="Costo de envío" TextColor="#545454" FontSize="16" HorizontalOptions="End" IsVisible="true" />
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
 
-                                    <Label x:Name="lblCostoEnvio" Text="{Binding TotalCostoEnvio}" TextColor="#545454" FontAttributes="Bold" FontSize="16" HorizontalOptions="EndAndExpand" IsVisible="true"/>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                                        <ColumnDefinition Width="30*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
 
-                                </StackLayout>
+                                    <Frame
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Padding="0"
+                                        Opacity="1"
+                                        BackgroundColor="White"
+                                        BorderColor="#eb068c"
+                                        CornerRadius="0"
+                                        IsClippedToBounds="true"
+                                        HorizontalOptions="FillAndExpand"
+                                        HeightRequest="35" >
 
-                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-
-                                    <Label Text="Total" TextColor="#545454" FontSize="16" HorizontalOptions="End" IsVisible="true"/>
-
-                                    <Label x:Name="lblTotal" Text="{Binding granTotal}" TextColor="#545454" FontAttributes="Bold" FontSize="16" HorizontalOptions="EndAndExpand" IsVisible="true"/>
-
-                                </StackLayout>
-
-                                <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#cccccc" Margin="-15,0,-15,10" />
-                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="10">
-                                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="70*"></ColumnDefinition>
-                                            <ColumnDefinition Width="30*"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                        <Frame Grid.Row="0" Grid.Column="0" Padding="0" Opacity="1" BackgroundColor="White" BorderColor="#eb068c" CornerRadius="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35" >
-                                            <renderers:Entry_Pago
+                                        <renderers:Entry_Pago
                                             x:Name="vCodigoPromo"
                                             Text=""
                                             Placeholder="   Código Promocional"
@@ -193,13 +451,35 @@
                                             FontSize="15"  
                                             HorizontalOptions="FillAndExpand"/>
 
-                                        </Frame>
-                                        <Frame Grid.Row="0" Grid.Column="1" Padding="0" Opacity="1" BackgroundColor="#FF69B4" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
-                                            <Label x:Name="lblConfirmaPromo" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"  FontSize="16" FontAttributes="Bold" />
-                                        </Frame>
+                                    </Frame>
 
-                                        <Frame Grid.Row="1" Grid.Column="0" Padding="0" Opacity="1" BackgroundColor="White" BorderColor="#FF69B4" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
-                                            <renderers:Entry_Pago
+                                    <Frame
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Padding="0"
+                                        Opacity="1"
+                                        BackgroundColor="#FF69B4"
+                                        CornerRadius ="0"
+                                        IsClippedToBounds="true"
+                                        HorizontalOptions="FillAndExpand"
+                                        HeightRequest="35">
+
+                                        <Label x:Name="lblConfirmaPromo" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"  FontSize="16" FontAttributes="Bold" />
+                                    </Frame>
+
+                                    <Frame
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Padding="0"
+                                        Opacity="1"
+                                        BackgroundColor="White"
+                                        BorderColor="#FF69B4"
+                                        CornerRadius ="0"
+                                        IsClippedToBounds="true"
+                                        HorizontalOptions="FillAndExpand"
+                                        HeightRequest="35">
+
+                                        <renderers:Entry_Pago
                                             x:Name="vMonedero"
                                             Text=""
                                             Placeholder="   Monedero Electrónico"
@@ -209,214 +489,474 @@
                                             FontSize="15"  
                                             HorizontalOptions="FillAndExpand"/>
 
-                                        </Frame>
-                                        <Frame Grid.Row="1" Grid.Column="1" Padding="0" Opacity="1" BackgroundColor="#FF69B4" CornerRadius ="0" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" HeightRequest="35">
-                                            <Label x:Name="lblConfirmaMonedero" Text="Aplicar" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"  FontSize="16" FontAttributes="Bold" />
-                                        </Frame>
-                                    </Grid>
-                                </StackLayout>
+                                    </Frame>
 
-                                <Grid BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
-                                    Padding="0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
+                                    <Frame
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Padding="0"
+                                        Opacity="1"
+                                        BackgroundColor="#FF69B4"
+                                        CornerRadius ="0"
+                                        IsClippedToBounds="true"
+                                        HorizontalOptions="FillAndExpand"
+                                        HeightRequest="35">
 
-                                    <StackLayout Grid.Column="0" x:Name="btnRegresar" HorizontalOptions="FillAndExpand" >
-                                        <Button
-                                                                        BackgroundColor="#FF69B4"
-                                                                        FontSize="14"
-                                                                        TextColor="#fff"
-                                                                        Padding="3"
-                                                                        BorderRadius="10"
-                                                                        Text="Sigue Comprando"
-                                                                        VerticalOptions="FillAndExpand"
-                                                                        HorizontalOptions="FillAndExpand"
-                                                                        Clicked="OnBtnRegresarClicked"/>
-
-                                    </StackLayout>
-
-                                </Grid>
-
-                                <Grid BackgroundColor="White" Padding="10">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="85*"/>
-                                        <ColumnDefinition Width="15*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <Label Grid.Column="0" Text="Selecciona tu dirección" FontAttributes="Bold" Margin="10,20,10,10" Style="{StaticResource MediumLabelStyle}"/>
-                                    <Image x:Name="btnAgregarDireccion" Grid.Column="1" Margin="5" Source="add.png" HeightRequest="25" HorizontalOptions="End" VerticalOptions="EndAndExpand" />
-                                </Grid>
-                                <Grid HorizontalOptions="FillAndExpand" Padding="1" BackgroundColor="White">
-                                    <Label x:Name="lbDireccion" FontSize="16" FontAttributes="Italic" TextColor="#545454" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="End" />
-                                    <CollectionView
-                                                x:Name="listviewDireccion"
-                                                HeightRequest="{Binding HeightDir}"
-                                                ItemsSource="{Binding Items.Direcciones}"                                                
-                                                BackgroundColor="White">
-                                        <CollectionView.ItemTemplate>
-                                            <DataTemplate>
-
-                                                <StackLayout HorizontalOptions="FillAndExpand">
-                                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                                        <Image Source="{Binding imagen}" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" >
-                                                            <Image.GestureRecognizers>
-                                                                <TapGestureRecognizer
-                                                                            CommandParameter="{Binding .}"
-                                                                            Command="{Binding Path=BindingContext.SelDireccionCommand,  Source={x:Reference CarritoPage}}"/>
-                                                            </Image.GestureRecognizers>
-                                                        </Image>
-                                                        <StackLayout HorizontalOptions="FillAndExpand" Padding="20,5,20,5">
-                                                            <Label Text="{Binding Alias}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource MediumLabelStyle}">
-                                                                <Label.GestureRecognizers>
-                                                                    <TapGestureRecognizer
-                                                                            CommandParameter="{Binding .}"
-                                                                            Command="{Binding Path=BindingContext.SelDireccionCommand,  Source={x:Reference CarritoPage}}"/>
-                                                                </Label.GestureRecognizers>
-                                                            </Label>
-                                                        </StackLayout>
-                                                        <Image Source="checkgris.png" HeightRequest="22" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Margin="0,0,20,0">
-                                                            <Image.GestureRecognizers>
-                                                                <TapGestureRecognizer
-                                                                            CommandParameter="{Binding .}"
-                                                                            Command="{Binding Path=BindingContext.BorrarDireccionCommand,  Source={x:Reference CarritoPage}}"/>
-                                                            </Image.GestureRecognizers>
-                                                        </Image>
-                                                    </StackLayout>
-                                                    <BoxView HeightRequest="1" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
-                                                </StackLayout>
-                                            </DataTemplate>
-                                        </CollectionView.ItemTemplate>
-                                    </CollectionView>
-                                </Grid>
-
-                                <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Padding="15" BackgroundColor="White"
-                                             HeightRequest="350" >
-                                    <Label Text="Método de Pago: " FontSize="16" FontAttributes="Italic" TextColor="#eb068c" HorizontalOptions="Start" />
-                                    <Frame Padding="5" VerticalOptions="CenterAndExpand" BorderColor="#eb068c" HasShadow="false" CornerRadius="5" HeightRequest="200" WidthRequest="40" BackgroundColor="White">
-                                        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
-
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="60" />
-                                                <RowDefinition Height="60" />
-                                                <RowDefinition Height="60" />
-                                            </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="3*"></ColumnDefinition>
-                                                <ColumnDefinition Width="7*"></ColumnDefinition>
-                                            </Grid.ColumnDefinitions>
-
-                                            <RadioButton Grid.Row="0" Grid.Column="0"
-                                                         Content="Efectivo" TextColor="#eb068c" FontSize="12"
-                                                         GroupName="MetodoPago"
-                                                         CheckedChanged="OnPagoCheckedChanged" BackgroundColor="White"/>
-                                            <Image Grid.Row="0" Grid.Column="1" Source="oxxo.png" BackgroundColor="White" Aspect="AspectFit" HeightRequest="50"/>
-
-                                            <RadioButton Grid.Row="1" Grid.Column="0" 
-                                                         Content="PayPal" TextColor="#eb068c" FontSize="12"
-                                                         GroupName="MetodoPago"
-                                                         CheckedChanged="OnPagoCheckedChanged" BackgroundColor="White"/>
-
-                                            <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand">
-                                                <Image Source="iconopaypal.png" BackgroundColor="White" Aspect="AspectFit" HeightRequest="35" />
-                                            </StackLayout>
-
-                                            <RadioButton  Grid.Row="2" Grid.Column="0"  
-                                                         Content="Tarjeta" TextColor="#eb068c" FontSize="12" 
-                                                         GroupName="MetodoPago"
-                                                         CheckedChanged="OnPagoCheckedChanged" BackgroundColor="White"/>
-                                            <Image Grid.Row="2" Grid.Column="1" Source="tarjeta.png" BackgroundColor="White" Aspect="AspectFit" HeightRequest="50"/>
-
-                                        </Grid>
-
+                                        <Label
+                                            x:Name="lblConfirmaMonedero"
+                                            Text="Aplicar"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            TextColor="White"
+                                            FontSize="16"
+                                            FontAttributes="Bold" />
 
                                     </Frame>
-                                    <Label x:Name="SelPago" FontSize="16" FontAttributes="Italic" TextColor="#545454" HorizontalOptions="Start" />
-                                </StackLayout>
 
-                                <StackLayout x:Name="MostrarTarjeta" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="5" IsVisible="false" BackgroundColor="White">
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                        <Grid BackgroundColor="White" Padding="10">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="85*"/>
-                                                <ColumnDefinition Width="15*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto"/>
-                                            </Grid.RowDefinitions>
-                                            <Label Grid.Column="0" Text="Selecciona tu tarjeta" FontAttributes="Bold" Margin="10,20,10,10" Style="{StaticResource MediumLabelStyle}"/>
-                                            <Image x:Name="btnAgregarTarjeta" Grid.Column="1" Margin="5" Source="add.png" HeightRequest="25" HorizontalOptions="End" VerticalOptions="EndAndExpand" />
-                                        </Grid>
-                                        <CollectionView
-                                                x:Name="listviewTarjetas"
-                                                ItemsSource="{Binding Items.Tarjetas}"
-                                                HeightRequest="{Binding HeightTar}" BackgroundColor="White">
-                                            <CollectionView.ItemTemplate>
-                                                <DataTemplate>
-                                                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White">
-
-                                                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" BackgroundColor="White">
-                                                            <Image Source="{Binding imagen}" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" >
-                                                                <Image.GestureRecognizers>
-                                                                    <TapGestureRecognizer
-                                                                            CommandParameter="{Binding .}"
-                                                                            Command="{Binding Path=BindingContext.SelTarjetaCommand,  Source={x:Reference CarritoPage}}"/>
-                                                                </Image.GestureRecognizers>
-                                                            </Image>
-                                                            <StackLayout HorizontalOptions="FillAndExpand" Padding="20,5,20,5">
-                                                                <Label Text="{Binding CuentaDigitos}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource MediumLabelStyle}"/>
-                                                            </StackLayout>
-                                                            <Image Source="btndelete.png" HeightRequest="22" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Margin="0,0,20,0">
-                                                                <Image.GestureRecognizers>
-                                                                    <TapGestureRecognizer
-                                                                            CommandParameter="{Binding .}"
-                                                                            Command="{Binding Path=BindingContext.BorrarTarjetaCommand,  Source={x:Reference CarritoPage}}"/>
-                                                                </Image.GestureRecognizers>
-                                                            </Image>
-                                                        </StackLayout>
-                                                        <BoxView HeightRequest="1" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
-
-                                                    </StackLayout>
-                                                </DataTemplate>
-                                            </CollectionView.ItemTemplate>
-                                        </CollectionView>
-
-
-                                    </StackLayout>
-                                </StackLayout>
-
-                                <Grid x:Name="btnConfirmarCompra" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" IsVisible="True" BackgroundColor="White">
-                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Padding="5,5,5,5" Spacing="5" BackgroundColor="White">
-                                        <Button
-                                            BackgroundColor="#eb068c"
-                                            FontSize="15"
-                                            TextColor="#fff"
-                                            Padding="10"
-                                            BorderRadius="10"
-                                            Text="Confirma tu compra"
-                                            VerticalOptions="FillAndExpand"
-                                            HorizontalOptions="FillAndExpand"
-                                            Clicked="OnBtnConfirmarClicked"/>
-                                    </StackLayout>
                                 </Grid>
 
-
-                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="20" BackgroundColor="White">
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                        <Label Text="" FontSize="16" FontAttributes="Italic" TextColor="White" HorizontalOptions="Start" IsVisible="false"/>
-                                    </StackLayout>
-                                </StackLayout>
                             </StackLayout>
 
+                            <Grid
+                                BackgroundColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start"
+                                Padding="0">
 
-                        </Grid>
-                    </ListView.Footer>
-                </ListView>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-            </StackLayout>
+                                <StackLayout
+                                    Grid.Column="0"
+                                    x:Name="btnRegresar"
+                                    HorizontalOptions="FillAndExpand" >
+
+                                    <Button
+                                        BackgroundColor="#FF69B4"
+                                        FontSize="14"
+                                        TextColor="#fff"
+                                        Padding="3"
+                                        BorderRadius="10"
+                                        Text="Sigue Comprando"
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Clicked="OnBtnRegresarClicked"/>
+
+                                </StackLayout>
+
+                            </Grid>
+
+                            <Grid
+                                BackgroundColor="White"
+                                Padding="10">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="85*"/>
+                                    <ColumnDefinition Width="15*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Selecciona tu dirección"
+                                    FontAttributes="Bold"
+                                    Margin="10,20,10,10"
+                                    Style="{StaticResource MediumLabelStyle}"/>
+
+                                <Image
+                                    x:Name="btnAgregarDireccion"
+                                    Grid.Column="1"
+                                    Margin="5"
+                                    Source="add.png"
+                                    HeightRequest="25"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="EndAndExpand" />
+
+                            </Grid>
+
+                            <Grid
+                                HorizontalOptions="FillAndExpand"
+                                Padding="1"
+                                BackgroundColor="White">
+
+                                <Label
+                                    x:Name="lbDireccion"
+                                    FontSize="16"
+                                    FontAttributes="Italic"
+                                    TextColor="#545454"
+                                    VerticalTextAlignment="Center"
+                                    HorizontalTextAlignment="Center"
+                                    HorizontalOptions="End" />
+
+                                <CollectionView
+                                    x:Name="listviewDireccion"
+                                    HeightRequest="{Binding HeightDir}"
+                                    ItemsSource="{Binding Items.Direcciones}"                                                
+                                    BackgroundColor="White">
+
+                                    <CollectionView.ItemTemplate>
+
+                                        <DataTemplate>
+
+                                            <StackLayout
+                                                HorizontalOptions="FillAndExpand">
+
+                                                <StackLayout
+                                                    HorizontalOptions="FillAndExpand"
+                                                    Orientation="Horizontal">
+
+                                                    <Image
+                                                        Source="{Binding imagen}"
+                                                        HeightRequest="20"
+                                                        VerticalOptions="CenterAndExpand"
+                                                        HorizontalOptions="Start" >
+
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                CommandParameter="{Binding .}"
+                                                                Command="{Binding Path=BindingContext.SelDireccionCommand,  Source={x:Reference CarritoPage}}"/>
+                                                        </Image.GestureRecognizers>
+
+                                                    </Image>
+
+                                                    <StackLayout
+                                                        HorizontalOptions="FillAndExpand"
+                                                        Padding="20,5,20,5">
+
+                                                        <Label
+                                                            Text="{Binding Alias}"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            HorizontalOptions="Start"
+                                                            Style="{StaticResource MediumLabelStyle}">
+
+                                                            <Label.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    CommandParameter="{Binding .}"
+                                                                    Command="{Binding Path=BindingContext.SelDireccionCommand,  Source={x:Reference CarritoPage}}"/>
+                                                            </Label.GestureRecognizers>
+
+                                                        </Label>
+
+                                                    </StackLayout>
+
+                                                    <Image
+                                                        Source="checkgris.png"
+                                                        HeightRequest="22"
+                                                        VerticalOptions="CenterAndExpand"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        Margin="0,0,20,0">
+
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                CommandParameter="{Binding .}"
+                                                                Command="{Binding Path=BindingContext.BorrarDireccionCommand,  Source={x:Reference CarritoPage}}"/>
+                                                        </Image.GestureRecognizers>
+
+                                                    </Image>
+
+                                                </StackLayout>
+
+                                                <BoxView
+                                                    HeightRequest="1"
+                                                    BackgroundColor="#ccc"
+                                                    HorizontalOptions="FillAndExpand" />
+
+                                            </StackLayout>
+
+                                        </DataTemplate>
+
+                                    </CollectionView.ItemTemplate>
+
+                                </CollectionView>
+
+                            </Grid>
+
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                Padding="15"
+                                BackgroundColor="White"
+                                HeightRequest="350" >
+
+                                <Label
+                                    Text="Método de Pago: "
+                                    FontSize="16"
+                                    FontAttributes="Italic"
+                                    TextColor="#eb068c"
+                                    HorizontalOptions="Start" />
+
+                                <Frame
+                                    Padding="5"
+                                    VerticalOptions="CenterAndExpand"
+                                    BorderColor="#eb068c"
+                                    HasShadow="false"
+                                    CornerRadius="5"
+                                    HeightRequest="200"
+                                    WidthRequest="40"
+                                    BackgroundColor="White">
+
+                                    <Grid
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        BackgroundColor="White">
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="60" />
+                                            <RowDefinition Height="60" />
+                                            <RowDefinition Height="60" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                                            <ColumnDefinition Width="7*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <RadioButton
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Content="Efectivo" TextColor="#eb068c" FontSize="12"
+                                            GroupName="MetodoPago"
+                                            CheckedChanged="OnPagoCheckedChanged" BackgroundColor="White"/>
+
+                                        <Image
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Source="oxxo.png"
+                                            BackgroundColor="White"
+                                            Aspect="AspectFit"
+                                            HeightRequest="50"/>
+
+                                        <RadioButton
+                                            Grid.Row="1" Grid.Column="0" 
+                                            Content="PayPal" TextColor="#eb068c" FontSize="12"
+                                            GroupName="MetodoPago"
+                                            CheckedChanged="OnPagoCheckedChanged" BackgroundColor="White"/>
+
+                                        <StackLayout
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand">
+
+                                            <Image
+                                                Source="iconopaypal.png"
+                                                BackgroundColor="White"
+                                                Aspect="AspectFit"
+                                                HeightRequest="35" />
+
+                                        </StackLayout>
+
+                                        <RadioButton
+                                            Grid.Row="2" Grid.Column="0"  
+                                            Content="Tarjeta" TextColor="#eb068c" FontSize="12" 
+                                            GroupName="MetodoPago"
+                                            CheckedChanged="OnPagoCheckedChanged" BackgroundColor="White"/>
+
+                                        <Image
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            Source="tarjeta.png"
+                                            BackgroundColor="White"
+                                            Aspect="AspectFit"
+                                            HeightRequest="50"/>
+
+                                    </Grid>
+
+                                </Frame>
+
+                                <Label
+                                    x:Name="SelPago"
+                                    FontSize="16"
+                                    FontAttributes="Italic"
+                                    TextColor="#545454"
+                                    HorizontalOptions="Start" />
+
+                            </StackLayout>
+
+                            <StackLayout
+                                x:Name="MostrarTarjeta"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal"
+                                Padding="5"
+                                IsVisible="false"
+                                BackgroundColor="White">
+
+                                <StackLayout
+                                    Orientation="Vertical"
+                                    HorizontalOptions="FillAndExpand">
+
+                                    <Grid
+                                        BackgroundColor="White"
+                                        Padding="10">
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="85*"/>
+                                            <ColumnDefinition Width="15*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label
+                                            Grid.Column="0"
+                                            Text="Selecciona tu tarjeta"
+                                            FontAttributes="Bold"
+                                            Margin="10,20,10,10"
+                                            Style="{StaticResource MediumLabelStyle}"/>
+
+                                        <Image
+                                            x:Name="btnAgregarTarjeta"
+                                            Grid.Column="1"
+                                            Margin="5"
+                                            Source="add.png"
+                                            HeightRequest="25"
+                                            HorizontalOptions="End"
+                                            VerticalOptions="EndAndExpand" />
+
+                                    </Grid>
+
+                                    <CollectionView
+                                        x:Name="listviewTarjetas"
+                                        ItemsSource="{Binding Items.Tarjetas}"
+                                        HeightRequest="{Binding HeightTar}" BackgroundColor="White">
+
+                                        <CollectionView.ItemTemplate>
+
+                                            <DataTemplate>
+
+                                                <StackLayout
+                                                    HorizontalOptions="FillAndExpand"
+                                                    BackgroundColor="White">
+
+                                                    <StackLayout
+                                                        HorizontalOptions="FillAndExpand"
+                                                        Orientation="Horizontal"
+                                                        BackgroundColor="White">
+
+                                                        <Image
+                                                            Source="{Binding imagen}"
+                                                            HeightRequest="20"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            HorizontalOptions="Start" >
+
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    CommandParameter="{Binding .}"
+                                                                    Command="{Binding Path=BindingContext.SelTarjetaCommand,  Source={x:Reference CarritoPage}}"/>
+                                                            </Image.GestureRecognizers>
+
+                                                        </Image>
+
+                                                        <StackLayout
+                                                            HorizontalOptions="FillAndExpand"
+                                                            Padding="20,5,20,5">
+
+                                                            <Label
+                                                                Text="{Binding CuentaDigitos}"
+                                                                VerticalOptions="CenterAndExpand"
+                                                                HorizontalOptions="Start"
+                                                                Style="{StaticResource MediumLabelStyle}"/>
+                                                        </StackLayout>
+
+                                                        <Image
+                                                            Source="btndelete.png"
+                                                            HeightRequest="22"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            HorizontalOptions="EndAndExpand"
+                                                            Margin="0,0,20,0">
+
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    CommandParameter="{Binding .}"
+                                                                    Command="{Binding Path=BindingContext.BorrarTarjetaCommand,  Source={x:Reference CarritoPage}}"/>
+                                                            </Image.GestureRecognizers>
+
+                                                        </Image>
+
+                                                    </StackLayout>
+
+                                                    <BoxView
+                                                        HeightRequest="1"
+                                                        BackgroundColor="#ccc"
+                                                        HorizontalOptions="FillAndExpand" />
+
+                                                </StackLayout>
+
+                                            </DataTemplate>
+
+                                        </CollectionView.ItemTemplate>
+
+                                    </CollectionView>
+
+                                </StackLayout>
+
+                            </StackLayout>
+
+                            <Grid
+                                x:Name="btnConfirmarCompra"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="EndAndExpand"
+                                IsVisible="True"
+                                BackgroundColor="White">
+
+                                <StackLayout
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="EndAndExpand"
+                                    Padding="5,5,5,5"
+                                    Spacing="5"
+                                    BackgroundColor="White">
+
+                                    <Button
+                                        BackgroundColor="#eb068c"
+                                        FontSize="15"
+                                        TextColor="#fff"
+                                        Padding="10"
+                                        BorderRadius="10"
+                                        Text="Confirma tu compra"
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Clicked="OnBtnConfirmarClicked"/>
+
+                                </StackLayout>
+
+                            </Grid>
+
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal"
+                                Padding="20"
+                                BackgroundColor="White">
+
+                                <StackLayout
+                                    Orientation="Vertical"
+                                    HorizontalOptions="FillAndExpand">
+
+                                    <Label
+                                        Text=""
+                                        FontSize="16"
+                                        FontAttributes="Italic"
+                                        TextColor="White"
+                                        HorizontalOptions="Start"
+                                        IsVisible="false"/>
+
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </Grid>
+
+                </StackLayout>
+
+            </ScrollView>
 
         </StackLayout>
+
     </ContentPage.Content>
+
 </ContentPage>

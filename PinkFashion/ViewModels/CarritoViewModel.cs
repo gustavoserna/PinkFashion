@@ -44,6 +44,19 @@ namespace PinkFashion.ViewModels
             }
         }
 
+        double _HeightLV = 0;
+        public double HeightLV
+        {
+            get
+            {
+                return _HeightLV;
+            }
+            set
+            {
+                SetProperty(ref _HeightLV, value);
+            }
+        }
+
         bool _noencontrado = false;
         public bool noencontrado
         {
@@ -80,6 +93,19 @@ namespace PinkFashion.ViewModels
             set
             {
                 SetProperty(ref _SesionNoIniciada, value);
+            }
+        }
+
+        bool _NoArticulos = false;
+        public bool NoArticulos
+        {
+            get
+            {
+                return _NoArticulos;
+            }
+            set
+            {
+                SetProperty(ref _NoArticulos, value);
             }
         }
 
@@ -628,6 +654,7 @@ namespace PinkFashion.ViewModels
 
                             total += Convert.ToDouble(t.Result.productos[i].Total);
                             lista.Add(t.Result.productos[i]);
+                            HeightLV += 130;
                         }
 
                         for (int i = 0; i < t.Result.Tarjetas.Count; i++)
@@ -662,6 +689,16 @@ namespace PinkFashion.ViewModels
                 //System.Diagnostics.Debug.WriteLine("---------------------------------------------");
 
                 productos = lista;
+                if(lista.Count == 0)
+                {
+                    NoArticulos = true;
+                    SesionIniciada = false;
+                }
+                else
+                {
+                    NoArticulos = false;
+                    SesionIniciada = true;
+                }
                 tarjetas = listaTarjetas;
                 if (listaTarjetas.Count == 0)
                 {
