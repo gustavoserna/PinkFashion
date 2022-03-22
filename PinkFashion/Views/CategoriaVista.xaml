@@ -13,6 +13,21 @@
 
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
 
+
+            <StackLayout BackgroundColor="white">
+                <SearchBar Placeholder="¿Buscas algo en especial?"
+           CancelButtonColor="White"
+           PlaceholderColor="Black"
+           TextColor="Black"
+           BackgroundColor="White"
+           Focused="SearchBar_Focused"
+           TextTransform="Lowercase"
+           HorizontalTextAlignment="Center"
+           FontSize="Medium"
+           FontAttributes="Italic" />
+
+            </StackLayout>
+
             <!-- Titulo -->
             <!--<StackLayout
                 HorizontalOptions="FillAndExpand"
@@ -29,8 +44,10 @@
             </StackLayout>-->
             <!-- End titulo -->
 
-            <!-- Menu -->
-            <carousel:CarouselViewControl
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
+
+                <!-- Menu -->
+                <carousel:CarouselViewControl
                 InterPageSpacing="0"
                 ShowIndicators="False"
                 ShowArrows="True"
@@ -43,16 +60,16 @@
                 BackgroundColor="#f1f1f1"
                 HeightRequest="80">
 
-                <carousel:CarouselViewControl.ItemTemplate>
+                    <carousel:CarouselViewControl.ItemTemplate>
 
-                    <DataTemplate>
+                        <DataTemplate>
 
-                        <Grid Padding="10,0,0,0"
+                            <Grid Padding="10,0,0,0"
                               VerticalOptions="Center"
                               HorizontalOptions="CenterAndExpand"
                               HeightRequest="80">
 
-                            <local:FlowListView_R
+                                <local:FlowListView_R
                                 FlowColumnCount="3"
                                 HasUnevenRows="True"
                                 HorizontalOptions="FillAndExpand"
@@ -66,15 +83,15 @@
                                 IsPullToRefreshEnabled="False"
                                 HeightRequest="80">
 
-                                <local:FlowListView_R.FlowColumnTemplate>
+                                    <local:FlowListView_R.FlowColumnTemplate>
 
-                                    <DataTemplate>
+                                        <DataTemplate>
 
-                                        <StackLayout
+                                            <StackLayout
                                             HeightRequest="80"
                                             VerticalOptions="Center">
 
-                                            <Label
+                                                <Label
                                                 Text="{Binding nombre}"
                                                 TextDecorations="{Binding LabelTextDecoration}"
                                                 HorizontalTextAlignment="Center"
@@ -82,137 +99,137 @@
                                                 VerticalOptions="Center"
                                                 TextColor="#333" />
 
-                                        </StackLayout>
+                                            </StackLayout>
 
-                                    </DataTemplate>
+                                        </DataTemplate>
 
-                                </local:FlowListView_R.FlowColumnTemplate>
+                                    </local:FlowListView_R.FlowColumnTemplate>
 
-                            </local:FlowListView_R>
+                                </local:FlowListView_R>
 
-                        </Grid>
+                            </Grid>
 
-                    </DataTemplate>
+                        </DataTemplate>
 
-                </carousel:CarouselViewControl.ItemTemplate>
+                    </carousel:CarouselViewControl.ItemTemplate>
 
-            </carousel:CarouselViewControl>
-            <!-- End Menu -->
+                </carousel:CarouselViewControl>
+                <!-- End Menu -->
 
-            <!-- Filtros -->
-            <StackLayout
+                <!-- Filtros -->
+                <StackLayout
                 Padding="10"
                 HorizontalOptions="FillAndExpand">
 
-                <StackLayout
+                    <StackLayout
                     Orientation="Horizontal"
                     HorizontalOptions="FillAndExpand">
 
-                    <StackLayout
+                        <StackLayout
                         HorizontalOptions="FillAndExpand">
 
-                        <!-- Filtro Marca -->
-                        <StackLayout
+                            <!-- Filtro Marca -->
+                            <StackLayout
                             HorizontalOptions="FillAndExpand"
                             Orientation="Horizontal">
 
-                            <StackLayout
+                                <StackLayout
                                 Orientation="Horizontal"
                                 HorizontalOptions="StartAndExpand">
 
-                                <Image
+                                    <Image
                                     HeightRequest="15"
                                     Opacity=".6"
                                     Source="filtroMarca.png"
                                     VerticalOptions="CenterAndExpand" />
 
-                                <Label
+                                    <Label
                                     Text="{Binding TextoFiltroMarca}"
                                     FontSize="14"
                                     TextDecorations="None"
                                     VerticalOptions="CenterAndExpand">
 
-                                    <Label.GestureRecognizers>
+                                        <Label.GestureRecognizers>
 
-                                        <TapGestureRecognizer
+                                            <TapGestureRecognizer
                                             CommandParameter="{Binding .}"
                                             Command="{Binding Path=BindingContext.AbrirMarcasCommand,  Source={x:Reference CategoriaPage}}"/>
 
-                                    </Label.GestureRecognizers>
+                                        </Label.GestureRecognizers>
 
-                                </Label>
+                                    </Label>
 
-                            </StackLayout>
+                                </StackLayout>
 
-                            <StackLayout
+                                <StackLayout
                                 Orientation="Horizontal"
                                 HorizontalOptions="End">
 
-                                <Label
+                                    <Label
                                     Text="Remover filtros"
                                     FontSize="14"
                                     TextDecorations="None"
                                     VerticalOptions="CenterAndExpand">
 
-                                    <Label.GestureRecognizers>
-                                        <TapGestureRecognizer
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
                                             CommandParameter="{Binding .}"
                                             Command="{Binding Path=BindingContext.RemoverFiltrosCommand,  Source={x:Reference CategoriaPage}}"/>
-                                    </Label.GestureRecognizers>
+                                        </Label.GestureRecognizers>
 
-                                </Label>
+                                    </Label>
+
+                                </StackLayout>
 
                             </StackLayout>
 
-                        </StackLayout>
-
-                        <!-- Filtro Precio -->
-                        <StackLayout
+                            <!-- Filtro Precio -->
+                            <StackLayout
                             HorizontalOptions="FillAndExpand"
                             Orientation="Horizontal">
 
-                            <Image
+                                <Image
                                 HeightRequest="15"
                                 Opacity=".6"
                                 Source="filtroPrecio.png"
                                 VerticalOptions="CenterAndExpand" />
 
-                            <Label
+                                <Label
                                 Text="{Binding TextoFiltroPrecio}"
                                 FontSize="14"
                                 TextDecorations="None"
                                 VerticalOptions="CenterAndExpand">
 
-                                <Label.GestureRecognizers>
+                                    <Label.GestureRecognizers>
 
-                                    <TapGestureRecognizer
+                                        <TapGestureRecognizer
                                         CommandParameter="{Binding .}"
                                         Command="{Binding Path=BindingContext.FiltroPrecioCommand,  Source={x:Reference CategoriaPage}}"/>
 
-                                </Label.GestureRecognizers>
+                                    </Label.GestureRecognizers>
 
-                            </Label>
+                                </Label>
 
+                            </StackLayout>
                         </StackLayout>
+
                     </StackLayout>
 
                 </StackLayout>
+                <!-- End Filtros -->
 
-            </StackLayout>
-            <!-- End Filtros -->
-
-            <BoxView
+                <BoxView
                 HeightRequest="1"
                 HorizontalOptions="FillAndExpand"
                 BackgroundColor="#f1f1f1" />
 
-            <StackLayout
+                <StackLayout
                 IsVisible="{Binding NoEncontradoVisible}"
                 BackgroundColor="Transparent"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand">
 
-                <Label
+                    <Label
                     Text="No encontramos productos con esa búsqueda."
                     FontSize="16"
                     TextColor="#666"
@@ -220,9 +237,9 @@
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"/>
 
-            </StackLayout>
+                </StackLayout>
 
-            <flv:FlowListView 
+                <flv:FlowListView 
                 x:Name="listview"
                 FlowColumnCount="2"
                 SeparatorColor="#f1f1f1"
@@ -232,28 +249,28 @@
                 FlowItemTappedCommand="{Binding BindingContext.ProductoTappedCommand, Source={x:Reference CategoriaPage}  }"
                 IsRefreshing="{Binding IsBusy}" BackgroundColor="White">
 
-                <flv:FlowListView.FlowColumnTemplate>
+                    <flv:FlowListView.FlowColumnTemplate>
 
-                    <DataTemplate>
+                        <DataTemplate>
 
-                        <Frame
+                            <Frame
                             BorderColor="Transparent"
                             Padding="0"
                             HasShadow="false"
                             Margin="0,0,0,20">
 
-                            <StackLayout
+                                <StackLayout
                                 HorizontalOptions="FillAndExpand"
                                 Padding="0"
                                 BackgroundColor="White">
 
-                                <Grid>
+                                    <Grid>
 
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
 
-                                    <ffimageloading:CachedImage
+                                        <ffimageloading:CachedImage
                                         ErrorPlaceholder="errorloading.png"
                                         LoadingPlaceholder="loading.png"
                                         DownsampleUseDipUnits="false"
@@ -263,7 +280,7 @@
                                         Aspect="AspectFit"
                                         Source="{Binding Imagen}"/>
 
-                                    <Label
+                                        <Label
                                                                 Rotation="-45"
                                                                 Grid.Row="0"
                                                                 x:Name="vAgotado"
@@ -274,7 +291,7 @@
                                                                 HorizontalOptions="CenterAndExpand"
                                                                 TextColor="#ff509f"
                                                                 FontSize="15" />
-                                    <!--<Frame
+                                        <!--<Frame
                                         x:Name="vAgotado"
                                         HasShadow="True"
                                         Grid.Row="0"
@@ -311,50 +328,50 @@
                                             VerticalOptions="CenterAndExpand" />
                                     </Frame>-->
 
-                                </Grid>
+                                    </Grid>
 
-                                <Label
+                                    <Label
                                     Text="{Binding producto}"
                                     HorizontalTextAlignment="Center"
                                     HorizontalOptions="CenterAndExpand"
                                     FontAttributes="Bold"
                                     Style="{StaticResource SmallLabelStyle}"/>
 
-                                <Label
+                                    <Label
                                     Text="{Binding marca}"
                                     HorizontalTextAlignment="Center"
                                     HorizontalOptions="CenterAndExpand"
                                     Style="{StaticResource SmallLabelStyle}"/>
 
-                                <StackLayout
+                                    <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Vertical"
                                     Spacing="0">
 
-                                    <Grid
+                                        <Grid
                                         HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand"
                                         RowSpacing="3"
                                         IsVisible="{Binding ConPromo}">
 
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
 
-                                        <Label
+                                            <Label
                                             Grid.Row="0"
                                             Text="{Binding SobrePreciostring}"
                                             HorizontalOptions="CenterAndExpand"
                                             HorizontalTextAlignment="Center"
                                             Style="{StaticResource PetitLabelStyle}"/>
 
-                                        <StackLayout
+                                            <StackLayout
                                             Grid.Row="0"
                                             HorizontalOptions="FillAndExpand"
                                             VerticalOptions="Center"
                                             Spacing="0">
 
-                                            <BoxView
+                                                <BoxView
                                                 Grid.Row="0"
                                                 HeightRequest="2"
                                                 Rotation="0"
@@ -362,25 +379,25 @@
                                                 HorizontalOptions="CenterAndExpand"
                                                 Margin="0,0,0,0"/>
 
-                                        </StackLayout>
+                                            </StackLayout>
 
-                                    </Grid>
+                                        </Grid>
 
-                                    <Label
+                                        <Label
                                         Text="{Binding precioCarrito}"
                                         HorizontalOptions="CenterAndExpand"
                                         HorizontalTextAlignment="Center"
                                         Style="{StaticResource SmallLabelStyle}"/>
 
-                                </StackLayout>
+                                    </StackLayout>
 
-                                <StackLayout
+                                    <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Vertical"
                                     VerticalOptions="EndAndExpand"
                                     Spacing="0">
 
-                                    <Label
+                                        <Label
                                         Text="{Binding TituloVer}"
                                         Padding="5"
                                         BackgroundColor="#ff509f"
@@ -390,18 +407,19 @@
                                         VerticalOptions="EndAndExpand"
                                         Style="{StaticResource SmallLabelStyle}"/>
 
+                                    </StackLayout>
+
                                 </StackLayout>
 
-                            </StackLayout>
+                            </Frame>
 
-                        </Frame>
+                        </DataTemplate>
 
-                    </DataTemplate>
+                    </flv:FlowListView.FlowColumnTemplate>
 
-                </flv:FlowListView.FlowColumnTemplate>
+                </flv:FlowListView>
 
-            </flv:FlowListView>
-
+            </StackLayout>
         </StackLayout>
 
     </ContentPage.Content>

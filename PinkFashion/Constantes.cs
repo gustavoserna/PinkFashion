@@ -29,5 +29,10 @@ namespace PinkFashion
         public static string iOSRedirectUrl = "com.googleusercontent.apps.669401120691-jngln8cs6vbl3tbsv1k45thoet20l3h8";
         public static string AndroidRedirectUrl = "com.googleusercontent.apps.669401120691-sgsi4m7e41p4ris3lobp1l5j371p88nn";
 
+        //Algolia
+        public static string algolia_app_id = "S68HLB20KI";
+        public static string algolia_api_key = "7ccb6cb4d74b40efccc3b67904278258";
+        //public static string algolia_api_key = "ebbc9f83e35955c507a012c72a42ff41";
+        public static string algolia_url = "https://S68HLB20KI.algolia.net/1/indexes/productos_pink/query";
     }
 }

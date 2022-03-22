@@ -19,6 +19,11 @@ namespace PinkFashion.Views
             BindingContext = familiaVistaViewModel = new FamiliaVistaViewModel(familia, Navigation);
         }
 
+        private void SearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            this.Navigation.PushAsync(new BuscadorPage());
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -32,5 +37,10 @@ namespace PinkFashion.Views
                 familiaVistaViewModel.LoadCategoriasCommand.Execute(null);
             }
         }
+
+        //private void SearchBar_Focused(object sender, FocusEventArgs e)
+        //{
+        //    this.Navigation.PushAsync(new BuscadorPage());
+        //}
     }
 }

@@ -38,5 +38,10 @@ namespace PinkFashion.Views
                 categoriaViewModel.LoadSubcategoriasCommand.Execute(null);
             } 
         }
+
+        private void SearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            this.Navigation.PushAsync(new BuscadorPage());
+        }
     }
 }

@@ -126,6 +126,10 @@ namespace PinkFashion.Views
         //    timer?.Dispose();
         //}
 
+        private void SearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            this.Navigation.PushAsync(new BuscadorPage());
+        }
         async void OnBtnWhatsappClicked(object sender, EventArgs args)
         {
             try

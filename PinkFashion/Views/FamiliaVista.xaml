@@ -13,6 +13,20 @@
 
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
 
+            <StackLayout BackgroundColor="#f5f5f5">
+                <SearchBar Placeholder="¿Buscas algo en especial?"
+           CancelButtonColor="White"
+           PlaceholderColor="Black"
+           TextColor="Black"
+           BackgroundColor="White"
+           Focused="SearchBar_Focused"
+           TextTransform="Lowercase"
+           HorizontalTextAlignment="Center"
+           FontSize="Medium"
+           FontAttributes="Italic" />
+
+            </StackLayout>
+
             <!-- Menu -->
             <carousel:CarouselViewControl
                 InterPageSpacing="0"
@@ -24,8 +38,8 @@
                 HorizontalArrowsPosition="Center"
                 ArrowsBackgroundColor="Transparent"
                 ItemsSource="{Binding ColCategorias}"
-                BackgroundColor="#f1f1f1"
-                HeightRequest="80">
+                BackgroundColor="White"
+                HeightRequest="60">
 
                 <carousel:CarouselViewControl.ItemTemplate>
 
@@ -33,9 +47,9 @@
 
                         <Grid Padding="10,0,0,0"
                               BackgroundColor="Transparent"
-                              VerticalOptions="Center"
+                              VerticalOptions="CenterAndExpand"
                               HorizontalOptions="CenterAndExpand"
-                              HeightRequest="80">
+                              HeightRequest="60">
 
                             <local:FlowListView_R
                                 FlowColumnCount="3"
@@ -44,7 +58,6 @@
                                 SeparatorVisibility="None"
                                 VerticalScrollBarVisibility="Never"
                                 HorizontalScrollBarVisibility="Never"
-                                VerticalOptions="Center"
                                 BackgroundColor="Transparent"
                                 FlowItemsSource="{Binding categorias}"
                                 FlowItemTappedCommand="{Binding BindingContext.ItemTappedCommand, Source={x:Reference FamiliaPage}  }"
@@ -56,15 +69,15 @@
                                     <DataTemplate>
 
                                         <StackLayout
-                                            HeightRequest="80"
-                                            VerticalOptions="Center">
+                                            HeightRequest="60"
+                                            VerticalOptions="CenterAndExpand">
 
                                             <Label
                                                 Text="{Binding Categoria}"
                                                 TextDecorations="{Binding CategoriaTextDecoration}"
                                                 HorizontalTextAlignment="Center"
                                                 HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="Center"
+                                                VerticalOptions="CenterAndExpand"
                                                 TextColor="#333" />
 
                                         </StackLayout>

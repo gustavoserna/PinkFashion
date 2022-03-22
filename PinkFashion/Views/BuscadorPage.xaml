@@ -1,0 +1,130 @@
+﻿<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PinkFashion.Views.BuscadorPage"
+    x:Name="BuscadorRapidoCVP">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" Spacing="0">
+
+            <StackLayout>
+                <SearchBar Placeholder="Buscar productos..."
+           CancelButtonColor="White"
+           PlaceholderColor="White"
+           TextColor="Black"
+           TextChanged="SearchBar_TextChanged"
+           TextTransform="Lowercase"
+           HorizontalTextAlignment="Center"
+           FontSize="Medium"
+           FontAttributes="Italic" />
+
+            </StackLayout>
+
+            <!--SearchCommand="{Binding PerformSearchCommand}"-->
+
+            <Label Margin="10"
+                       Text="10 SUGERENCIAS"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="11"/>
+
+            <StackLayout
+                    Padding="10"
+                    Spacing="10"
+                    Orientation="Horizontal"
+                    >
+
+                <Image
+                        Source="search.png"
+                        HeightRequest="25"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="Start"/>
+
+                <Label
+                        Text="{Binding Key}"
+                        TextColor="Black"
+                        FontSize="14"
+                        FontAttributes="Bold"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="FillAndExpand"/>
+
+                <StackLayout.GestureRecognizers>
+
+                    <TapGestureRecognizer
+                            Command="{Binding Path=BindingContext.ItemTappedCommand,  Source={x:Reference BuscadorRapidoCVP}}"/>
+
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+            <!--</StackLayout>-->
+
+            <ListView
+                HasUnevenRows="True"
+                BackgroundColor="#ffffff"
+                SeparatorVisibility="None"
+                VerticalOptions="FillAndExpand"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                ItemsSource="{Binding Articulos}"
+                IsVisible="true"
+                >
+                <!-- IsVisible="{Binding Buscador_Rapido_Visible}" -->
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <StackLayout
+                                Padding="10"
+                                Spacing="10"
+                                Orientation="Horizontal">
+
+                                <!--<Image
+                                    Source="search.png"
+                                    HeightRequest="25"
+                                    VerticalOptions="StartAndExpand"
+                                    HorizontalOptions="Start"/>-->
+
+                                <StackLayout
+                                    Padding="10"
+                                Spacing="10"
+                                Orientation="Vertical">
+                                <Label
+                                    Text="{Binding producto}"
+                                    TextColor="Black"
+                                    FontSize="14"
+                                    VerticalOptions="StartAndExpand"
+                                    HorizontalOptions="FillAndExpand"/>
+
+                                <Label
+                                    Text="{Binding marca}"
+                                    TextColor="Black"
+                                    FontSize="10"
+                                    VerticalOptions="StartAndExpand"
+                                    HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+
+                                <StackLayout.GestureRecognizers>
+
+                                    <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding Path=BindingContext.ItemTappedCommand,  Source={x:Reference BuscadorRapidoCVP}}"/>
+
+                                </StackLayout.GestureRecognizers>
+
+
+                            </StackLayout>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

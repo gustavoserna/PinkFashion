@@ -694,6 +694,7 @@
         "lib/MonoAndroid10/Sharpnado.MaterialFrame.pdb",
         "lib/Xamarin.iOS10/Sharpnado.MaterialFrame.dll",
         "lib/Xamarin.iOS10/Sharpnado.MaterialFrame.iOS.dll",
+        "lib/Xamarin.iOS10/Sharpnado.MaterialFrame.iOS.dll.mdb",
         "lib/Xamarin.iOS10/Sharpnado.MaterialFrame.iOS.pdb",
         "lib/Xamarin.iOS10/Sharpnado.MaterialFrame.pdb",
         "lib/netstandard2.0/Sharpnado.MaterialFrame.dll",
@@ -725,6 +726,7 @@
         "lib/MonoAndroid10/Sharpnado.Presentation.Forms.pdb",
         "lib/Xamarin.iOS10/Sharpnado.Presentation.Forms.dll",
         "lib/Xamarin.iOS10/Sharpnado.Presentation.Forms.iOS.dll",
+        "lib/Xamarin.iOS10/Sharpnado.Presentation.Forms.iOS.dll.mdb",
         "lib/Xamarin.iOS10/Sharpnado.Presentation.Forms.iOS.pdb",
         "lib/Xamarin.iOS10/Sharpnado.Presentation.Forms.pdb",
         "lib/netstandard2.0/Sharpnado.Presentation.Forms.dll",
@@ -748,6 +750,7 @@
         "lib/MonoAndroid10/Sharpnado.Shadows.pdb",
         "lib/Xamarin.iOS10/Sharpnado.Shadows.dll",
         "lib/Xamarin.iOS10/Sharpnado.Shadows.iOS.dll",
+        "lib/Xamarin.iOS10/Sharpnado.Shadows.iOS.dll.mdb",
         "lib/Xamarin.iOS10/Sharpnado.Shadows.iOS.pdb",
         "lib/Xamarin.iOS10/Sharpnado.Shadows.pdb",
         "lib/netstandard2.0/Sharpnado.Shadows.dll",
@@ -1000,6 +1003,7 @@
         "lib/monoandroid80/ImageCircle.Forms.Plugin.pdb",
         "lib/monoandroid80/ImageCircle.Forms.Plugin.xml",
         "lib/monoandroid81/ImageCircle.Forms.Plugin.dll",
+        "lib/monoandroid81/ImageCircle.Forms.Plugin.dll.mdb",
         "lib/monoandroid81/ImageCircle.Forms.Plugin.pdb",
         "lib/monoandroid81/ImageCircle.Forms.Plugin.xml",
         "lib/netstandard2.0/ImageCircle.Forms.Plugin.dll",
@@ -1010,6 +1014,7 @@
         "lib/uap10.0.16299/ImageCircle.Forms.Plugin.pri",
         "lib/uap10.0.16299/ImageCircle.Forms.Plugin.xml",
         "lib/xamarinios10/ImageCircle.Forms.Plugin.dll",
+        "lib/xamarinios10/ImageCircle.Forms.Plugin.dll.mdb",
         "lib/xamarinios10/ImageCircle.Forms.Plugin.pdb",
         "lib/xamarinios10/ImageCircle.Forms.Plugin.xml",
         "lib/xamarinmac20/ImageCircle.Forms.Plugin.dll",
@@ -1027,8 +1032,10 @@
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Xamarin.Auth.dll",
+        "lib/MonoAndroid10/Xamarin.Auth.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Auth.pdb",
         "lib/Xamarin.iOS10/Xamarin.Auth.dll",
+        "lib/Xamarin.iOS10/Xamarin.Auth.dll.mdb",
         "lib/Xamarin.iOS10/Xamarin.Auth.pdb",
         "lib/netstandard1.0/Xamarin.Auth.dll",
         "lib/netstandard1.6/Xamarin.Auth.dll",
@@ -1495,28 +1502,31 @@
     ]
   },
   "packageFolders": {
-    "/Users/gustavoserna/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Han-S\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj",
+      "projectUniqueName": "C:\\Users\\Han-S\\source\\repos\\PinkFashion15Feb\\PinkFashion\\PinkFashion\\PinkFashion.csproj",
       "projectName": "PinkFashion",
-      "projectPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/PinkFashion.csproj",
-      "packagesPath": "/Users/gustavoserna/.nuget/packages/",
-      "outputPath": "/Users/gustavoserna/Projects/PinkFashion/PinkFashion/obj/",
+      "projectPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion15Feb\\PinkFashion\\PinkFashion\\PinkFashion.csproj",
+      "packagesPath": "C:\\Users\\Han-S\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Han-S\\source\\repos\\PinkFashion15Feb\\PinkFashion\\PinkFashion\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "/Users/gustavoserna/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Han-S\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1620,7 +1630,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.211\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.212\\RuntimeIdentifierGraph.json"
       }
     }
   },
